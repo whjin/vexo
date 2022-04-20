@@ -1,0 +1,29 @@
+author: whjin # 作者
+description: whjin's blog
+keyword: hexo-theme, vuejs
+favicon: 
+
+excerpt_link: 阅读全文
+
+menu:
+ 首页: /
+ 归档: /archives
+ 标签: /tags
+ 项目: /project
+ 关于: /about
+
+# highlight
+highlight:
+#  default
+#  foundation
+  idea
+#  github
+#  vs
+#  tomorrow
+
+baidu_id: 7176d0bc67fb19a89fea168ac922b24e
+
+about: 
+  banner: /css/images/banner.jpg
+  avatar: /css/images/logo.png
+  description: 雅致寓于高阁渔舟唱晚，古典悠然<br/>格调外发园林绿树萦绕，馥郁清香
