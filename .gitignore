@@ -1,9 +1,4 @@
-.DS_Store
-Thumbs.db
-db.json
-*.log
+.idea/
 node_modules/
-public/
-.deploy*/
-.idea/inspectionProfiles/
-package-lock.json
+.DS_Store
+*.log

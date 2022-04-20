@@ -1,90 +1,29 @@
-# Hexo Configuration
-## Docs: https://hexo.io/docs/configuration.html
-## Source: https://github.com/hexojs/hexo/
+author: whjin # 作者
+description: whjin's blog
+keyword: hexo-theme, vuejs
+favicon: 
 
-# Site
-title: 寒青
-subtitle: 天地有大美而不言
-description: whjin
-author: whjin
-language: zh-CN
-timezone: Asia/Shanghai
+excerpt_link: 阅读全文
 
-# URL
-## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://whjin.github.com
-root: /
-permalink: :year/:month/:day/:title/
-permalink_defaults:
+menu:
+ 首页: /
+ 归档: /archives/
+ 标签: /tags/
+ 项目: /project/
+ 关于: /about/
 
-# Links
-weibo_username: boyatazhizi
-twitter_username: boyatazhizi
-facebook_username: boyatazhizi
-github_username: whjin
-zhihu_username: whjin
-douban_username: whuajin
-
-# Directory
-source_dir: source
-public_dir: public
-tag_dir: tags
-archive_dir: archives
-category_dir: categories
-code_dir: downloads/code
-i18n_dir: :lang
-skip_render:
-
-# Writing
-new_post_name: :title.md # File name of new posts
-default_layout: post
-titlecase: false # Transform title into titlecase
-external_link: true # Open external links in new tab
-filename_case: 0
-render_drafts: false
-post_asset_folder: false
-relative_link: false
-future: true
+# highlight
 highlight:
-  enable: true
-  line_number: false
-  auto_detect: true
-  tab_replace: true
-  
-# Home page setting
-# path: Root path for your blogs index page. (default = '')
-# per_page: Posts displayed per page. (0 = disable pagination)
-# order_by: Posts order. (Order by date descending by default)
-index_generator:
-  path: ''
-  per_page: 5
-  order_by: -date
-  
-# Category & Tag
-default_category: uncategorized
-category_map:
-tag_map:
+#  default
+#  foundation
+  idea
+#  github
+#  vs
+#  tomorrow
 
-# Date / Time format
-## Hexo uses Moment.js to parse and display date
-## You can customize the date format as defined in
-## http://momentjs.com/docs/#/displaying/format/
-date_format: YYYY-MM-DD
-time_format: HH:mm:ss
+baidu_id: 7176d0bc67fb19a89fea168ac922b24e
 
-# Pagination
-## Set per_page to 0 to disable pagination
-per_page: 5
-pagination_dir: page
-
-# Extensions
-## Plugins: https://hexo.io/plugins/
-## Themes: https://hexo.io/themes/
-theme: vexo
-
-# Deployment
-## Docs: https://hexo.io/docs/deployment.html
-deploy:
-  type: git
-  repository: git@github.com:whjin/whjin.github.com.git
-  branch: master
+about: 
+  banner: https://i.imgur.com/YT9F84p.jpg
+  avatar: https://i.imgur.com/MytU5HF.png
+  description: 雅致寓于高阁渔舟唱晚，古典悠然；格调外发园林绿树萦绕，馥郁清香。
