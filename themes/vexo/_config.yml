@@ -1,0 +1,37 @@
+author: whjin # 作者
+description: whjin's blog
+keyword: hexo-theme, vuejs
+favicon:
+
+excerpt_link: 阅读全文
+
+menu:
+  首页: /
+  归档: /archives/
+  标签: /tags/
+  项目: /project/
+  关于: /about/
+
+# highlight
+highlight:
+  #  default
+  #  foundation
+  idea
+#  github
+#  vs
+#  tomorrow
+
+valine:
+  enable: true
+  appId: 9Y9fUh0rr3StVKSING2lDixH-gzGzoHsz
+  appKey: H0nOdiUHT7y5pXYxJBTdUq8X
+  notify: true
+  placeholder: 
+  avatar: mp
+  enableQQ: true
+  cdn: //unpkg.com/valine/dist/Valine.min.js # /script/Valine.min.js # https://cdn.jsdelivr.net/npm/valine
+
+baidu_id: 7176d0bc67fb19a89fea168ac922b24e
+
+about:
+  description: 雅致寓于高阁渔舟唱晚，古典悠然；格调外发园林绿树萦绕，馥郁清香。
