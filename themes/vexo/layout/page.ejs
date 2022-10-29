@@ -1,39 +1,45 @@
 <div id="article-banner">
-  <h2><%- page.title %></h2>
-  <p class="post-date"><%- date(page.date, "YYYY-MM-DD") %></p>
+  <h2>
+    <%- page.title %>
+  </h2>
+  <p class="post-date">
+    <%- date(page.date, "YYYY-MM-DD" ) %>
+  </p>
   <div class="arrow-down">
     <a href="javascript:;"></a>
   </div>
 </div>
 <main class="app-body">
   <article class="post-article">
-    <section class="markdown-content"><%- page.content %></section>
+    <section class="markdown-content">
+      <%- page.content %>
+    </section>
     <% if (page.tags && page.tags.length) { %>
-    <div class="tags">
-      <span>Tags:</span>
-      <%- partial('_partial/tag', {tags: page.tags}) %>
-    </div>
-    <% } %>
-    <div class="money-like">
-      <div class="reward-btn">
-        赏
-        <div class="money-code">
-          <span class="wechat-code">
-            <img class="code-image" src="/css/images/wechat.png" />
-            <b>使用微信打赏</b>
-          </span>
-          <!--<span class="alipay-code">
-                        <img class="code-image" src="/css/images/alipay.png">
-                        <b>使用支付宝打赏</b>
-                  </span>-->
-        </div>
+      <div class="tags">
+        <span>Tags:</span>
+        <%- partial('_partial/tag', {tags: page.tags}) %>
       </div>
-      <p class="notice">雅致寓于高阁渔舟唱晚，古典悠然；<br />格调外发园林绿树萦绕，馥郁清香。</p>
-    </div>
-    <div class="qrcode">
-      <img id="share-qrcode" />
-      <p class="notice">扫描二维码，分享此文章</p>
-    </div>
+      <% } %>
+        <div class="money-like">
+          <div class="reward-btn">
+            赏
+            <div class="money-code">
+              <span class="wechat-code">
+                <img class="code-image" src="/css/images/wechat.png" />
+                <b>使用微信打赏</b>
+              </span>
+              <span class="wechat-code">
+                <img class="code-image" src="/css/images/alipay.png">
+                <b>使用支付宝打赏</b>
+              </span>
+            </div>
+          </div>
+          <p class="notice">雅致寓于高阁渔舟唱晚，古典悠然；<br />格调外发园林绿树萦绕，馥郁清香。</p>
+        </div>
+        <div class="qrcode">
+          <img id="share-qrcode" />
+          <p class="notice">扫描二维码，分享此文章</p>
+        </div>
   </article>
 </main>
 <!--PC和WAP自适应版-->
@@ -135,30 +141,30 @@
 </script> -->
 
 <% if(page.comments && theme.valine && theme.valine.enable ){ %>
-<div class="vcomment valine">
-  <script src="<%= theme.valine.cdn %>"></script>
-  <script>
-    var path = window.location.pathname.replace("index.html", "");
-    var isEN = path.indexOf("en") > -1;
-    path = isEN ? path.replace("en/", "") : path;
-    new Valine({
-      el: ".vcomment",
-      appId: "<%- theme.valine.appId %>",
-      appKey: "<%- theme.valine.appKey %>",
-      placeholder: "<%- theme.valine.placeholder %>",
-      avatar: "<%- theme.valine.avatar %>",
-      path: path,
-      recordIP: true,
-      lang: isEN ? "en" : "zh-cn",
-      visitor: true,
-      enableQQ: "<%- theme.valine.enableQQ %>",
-      emojiCDN:
-        path.indexOf("emoji") > -1
-          ? "//i0.hdslb.com/bfs/emote/"
-          : "//img.t.sinajs.cn/t4/appstyle/expression/ext/normal/",
-      emojiMaps:
-        path.indexOf("emoji") > -1
-          ? {
+  <div class="vcomment valine">
+    <script src="<%= theme.valine.cdn %>"></script>
+    <script>
+      var path = window.location.pathname.replace("index.html", "");
+      var isEN = path.indexOf("en") > -1;
+      path = isEN ? path.replace("en/", "") : path;
+      new Valine({
+        el: ".vcomment",
+        appId: "<%- theme.valine.appId %>",
+        appKey: "<%- theme.valine.appKey %>",
+        placeholder: "<%- theme.valine.placeholder %>",
+        avatar: "<%- theme.valine.avatar %>",
+        path: path,
+        recordIP: true,
+        lang: isEN ? "en" : "zh-cn",
+        visitor: true,
+        enableQQ: "<%- theme.valine.enableQQ %>",
+        emojiCDN:
+          path.indexOf("emoji") > -1
+            ? "//i0.hdslb.com/bfs/emote/"
+            : "//img.t.sinajs.cn/t4/appstyle/expression/ext/normal/",
+        emojiMaps:
+          path.indexOf("emoji") > -1
+            ? {
               tv_doge: "6ea59c827c414b4a2955fe79e0f6fd3dcd515e24.png",
               tv_亲亲: "a8111ad55953ef5e3be3327ef94eb4a39d535d06.png",
               tv_偷笑: "bb690d4107620f1c15cff29509db529a73aee261.png",
@@ -211,18 +217,18 @@
               tv_鼓掌: "1d21793f96ef4e6f48b23e53e3b9e42da833a0f6.png",
               // ... 更多表情
             }
-          : void 0,
-    });
-  </script>
-</div>
-<% } %>
+            : void 0,
+      });
+    </script>
+  </div>
+  <% } %>
 
-<script>
-  var _hmt = _hmt || [];
-  (function () {
-    var hm = document.createElement("script");
-    hm.src = "https://hm.baidu.com/hm.js?7176d0bc67fb19a89fea168ac922b24e";
-    var s = document.getElementsByTagName("script")[0];
-    s.parentNode.insertBefore(hm, s);
-  })();
-</script>
+    <script>
+      var _hmt = _hmt || [];
+      (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?7176d0bc67fb19a89fea168ac922b24e";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+      })();
+    </script>
