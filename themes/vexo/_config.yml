@@ -25,12 +25,11 @@ valine:
   enable: true
   appId: 9NwKq9DsbUrNgihmAZusvPpR-gzGzoHsz
   appKey: WaUpXkmnXUes9ZNF30cZIAho
+  avatar: mp
   notify: true
   placeholder:
-  meta: true
   enableQQ: true
-  visitor: true
-  cdn: //unpkg.com/valine/dist/Valine.min.js # /script/Valine.min.js # https://cdn.jsdelivr.net/npm/valine
+  cdn: //cdn.jsdelivr.net/npm/valine
 
 baidu_id: 7176d0bc67fb19a89fea168ac922b24e
 
