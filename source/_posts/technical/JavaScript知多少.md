@@ -2,7 +2,7 @@
 title: JavaScript知多少
 date: 2018-11-13 07:57:49
 category: ["前端"]
-tags: ["javascript"]
+tags: ["JavaScript"]
 ---
 
 # `this`与对象原型`prototype` #

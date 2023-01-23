@@ -2,7 +2,7 @@
 title: 管中窥Vue
 date: 2018-11-13 06:01:16
 category: ["前端"]
-tags: ["vue"]
+tags: ["Vue"]
 ---
 
 > `Vue`和`Angular`、`React.js`的相同点和不同点？

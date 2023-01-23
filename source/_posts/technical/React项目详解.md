@@ -2,7 +2,7 @@
 title: React项目详解
 date: 2019-04-09 20:02:01
 category: ["前端"]
-tags: ["react"]
+tags: ["React"]
 comments:
 ---
 

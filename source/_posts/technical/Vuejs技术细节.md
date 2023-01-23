@@ -1,8 +1,8 @@
 ---
 title: Vue.js技术细节
 date: 2019-08-23 15:21:15
-category: ["Vue.js"]
-tags: ["前端"]
+category: ["前端"]
+tags: ["Vue"]
 comments: true
 ---
 

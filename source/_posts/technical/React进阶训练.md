@@ -2,7 +2,7 @@
 title: React进阶训练
 date: 2019-04-17 21:13:13
 category: ["前端"]
-tags: ["react"]
+tags: ["React"]
 comments:
 ---
 

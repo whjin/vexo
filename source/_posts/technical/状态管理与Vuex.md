@@ -2,7 +2,7 @@
 title: 状态管理与Vuex
 date: 2019-08-24 09:39:56
 category: ["Vue"]
-tags: ["Vue.js","Vuex"]
+tags: ["Vue","Vuex"]
 comments: true
 ---
 

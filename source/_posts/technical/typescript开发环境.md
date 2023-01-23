@@ -1,8 +1,8 @@
 ---
 title: typescript开发环境
 date: 2019-10-13 21:43:15
-category: ["前端","typescript"]
-tags: ["typescript"]
+category: ["前端","TypeScript"]
+tags: ["TypeScript"]
 comments: true
 ---
 
