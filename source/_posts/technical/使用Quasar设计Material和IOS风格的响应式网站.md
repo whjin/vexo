@@ -1,8 +1,8 @@
 ---
 title: 使用Quasar设计Material和IOS风格的响应式网站
 date: 2019-02-23 18:37:28
-category: ["前端"]
-tags: ["Vue"]
+category: ["技术"]
+tags: ["前端","Quasar"]
 ---
 
 # Quasar #

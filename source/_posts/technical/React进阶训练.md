@@ -1,12 +1,12 @@
 ---
 title: React进阶训练
 date: 2019-04-17 21:13:13
-category: ["前端"]
-tags: ["React"]
+category: ["技术"]
+tags: ["前端","React"]
 comments:
 ---
 
-# `redux` #
+# redux #
 
 **`Redux`就是给JavaScript应用程序一个可以预测`state`的容器。**
 
@@ -25,7 +25,7 @@ comments:
 3. `reducer`是一个`pure function`，它会**根据我们`action`的要求去做`state`的更改，并将新的`state`回传给`store`**。
 4. 我们可以让`component`去做监听`redux`裡面的`storestate`，只要一旦发现`state`有发生变化，就会立即帮我们重新`Render`。
 
-# `store` #
+# store #
 
 `store`主要的功能就是掌管应用程式的状态，并且有这些任务：
 

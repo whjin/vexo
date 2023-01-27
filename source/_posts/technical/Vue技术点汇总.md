@@ -1,8 +1,8 @@
 ---
 title: Vue技术点汇总
 date: 2023-01-22 16:57:15
-category: ["前端","技术"]
-tags: ["Vue","JavaScript"]
+category: ["技术"]
+tags: ["前端","Vue"]
 ---
 
 ### 响应式数据 ###

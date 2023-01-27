@@ -1,8 +1,8 @@
 ---
 title: React生命周期
 date: 2019-05-13 22:57:12
-category: ["前端","框架","React"]
-tags: ["React","生命周期"]
+category: ["技术"]
+tags: ["前端","React"]
 comments:
 ---
 

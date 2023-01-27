@@ -1,9 +1,9 @@
 ---
 title: vscode配置
 date: 2019-09-05 04:41:29
-category: ["工具"]
-tags: ["前端工具"]
-comments: true
+category: ["技术"]
+tags: ["前端","编辑器"]
+comments: 
 ---
 
 # 插件 #
@@ -16,7 +16,7 @@ comments: true
 
 <!--more-->
 
-# `settings.json` #
+# settings.json #
 
 ```json
 {

@@ -1,14 +1,14 @@
 ---
 title: React项目详解
 date: 2019-04-09 20:02:01
-category: ["前端"]
-tags: ["React"]
+category: ["技术"]
+tags: ["前端","React"]
 comments:
 ---
 
 # React项目指导 #
 
-## 使用`webpack`需要安装的依赖 ##
+## 使用webpack需要安装的依赖 ##
 
 <!--more-->
 
@@ -40,7 +40,7 @@ comments:
     }
     ```
 
-## `Component` ##
+## Component ##
 
 1. 基本组件
 
@@ -165,9 +165,9 @@ comments:
     );
     ```
 
-## `Component`的状态`state`和生命周期 ##
+## Component的状态state和生命周期 ##
 
-### `state`属性 ###
+### state属性 ###
 
 ```javascript
 constructor(props) {
@@ -193,7 +193,7 @@ componentDidMount() {
 }
 ```
 
-### `setState()`修改状态值 ###
+### setState()修改状态值 ###
 
 ```javascript
 this.setState({time: new Date().toLocaleTimeString()})
@@ -255,7 +255,7 @@ class Clock extends Component {
 }
 ```
 
-### `component`各阶段的生命周期方法 ###
+### component各阶段的生命周期方法 ###
 
 1. 挂载（`Mounting`）：组件一开始呈现到真实网页的过程
 
@@ -351,7 +351,7 @@ class LifeCycle extends Component {
 }
 ```
 
-#### `catch error` ####
+#### catch error ####
 
 ```javascript
 class ErrorBoundary extends Component {
@@ -391,7 +391,7 @@ class ErrorBoundary extends Component {
 4. `compoinentDidUpdate()`
 5. `componentWillUnmount()`
 
-## `Component`的事件处理 ##
+## Component的事件处理 ##
 
 1. 取得触发事件的DOM
 
@@ -437,7 +437,7 @@ class HelloTitle extends Component {
 {(this.state.gender === 'M') ? <HelloTitle title="先生"/> : <HelloTitle title="女士"/>}
 ```
 
-### 用绑定的`state`取得输入资料 ###
+### 用绑定的state取得输入资料 ###
 
 ```javascript
 class EasyForm extends Component {
@@ -564,7 +564,7 @@ class EasyForm extends Component {
 }
 ```
 
-### `refs`操作DOM ###
+### refs操作DOM ###
 
 ```javascript
 class App extends Component {
@@ -605,7 +605,7 @@ class App extends Component {
 }
 ```
 
-# 实例：`TODOLIST` #
+# 实例：TODOLIST #
 
 **`TodoList.js`**
 

@@ -1,8 +1,8 @@
 ---
 title: JavaScript常用方法集
 date: 2020-08-23 21:01:36
-category: ["前端"]
-tags: ["前端","JavaScript"]
+category: ["技术"]
+tags: ["前端","JS"]
 comments:
 ---
 

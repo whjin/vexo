@@ -1,8 +1,8 @@
 ---
 title: 使用React Native构建App
 date: 2019-04-11 21:02:03
-category: ["前端"]
-tags: ["React"]
+category: ["技术"]
+tags: ["前端","RN"]
 ---
 
 > 本文重点记录使用`React Native`构建双平台`App`的过程，同时进一步掌握构建过程中运用的技术。

@@ -1,8 +1,8 @@
 ---
 title: CSS团队协作规范
 date: 2019-05-06 22:23:17
-category: ["前端","规范"]
-tags: ["CSS"]
+category: ["技术"]
+tags: ["前端","CSS"]
 comments:
 ---
 
@@ -13,7 +13,7 @@ comments:
 
 <!--more-->
 
-# 禁止在非特殊情况下写`！important` #
+# 禁止在非特殊情况下写!important #
 
 - CSS本身有权重设计，任意地使用`!important`会造成权重混乱而无法维护。
 
@@ -26,7 +26,7 @@ comments:
 - 移动设备的高度是无限的，宽度是有限的。
 - 请不要把宽写死。
 
-# `img`请让它自动缩放 #
+# img请让它自动缩放 #
 
 - 请不要替`img`的容器设定宽或高，让它根据设备自行缩放。
 - 请使用`bootstrap`的`img-responsive`。
@@ -37,12 +37,12 @@ comments:
     ```
 - 如果要给`img border-radius`设定样式，请使用父元素控制行为，保持`img`只载入图片，没有样式。
 
-# 优先使用`grid`排版 #
+# 优先使用grid排版 #
 
 - 请不要花很多时间在写`media query`，设定一堆`breakpoint`，自己写组件样式，自己控制每种设备上的容器宽度。
 - 请使用`grid system`，这些都是已经成熟的框架，而且有些也已经帮你处理了浏览器相容问题。
 
-# 不可直接`over write`或在原本框架的`class`增加内容 #
+# 不可直接over write或在原本框架的class增加内容 #
 
 - 直接写一个新的`class`，不要覆盖原有的设计。
 - 不要再已有的`class`上添加样式，请额外单独写一个。
@@ -57,7 +57,7 @@ comments:
 
 > 再来是iPhone手机的`retina`，会将图片放到手机上时自动做两倍缩小，在一开始制作时即可发现图片载入是否吃效能。为了让图片能在iPhone上有更好的体验，建议移动版优先。
 
-# 不可使用`html tag selector` #
+# 不可使用html tag selector #
 
 - 请直接定义`class`的样式，不需要指定`html tag`。
 
@@ -65,29 +65,29 @@ comments:
 
 - 超过三层表示耦合度太高，不具有弹性、可维护性。
 
-# 用一样的`element`时不要把一堆东西全部写在里面，请把排版相关的独立出来 #
+# 用一样的element时不要把一堆东西全部写在里面，请把排版相关的独立出来 #
 
 - 把`border-radius`写在`img`上面，请把`img`保持干净。定位，例如`position: absolute;`
 
-# 不要随意`none`掉画面上的`tag`或行为 #
+# 不要随意none掉画面上的tag或行为 #
 
 - 请注意如果要`none`掉一些样式，请依照使用程度决定。
 - 使用程度遍布整个网站，请直接使用`reset.css`
 - 使用程度中等以下，请定义一个`class`
 
-## `reset.css` ##
+## reset.css ##
 
 - 常见的`a tag`不要有`underline`
 - `list`消除原有样式
 - 请在`reset.css`上定义，并且设为第一载入次序
 
-# 有JavaScript行为的`class`可以为命名加入`name space` #
+# 有JavaScript行为的class可以为命名加入name space #
 
 ```javascript
 #js-project-show {}
 ```
 
-# 请勿任意使用`br hr tag` #
+# 请勿任意使用br hr tag #
 
 - `br`是换行，请使用在`p tag`里面，当`p`里面文字过多时可以使用。
 - `hr`是快速划线，但是即将被淘汰，请直接使用`border`写在`class`里面。

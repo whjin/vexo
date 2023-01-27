@@ -1,8 +1,8 @@
 ---
 title: jQuery选择器
 date: 2019-05-08 16:17:24
-category: ["前端","jQuery"]
-tags: ["jQuery"]
+category: ["技术"]
+tags: ["前端","jQuery"]
 comments:
 ---
 

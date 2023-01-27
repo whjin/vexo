@@ -14,12 +14,12 @@ menu:
 
 # highlight
 highlight:
-  #  default
-  #  foundation
-  idea
-#  github
-#  vs
-#  tomorrow
+  # default
+  # foundation
+  # idea
+  # github
+  vs
+  # tomorrow
 
 valine:
   enable: true

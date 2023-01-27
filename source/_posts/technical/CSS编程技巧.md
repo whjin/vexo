@@ -1,8 +1,8 @@
 ---
 title: CSS-编程技巧
 date: 2019-03-13 18:31:43
-category: ["前端","CSS"]
-tags: ["CSS"]
+category: ["技术"]
+tags: ["前端","CSS"]
 comments:
 ---
 
@@ -81,5 +81,3 @@ comments:
   on <a href="https://codepen.io">CodePen</a>.</span>
 </p>
 <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
-
-## 钻石形图片 ##

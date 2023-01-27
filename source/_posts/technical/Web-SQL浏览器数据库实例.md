@@ -1,8 +1,8 @@
 ---
 title: Web SQL浏览器数据库实例
 date: 2020-08-23 20:55:31
-category: ["前端"]
-tags: ["前端"]
+category: ["技术"]
+tags: ["前端","数据库"]
 comments:
 ---
 

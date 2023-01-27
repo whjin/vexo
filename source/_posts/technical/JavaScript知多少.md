@@ -1,13 +1,13 @@
 ---
 title: JavaScript知多少
 date: 2018-11-13 07:57:49
-category: ["前端"]
-tags: ["JavaScript"]
+category: ["技术"]
+tags: ["前端","JS"]
 ---
 
-# `this`与对象原型`prototype` #
+# this与对象原型prototype #
 
-# `hoisting`状态提升 #
+# hoisting状态提升 #
 
 在程序执行前，编译器先由上到下逐行将代码转为机器可读的命令，然后再执行编译后的指令。
 
@@ -70,7 +70,7 @@ function out(element) {
 }
 ```
 
-# `jsonp`实现代码 #
+# jsonp实现代码 #
 
 ```javascript
 function JSONP({
@@ -152,6 +152,4 @@ const throttle = (fn, delay = 500) => {
 - 拖拽：固定时间内只执行一次，防止超高频次触发位置变动
 - 缩放场景：监控浏览器`resize`
 - 动画：避免短时间内多次触发动画引起性能问题
-
-# 深克隆 #
 

@@ -1,8 +1,8 @@
 ---
 title: Vue组件通信
 date: 2019-10-12 00:36:21
-category: ["Vue","前端"]
-tags: ["Vue"]
+category: ["技术"]
+tags: ["前端","Vue"]
 ---
 
 # `props` #

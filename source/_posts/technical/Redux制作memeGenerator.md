@@ -1,8 +1,8 @@
 ---
 title: Redux+API制作meme generator
 date: 2019-05-14 08:27:51
-category: ["前端","React"]
-tags: ["React"]
+category: ["技术"]
+tags: ["前端","Redux"]
 comments:
 ---
 

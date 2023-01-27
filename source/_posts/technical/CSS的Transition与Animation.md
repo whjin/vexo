@@ -1,8 +1,8 @@
 ---
 title: CSS的Transition与Animation
 date: 2019-05-08 17:40:49
-category: ["前端","CSS"]
-tags: ["CSS"]
+category: ["技术"]
+tags: ["前端","CSS"]
 comments:
 ---
 
@@ -31,7 +31,7 @@ comments:
 
 # 浏览器支持 #
 
-## `transition`写法 ##
+## transition写法 ##
 
 ```css
 .box {
@@ -48,7 +48,7 @@ comments:
 }
 ```
 
-## `animation`写法 ##
+## animation写法 ##
 
 ```css
 .box {
@@ -110,8 +110,5 @@ comments:
 |`animation-fill-mode`|`forwards`使用关键帧最后的值`backwards`使用最开始的值`both`|
 |`animation-play-state`播放状态|`pause`暂停`running`为预设值`initial`预设值、`inherit`继承父层|
 
-## `Animation.css` ##
-
-官网下载：[Animate.css](https://daneden.github.io/animate.css/)
-GitHub：[Animate.css 使用说明](https://github.com/daneden/animate.css)
+> GitHub：[Animate.css 使用说明](https://github.com/daneden/animate.css)
 

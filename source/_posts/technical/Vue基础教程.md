@@ -1,8 +1,8 @@
 ---
-title: Vue.js基础教程
+title: Vue基础教程
 date: 2019-02-18 23:34:23
 category: ["技术"]
-tags: ["前端"]
+tags: ["前端","Vue"]
 ---
 
 开发工具准备：

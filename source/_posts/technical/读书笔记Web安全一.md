@@ -1,8 +1,8 @@
 ---
 title: 读书笔记-Web安全一
 date: 2019-02-23 05:17:37
-category: ["前端"]
-tags: ["Web安全","黑客"]
+category: ["技术"]
+tags: ["前端","Web安全"]
 comments:
 ---
 
