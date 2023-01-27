@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+  <meta name="description" content="吴华锦的个人主页" />
+  <meta name="keyword" content="hexo-theme, vuejs" />
+   <link rel="shortcut icon" href="/css/images/logo.png"> 
+  <title>
+     React项目详解 | 吴华锦 
+  </title>
+  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+  <link href="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.css" rel="stylesheet" />
+  <link href="//cdn.bootcss.com/highlight.js/9.12.0/styles/vs.min.css" rel="stylesheet" />
+  <link href="//cdn.bootcss.com/emojione/2.2.2/assets/css/emojione.min.css" rel="stylesheet" />
+  <link href="//cdn.bootcss.com/emojione/2.2.2/assets/sprites/emojione.sprites.css" rel="stylesheet" />
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  <script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+  <script src="//cdn.bootcss.com/geopattern/1.2.3/js/geopattern.min.js"></script>
+  <script src="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js"></script>
+  <script src="//cdn.bootcdn.net/ajax/libs/emojione/4.5.0/lib/js/emojione.min.js"></script>
+  
+<script src="/js/qrious.js"></script>
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+<div class="wechat-share">
+  <img src="/css/images/logo.png" />
+</div>
+
+<body>
+<header class="header fixed-header">
+    <div class="header-container">
+        <a class="home-link" href="/">
+            <div class="logo"></div>
+            <span>吴华锦</span>
+        </a>
+        <ul class="right-list">
+            
+            <li class="list-item">
+                
+                <a href="/" class="item-link">首页</a>
+                
+            </li>
+            
+            <li class="list-item">
+                
+                <a href="/archives/" class="item-link">归档</a>
+                
+            </li>
+            
+            <li class="list-item">
+                
+                <a href="/tags/" class="item-link">标签</a>
+                
+            </li>
+            
+            <li class="list-item">
+                
+                <a href="/project/" class="item-link">项目</a>
+                
+            </li>
+            
+            <li class="list-item">
+                
+                <a href="/about/" class="item-link">关于</a>
+                
+            </li>
+            
+        </ul>
+        <div class="menu">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </div>
+        <div class="menu-mask">
+            <ul class="menu-list">
+                
+                <li class="menu-item">
+                    
+                    <a href="/" class="menu-link">首页</a>
+                    
+                </li>
+                
+                <li class="menu-item">
+                    
+                    <a href="/archives/" class="menu-link">归档</a>
+                    
+                </li>
+                
+                <li class="menu-item">
+                    
+                    <a href="/tags/" class="menu-link">标签</a>
+                    
+                </li>
+                
+                <li class="menu-item">
+                    
+                    <a href="/project/" class="menu-link">项目</a>
+                    
+                </li>
+                
+                <li class="menu-item">
+                    
+                    <a href="/about/" class="menu-link">关于</a>
+                    
+                </li>
+                
+            </ul>
+        </div>
+    </div>
+</header>
+
+<div id="article-banner">
+  <h2>
+    React项目详解
+  </h2>
+  <p class="post-date">
+    2019-04-09
+  </p>
+  <div class="arrow-down">
+    <a href="javascript:;"></a>
+  </div>
+</div>
+<main class="app-body">
+  <article class="post-article">
+    <section class="markdown-content">
+      <h1 id="React项目指导"><a href="#React项目指导" class="headerlink" title="React项目指导"></a>React项目指导</h1><h2 id="使用webpack需要安装的依赖"><a href="#使用webpack需要安装的依赖" class="headerlink" title="使用webpack需要安装的依赖"></a>使用webpack需要安装的依赖</h2><span id="more"></span>
+<ol>
+<li><code>webpack</code>，<code>webpack-cli</code>，<code>react</code>，<code>react-dom</code></li>
+<li><code>babel-loader</code>，<code>@babel/core</code>，<code>@babel/preset-env</code>，<code>@babel/preset-react</code></li>
+<li>设置<code>.babelrc</code>，<code>&#123;&quot;presets&quot;: [&quot;@babel/preset-env&quot;,&quot;@babel/preset-react&quot;]&#125;</code></li>
+<li><p>设置<code>scripts</code>：</p>
+  <figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="string">&quot;dev&quot;</span>: <span class="string">&quot;webpack --mode development&quot;</span>,</span><br><span class="line"><span class="string">&quot;build&quot;</span>: <span class="string">&quot;webpack --mode production&quot;</span></span><br></pre></td></tr></table></figure></li>
+<li><p>设置<code>webpack-dev-server</code>：   </p>
+ <figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="attr">devServer</span>: &#123;</span><br><span class="line">  <span class="attr">compress</span>: <span class="literal">true</span>,</span><br><span class="line">    <span class="attr">port</span>: <span class="number">9000</span>，</span><br><span class="line">    <span class="attr">hot</span>: <span class="literal">true</span></span><br><span class="line">&#125;,</span><br><span class="line"></span><br><span class="line"><span class="string">&quot;start&quot;</span>: <span class="string">&quot;webpack-dev-server --config webpack.config.js&quot;</span> </span><br></pre></td></tr></table></figure></li>
+<li><p>设置<code>performance</code>：</p>
+ <figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="attr">performance</span>: &#123;</span><br><span class="line">  <span class="attr">hints</span>: <span class="literal">false</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h2 id="Component"><a href="#Component" class="headerlink" title="Component"></a>Component</h2><ol>
+<li><p>基本组件</p>
+ <figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> title = <span class="language-xml"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>Hello, world!<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="title class_">ReactDOM</span>.<span class="title function_">render</span>(title,<span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&#x27;root&#x27;</span>))</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>动态组件</p>
+ <figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="title class_">React</span> <span class="keyword">from</span> <span class="string">&#x27;react&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="title class_">ReactDOM</span> <span class="keyword">from</span> <span class="string">&#x27;react-dom&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> <span class="title function_">displayTime</span> = (<span class="params"></span>) =&gt; &#123;</span><br><span class="line">  <span class="keyword">let</span> nowTime = (</span><br><span class="line">    <span class="language-xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;<span class="name">span</span>&gt;</span>现在时间：&#123;new Date().toLocaleTimeString()&#125;<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">  );</span><br><span class="line">  <span class="title class_">ReactDOM</span>.<span class="title function_">render</span>(t</span><br><span class="line">    nowTime,</span><br><span class="line">    <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&#x27;root&#x27;</span>)</span><br><span class="line">  );</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="built_in">setInterval</span>(displayTime, <span class="number">1000</span>);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>class</code>组件构建器</p>
+ <figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="title class_">React</span>, &#123;<span class="title class_">Component</span>&#125; <span class="keyword">from</span> <span class="string">&#x27;react&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="title class_">ReactDOM</span> <span class="keyword">from</span> <span class="string">&#x27;react-dom&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">HelloTitle</span> <span class="keyword">extends</span> <span class="title class_ inherited__">Component</span> &#123;</span><br><span class="line">  <span class="title function_">render</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="language-xml"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>Hello,World!<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="title class_">ReactDOM</span>.<span class="title function_">render</span>(</span><br><span class="line">  <span class="language-xml"><span class="tag">&lt;<span class="name">HelloTitle</span>/&gt;</span></span>,</span><br><span class="line">  <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&#x27;root&#x27;</span>)</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>props</code>属性</p>
+ <figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="title class_">React</span>, &#123;<span class="title class_">Component</span>&#125; <span class="keyword">from</span> <span class="string">&#x27;react&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="title class_">ReactDOM</span> <span class="keyword">from</span> <span class="string">&#x27;react-dom&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">HelloTitle</span> <span class="keyword">extends</span> <span class="title class_ inherited__">Component</span> &#123;</span><br><span class="line">  <span class="title function_">render</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="language-xml"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>Hello,&#123;this.props.name&#125;!<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> titleDiv = (</span><br><span class="line">  <span class="language-xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;<span class="name">HelloTitle</span> <span class="attr">name</span>=<span class="string">&quot;React&quot;</span>/&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;<span class="name">HelloTitle</span> <span class="attr">name</span>=<span class="string">&quot;World&quot;</span>/&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">);</span><br><span class="line"></span><br><span class="line"><span class="title class_">ReactDOM</span>.<span class="title function_">render</span>(</span><br><span class="line">  titleDiv,</span><br><span class="line">  <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&#x27;root&#x27;</span>)</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>props</code>多层使用</p>
+ <figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="title class_">React</span>, &#123;<span class="title class_">Component</span>&#125; <span class="keyword">from</span> <span class="string">&#x27;react&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="title class_">ReactDOM</span> <span class="keyword">from</span> <span class="string">&#x27;react-dom&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">HelloTitle</span> <span class="keyword">extends</span> <span class="title class_ inherited__">Component</span> &#123;</span><br><span class="line">  <span class="title function_">render</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="language-xml"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>Hello,&#123;this.props.name&#125;!<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">HelloDiv</span> <span class="keyword">extends</span> <span class="title class_ inherited__">Component</span> &#123;</span><br><span class="line">  <span class="title function_">render</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="language-xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span><span class="tag">&lt;<span class="name">HelloTitle</span> <span class="attr">name</span>=<span class="string">&#123;this.props.name&#125;/</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="title class_">ReactDOM</span>.<span class="title function_">render</span>(</span><br><span class="line">  <span class="language-xml"><span class="tag">&lt;<span class="name">HelloDiv</span> <span class="attr">name</span>=<span class="string">&quot;React&quot;</span>/&gt;</span></span>,</span><br><span class="line">  <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&#x27;root&#x27;</span>)</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>组件复用</p>
+ <figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="title class_">React</span>, &#123;<span class="title class_">Component</span>&#125; <span class="keyword">from</span> <span class="string">&#x27;react&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="title class_">ReactDOM</span> <span class="keyword">from</span> <span class="string">&#x27;react-dom&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">HelloTitle</span> <span class="keyword">extends</span> <span class="title class_ inherited__">Component</span> &#123;</span><br><span class="line">  <span class="title function_">render</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="language-xml"><span class="tag">&lt;<span class="name">h1</span> <span class="attr">style</span>=<span class="string">&#123;this.props.style&#125;</span>&gt;</span>&#123;this.props.content&#125;<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">HelloDiv</span> <span class="keyword">extends</span> <span class="title class_ inherited__">Component</span> &#123;</span><br><span class="line">  <span class="title function_">render</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="language-xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;<span class="name">HelloTitle</span> <span class="attr">content</span>=<span class="string">&quot;比较大的字&quot;</span> <span class="attr">style</span>=<span class="string">&#123;&#123;</span>&#x27;<span class="attr">fontSize</span>&#x27;<span class="attr">:</span> <span class="attr">18</span>&#125;&#125;/&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;<span class="name">HelloTitle</span> <span class="attr">content</span>=<span class="string">&quot;比较小的字&quot;</span> <span class="attr">style</span>=<span class="string">&#123;&#123;</span>&#x27;<span class="attr">fontSize</span>&#x27;<span class="attr">:</span> <span class="attr">12</span>&#125;&#125;/&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="title class_">ReactDOM</span>.<span class="title function_">render</span>(</span><br><span class="line">  <span class="language-xml"><span class="tag">&lt;<span class="name">HelloDiv</span>/&gt;</span></span>,</span><br><span class="line">  <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&#x27;root&#x27;</span>)</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h2 id="Component的状态state和生命周期"><a href="#Component的状态state和生命周期" class="headerlink" title="Component的状态state和生命周期"></a>Component的状态state和生命周期</h2><h3 id="state属性"><a href="#state属性" class="headerlink" title="state属性"></a>state属性</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="title function_">constructor</span>(<span class="params">props</span>) &#123;</span><br><span class="line">  <span class="variable language_">super</span>(props);</span><br><span class="line">  <span class="variable language_">this</span>.<span class="property">state</span> = &#123;</span><br><span class="line">    <span class="attr">time</span>: <span class="keyword">new</span> <span class="title class_">Date</span>().<span class="title function_">toLocaleTimeString</span>()</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="title function_">render</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="language-xml"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>现在时间是&#123;this.state.time&#125;<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>组件构建完成后先执行的动作，<code>componentDidMount()</code>：</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="title function_">componentDidMount</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">let</span> <span class="title function_">upTime</span> = (<span class="params"></span>) =&gt; &#123;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="title function_">setState</span>(&#123;<span class="attr">time</span>: <span class="keyword">new</span> <span class="title class_">Date</span>().<span class="title function_">toLocaleTimeString</span>()&#125;)</span><br><span class="line">  &#125;;</span><br><span class="line">  <span class="built_in">setInterval</span>(upTime, <span class="number">1000</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="setState-修改状态值"><a href="#setState-修改状态值" class="headerlink" title="setState()修改状态值"></a>setState()修改状态值</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="variable language_">this</span>.<span class="title function_">setState</span>(&#123;<span class="attr">time</span>: <span class="keyword">new</span> <span class="title class_">Date</span>().<span class="title function_">toLocaleTimeString</span>()&#125;)</span><br></pre></td></tr></table></figure>
+<h3 id="生命周期"><a href="#生命周期" class="headerlink" title="生命周期"></a>生命周期</h3><ol>
+<li>在<code>constructor</code>中初始化组件内部的资料。</li>
+<li>使用<code>render()</code>在网页上输出组件内容。</li>
+<li>输出后会执行<code>componentDidMount()</code>进行一次调用。</li>
+<li>当组件内部的<code>state</code>值被修改时执行<code>componentDidUpdate()</code>。</li>
+<li>当组件被移除时会执行<code>componentWillUnmount()</code>的内容一次。</li>
+</ol>
+<p><strong><code>componentDidMount()</code></strong></p>
+<ol>
+<li>Component已经<code>render</code>到实体DOM阶段完成的时候触发；</li>
+<li>此<code>method</code>只会被呼叫一次；</li>
+<li>在这裡可以<code>setState()</code>，并会再次重新<code>render</code>、<code>component</code>一次；</li>
+<li>可以放入具有<code>side effect</code>的<code>function</code>，如<code>setInterval</code>、呼叫API等等。</li>
+</ol>
+<p><strong><code>componentWillUnmount()</code></strong></p>
+<ol>
+<li>Component即将从实体DOM阶段移除「之前」的时候触发；</li>
+<li>也是只会被呼叫一次；</li>
+<li>不可以在这裡使用<code>setState()</code>；</li>
+<li>也可以放入具有<code>side effect</code>的<code>function</code>。</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Clock</span> <span class="keyword">extends</span> <span class="title class_ inherited__">Component</span> &#123;</span><br><span class="line">  <span class="title function_">constructor</span>(<span class="params">props</span>) &#123;</span><br><span class="line">    <span class="variable language_">super</span>(props);</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">state</span> = &#123;</span><br><span class="line">      <span class="attr">currentTime</span>: <span class="keyword">new</span> <span class="title class_">Date</span>().<span class="title function_">toLocaleString</span>()</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="title function_">componentDidMount</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">timer</span> = <span class="built_in">setInterval</span>(<span class="variable language_">this</span>.<span class="property">updateTime</span>, <span class="number">1000</span>)</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="title function_">componentWillUnmount</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="built_in">clearInterval</span>(<span class="variable language_">this</span>.<span class="property">timer</span>)</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  updateTime = <span class="function">() =&gt;</span> &#123;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="title function_">setState</span>(&#123;</span><br><span class="line">      <span class="attr">currentTime</span>: <span class="keyword">new</span> <span class="title class_">Date</span>().<span class="title function_">toLocaleString</span>()</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;;</span><br><span class="line"></span><br><span class="line">  <span class="title function_">render</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">const</span> &#123;currentTime&#125; = <span class="variable language_">this</span>.<span class="property">state</span>;</span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">      <span class="language-xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">className</span>=<span class="string">&quot;clock&quot;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">        <span class="tag">&lt;<span class="name">div</span>&gt;</span>&#123;currentTime&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">    )</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="component各阶段的生命周期方法"><a href="#component各阶段的生命周期方法" class="headerlink" title="component各阶段的生命周期方法"></a>component各阶段的生命周期方法</h3><ol>
+<li>挂载（<code>Mounting</code>）：组件一开始呈现到真实网页的过程</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">LifeCycle</span> <span class="keyword">extends</span> <span class="title class_ inherited__">Component</span> &#123;</span><br><span class="line">  <span class="title function_">constructor</span>(<span class="params">props</span>) &#123;</span><br><span class="line">    <span class="variable language_">super</span>(props);</span><br><span class="line">    <span class="comment">//  建构式，推进组件初始state设定，绑定方法，接受父级props的地方</span></span><br><span class="line">    <span class="comment">//  只会被调用一次</span></span><br><span class="line">    <span class="comment">//  不适合使用具有side effect的工作，如AJAX调用</span></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">static</span> <span class="title function_">getDerivedStateFromProps</span>(<span class="params">nextProps, prevState</span>) &#123;</span><br><span class="line">    <span class="comment">//  React V16.3新增的生命周期方法</span></span><br><span class="line">    <span class="comment">//  在组件建构之后,render()被调用之前</span></span><br><span class="line">    <span class="comment">//  每次接收新的props后回传object更新state；也可以回传null不做更新</span></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="title function_">UNSAFE_componentWillMount</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="comment">//  即将在React V17中移除，不可与static getDerivedStateFromProps同时出现</span></span><br><span class="line">    <span class="comment">//  在render()调用之后被调用，且之后被调用一次</span></span><br><span class="line">    <span class="comment">//  会用到的地方仅在于服务器端的应用</span></span><br><span class="line">    <span class="comment">//  适合设定初始化数据的地方，不适合做有side effect的工作</span></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="title function_">render</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="comment">//  在class component中「唯一」必要存在的方法</span></span><br><span class="line">    <span class="comment">//  尽量pure，不应该改变component的state</span></span><br><span class="line">    <span class="comment">//  如需要和browser有互动的话，将其放进componentDidMount()中</span></span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">      <span class="language-xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">    )</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="title function_">componentDidMount</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="comment">//  在render()被调用后，组件已经在真实DOM呈现之后被调用执行</span></span><br><span class="line">    <span class="comment">//  只会被调用一次，适合执行AJAX、计时器设定、加入eventListener等有副作用的工作</span></span><br><span class="line">    <span class="comment">//  调用setState()可能会再执行一次render()</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li>更新（Updating）：使用者的操作中，组件的状态和属性被改变</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">LifeCycle</span> <span class="keyword">extends</span> <span class="title class_ inherited__">Component</span> &#123;</span><br><span class="line">  <span class="title function_">UNSAFE_componentWillReceiveProps</span>(<span class="params">nextProps</span>) &#123;</span><br><span class="line">    <span class="comment">//  即将在React V17中移除，不可与static getDerivedStateFromProps同时出现</span></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">static</span> <span class="title function_">getDerivedStateFromProps</span>(<span class="params">nextProps, prevState</span>) &#123;</span><br><span class="line">    <span class="comment">//  React V16.3新增的新生命周期方法</span></span><br><span class="line">    <span class="comment">//  在组件构建之后，render()被调用之前</span></span><br><span class="line">    <span class="comment">//  每次接收新的props后回传object更新state；也可回传null不做更新</span></span><br><span class="line">    <span class="comment">//  搭配componentDidUpdate，可以达到与componentWillReceivedProps的效果</span></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="title function_">shouldComponentUpdate</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="comment">//  让使用者自定义是否进行component更新，预设都会默认更新</span></span><br><span class="line">    <span class="comment">//  只有少部分的情况才会使用此方法，如进行复杂耗时的计算</span></span><br><span class="line">    <span class="comment">//  尽量不要检查太过深层的值，也不适合执行具有side effect的工作</span></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="title function_">UNSAFE_componentWillUpdate</span>(<span class="params">nextProps, nextState</span>) &#123;</span><br><span class="line">    <span class="comment">//  即将在React V17中移除，不可与static getDerivedStateFromProps同时出现</span></span><br><span class="line">    <span class="comment">//  在组件即将更新「之前」调用</span></span><br><span class="line">    <span class="comment">//  不能在此使用setState方法，若要改变请用getDerivedStateFromProps</span></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="title function_">getSnapshotBeforeUpdate</span>(<span class="params">prevProps, prevState</span>) &#123;</span><br><span class="line">    <span class="comment">//  在render之后，在最新的渲染前输出交给真实DOM前会立即执行</span></span><br><span class="line">    <span class="comment">//  返回的值作为componentDidUpdate的第三个值</span></span><br><span class="line">    <span class="comment">//  搭配componentDidUpdate，可以达到与componentWillUpdate的效果</span></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="title function_">componentDidUpdate</span>(<span class="params">prevProps, prevState, snapshot</span>) &#123;</span><br><span class="line">    <span class="comment">//  会发生在更新「之后」被调用</span></span><br><span class="line">    <span class="comment">//  如果shouldComponentUpdate回传的是false，就不会调用此方法</span></span><br><span class="line">    <span class="comment">//  适合执行具有side effect的地方</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ol start="3">
+<li>卸载（Unmounting）：组件要移除真实DOM的阶段</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">LifeCycle</span> <span class="keyword">extends</span> <span class="title class_ inherited__">Component</span> &#123;</span><br><span class="line">  <span class="title function_">componentWillMount</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="comment">//  在组件即将要移除真实DOM时会执行</span></span><br><span class="line">    <span class="comment">//  可以在这里做中断网络连接、清楚计时器、移除事件监听器</span></span><br><span class="line">    <span class="comment">//  不适合使用setState方法</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="catch-error"><a href="#catch-error" class="headerlink" title="catch error"></a>catch error</h4><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">ErrorBoundary</span> <span class="keyword">extends</span> <span class="title class_ inherited__">Component</span> &#123;</span><br><span class="line">  <span class="title function_">constructor</span>(<span class="params">props</span>) &#123;</span><br><span class="line">    <span class="variable language_">super</span>(props);</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">state</span> = &#123;</span><br><span class="line">      <span class="attr">hasError</span>: <span class="literal">false</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="title function_">componentDidCatch</span>(<span class="params">error, info</span>) &#123;</span><br><span class="line">    <span class="comment">//  是error handle的方法，与挂载和更新阶段有密切关系</span></span><br><span class="line">    <span class="comment">//  可以用来捕捉子组件的任何JavaScript的错误</span></span><br><span class="line">    <span class="comment">//  可以记录这些错误，或是呈现在目前反馈用的操作界面上</span></span><br><span class="line">    <span class="comment">//  不能在事件的callback上使用</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">//  显示在反馈的UI上</span></span><br><span class="line">    <span class="variable language_">this</span>.<span class="title function_">setState</span>(&#123;<span class="attr">hasError</span>: <span class="literal">true</span>&#125;);</span><br><span class="line">    <span class="comment">//  也可以用额外的错误记录服务</span></span><br><span class="line">    <span class="title function_">logErrorMyService</span>(error, info);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="title function_">render</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">if</span> (<span class="variable language_">this</span>.<span class="property">state</span>.<span class="property">hasError</span>) &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="language-xml"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>Something went wrong...<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="variable language_">this</span>.<span class="property">props</span>.<span class="property">children</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>上面就是<code>component</code>可以使用的生命周期方法，最常用主要是这些：</p>
+<ol>
+<li><code>constructor()</code></li>
+<li><code>render()</code></li>
+<li><code>componentDidMount()</code></li>
+<li><code>compoinentDidUpdate()</code></li>
+<li><code>componentWillUnmount()</code></li>
+</ol>
+<h2 id="Component的事件处理"><a href="#Component的事件处理" class="headerlink" title="Component的事件处理"></a>Component的事件处理</h2><ol>
+<li>取得触发事件的DOM</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">InputGender</span> <span class="keyword">extends</span> <span class="title class_ inherited__">Component</span> &#123;</span><br><span class="line">  <span class="title function_">constructor</span>(<span class="params">props</span>) &#123;</span><br><span class="line">    <span class="variable language_">super</span>(props);</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">state</span> = &#123;</span><br><span class="line">      <span class="attr">gender</span>: <span class="string">&#x27;&#x27;</span></span><br><span class="line">    &#125;;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">changeGender</span> = <span class="variable language_">this</span>.<span class="property">changeGender</span>.<span class="title function_">bind</span>(<span class="variable language_">this</span>)</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="title function_">changeGender</span>(<span class="params">event</span>) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(event.<span class="property">target</span>.<span class="property">value</span>);</span><br><span class="line">    <span class="variable language_">this</span>.<span class="title function_">setState</span>(&#123;</span><br><span class="line">      <span class="attr">gender</span>: event.<span class="property">target</span>.<span class="property">value</span></span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="title function_">componentDidUpdate</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`已将state.gender变动为：<span class="subst">$&#123;<span class="variable language_">this</span>.state.gender&#125;</span>`</span>)</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="title function_">render</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">      <span class="language-xml"><span class="tag">&lt;<span class="name">select</span> <span class="attr">onChange</span>=<span class="string">&#123;this.changeGender&#125;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">        <span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">&quot;M&quot;</span>&gt;</span>男<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">        <span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">&quot;W&quot;</span>&gt;</span>女<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;/<span class="name">select</span>&gt;</span></span></span><br><span class="line">    )</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">HelloTitle</span> <span class="keyword">extends</span> <span class="title class_ inherited__">Component</span> &#123;</span><br><span class="line">  <span class="title function_">render</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="language-xml"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>&#123;this.props.title&#125;<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#123;(<span class="variable language_">this</span>.<span class="property">state</span>.<span class="property">gender</span> === <span class="string">&#x27;M&#x27;</span>) ? <span class="language-xml"><span class="tag">&lt;<span class="name">HelloTitle</span> <span class="attr">title</span>=<span class="string">&quot;先生&quot;</span>/&gt;</span></span> : <span class="language-xml"><span class="tag">&lt;<span class="name">HelloTitle</span> <span class="attr">title</span>=<span class="string">&quot;女士&quot;</span>/&gt;</span></span>&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="用绑定的state取得输入资料"><a href="#用绑定的state取得输入资料" class="headerlink" title="用绑定的state取得输入资料"></a>用绑定的state取得输入资料</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">EasyForm</span> <span class="keyword">extends</span> <span class="title class_ inherited__">Component</span> &#123;</span><br><span class="line">  <span class="title function_">constructor</span>(<span class="params">props</span>) &#123;</span><br><span class="line">    <span class="variable language_">super</span>(props);</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">state</span> = &#123;</span><br><span class="line">      <span class="attr">name</span>: <span class="string">&quot;&quot;</span></span><br><span class="line">    &#125;;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">changeState</span> = <span class="variable language_">this</span>.<span class="property">changeState</span>.<span class="title function_">bind</span>(<span class="variable language_">this</span>);</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">submitForm</span> = <span class="variable language_">this</span>.<span class="property">submitForm</span>.<span class="title function_">bind</span>(<span class="variable language_">this</span>);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="title function_">changeState</span>(<span class="params">event</span>) &#123;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="title function_">setState</span>(&#123;</span><br><span class="line">      <span class="attr">name</span>: event.<span class="property">target</span>.<span class="property">value</span>,</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="title function_">submitForm</span>(<span class="params">event</span>) &#123;</span><br><span class="line">    <span class="keyword">let</span> element = <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&#x27;span&#x27;</span>);</span><br><span class="line">    element.<span class="property">innerHTML</span> = <span class="string">`<span class="subst">$&#123;<span class="variable language_">this</span>.state.name&#125;</span>`</span>;</span><br><span class="line">    event.<span class="title function_">preventDefault</span>()</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="title function_">render</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">      <span class="language-xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">        <span class="tag">&lt;<span class="name">form</span> <span class="attr">onSubmit</span>=<span class="string">&#123;this.submitForm&#125;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">          <span class="tag">&lt;<span class="name">label</span>&gt;</span>姓名：<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">          <span class="tag">&lt;<span class="name">input</span> <span class="attr">id</span>=<span class="string">&quot;name&quot;</span> <span class="attr">name</span>=<span class="string">&quot;name&quot;</span> <span class="attr">onChange</span>=<span class="string">&#123;this.changeState&#125;</span> <span class="attr">value</span>=<span class="string">&#123;this.state.name&#125;/</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">          <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;submit&quot;</span> <span class="attr">value</span>=<span class="string">&quot;提交&quot;</span> <span class="attr">style</span>=<span class="string">&#123;&#123;</span>&#x27;<span class="attr">marginLeft</span>&#x27;<span class="attr">:</span> <span class="attr">6</span>&#125;&#125;/&gt;</span></span></span><br><span class="line"><span class="language-xml">        <span class="tag">&lt;/<span class="name">form</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">        <span class="tag">&lt;<span class="name">p</span>&gt;</span>现在输入的名字是：<span class="tag">&lt;<span class="name">span</span> <span class="attr">style</span>=<span class="string">&#123;&#123;</span>&#x27;<span class="attr">color</span>&#x27;<span class="attr">:</span> &#x27;#<span class="attr">FF7F24</span>&#x27;&#125;&#125;&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">    )</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="受控组件"><a href="#受控组件" class="headerlink" title="受控组件"></a>受控组件</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">EasyForm</span> <span class="keyword">extends</span> <span class="title class_ inherited__">Component</span> &#123;</span><br><span class="line">  <span class="title function_">constructor</span>(<span class="params">props</span>) &#123;</span><br><span class="line">    <span class="variable language_">super</span>(props);</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">state</span> = &#123;</span><br><span class="line">      <span class="attr">lists</span>: [</span><br><span class="line">        &#123;<span class="attr">id</span>: <span class="string">&#x27;01&#x27;</span>, <span class="attr">listName</span>: <span class="string">&#x27;写文章&#x27;</span>, <span class="attr">check</span>: <span class="literal">false</span>&#125;,</span><br><span class="line">        &#123;<span class="attr">id</span>: <span class="string">&#x27;02&#x27;</span>, <span class="attr">listName</span>: <span class="string">&#x27;写代码&#x27;</span>, <span class="attr">check</span>: <span class="literal">false</span>&#125;,</span><br><span class="line">        &#123;<span class="attr">id</span>: <span class="string">&#x27;03&#x27;</span>, <span class="attr">listName</span>: <span class="string">&#x27;旅游&#x27;</span>, <span class="attr">check</span>: <span class="literal">true</span>&#125;,</span><br><span class="line">        &#123;<span class="attr">id</span>: <span class="string">&#x27;04&#x27;</span>, <span class="attr">listName</span>: <span class="string">&#x27;踢球&#x27;</span>, <span class="attr">check</span>: <span class="literal">true</span>&#125;,</span><br><span class="line">        &#123;<span class="attr">id</span>: <span class="string">&#x27;05&#x27;</span>, <span class="attr">listName</span>: <span class="string">&#x27;公益&#x27;</span>, <span class="attr">check</span>: <span class="literal">false</span>&#125;,</span><br><span class="line">      ]</span><br><span class="line">    &#125;;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">submitForm</span> = <span class="variable language_">this</span>.<span class="property">submitForm</span>.<span class="title function_">bind</span>(<span class="variable language_">this</span>);</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">changeState</span> = <span class="variable language_">this</span>.<span class="property">changeState</span>.<span class="title function_">bind</span>(<span class="variable language_">this</span>);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="title function_">changeState</span>(<span class="params">index</span>) &#123;</span><br><span class="line">    <span class="keyword">let</span> arrLists = <span class="variable language_">this</span>.<span class="property">state</span>.<span class="property">lists</span>;</span><br><span class="line">    arrLists[index].<span class="property">check</span> ? arrLists[index].<span class="property">check</span> = <span class="literal">false</span> : arrLists[index].<span class="property">check</span> = <span class="literal">true</span>;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="title function_">setState</span>(&#123;</span><br><span class="line">      <span class="attr">lists</span>: arrLists,</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="title function_">submitForm</span>(<span class="params">event</span>) &#123;</span><br><span class="line">    <span class="keyword">let</span> status = <span class="string">&quot;目前做了：&quot;</span>;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">state</span>.<span class="property">lists</span>.<span class="title function_">map</span>(<span class="function">(<span class="params">list</span>) =&gt;</span> list.<span class="property">check</span> ? status += <span class="string">`<span class="subst">$&#123;list.listName&#125;</span> `</span> : <span class="string">&#x27;&#x27;</span>);</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(status);</span><br><span class="line">    event.<span class="title function_">preventDefault</span>()</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="title function_">render</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">let</span> lists = <span class="variable language_">this</span>.<span class="property">state</span>.<span class="property">lists</span>.<span class="title function_">map</span>(<span class="function">(<span class="params">list, index</span>) =&gt;</span> (</span><br><span class="line">      <span class="language-xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">key</span>=<span class="string">&#123;list.id&#125;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">        <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;checkbox&quot;</span></span></span></span><br><span class="line"><span class="tag"><span class="language-xml">               <span class="attr">checked</span>=<span class="string">&#123;list.check&#125;</span></span></span></span><br><span class="line"><span class="tag"><span class="language-xml">               <span class="attr">onChange</span>=<span class="string">&#123;this.changeState.bind(this,</span> <span class="attr">index</span>)&#125;</span></span></span><br><span class="line"><span class="tag"><span class="language-xml">               <span class="attr">key</span>=<span class="string">&#123;list.id&#125;</span></span></span></span><br><span class="line"><span class="tag"><span class="language-xml">        /&gt;</span></span></span><br><span class="line"><span class="language-xml">        <span class="tag">&lt;<span class="name">label</span>&gt;</span>&#123;list.listName&#125;<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">    ));</span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">      <span class="language-xml"><span class="tag">&lt;<span class="name">form</span> <span class="attr">onSubmit</span>=<span class="string">&#123;this.submitForm&#125;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">        <span class="tag">&lt;<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">          <span class="tag">&lt;<span class="name">label</span>&gt;</span>每日待办清单：<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">          &#123;lists&#125;</span></span><br><span class="line"><span class="language-xml">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">        <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;submit&quot;</span> <span class="attr">value</span>=<span class="string">&quot;发送表单&quot;</span>/&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;/<span class="name">form</span>&gt;</span></span></span><br><span class="line">    )</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="非受控组件"><a href="#非受控组件" class="headerlink" title="非受控组件"></a>非受控组件</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">EasyForm</span> <span class="keyword">extends</span> <span class="title class_ inherited__">Component</span> &#123;</span><br><span class="line">  <span class="title function_">constructor</span>(<span class="params">props</span>) &#123;</span><br><span class="line">    <span class="variable language_">super</span>(props);</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">submitForm</span> = <span class="variable language_">this</span>.<span class="property">submitForm</span>.<span class="title function_">bind</span>(<span class="variable language_">this</span>);</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">filebox</span> = <span class="title class_">React</span>.<span class="title function_">createRef</span>()</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="title function_">submitForm</span>(<span class="params">event</span>) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`选择文档为：<span class="subst">$&#123;<span class="variable language_">this</span>.filebox.current.files[<span class="number">0</span>].name&#125;</span>`</span>)</span><br><span class="line">    event.<span class="title function_">preventDefault</span>()</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="title function_">render</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">      <span class="language-xml"><span class="tag">&lt;<span class="name">form</span> <span class="attr">onSubmit</span>=<span class="string">&#123;this.submitForm&#125;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">        <span class="tag">&lt;<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">          <span class="tag">&lt;<span class="name">label</span>&gt;</span>上传文档：<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">          <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;file&quot;</span> <span class="attr">ref</span>=<span class="string">&#123;this.filebox&#125;/</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">        <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;submit&quot;</span> <span class="attr">value</span>=<span class="string">&quot;送出表单&quot;</span>/&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;/<span class="name">form</span>&gt;</span></span></span><br><span class="line">    )</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="refs操作DOM"><a href="#refs操作DOM" class="headerlink" title="refs操作DOM"></a>refs操作DOM</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">App</span> <span class="keyword">extends</span> <span class="title class_ inherited__">Component</span> &#123;</span><br><span class="line">  <span class="title function_">constructor</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="variable language_">super</span>();</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">state</span> = &#123;</span><br><span class="line">      <span class="attr">itemList</span>: []</span><br><span class="line">    &#125;;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">addFile</span> = <span class="title class_">React</span>.<span class="title function_">createRef</span>();</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  addItem = <span class="function">() =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">const</span> &#123;itemList&#125; = <span class="variable language_">this</span>.<span class="property">state</span>;</span><br><span class="line">    <span class="keyword">const</span> tempList = <span class="title class_">Object</span>.<span class="title function_">assign</span>([], itemList);</span><br><span class="line">    <span class="keyword">if</span> (<span class="variable language_">this</span>.<span class="property">addFile</span>.<span class="property">current</span>.<span class="property">value</span> !== <span class="string">&#x27;&#x27;</span>) &#123;</span><br><span class="line">      tempList.<span class="title function_">push</span>(<span class="variable language_">this</span>.<span class="property">addFile</span>.<span class="property">current</span>.<span class="property">value</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="title function_">setState</span>(&#123;</span><br><span class="line">      <span class="attr">itemList</span>: tempList</span><br><span class="line">    &#125;);</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">addFile</span>.<span class="property">current</span>.<span class="property">value</span> = <span class="string">&#x27;&#x27;</span></span><br><span class="line">  &#125;;</span><br><span class="line"></span><br><span class="line">  <span class="title function_">render</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">const</span> &#123;itemList&#125; = <span class="variable language_">this</span>.<span class="property">state</span>;</span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">      <span class="language-xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">className</span>=<span class="string">&quot;App&quot;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">        <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">name</span>=<span class="string">&quot;addFile&quot;</span> <span class="attr">ref</span>=<span class="string">&#123;this.addFile&#125;/</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">        <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;button&quot;</span> <span class="attr">onClick</span>=<span class="string">&#123;this.addItem&#125;</span> <span class="attr">value</span>=<span class="string">&quot;ADD&quot;</span>/&gt;</span></span></span><br><span class="line"><span class="language-xml">        <span class="tag">&lt;<span class="name">ul</span> <span class="attr">className</span>=<span class="string">&quot;list&quot;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">          &#123;itemList.map((item, index) =&gt;</span></span><br><span class="line"><span class="language-xml">            <span class="tag">&lt;<span class="name">li</span> <span class="attr">key</span>=<span class="string">&#123;</span>`<span class="attr">item_</span>$&#123;<span class="attr">index</span>&#125;`&#125;&gt;</span>&#123;item&#125;<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">          )&#125;</span></span><br><span class="line"><span class="language-xml">        <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="实例：TODOLIST"><a href="#实例：TODOLIST" class="headerlink" title="实例：TODOLIST"></a>实例：TODOLIST</h1><p><strong><code>TodoList.js</code></strong></p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">TodoList</span> <span class="keyword">extends</span> <span class="title class_ inherited__">Component</span> &#123;</span><br><span class="line">  <span class="title function_">constructor</span>(<span class="params">props</span>) &#123;</span><br><span class="line">    <span class="variable language_">super</span>(props);</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">state</span> = &#123;</span><br><span class="line">      <span class="attr">list</span>: []</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  addItem = <span class="function">(<span class="params">text</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">const</span> &#123;list&#125; = <span class="variable language_">this</span>.<span class="property">state</span>;</span><br><span class="line">    <span class="keyword">if</span> (text !== <span class="string">&#x27;&#x27;</span>) &#123;</span><br><span class="line">      <span class="keyword">const</span> tempArr = list.<span class="title function_">concat</span>(&#123;</span><br><span class="line">        <span class="attr">id</span>: list.<span class="property">length</span> + <span class="number">1</span>,</span><br><span class="line">        text,</span><br><span class="line">        <span class="attr">status</span>: <span class="literal">false</span></span><br><span class="line">      &#125;);</span><br><span class="line">      <span class="variable language_">this</span>.<span class="title function_">setState</span>(&#123;<span class="attr">list</span>: tempArr&#125;)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;;</span><br><span class="line"></span><br><span class="line">  toggleStatus = <span class="function">(<span class="params">id</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">const</span> &#123;list&#125; = <span class="variable language_">this</span>.<span class="property">state</span>;</span><br><span class="line">    <span class="keyword">const</span> tempArr = list.<span class="title function_">map</span>(<span class="function"><span class="params">item</span> =&gt;</span> &#123;</span><br><span class="line">      <span class="keyword">if</span> (item.<span class="property">id</span>.<span class="title function_">toString</span>() === id.<span class="title function_">toString</span>()) &#123;</span><br><span class="line">        <span class="keyword">return</span> (&#123;</span><br><span class="line">          <span class="attr">id</span>: item.<span class="property">id</span>,</span><br><span class="line">          <span class="attr">text</span>: item.<span class="property">text</span>,</span><br><span class="line">          <span class="attr">status</span>: !item.<span class="property">status</span></span><br><span class="line">        &#125;)</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="keyword">return</span> item;</span><br><span class="line">    &#125;);</span><br><span class="line">    <span class="variable language_">this</span>.<span class="title function_">setState</span>(&#123;<span class="attr">list</span>: tempArr&#125;)</span><br><span class="line">  &#125;;</span><br><span class="line"></span><br><span class="line">  <span class="title function_">render</span>(<span class="params"></span>) &#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">const</span> &#123;list&#125; = <span class="variable language_">this</span>.<span class="property">state</span>;</span><br><span class="line">    <span class="keyword">const</span> divStyle = &#123;</span><br><span class="line">      <span class="attr">width</span>: <span class="string">&#x27;250px&#x27;</span>,</span><br><span class="line">      <span class="attr">margin</span>: <span class="string">&#x27;auto&#x27;</span>,</span><br><span class="line">      <span class="attr">textAlign</span>: <span class="string">&#x27;left&#x27;</span></span><br><span class="line">    &#125;;</span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">      <span class="language-xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">&#123;divStyle&#125;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">        <span class="tag">&lt;<span class="name">TodoForm</span> <span class="attr">onAddItem</span>=<span class="string">&#123;this.addItem&#125;/</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">        <span class="tag">&lt;<span class="name">ul</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">          &#123;list.map(item =&gt; (</span></span><br><span class="line"><span class="language-xml">            <span class="tag">&lt;<span class="name">TodoItem</span></span></span></span><br><span class="line"><span class="tag"><span class="language-xml">              <span class="attr">key</span>=<span class="string">&#123;item.id&#125;</span></span></span></span><br><span class="line"><span class="tag"><span class="language-xml">              <span class="attr">id</span>=<span class="string">&#123;item.id&#125;</span></span></span></span><br><span class="line"><span class="tag"><span class="language-xml">              <span class="attr">status</span>=<span class="string">&#123;item.status&#125;</span></span></span></span><br><span class="line"><span class="tag"><span class="language-xml">              <span class="attr">onItemClick</span>=<span class="string">&#123;this.toggleStatus&#125;</span></span></span></span><br><span class="line"><span class="tag"><span class="language-xml">            &gt;</span></span></span><br><span class="line"><span class="language-xml">              &#123;item.text&#125;</span></span><br><span class="line"><span class="language-xml">            <span class="tag">&lt;/<span class="name">TodoItem</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">          ))&#125;</span></span><br><span class="line"><span class="language-xml">        <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">    )</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong><code>TodoForm.js</code></strong></p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">TodoForm</span> <span class="keyword">extends</span> <span class="title class_ inherited__">Component</span> &#123;</span><br><span class="line">  <span class="title function_">constructor</span>(<span class="params">props</span>) &#123;</span><br><span class="line">    <span class="variable language_">super</span>(props);</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">inputRef</span> = <span class="title class_">React</span>.<span class="title function_">createRef</span>();</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  formSubmit = <span class="function">(<span class="params">e</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">const</span> &#123;onAddItem&#125; = <span class="variable language_">this</span>.<span class="property">props</span>;</span><br><span class="line">    e.<span class="title function_">preventDefault</span>();</span><br><span class="line">    <span class="title function_">onAddItem</span>(<span class="variable language_">this</span>.<span class="property">inputRef</span>.<span class="property">current</span>.<span class="property">value</span>);</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">inputRef</span>.<span class="property">current</span>.<span class="property">value</span> = <span class="string">&#x27;&#x27;</span></span><br><span class="line">  &#125;;</span><br><span class="line"></span><br><span class="line">  <span class="title function_">render</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">      <span class="language-xml"><span class="tag">&lt;<span class="name">form</span> <span class="attr">onSubmit</span>=<span class="string">&#123;this.formSubmit&#125;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">        <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">name</span>=<span class="string">&quot;todoItem&quot;</span> <span class="attr">ref</span>=<span class="string">&#123;this.inputRef&#125;</span> <span class="attr">autoComplete</span>=<span class="string">&quot;off&quot;</span>/&gt;</span></span></span><br><span class="line"><span class="language-xml">        <span class="tag">&lt;<span class="name">button</span> <span class="attr">type</span>=<span class="string">&quot;submit&quot;</span> <span class="attr">value</span>=<span class="string">&quot;submit&quot;</span>&gt;</span>submit<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;/<span class="name">form</span>&gt;</span></span></span><br><span class="line">    )</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong><code>TodoItem.js</code></strong></p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">TodoItem</span> <span class="keyword">extends</span> <span class="title class_ inherited__">Component</span> &#123;</span><br><span class="line">  handleItemClick = <span class="function">(<span class="params">e</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">const</span> &#123;onItemClick&#125; = <span class="variable language_">this</span>.<span class="property">props</span>;</span><br><span class="line">    <span class="title function_">onItemClick</span>(e.<span class="property">target</span>.<span class="property">id</span>)</span><br><span class="line">  &#125;;</span><br><span class="line"></span><br><span class="line">  <span class="title function_">render</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">const</span> &#123;children, id, status&#125; = <span class="variable language_">this</span>.<span class="property">props</span>;</span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">      <span class="language-xml"><span class="tag">&lt;<span class="name">li</span></span></span></span><br><span class="line"><span class="tag"><span class="language-xml">        <span class="attr">id</span>=<span class="string">&#123;id&#125;</span></span></span></span><br><span class="line"><span class="tag"><span class="language-xml">        <span class="attr">onClick</span>=<span class="string">&#123;this.handleItemClick&#125;</span></span></span></span><br><span class="line"><span class="tag"><span class="language-xml">        <span class="attr">data-status</span>=<span class="string">&#123;status&#125;</span></span></span></span><br><span class="line"><span class="tag"><span class="language-xml">        <span class="attr">style</span>=<span class="string">&#123;</span></span></span></span><br><span class="line"><span class="tag"><span class="language-xml">          <span class="attr">status</span> ?</span></span></span><br><span class="line"><span class="tag"><span class="language-xml">            &#123;<span class="attr">textDecoration:</span> &#x27;<span class="attr">line-through</span>&#x27;&#125; <span class="attr">:</span></span></span></span><br><span class="line"><span class="tag"><span class="language-xml">            &#123;<span class="attr">textDecoration:</span> &#x27;<span class="attr">none</span>&#x27;&#125;</span></span></span><br><span class="line"><span class="tag"><span class="language-xml">        &#125;</span></span></span><br><span class="line"><span class="tag"><span class="language-xml">      &gt;</span></span></span><br><span class="line"><span class="language-xml">        &#123;children&#125;</span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span></span><br><span class="line">    )</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+    </section>
+    
+      <div class="tags">
+        <span>Tags:</span>
+        
+  <a href="/tags#前端" >
+    <span class="tag-code">前端</span>
+  </a>
+
+  <a href="/tags#React" >
+    <span class="tag-code">React</span>
+  </a>
+
+      </div>
+      
+        <div class="money-like">
+          <div class="reward-btn">
+            赏
+            <div class="money-code">
+              <span class="wechat-code">
+                <img class="code-image" src="/css/images/wechat.png" />
+                <b>使用微信打赏</b>
+              </span>
+              <span class="wechat-code">
+                <img class="code-image" src="/css/images/alipay.png">
+                <b>使用支付宝打赏</b>
+              </span>
+            </div>
+          </div>
+          <p class="notice">雅致寓于高阁渔舟唱晚，古典悠然；<br />格调外发园林绿树萦绕，馥郁清香。</p>
+        </div>
+        <div class="qrcode">
+          <img id="share-qrcode" />
+          <p class="notice">扫描二维码，分享此文章</p>
+        </div>
+  </article>
+</main>
+<!--PC和WAP自适应版-->
+<div id="SOHUCS" sid="2019/04/09/technical/React项目详解/" style="max-width: 750px; height: 100%;"></div>
+
+<script>
+  (function () {
+    var url = "https://whjin.github.io/2019/04/09/technical/React项目详解/";
+    var banner = "";
+    if (banner) {
+      $("#article-banner").css({
+        "background-image": "url(" + banner + ")",
+      });
+    } else {
+      $("#article-banner").geopattern(url);
+    }
+    $(".header").removeClass("fixed-header");
+
+    // error image
+    $(".markdown-content img").on("error", function () {
+      $(this).attr("src", "http://file.muyutech.com/error-img.png");
+    });
+
+    // zoom image
+    $(".markdown-content img").on("click", function () {
+      var src = $(this).attr("src");
+      var imageW = $(this).width();
+      var imageH = $(this).height();
+
+      var zoom = (($(window).width() * 0.95) / imageW).toFixed(2);
+      zoom = zoom < 1 ? 1 : zoom;
+      zoom = zoom > 2 ? 2 : zoom;
+      var transY = (($(window).height() - imageH) / 2).toFixed(2);
+
+      $("body").append(
+        '<div class="image-view-wrap"><div class="image-view-inner"><img src="' + src + '" /></div></div>'
+      );
+      $(".image-view-wrap").addClass("wrap-active");
+      $(".image-view-wrap img").css({
+        width: `${imageW}`,
+        transform: `translate3d(0, ${transY}px, 0) scale3d(${zoom}, ${zoom}, 1)`,
+      });
+      $("html").css("overflow", "hidden");
+
+      $(".image-view-wrap").on("click", function () {
+        $(this).remove();
+        $("html").attr("style", "");
+      });
+    });
+
+    // qrcode
+    var qr = new QRious({
+      element: document.getElementById("share-qrcode"),
+      value: document.location.href,
+    });
+  })();
+</script>
+
+<!-- <script type="text/javascript">
+  (function () {
+    var appid = "cytdwbqB7";
+    var conf = "prod_2648b5665a85c057dd13bef6cd1ebd30";
+    var width = window.innerWidth || document.documentElement.clientWidth;
+    if (width < 960) {
+      window.document.write(
+        '<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="//changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' +
+          appid +
+          "&conf=" +
+          conf +
+          '"><\/script>'
+      );
+    } else {
+      var loadJs = function (d, a) {
+        var c = document.getElementsByTagName("head")[0] || document.head || document.documentElement;
+        var b = document.createElement("script");
+        b.setAttribute("type", "text/javascript");
+        b.setAttribute("charset", "UTF-8");
+        b.setAttribute("src", d);
+        if (typeof a === "function") {
+          if (window.attachEvent) {
+            b.onreadystatechange = function () {
+              var e = b.readyState;
+              if (e === "loaded" || e === "complete") {
+                b.onreadystatechange = null;
+                a();
+              }
+            };
+          } else {
+            b.onload = a;
+          }
+        }
+        c.appendChild(b);
+      };
+      loadJs("//changyan.sohu.com/upload/changyan.js", function () {
+        window.changyan.api.config({ appid: appid, conf: conf });
+      });
+    }
+  })();
+</script> -->
+
+
+  <div class="vcomment valine">
+    <script src="//cdn.jsdelivr.net/npm/valine"></script>
+    <script>
+      var path = window.location.pathname.replace("index.html", "");
+      var isEN = path.indexOf("en") > -1;
+      path = isEN ? path.replace("en/", "") : path;
+      new Valine({
+        el: ".vcomment",
+        appId: "9NwKq9DsbUrNgihmAZusvPpR-gzGzoHsz",
+        appKey: "WaUpXkmnXUes9ZNF30cZIAho",
+        placeholder: "",
+        avatar: "mp",
+        path: path,
+        recordIP: true,
+        lang: isEN ? "en" : "zh-cn",
+        visitor: true,
+        enableQQ: "true",
+        emojiCDN:
+          path.indexOf("emoji") > -1
+            ? "//i0.hdslb.com/bfs/emote/"
+            : "//img.t.sinajs.cn/t4/appstyle/expression/ext/normal/",
+        emojiMaps:
+          path.indexOf("emoji") > -1
+            ? {
+              tv_doge: "6ea59c827c414b4a2955fe79e0f6fd3dcd515e24.png",
+              tv_亲亲: "a8111ad55953ef5e3be3327ef94eb4a39d535d06.png",
+              tv_偷笑: "bb690d4107620f1c15cff29509db529a73aee261.png",
+              tv_再见: "180129b8ea851044ce71caf55cc8ce44bd4a4fc8.png",
+              tv_冷漠: "b9cbc755c2b3ee43be07ca13de84e5b699a3f101.png",
+              tv_发怒: "34ba3cd204d5b05fec70ce08fa9fa0dd612409ff.png",
+              tv_发财: "34db290afd2963723c6eb3c4560667db7253a21a.png",
+              tv_可爱: "9e55fd9b500ac4b96613539f1ce2f9499e314ed9.png",
+              tv_吐血: "09dd16a7aa59b77baa1155d47484409624470c77.png",
+              tv_呆: "fe1179ebaa191569b0d31cecafe7a2cd1c951c9d.png",
+              tv_呕吐: "9f996894a39e282ccf5e66856af49483f81870f3.png",
+              tv_困: "241ee304e44c0af029adceb294399391e4737ef2.png",
+              tv_坏笑: "1f0b87f731a671079842116e0991c91c2c88645a.png",
+              tv_大佬: "093c1e2c490161aca397afc45573c877cdead616.png",
+              tv_大哭: "23269aeb35f99daee28dda129676f6e9ea87934f.png",
+              tv_委屈: "d04dba7b5465779e9755d2ab6f0a897b9b33bb77.png",
+              tv_害羞: "a37683fb5642fa3ddfc7f4e5525fd13e42a2bdb1.png",
+              tv_尴尬: "7cfa62dafc59798a3d3fb262d421eeeff166cfa4.png",
+              tv_微笑: "70dc5c7b56f93eb61bddba11e28fb1d18fddcd4c.png",
+              tv_思考: "90cf159733e558137ed20aa04d09964436f618a1.png",
+              tv_惊吓: "0d15c7e2ee58e935adc6a7193ee042388adc22af.png",
+              tv_打脸: "56ab10b624063e966bfcb76ea5dc4794d87dfd47.png",
+              tv_抓狂: "fe31c08edad661d63762b04e17b8d5ae3c71a757.png",
+              tv_抠鼻: "c666f55e88d471e51bbd9fab9bb308110824a6eb.png",
+              tv_斜眼笑: "911f987aa8bc1bee12d52aafe62bc41ef4474e6c.png",
+              tv_无奈: "ea8ed89ee9878f2fece2dda0ea8a5dbfe21b5751.png",
+              tv_晕: "5443c22b4d07fb1907ccc610c8e6db254f2461b7.png",
+              tv_流汗: "cead1c351ab8d79e9f369605beb90148db0fbed3.png",
+              tv_流泪: "7e71cde7858f0cd50d74b0264aa26db612a8a167.png",
+              tv_流鼻血: "c32d39db2737f89b904ca32700d140a9241b0767.png",
+              tv_点赞: "f85c354995bd99e28fc76c869bfe42ba6438eff4.png",
+              tv_生气: "26702dcafdab5e8225b43ffd23c94ac1ff932654.png",
+              tv_生病: "8b0ec90e6b86771092a498c54f09fc94621c1900.png",
+              tv_疑问: "0793d949b18d7be716078349c202c15ff166f314.png",
+              tv_白眼: "c1d59f439e379ee50eef488bcb5e5378e5044ea4.png",
+              tv_皱眉: "72ccad6679fea0d14cce648b4d818e09b8ffea2d.png",
+              tv_目瞪口呆: "0b8cb81a68de5d5365212c99375e7ace3e7891b7.png",
+              tv_睡着: "8b196675b53af58264f383c50ad0945048290b33.png",
+              tv_笑哭: "1abc628f6d4f4caf9d0e7800878f4697abbc8273.png",
+              tv_腼腆: "89712c0d4af73e67f89e35cbc518420380a7f6f4.png",
+              tv_色: "61822c7e9aae5da76475e7892534545336b23a6f.png",
+              tv_调侃: "4bc022533ef31544ca0d72c12c808cf4a1cce3e3.png",
+              tv_调皮: "b9c41de8e82dd7a8515ae5e3cb63e898bf245186.png",
+              tv_鄙视: "6e72339f346a692a495b123174b49e4e8e781303.png",
+              tv_闭嘴: "c9e990da7f6e93975e25fd8b70e2e290aa4086ef.png",
+              tv_难过: "87f46748d3f142ebc6586ff58860d0e2fc8263ba.png",
+              tv_馋: "fc7e829b845c43c623c8b490ee3602b7f0e76a31.png",
+              tv_鬼脸: "0ffbbddf8a94d124ca2f54b360bbc04feb6bbfea.png",
+              tv_黑人问号: "45821a01f51bc867da9edbaa2e070410819a95b2.png",
+              tv_鼓掌: "1d21793f96ef4e6f48b23e53e3b9e42da833a0f6.png",
+              // ... 更多表情
+            }
+            : void 0,
+      });
+    </script>
+  </div>
+  
+
+    <script>
+      var _hmt = _hmt || [];
+      (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?7176d0bc67fb19a89fea168ac922b24e";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+      })();
+    </script>
+<div class="scroll-top">
+  <span class="arrow-icon"></span>
+</div>
+<footer class="app-footer">
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <div>&copy; 2015 -
+        <script type="text/javascript">document.write(new Date().getFullYear());</script>
+        <a href="https://github.com/whjin" target="_blank" title="Github"> whjin </a>|<span
+                id="busuanzi_container_site_pv"> 访问 <a
+                    href="http://service.ibruce.info/" target="_blank"><span id="busuanzi_value_site_pv"></span></a> 次 </span><span
+                id="busuanzi_container_site_uv"><a href="http://service.ibruce.info/" target="_blank"><span
+                        id="busuanzi_value_site_uv"></span></a> 人</span></div>
+</footer>
+
+<script>
+    function async(u, c) {
+        var d = document, t = 'script',
+            o = d.createElement(t),
+            s = d.getElementsByTagName(t)[0];
+        o.src = u;
+        if (c) {
+            o.addEventListener('load', function (e) {
+                c(null, e);
+            }, false);
+        }
+        s.parentNode.insertBefore(o, s);
+    }
+</script>
+<script>
+    async("//cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function () {
+        FastClick.attach(document.body);
+    })
+</script>
+
+<script>
+    var hasLine = 'false';
+    async("//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js", function () {
+        $('figure pre').each(function (i, block) {
+            var figure = $(this).parents('figure');
+            if (hasLine == 'false') {
+                figure.find('.gutter').hide();
+            }
+            var lang = figure.attr('class').split(' ')[1] || 'code';
+            var codeHtml = $(this).html();
+            var codeTag = document.createElement('code');
+            codeTag.className = lang;
+            codeTag.innerHTML = codeHtml;
+            $(this).attr('class', '').empty().html(codeTag);
+            figure.attr('data-lang', lang.toUpperCase());
+            hljs.highlightBlock(block);
+        });
+    })
+</script>
+<!-- Baidu Tongji -->
+
+
+<script src="/js/script.js"></script>
+
+<script>
+    var _hmt = _hmt || [];
+    (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?7176d0bc67fb19a89fea168ac922b24e";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+
+</body>
+</html>

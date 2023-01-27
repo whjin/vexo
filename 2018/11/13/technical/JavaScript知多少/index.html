@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+  <meta name="description" content="吴华锦的个人主页" />
+  <meta name="keyword" content="hexo-theme, vuejs" />
+   <link rel="shortcut icon" href="/css/images/logo.png"> 
+  <title>
+     JavaScript知多少 | 吴华锦 
+  </title>
+  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+  <link href="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.css" rel="stylesheet" />
+  <link href="//cdn.bootcss.com/highlight.js/9.12.0/styles/vs.min.css" rel="stylesheet" />
+  <link href="//cdn.bootcss.com/emojione/2.2.2/assets/css/emojione.min.css" rel="stylesheet" />
+  <link href="//cdn.bootcss.com/emojione/2.2.2/assets/sprites/emojione.sprites.css" rel="stylesheet" />
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  <script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+  <script src="//cdn.bootcss.com/geopattern/1.2.3/js/geopattern.min.js"></script>
+  <script src="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js"></script>
+  <script src="//cdn.bootcdn.net/ajax/libs/emojione/4.5.0/lib/js/emojione.min.js"></script>
+  
+<script src="/js/qrious.js"></script>
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+<div class="wechat-share">
+  <img src="/css/images/logo.png" />
+</div>
+
+<body>
+<header class="header fixed-header">
+    <div class="header-container">
+        <a class="home-link" href="/">
+            <div class="logo"></div>
+            <span>吴华锦</span>
+        </a>
+        <ul class="right-list">
+            
+            <li class="list-item">
+                
+                <a href="/" class="item-link">首页</a>
+                
+            </li>
+            
+            <li class="list-item">
+                
+                <a href="/archives/" class="item-link">归档</a>
+                
+            </li>
+            
+            <li class="list-item">
+                
+                <a href="/tags/" class="item-link">标签</a>
+                
+            </li>
+            
+            <li class="list-item">
+                
+                <a href="/project/" class="item-link">项目</a>
+                
+            </li>
+            
+            <li class="list-item">
+                
+                <a href="/about/" class="item-link">关于</a>
+                
+            </li>
+            
+        </ul>
+        <div class="menu">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </div>
+        <div class="menu-mask">
+            <ul class="menu-list">
+                
+                <li class="menu-item">
+                    
+                    <a href="/" class="menu-link">首页</a>
+                    
+                </li>
+                
+                <li class="menu-item">
+                    
+                    <a href="/archives/" class="menu-link">归档</a>
+                    
+                </li>
+                
+                <li class="menu-item">
+                    
+                    <a href="/tags/" class="menu-link">标签</a>
+                    
+                </li>
+                
+                <li class="menu-item">
+                    
+                    <a href="/project/" class="menu-link">项目</a>
+                    
+                </li>
+                
+                <li class="menu-item">
+                    
+                    <a href="/about/" class="menu-link">关于</a>
+                    
+                </li>
+                
+            </ul>
+        </div>
+    </div>
+</header>
+
+<div id="article-banner">
+  <h2>
+    JavaScript知多少
+  </h2>
+  <p class="post-date">
+    2018-11-13
+  </p>
+  <div class="arrow-down">
+    <a href="javascript:;"></a>
+  </div>
+</div>
+<main class="app-body">
+  <article class="post-article">
+    <section class="markdown-content">
+      <h1 id="this与对象原型prototype"><a href="#this与对象原型prototype" class="headerlink" title="this与对象原型prototype"></a>this与对象原型prototype</h1><h1 id="hoisting状态提升"><a href="#hoisting状态提升" class="headerlink" title="hoisting状态提升"></a>hoisting状态提升</h1><p>在程序执行前，编译器先由上到下逐行将代码转为机器可读的命令，然后再执行编译后的指令。</p>
+<blockquote>
+<p>实现一个函数，可以返回输入参数是否为质数？</p>
+</blockquote>
+<span id="more"></span>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">isPrimeNumber</span>(<span class="params">m</span>) &#123;</span><br><span class="line">    <span class="keyword">if</span> (m &lt;= <span class="number">1</span> || m % <span class="number">1</span> !== <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">var</span> n = <span class="number">2</span>;</span><br><span class="line">    <span class="keyword">while</span> (n &lt; m) &#123;</span><br><span class="line">        <span class="keyword">if</span> (m % n === <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            n++;</span><br><span class="line">            <span class="keyword">continue</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>实现一个函数，如果传入的参数是字符串，则将该字符串按照字母出现的次数由大到小重新排列并输出；如果传入的参数不是字符串，则将参数输出。</p>
+</blockquote>
+<p><strong>分析：</strong></p>
+<ol>
+<li>首先，使用<code>for</code>循环找出相同的字母，此时需要知道字母出现的次数；</li>
+<li>然后，给它们进行排序<code>sort()</code>，但是<code>sort()</code>是数组方法；</li>
+<li>考虑把字符串先转换为数组，处理完毕之后再转换回字符串；</li>
+<li>使用<code>split()</code>（字符串方法，输出为数组），如果内容为空，则返回的是整个字符串作为数组的第一个元素且数组只包含这一个元素。如果<code>split</code>传入内容为<code>&#39;&#39;</code>，即<code>split(&#39;&#39;)</code>，则字符串里的每个字符分别作为输出数组的元素；</li>
+<li>处理完毕需要再转换为字符串，使用<code>join()</code>（数组方法，输出位字符串），传入内容<code>join(&#39;&#39;)</code>；</li>
+<li>使用正则表达式查找重复字符。</li>
+</ol>
+<blockquote>
+<p><code>classList.toggle(class,true/false)</code></p>
+</blockquote>
+<p><p class="codepen" data-height="365" data-theme-id="0" data-default-tab="html,result" data-user="whjin" data-slug-hash="MRdePN" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid black; margin: 1em 0; padding: 1em;" data-pen-title="js-toggleMenu"><br>  <span>See the Pen <a target="_blank" rel="noopener" href="https://codepen.io/whjin/pen/MRdePN/"><br>  js-toggleMenu</a> by whjin (<a target="_blank" rel="noopener" href="https://codepen.io/whjin">@whjin</a>)<br>  on <a target="_blank" rel="noopener" href="https://codepen.io">CodePen</a>.</span><br></p></p>
+<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+
+<h1 id="事件处理"><a href="#事件处理" class="headerlink" title="事件处理"></a>事件处理</h1><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">onmouseover</span>=<span class="string">&quot;over(this)&quot;</span> <span class="attr">onmouseout</span>=<span class="string">&quot;out(this)&quot;</span>&gt;</span>Test<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">onmouseover</span>=<span class="string">&quot;over(this)&quot;</span> <span class="attr">onmouseout</span>=<span class="string">&quot;out(this)&quot;</span>&gt;</span>Line<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">over</span>(<span class="params">element</span>) &#123;</span><br><span class="line">  element.<span class="property">style</span>.<span class="property">color</span> = <span class="string">&#x27;red&#x27;</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">out</span>(<span class="params">element</span>) &#123;</span><br><span class="line">  element.<span class="property">style</span>.<span class="property">color</span> = <span class="string">&#x27;blue&#x27;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="jsonp实现代码"><a href="#jsonp实现代码" class="headerlink" title="jsonp实现代码"></a>jsonp实现代码</h1><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">JSONP</span>(<span class="params">&#123;</span></span><br><span class="line"><span class="params">    url,</span></span><br><span class="line"><span class="params">    params,</span></span><br><span class="line"><span class="params">    callbackKey,</span></span><br><span class="line"><span class="params">    callback</span></span><br><span class="line"><span class="params">&#125;</span>) &#123;</span><br><span class="line">    <span class="comment">// 在参数里制定callback的名字</span></span><br><span class="line">    params = params || &#123;&#125;</span><br><span class="line">    params[callbackKey] = <span class="string">&#x27;jsonpCallback&#x27;</span></span><br><span class="line">    <span class="comment">// 预留callback</span></span><br><span class="line">    <span class="variable language_">window</span>.<span class="property">jsonpCallback</span> = callback</span><br><span class="line">    <span class="comment">// 拼接参数字符串</span></span><br><span class="line">    <span class="keyword">const</span> paramKeys = <span class="title class_">Object</span>.<span class="title function_">keys</span>(params)</span><br><span class="line">    <span class="keyword">const</span> paramString = paramKeys</span><br><span class="line">        .<span class="title function_">map</span>(<span class="function"><span class="params">key</span> =&gt;</span> <span class="string">`<span class="subst">$&#123;key&#125;</span>=<span class="subst">$&#123;params[key]&#125;</span>`</span>)</span><br><span class="line">        .<span class="title function_">join</span>(<span class="string">&#x27;&amp;&#x27;</span>)</span><br><span class="line">    <span class="comment">// 插入DOM元素</span></span><br><span class="line">    <span class="keyword">const</span> script = <span class="variable language_">document</span>.<span class="title function_">createElement</span>(<span class="string">&#x27;script&#x27;</span>);</span><br><span class="line">    script.<span class="title function_">setAttribute</span>(<span class="string">&#x27;src&#x27;</span>, <span class="string">`<span class="subst">$&#123;url&#125;</span>?<span class="subst">$&#123;paramString&#125;</span>`</span>)</span><br><span class="line">    <span class="variable language_">document</span>.<span class="property">body</span>.<span class="title function_">appendChild</span>(script)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="title class_">JSON</span>(&#123;</span><br><span class="line">    <span class="attr">url</span>: <span class="string">&quot;http://s.weibo.com/ajax/jsonp/suggestion&quot;</span>,</span><br><span class="line">    <span class="attr">params</span>: &#123;</span><br><span class="line">        <span class="attr">key</span>: <span class="string">&#x27;test&#x27;</span></span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="attr">callbackKey</span>: <span class="string">&#x27;_cb&#x27;</span>,</span><br><span class="line">    <span class="title function_">callback</span>(<span class="params">result</span>) &#123;</span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(result.<span class="property">data</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<h1 id="实现防抖函数"><a href="#实现防抖函数" class="headerlink" title="实现防抖函数"></a>实现防抖函数</h1><p>防抖函数原理：在事件被触发<code>n</code>秒后再执行回调，如果在这<code>n</code>秒内又被触发，则重新计时。</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 防抖函数</span></span><br><span class="line"><span class="keyword">const</span> <span class="title function_">debounce</span> = (<span class="params">fn, delay</span>) =&gt; &#123;</span><br><span class="line">    <span class="keyword">let</span> timer = <span class="literal">null</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="function">(<span class="params">...args</span>) =&gt;</span> &#123;</span><br><span class="line">        <span class="built_in">clearTimeout</span>(timer)</span><br><span class="line">        timer = <span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">            fn.<span class="title function_">args</span>(<span class="variable language_">this</span>, args)</span><br><span class="line">        &#125;, delay)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>适用场景：</p>
+<ul>
+<li>按钮提交：防止多次提交按钮，只执行最后提交的一次</li>
+<li>服务端验证：表单验证需要服务端配合，只执行一段连续的输入事件的最后一次，还有搜索联想词的功能类似</li>
+</ul>
+<h1 id="实现节流函数"><a href="#实现节流函数" class="headerlink" title="实现节流函数"></a>实现节流函数</h1><p>节流函数原理：规定在一个单位时间内，只能触发一次函数。如果这个单位时间内触发多次函数，只有一次生效。  </p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 节流函数</span></span><br><span class="line"><span class="keyword">const</span> <span class="title function_">throttle</span> = (<span class="params">fn, delay = <span class="number">500</span></span>) =&gt; &#123;</span><br><span class="line">    <span class="keyword">let</span> flag = <span class="literal">true</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="function">(<span class="params">...args</span>) =&gt;</span> &#123;</span><br><span class="line">        <span class="keyword">if</span> (!flag) <span class="keyword">return</span>;</span><br><span class="line">        <span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">            fn.<span class="title function_">apply</span>(<span class="variable language_">this</span>, args)</span><br><span class="line">            flag = <span class="literal">true</span></span><br><span class="line">        &#125;, delay)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>适用场景：</p>
+<ul>
+<li>拖拽：固定时间内只执行一次，防止超高频次触发位置变动</li>
+<li>缩放场景：监控浏览器<code>resize</code></li>
+<li>动画：避免短时间内多次触发动画引起性能问题</li>
+</ul>
+
+    </section>
+    
+      <div class="tags">
+        <span>Tags:</span>
+        
+  <a href="/tags#前端" >
+    <span class="tag-code">前端</span>
+  </a>
+
+  <a href="/tags#JS" >
+    <span class="tag-code">JS</span>
+  </a>
+
+      </div>
+      
+        <div class="money-like">
+          <div class="reward-btn">
+            赏
+            <div class="money-code">
+              <span class="wechat-code">
+                <img class="code-image" src="/css/images/wechat.png" />
+                <b>使用微信打赏</b>
+              </span>
+              <span class="wechat-code">
+                <img class="code-image" src="/css/images/alipay.png">
+                <b>使用支付宝打赏</b>
+              </span>
+            </div>
+          </div>
+          <p class="notice">雅致寓于高阁渔舟唱晚，古典悠然；<br />格调外发园林绿树萦绕，馥郁清香。</p>
+        </div>
+        <div class="qrcode">
+          <img id="share-qrcode" />
+          <p class="notice">扫描二维码，分享此文章</p>
+        </div>
+  </article>
+</main>
+<!--PC和WAP自适应版-->
+<div id="SOHUCS" sid="2018/11/13/technical/JavaScript知多少/" style="max-width: 750px; height: 100%;"></div>
+
+<script>
+  (function () {
+    var url = "https://whjin.github.io/2018/11/13/technical/JavaScript知多少/";
+    var banner = "";
+    if (banner) {
+      $("#article-banner").css({
+        "background-image": "url(" + banner + ")",
+      });
+    } else {
+      $("#article-banner").geopattern(url);
+    }
+    $(".header").removeClass("fixed-header");
+
+    // error image
+    $(".markdown-content img").on("error", function () {
+      $(this).attr("src", "http://file.muyutech.com/error-img.png");
+    });
+
+    // zoom image
+    $(".markdown-content img").on("click", function () {
+      var src = $(this).attr("src");
+      var imageW = $(this).width();
+      var imageH = $(this).height();
+
+      var zoom = (($(window).width() * 0.95) / imageW).toFixed(2);
+      zoom = zoom < 1 ? 1 : zoom;
+      zoom = zoom > 2 ? 2 : zoom;
+      var transY = (($(window).height() - imageH) / 2).toFixed(2);
+
+      $("body").append(
+        '<div class="image-view-wrap"><div class="image-view-inner"><img src="' + src + '" /></div></div>'
+      );
+      $(".image-view-wrap").addClass("wrap-active");
+      $(".image-view-wrap img").css({
+        width: `${imageW}`,
+        transform: `translate3d(0, ${transY}px, 0) scale3d(${zoom}, ${zoom}, 1)`,
+      });
+      $("html").css("overflow", "hidden");
+
+      $(".image-view-wrap").on("click", function () {
+        $(this).remove();
+        $("html").attr("style", "");
+      });
+    });
+
+    // qrcode
+    var qr = new QRious({
+      element: document.getElementById("share-qrcode"),
+      value: document.location.href,
+    });
+  })();
+</script>
+
+<!-- <script type="text/javascript">
+  (function () {
+    var appid = "cytdwbqB7";
+    var conf = "prod_2648b5665a85c057dd13bef6cd1ebd30";
+    var width = window.innerWidth || document.documentElement.clientWidth;
+    if (width < 960) {
+      window.document.write(
+        '<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="//changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' +
+          appid +
+          "&conf=" +
+          conf +
+          '"><\/script>'
+      );
+    } else {
+      var loadJs = function (d, a) {
+        var c = document.getElementsByTagName("head")[0] || document.head || document.documentElement;
+        var b = document.createElement("script");
+        b.setAttribute("type", "text/javascript");
+        b.setAttribute("charset", "UTF-8");
+        b.setAttribute("src", d);
+        if (typeof a === "function") {
+          if (window.attachEvent) {
+            b.onreadystatechange = function () {
+              var e = b.readyState;
+              if (e === "loaded" || e === "complete") {
+                b.onreadystatechange = null;
+                a();
+              }
+            };
+          } else {
+            b.onload = a;
+          }
+        }
+        c.appendChild(b);
+      };
+      loadJs("//changyan.sohu.com/upload/changyan.js", function () {
+        window.changyan.api.config({ appid: appid, conf: conf });
+      });
+    }
+  })();
+</script> -->
+
+
+  <div class="vcomment valine">
+    <script src="//cdn.jsdelivr.net/npm/valine"></script>
+    <script>
+      var path = window.location.pathname.replace("index.html", "");
+      var isEN = path.indexOf("en") > -1;
+      path = isEN ? path.replace("en/", "") : path;
+      new Valine({
+        el: ".vcomment",
+        appId: "9NwKq9DsbUrNgihmAZusvPpR-gzGzoHsz",
+        appKey: "WaUpXkmnXUes9ZNF30cZIAho",
+        placeholder: "",
+        avatar: "mp",
+        path: path,
+        recordIP: true,
+        lang: isEN ? "en" : "zh-cn",
+        visitor: true,
+        enableQQ: "true",
+        emojiCDN:
+          path.indexOf("emoji") > -1
+            ? "//i0.hdslb.com/bfs/emote/"
+            : "//img.t.sinajs.cn/t4/appstyle/expression/ext/normal/",
+        emojiMaps:
+          path.indexOf("emoji") > -1
+            ? {
+              tv_doge: "6ea59c827c414b4a2955fe79e0f6fd3dcd515e24.png",
+              tv_亲亲: "a8111ad55953ef5e3be3327ef94eb4a39d535d06.png",
+              tv_偷笑: "bb690d4107620f1c15cff29509db529a73aee261.png",
+              tv_再见: "180129b8ea851044ce71caf55cc8ce44bd4a4fc8.png",
+              tv_冷漠: "b9cbc755c2b3ee43be07ca13de84e5b699a3f101.png",
+              tv_发怒: "34ba3cd204d5b05fec70ce08fa9fa0dd612409ff.png",
+              tv_发财: "34db290afd2963723c6eb3c4560667db7253a21a.png",
+              tv_可爱: "9e55fd9b500ac4b96613539f1ce2f9499e314ed9.png",
+              tv_吐血: "09dd16a7aa59b77baa1155d47484409624470c77.png",
+              tv_呆: "fe1179ebaa191569b0d31cecafe7a2cd1c951c9d.png",
+              tv_呕吐: "9f996894a39e282ccf5e66856af49483f81870f3.png",
+              tv_困: "241ee304e44c0af029adceb294399391e4737ef2.png",
+              tv_坏笑: "1f0b87f731a671079842116e0991c91c2c88645a.png",
+              tv_大佬: "093c1e2c490161aca397afc45573c877cdead616.png",
+              tv_大哭: "23269aeb35f99daee28dda129676f6e9ea87934f.png",
+              tv_委屈: "d04dba7b5465779e9755d2ab6f0a897b9b33bb77.png",
+              tv_害羞: "a37683fb5642fa3ddfc7f4e5525fd13e42a2bdb1.png",
+              tv_尴尬: "7cfa62dafc59798a3d3fb262d421eeeff166cfa4.png",
+              tv_微笑: "70dc5c7b56f93eb61bddba11e28fb1d18fddcd4c.png",
+              tv_思考: "90cf159733e558137ed20aa04d09964436f618a1.png",
+              tv_惊吓: "0d15c7e2ee58e935adc6a7193ee042388adc22af.png",
+              tv_打脸: "56ab10b624063e966bfcb76ea5dc4794d87dfd47.png",
+              tv_抓狂: "fe31c08edad661d63762b04e17b8d5ae3c71a757.png",
+              tv_抠鼻: "c666f55e88d471e51bbd9fab9bb308110824a6eb.png",
+              tv_斜眼笑: "911f987aa8bc1bee12d52aafe62bc41ef4474e6c.png",
+              tv_无奈: "ea8ed89ee9878f2fece2dda0ea8a5dbfe21b5751.png",
+              tv_晕: "5443c22b4d07fb1907ccc610c8e6db254f2461b7.png",
+              tv_流汗: "cead1c351ab8d79e9f369605beb90148db0fbed3.png",
+              tv_流泪: "7e71cde7858f0cd50d74b0264aa26db612a8a167.png",
+              tv_流鼻血: "c32d39db2737f89b904ca32700d140a9241b0767.png",
+              tv_点赞: "f85c354995bd99e28fc76c869bfe42ba6438eff4.png",
+              tv_生气: "26702dcafdab5e8225b43ffd23c94ac1ff932654.png",
+              tv_生病: "8b0ec90e6b86771092a498c54f09fc94621c1900.png",
+              tv_疑问: "0793d949b18d7be716078349c202c15ff166f314.png",
+              tv_白眼: "c1d59f439e379ee50eef488bcb5e5378e5044ea4.png",
+              tv_皱眉: "72ccad6679fea0d14cce648b4d818e09b8ffea2d.png",
+              tv_目瞪口呆: "0b8cb81a68de5d5365212c99375e7ace3e7891b7.png",
+              tv_睡着: "8b196675b53af58264f383c50ad0945048290b33.png",
+              tv_笑哭: "1abc628f6d4f4caf9d0e7800878f4697abbc8273.png",
+              tv_腼腆: "89712c0d4af73e67f89e35cbc518420380a7f6f4.png",
+              tv_色: "61822c7e9aae5da76475e7892534545336b23a6f.png",
+              tv_调侃: "4bc022533ef31544ca0d72c12c808cf4a1cce3e3.png",
+              tv_调皮: "b9c41de8e82dd7a8515ae5e3cb63e898bf245186.png",
+              tv_鄙视: "6e72339f346a692a495b123174b49e4e8e781303.png",
+              tv_闭嘴: "c9e990da7f6e93975e25fd8b70e2e290aa4086ef.png",
+              tv_难过: "87f46748d3f142ebc6586ff58860d0e2fc8263ba.png",
+              tv_馋: "fc7e829b845c43c623c8b490ee3602b7f0e76a31.png",
+              tv_鬼脸: "0ffbbddf8a94d124ca2f54b360bbc04feb6bbfea.png",
+              tv_黑人问号: "45821a01f51bc867da9edbaa2e070410819a95b2.png",
+              tv_鼓掌: "1d21793f96ef4e6f48b23e53e3b9e42da833a0f6.png",
+              // ... 更多表情
+            }
+            : void 0,
+      });
+    </script>
+  </div>
+  
+
+    <script>
+      var _hmt = _hmt || [];
+      (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?7176d0bc67fb19a89fea168ac922b24e";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+      })();
+    </script>
+<div class="scroll-top">
+  <span class="arrow-icon"></span>
+</div>
+<footer class="app-footer">
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <div>&copy; 2015 -
+        <script type="text/javascript">document.write(new Date().getFullYear());</script>
+        <a href="https://github.com/whjin" target="_blank" title="Github"> whjin </a>|<span
+                id="busuanzi_container_site_pv"> 访问 <a
+                    href="http://service.ibruce.info/" target="_blank"><span id="busuanzi_value_site_pv"></span></a> 次 </span><span
+                id="busuanzi_container_site_uv"><a href="http://service.ibruce.info/" target="_blank"><span
+                        id="busuanzi_value_site_uv"></span></a> 人</span></div>
+</footer>
+
+<script>
+    function async(u, c) {
+        var d = document, t = 'script',
+            o = d.createElement(t),
+            s = d.getElementsByTagName(t)[0];
+        o.src = u;
+        if (c) {
+            o.addEventListener('load', function (e) {
+                c(null, e);
+            }, false);
+        }
+        s.parentNode.insertBefore(o, s);
+    }
+</script>
+<script>
+    async("//cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function () {
+        FastClick.attach(document.body);
+    })
+</script>
+
+<script>
+    var hasLine = 'false';
+    async("//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js", function () {
+        $('figure pre').each(function (i, block) {
+            var figure = $(this).parents('figure');
+            if (hasLine == 'false') {
+                figure.find('.gutter').hide();
+            }
+            var lang = figure.attr('class').split(' ')[1] || 'code';
+            var codeHtml = $(this).html();
+            var codeTag = document.createElement('code');
+            codeTag.className = lang;
+            codeTag.innerHTML = codeHtml;
+            $(this).attr('class', '').empty().html(codeTag);
+            figure.attr('data-lang', lang.toUpperCase());
+            hljs.highlightBlock(block);
+        });
+    })
+</script>
+<!-- Baidu Tongji -->
+
+
+<script src="/js/script.js"></script>
+
+<script>
+    var _hmt = _hmt || [];
+    (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?7176d0bc67fb19a89fea168ac922b24e";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+
+</body>
+</html>

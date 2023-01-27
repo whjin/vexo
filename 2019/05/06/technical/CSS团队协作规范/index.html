@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+  <meta name="description" content="吴华锦的个人主页" />
+  <meta name="keyword" content="hexo-theme, vuejs" />
+   <link rel="shortcut icon" href="/css/images/logo.png"> 
+  <title>
+     CSS团队协作规范 | 吴华锦 
+  </title>
+  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+  <link href="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.css" rel="stylesheet" />
+  <link href="//cdn.bootcss.com/highlight.js/9.12.0/styles/vs.min.css" rel="stylesheet" />
+  <link href="//cdn.bootcss.com/emojione/2.2.2/assets/css/emojione.min.css" rel="stylesheet" />
+  <link href="//cdn.bootcss.com/emojione/2.2.2/assets/sprites/emojione.sprites.css" rel="stylesheet" />
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  <script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+  <script src="//cdn.bootcss.com/geopattern/1.2.3/js/geopattern.min.js"></script>
+  <script src="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js"></script>
+  <script src="//cdn.bootcdn.net/ajax/libs/emojione/4.5.0/lib/js/emojione.min.js"></script>
+  
+<script src="/js/qrious.js"></script>
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+<div class="wechat-share">
+  <img src="/css/images/logo.png" />
+</div>
+
+<body>
+<header class="header fixed-header">
+    <div class="header-container">
+        <a class="home-link" href="/">
+            <div class="logo"></div>
+            <span>吴华锦</span>
+        </a>
+        <ul class="right-list">
+            
+            <li class="list-item">
+                
+                <a href="/" class="item-link">首页</a>
+                
+            </li>
+            
+            <li class="list-item">
+                
+                <a href="/archives/" class="item-link">归档</a>
+                
+            </li>
+            
+            <li class="list-item">
+                
+                <a href="/tags/" class="item-link">标签</a>
+                
+            </li>
+            
+            <li class="list-item">
+                
+                <a href="/project/" class="item-link">项目</a>
+                
+            </li>
+            
+            <li class="list-item">
+                
+                <a href="/about/" class="item-link">关于</a>
+                
+            </li>
+            
+        </ul>
+        <div class="menu">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </div>
+        <div class="menu-mask">
+            <ul class="menu-list">
+                
+                <li class="menu-item">
+                    
+                    <a href="/" class="menu-link">首页</a>
+                    
+                </li>
+                
+                <li class="menu-item">
+                    
+                    <a href="/archives/" class="menu-link">归档</a>
+                    
+                </li>
+                
+                <li class="menu-item">
+                    
+                    <a href="/tags/" class="menu-link">标签</a>
+                    
+                </li>
+                
+                <li class="menu-item">
+                    
+                    <a href="/project/" class="menu-link">项目</a>
+                    
+                </li>
+                
+                <li class="menu-item">
+                    
+                    <a href="/about/" class="menu-link">关于</a>
+                    
+                </li>
+                
+            </ul>
+        </div>
+    </div>
+</header>
+
+<div id="article-banner">
+  <h2>
+    CSS团队协作规范
+  </h2>
+  <p class="post-date">
+    2019-05-06
+  </p>
+  <div class="arrow-down">
+    <a href="javascript:;"></a>
+  </div>
+</div>
+<main class="app-body">
+  <article class="post-article">
+    <section class="markdown-content">
+      <h1 id="命名禁止缩写"><a href="#命名禁止缩写" class="headerlink" title="命名禁止缩写"></a>命名禁止缩写</h1><ul>
+<li>精简扼要地对<code>class</code>命名，请勿使用自定义缩写。</li>
+<li><code>class name</code>的命名必须是行为、有语意的。</li>
+</ul>
+<span id="more"></span>
+<h1 id="禁止在非特殊情况下写-important"><a href="#禁止在非特殊情况下写-important" class="headerlink" title="禁止在非特殊情况下写!important"></a>禁止在非特殊情况下写!important</h1><ul>
+<li>CSS本身有权重设计，任意地使用<code>!important</code>会造成权重混乱而无法维护。</li>
+</ul>
+<h1 id="不可轻易限定宽高"><a href="#不可轻易限定宽高" class="headerlink" title="不可轻易限定宽高"></a>不可轻易限定宽高</h1><ul>
+<li>用户可以自行设定自己的浏览器，例如<code>Android</code>手机可以设定显示字体大小，写死的高度会让字体相互重叠。</li>
+</ul>
+<h2 id="RWD失效"><a href="#RWD失效" class="headerlink" title="RWD失效"></a>RWD失效</h2><ul>
+<li>移动设备的高度是无限的，宽度是有限的。</li>
+<li>请不要把宽写死。</li>
+</ul>
+<h1 id="img请让它自动缩放"><a href="#img请让它自动缩放" class="headerlink" title="img请让它自动缩放"></a>img请让它自动缩放</h1><ul>
+<li>请不要替<code>img</code>的容器设定宽或高，让它根据设备自行缩放。</li>
+<li>请使用<code>bootstrap</code>的<code>img-responsive</code>。</li>
+<li>如果确实要用：  <figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="attribute">width</span>: <span class="number">100%</span>;</span><br><span class="line"><span class="attribute">height</span>: auto;</span><br></pre></td></tr></table></figure></li>
+<li>如果要给<code>img border-radius</code>设定样式，请使用父元素控制行为，保持<code>img</code>只载入图片，没有样式。</li>
+</ul>
+<h1 id="优先使用grid排版"><a href="#优先使用grid排版" class="headerlink" title="优先使用grid排版"></a>优先使用grid排版</h1><ul>
+<li>请不要花很多时间在写<code>media query</code>，设定一堆<code>breakpoint</code>，自己写组件样式，自己控制每种设备上的容器宽度。</li>
+<li>请使用<code>grid system</code>，这些都是已经成熟的框架，而且有些也已经帮你处理了浏览器相容问题。</li>
+</ul>
+<h1 id="不可直接over-write或在原本框架的class增加内容"><a href="#不可直接over-write或在原本框架的class增加内容" class="headerlink" title="不可直接over write或在原本框架的class增加内容"></a>不可直接over write或在原本框架的class增加内容</h1><ul>
+<li>直接写一个新的<code>class</code>，不要覆盖原有的设计。</li>
+<li>不要再已有的<code>class</code>上添加样式，请额外单独写一个。</li>
+</ul>
+<h1 id="设计RWD网站，请遵循移动设备优先原则"><a href="#设计RWD网站，请遵循移动设备优先原则" class="headerlink" title="设计RWD网站，请遵循移动设备优先原则"></a>设计RWD网站，请遵循移动设备优先原则</h1><ul>
+<li>设计师的设计顺序，以桌面版优先，再设计手机版。</li>
+<li>前端工程师拿到视觉图，开始写<code>HTML/CSS</code>时以手机版为第一优先。</li>
+</ul>
+<blockquote>
+<p>手机开启网页很吃手机效能和网络状况，前端工程师一开始就以手机版为优先，可以让HTML一开始载入，使用最少的效能快速载入网页。当开始制作桌面版时，只会少许跑版，做适当微调即可。<br>相反，如果先制作桌面版，当手机版画面被切掉或是跑版，需要花更多时间去调整。</p>
+</blockquote>
+<blockquote>
+<p>再来是iPhone手机的<code>retina</code>，会将图片放到手机上时自动做两倍缩小，在一开始制作时即可发现图片载入是否吃效能。为了让图片能在iPhone上有更好的体验，建议移动版优先。</p>
+</blockquote>
+<h1 id="不可使用html-tag-selector"><a href="#不可使用html-tag-selector" class="headerlink" title="不可使用html tag selector"></a>不可使用html tag selector</h1><ul>
+<li>请直接定义<code>class</code>的样式，不需要指定<code>html tag</code>。</li>
+</ul>
+<h1 id="层级不可以超过三层"><a href="#层级不可以超过三层" class="headerlink" title="层级不可以超过三层"></a>层级不可以超过三层</h1><ul>
+<li>超过三层表示耦合度太高，不具有弹性、可维护性。</li>
+</ul>
+<h1 id="用一样的element时不要把一堆东西全部写在里面，请把排版相关的独立出来"><a href="#用一样的element时不要把一堆东西全部写在里面，请把排版相关的独立出来" class="headerlink" title="用一样的element时不要把一堆东西全部写在里面，请把排版相关的独立出来"></a>用一样的element时不要把一堆东西全部写在里面，请把排版相关的独立出来</h1><ul>
+<li>把<code>border-radius</code>写在<code>img</code>上面，请把<code>img</code>保持干净。定位，例如<code>position: absolute;</code></li>
+</ul>
+<h1 id="不要随意none掉画面上的tag或行为"><a href="#不要随意none掉画面上的tag或行为" class="headerlink" title="不要随意none掉画面上的tag或行为"></a>不要随意none掉画面上的tag或行为</h1><ul>
+<li>请注意如果要<code>none</code>掉一些样式，请依照使用程度决定。</li>
+<li>使用程度遍布整个网站，请直接使用<code>reset.css</code></li>
+<li>使用程度中等以下，请定义一个<code>class</code></li>
+</ul>
+<h2 id="reset-css"><a href="#reset-css" class="headerlink" title="reset.css"></a>reset.css</h2><ul>
+<li>常见的<code>a tag</code>不要有<code>underline</code></li>
+<li><code>list</code>消除原有样式</li>
+<li>请在<code>reset.css</code>上定义，并且设为第一载入次序</li>
+</ul>
+<h1 id="有JavaScript行为的class可以为命名加入name-space"><a href="#有JavaScript行为的class可以为命名加入name-space" class="headerlink" title="有JavaScript行为的class可以为命名加入name space"></a>有JavaScript行为的class可以为命名加入name space</h1><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">#js-project-show &#123;&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="请勿任意使用br-hr-tag"><a href="#请勿任意使用br-hr-tag" class="headerlink" title="请勿任意使用br hr tag"></a>请勿任意使用br hr tag</h1><ul>
+<li><code>br</code>是换行，请使用在<code>p tag</code>里面，当<code>p</code>里面文字过多时可以使用。</li>
+<li><code>hr</code>是快速划线，但是即将被淘汰，请直接使用<code>border</code>写在<code>class</code>里面。</li>
+<li><code>br</code>必须去思考父区块是不是<code>display: block;</code>，如果要换行，应该思考是不是下一段文字。</li>
+<li>线条请都是用<code>border</code>去写。</li>
+</ul>
+
+    </section>
+    
+      <div class="tags">
+        <span>Tags:</span>
+        
+  <a href="/tags#CSS" >
+    <span class="tag-code">CSS</span>
+  </a>
+
+  <a href="/tags#前端" >
+    <span class="tag-code">前端</span>
+  </a>
+
+      </div>
+      
+        <div class="money-like">
+          <div class="reward-btn">
+            赏
+            <div class="money-code">
+              <span class="wechat-code">
+                <img class="code-image" src="/css/images/wechat.png" />
+                <b>使用微信打赏</b>
+              </span>
+              <span class="wechat-code">
+                <img class="code-image" src="/css/images/alipay.png">
+                <b>使用支付宝打赏</b>
+              </span>
+            </div>
+          </div>
+          <p class="notice">雅致寓于高阁渔舟唱晚，古典悠然；<br />格调外发园林绿树萦绕，馥郁清香。</p>
+        </div>
+        <div class="qrcode">
+          <img id="share-qrcode" />
+          <p class="notice">扫描二维码，分享此文章</p>
+        </div>
+  </article>
+</main>
+<!--PC和WAP自适应版-->
+<div id="SOHUCS" sid="2019/05/06/technical/CSS团队协作规范/" style="max-width: 750px; height: 100%;"></div>
+
+<script>
+  (function () {
+    var url = "https://whjin.github.io/2019/05/06/technical/CSS团队协作规范/";
+    var banner = "";
+    if (banner) {
+      $("#article-banner").css({
+        "background-image": "url(" + banner + ")",
+      });
+    } else {
+      $("#article-banner").geopattern(url);
+    }
+    $(".header").removeClass("fixed-header");
+
+    // error image
+    $(".markdown-content img").on("error", function () {
+      $(this).attr("src", "http://file.muyutech.com/error-img.png");
+    });
+
+    // zoom image
+    $(".markdown-content img").on("click", function () {
+      var src = $(this).attr("src");
+      var imageW = $(this).width();
+      var imageH = $(this).height();
+
+      var zoom = (($(window).width() * 0.95) / imageW).toFixed(2);
+      zoom = zoom < 1 ? 1 : zoom;
+      zoom = zoom > 2 ? 2 : zoom;
+      var transY = (($(window).height() - imageH) / 2).toFixed(2);
+
+      $("body").append(
+        '<div class="image-view-wrap"><div class="image-view-inner"><img src="' + src + '" /></div></div>'
+      );
+      $(".image-view-wrap").addClass("wrap-active");
+      $(".image-view-wrap img").css({
+        width: `${imageW}`,
+        transform: `translate3d(0, ${transY}px, 0) scale3d(${zoom}, ${zoom}, 1)`,
+      });
+      $("html").css("overflow", "hidden");
+
+      $(".image-view-wrap").on("click", function () {
+        $(this).remove();
+        $("html").attr("style", "");
+      });
+    });
+
+    // qrcode
+    var qr = new QRious({
+      element: document.getElementById("share-qrcode"),
+      value: document.location.href,
+    });
+  })();
+</script>
+
+<!-- <script type="text/javascript">
+  (function () {
+    var appid = "cytdwbqB7";
+    var conf = "prod_2648b5665a85c057dd13bef6cd1ebd30";
+    var width = window.innerWidth || document.documentElement.clientWidth;
+    if (width < 960) {
+      window.document.write(
+        '<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="//changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' +
+          appid +
+          "&conf=" +
+          conf +
+          '"><\/script>'
+      );
+    } else {
+      var loadJs = function (d, a) {
+        var c = document.getElementsByTagName("head")[0] || document.head || document.documentElement;
+        var b = document.createElement("script");
+        b.setAttribute("type", "text/javascript");
+        b.setAttribute("charset", "UTF-8");
+        b.setAttribute("src", d);
+        if (typeof a === "function") {
+          if (window.attachEvent) {
+            b.onreadystatechange = function () {
+              var e = b.readyState;
+              if (e === "loaded" || e === "complete") {
+                b.onreadystatechange = null;
+                a();
+              }
+            };
+          } else {
+            b.onload = a;
+          }
+        }
+        c.appendChild(b);
+      };
+      loadJs("//changyan.sohu.com/upload/changyan.js", function () {
+        window.changyan.api.config({ appid: appid, conf: conf });
+      });
+    }
+  })();
+</script> -->
+
+
+  <div class="vcomment valine">
+    <script src="//cdn.jsdelivr.net/npm/valine"></script>
+    <script>
+      var path = window.location.pathname.replace("index.html", "");
+      var isEN = path.indexOf("en") > -1;
+      path = isEN ? path.replace("en/", "") : path;
+      new Valine({
+        el: ".vcomment",
+        appId: "9NwKq9DsbUrNgihmAZusvPpR-gzGzoHsz",
+        appKey: "WaUpXkmnXUes9ZNF30cZIAho",
+        placeholder: "",
+        avatar: "mp",
+        path: path,
+        recordIP: true,
+        lang: isEN ? "en" : "zh-cn",
+        visitor: true,
+        enableQQ: "true",
+        emojiCDN:
+          path.indexOf("emoji") > -1
+            ? "//i0.hdslb.com/bfs/emote/"
+            : "//img.t.sinajs.cn/t4/appstyle/expression/ext/normal/",
+        emojiMaps:
+          path.indexOf("emoji") > -1
+            ? {
+              tv_doge: "6ea59c827c414b4a2955fe79e0f6fd3dcd515e24.png",
+              tv_亲亲: "a8111ad55953ef5e3be3327ef94eb4a39d535d06.png",
+              tv_偷笑: "bb690d4107620f1c15cff29509db529a73aee261.png",
+              tv_再见: "180129b8ea851044ce71caf55cc8ce44bd4a4fc8.png",
+              tv_冷漠: "b9cbc755c2b3ee43be07ca13de84e5b699a3f101.png",
+              tv_发怒: "34ba3cd204d5b05fec70ce08fa9fa0dd612409ff.png",
+              tv_发财: "34db290afd2963723c6eb3c4560667db7253a21a.png",
+              tv_可爱: "9e55fd9b500ac4b96613539f1ce2f9499e314ed9.png",
+              tv_吐血: "09dd16a7aa59b77baa1155d47484409624470c77.png",
+              tv_呆: "fe1179ebaa191569b0d31cecafe7a2cd1c951c9d.png",
+              tv_呕吐: "9f996894a39e282ccf5e66856af49483f81870f3.png",
+              tv_困: "241ee304e44c0af029adceb294399391e4737ef2.png",
+              tv_坏笑: "1f0b87f731a671079842116e0991c91c2c88645a.png",
+              tv_大佬: "093c1e2c490161aca397afc45573c877cdead616.png",
+              tv_大哭: "23269aeb35f99daee28dda129676f6e9ea87934f.png",
+              tv_委屈: "d04dba7b5465779e9755d2ab6f0a897b9b33bb77.png",
+              tv_害羞: "a37683fb5642fa3ddfc7f4e5525fd13e42a2bdb1.png",
+              tv_尴尬: "7cfa62dafc59798a3d3fb262d421eeeff166cfa4.png",
+              tv_微笑: "70dc5c7b56f93eb61bddba11e28fb1d18fddcd4c.png",
+              tv_思考: "90cf159733e558137ed20aa04d09964436f618a1.png",
+              tv_惊吓: "0d15c7e2ee58e935adc6a7193ee042388adc22af.png",
+              tv_打脸: "56ab10b624063e966bfcb76ea5dc4794d87dfd47.png",
+              tv_抓狂: "fe31c08edad661d63762b04e17b8d5ae3c71a757.png",
+              tv_抠鼻: "c666f55e88d471e51bbd9fab9bb308110824a6eb.png",
+              tv_斜眼笑: "911f987aa8bc1bee12d52aafe62bc41ef4474e6c.png",
+              tv_无奈: "ea8ed89ee9878f2fece2dda0ea8a5dbfe21b5751.png",
+              tv_晕: "5443c22b4d07fb1907ccc610c8e6db254f2461b7.png",
+              tv_流汗: "cead1c351ab8d79e9f369605beb90148db0fbed3.png",
+              tv_流泪: "7e71cde7858f0cd50d74b0264aa26db612a8a167.png",
+              tv_流鼻血: "c32d39db2737f89b904ca32700d140a9241b0767.png",
+              tv_点赞: "f85c354995bd99e28fc76c869bfe42ba6438eff4.png",
+              tv_生气: "26702dcafdab5e8225b43ffd23c94ac1ff932654.png",
+              tv_生病: "8b0ec90e6b86771092a498c54f09fc94621c1900.png",
+              tv_疑问: "0793d949b18d7be716078349c202c15ff166f314.png",
+              tv_白眼: "c1d59f439e379ee50eef488bcb5e5378e5044ea4.png",
+              tv_皱眉: "72ccad6679fea0d14cce648b4d818e09b8ffea2d.png",
+              tv_目瞪口呆: "0b8cb81a68de5d5365212c99375e7ace3e7891b7.png",
+              tv_睡着: "8b196675b53af58264f383c50ad0945048290b33.png",
+              tv_笑哭: "1abc628f6d4f4caf9d0e7800878f4697abbc8273.png",
+              tv_腼腆: "89712c0d4af73e67f89e35cbc518420380a7f6f4.png",
+              tv_色: "61822c7e9aae5da76475e7892534545336b23a6f.png",
+              tv_调侃: "4bc022533ef31544ca0d72c12c808cf4a1cce3e3.png",
+              tv_调皮: "b9c41de8e82dd7a8515ae5e3cb63e898bf245186.png",
+              tv_鄙视: "6e72339f346a692a495b123174b49e4e8e781303.png",
+              tv_闭嘴: "c9e990da7f6e93975e25fd8b70e2e290aa4086ef.png",
+              tv_难过: "87f46748d3f142ebc6586ff58860d0e2fc8263ba.png",
+              tv_馋: "fc7e829b845c43c623c8b490ee3602b7f0e76a31.png",
+              tv_鬼脸: "0ffbbddf8a94d124ca2f54b360bbc04feb6bbfea.png",
+              tv_黑人问号: "45821a01f51bc867da9edbaa2e070410819a95b2.png",
+              tv_鼓掌: "1d21793f96ef4e6f48b23e53e3b9e42da833a0f6.png",
+              // ... 更多表情
+            }
+            : void 0,
+      });
+    </script>
+  </div>
+  
+
+    <script>
+      var _hmt = _hmt || [];
+      (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?7176d0bc67fb19a89fea168ac922b24e";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+      })();
+    </script>
+<div class="scroll-top">
+  <span class="arrow-icon"></span>
+</div>
+<footer class="app-footer">
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <div>&copy; 2015 -
+        <script type="text/javascript">document.write(new Date().getFullYear());</script>
+        <a href="https://github.com/whjin" target="_blank" title="Github"> whjin </a>|<span
+                id="busuanzi_container_site_pv"> 访问 <a
+                    href="http://service.ibruce.info/" target="_blank"><span id="busuanzi_value_site_pv"></span></a> 次 </span><span
+                id="busuanzi_container_site_uv"><a href="http://service.ibruce.info/" target="_blank"><span
+                        id="busuanzi_value_site_uv"></span></a> 人</span></div>
+</footer>
+
+<script>
+    function async(u, c) {
+        var d = document, t = 'script',
+            o = d.createElement(t),
+            s = d.getElementsByTagName(t)[0];
+        o.src = u;
+        if (c) {
+            o.addEventListener('load', function (e) {
+                c(null, e);
+            }, false);
+        }
+        s.parentNode.insertBefore(o, s);
+    }
+</script>
+<script>
+    async("//cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function () {
+        FastClick.attach(document.body);
+    })
+</script>
+
+<script>
+    var hasLine = 'false';
+    async("//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js", function () {
+        $('figure pre').each(function (i, block) {
+            var figure = $(this).parents('figure');
+            if (hasLine == 'false') {
+                figure.find('.gutter').hide();
+            }
+            var lang = figure.attr('class').split(' ')[1] || 'code';
+            var codeHtml = $(this).html();
+            var codeTag = document.createElement('code');
+            codeTag.className = lang;
+            codeTag.innerHTML = codeHtml;
+            $(this).attr('class', '').empty().html(codeTag);
+            figure.attr('data-lang', lang.toUpperCase());
+            hljs.highlightBlock(block);
+        });
+    })
+</script>
+<!-- Baidu Tongji -->
+
+
+<script src="/js/script.js"></script>
+
+<script>
+    var _hmt = _hmt || [];
+    (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?7176d0bc67fb19a89fea168ac922b24e";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+
+</body>
+</html>

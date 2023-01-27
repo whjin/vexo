@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+  <meta name="description" content="吴华锦的个人主页" />
+  <meta name="keyword" content="hexo-theme, vuejs" />
+   <link rel="shortcut icon" href="/css/images/logo.png"> 
+  <title>
+     正则表达式手册 | 吴华锦 
+  </title>
+  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+  <link href="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.css" rel="stylesheet" />
+  <link href="//cdn.bootcss.com/highlight.js/9.12.0/styles/vs.min.css" rel="stylesheet" />
+  <link href="//cdn.bootcss.com/emojione/2.2.2/assets/css/emojione.min.css" rel="stylesheet" />
+  <link href="//cdn.bootcss.com/emojione/2.2.2/assets/sprites/emojione.sprites.css" rel="stylesheet" />
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  <script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+  <script src="//cdn.bootcss.com/geopattern/1.2.3/js/geopattern.min.js"></script>
+  <script src="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js"></script>
+  <script src="//cdn.bootcdn.net/ajax/libs/emojione/4.5.0/lib/js/emojione.min.js"></script>
+  
+<script src="/js/qrious.js"></script>
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+<div class="wechat-share">
+  <img src="/css/images/logo.png" />
+</div>
+
+<body>
+<header class="header fixed-header">
+    <div class="header-container">
+        <a class="home-link" href="/">
+            <div class="logo"></div>
+            <span>吴华锦</span>
+        </a>
+        <ul class="right-list">
+            
+            <li class="list-item">
+                
+                <a href="/" class="item-link">首页</a>
+                
+            </li>
+            
+            <li class="list-item">
+                
+                <a href="/archives/" class="item-link">归档</a>
+                
+            </li>
+            
+            <li class="list-item">
+                
+                <a href="/tags/" class="item-link">标签</a>
+                
+            </li>
+            
+            <li class="list-item">
+                
+                <a href="/project/" class="item-link">项目</a>
+                
+            </li>
+            
+            <li class="list-item">
+                
+                <a href="/about/" class="item-link">关于</a>
+                
+            </li>
+            
+        </ul>
+        <div class="menu">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </div>
+        <div class="menu-mask">
+            <ul class="menu-list">
+                
+                <li class="menu-item">
+                    
+                    <a href="/" class="menu-link">首页</a>
+                    
+                </li>
+                
+                <li class="menu-item">
+                    
+                    <a href="/archives/" class="menu-link">归档</a>
+                    
+                </li>
+                
+                <li class="menu-item">
+                    
+                    <a href="/tags/" class="menu-link">标签</a>
+                    
+                </li>
+                
+                <li class="menu-item">
+                    
+                    <a href="/project/" class="menu-link">项目</a>
+                    
+                </li>
+                
+                <li class="menu-item">
+                    
+                    <a href="/about/" class="menu-link">关于</a>
+                    
+                </li>
+                
+            </ul>
+        </div>
+    </div>
+</header>
+
+<div id="article-banner">
+  <h2>
+    正则表达式手册
+  </h2>
+  <p class="post-date">
+    2018-11-13
+  </p>
+  <div class="arrow-down">
+    <a href="javascript:;"></a>
+  </div>
+</div>
+<main class="app-body">
+  <article class="post-article">
+    <section class="markdown-content">
+      <h1 id="表达式全集"><a href="#表达式全集" class="headerlink" title="表达式全集"></a>表达式全集</h1><span id="more"></span>
+<table>
+<thead>
+<tr>
+<th>字符</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>\</code></td>
+<td>将下一个字符标记为一个特殊字符、或一个原义字符、或一个向后引用、或一个八进制转义符。例如，“<code>n</code>”匹配字符“<code>n</code>”。“<code>\n</code>”匹配一个换行符。串行“<code>\\</code>”匹配“<code>\</code>”而“<code>\(</code>”则匹配“<code>(</code>”。</td>
+</tr>
+<tr>
+<td><code>^</code></td>
+<td>匹配输入字符串的开始位置。如果设置了<code>RegExp</code>对象的<code>Multiline</code>属性，<code>^</code>也匹配“<code>\n</code>”或“<code>\r</code>”之后的位置。</td>
+</tr>
+<tr>
+<td><code>$</code></td>
+<td>匹配输入字符串的结束位置。如果设置了<code>RegExp</code>对象的<code>Multiline</code>属性，<code>$</code>也匹配“<code>\n</code>”或“<code>\r</code>”之前的位置。</td>
+</tr>
+<tr>
+<td><code>*</code></td>
+<td>匹配前面的子表达式零次或多次。例如，<code>zo*</code>能匹配“<code>z</code>”以及“<code>zoo</code>”。<code>*</code>等价于<code>&#123;0,&#125;</code>。</td>
+</tr>
+<tr>
+<td><code>+</code></td>
+<td>匹配前面的子表达式一次或多次。例如，“<code>zo+</code>”能匹配“<code>zo</code>”以及“<code>zoo</code>”，但不能匹配“<code>z</code>”。<code>+</code>等价于<code>&#123;1,&#125;</code>。</td>
+</tr>
+<tr>
+<td><code>?</code></td>
+<td>匹配前面的子表达式零次或一次。例如，“<code>do(es)?</code>”可以匹配“<code>does</code>”或“<code>does</code>”中的“<code>do</code>”。<code>?</code>等价于<code>&#123;0,1&#125;</code>。</td>
+</tr>
+<tr>
+<td><code>&#123;n&#125;</code></td>
+<td><code>n</code>是一个非负整数。匹配确定的<code>n</code>次。例如，“<code>o&#123;2&#125;</code>”不能匹配“<code>Bob</code>”中的“<code>o</code>”，但是能匹配“<code>food</code>”中的两个<code>o</code>。</td>
+</tr>
+<tr>
+<td><code>&#123;n,&#125;</code></td>
+<td><code>n</code>是一个非负整数。至少匹配<code>n</code>次。例如，“<code>o&#123;2,&#125;</code>”不能匹配“<code>Bob</code>”中的“<code>o</code>”，但能匹配“<code>foooood</code>”中的所有<code>o</code>。“<code>o&#123;1,&#125;</code>”等价于“<code>o+</code>”。“<code>o&#123;0,&#125;</code>”则等价于“<code>o*</code>”。</td>
+</tr>
+<tr>
+<td><code>&#123;n,m&#125;</code></td>
+<td><code>m</code>和<code>n</code>均为非负整数，其中<code>n&lt;=m</code>。最少匹配<code>n</code>次且最多匹配<code>m</code>次。例如，“<code>o&#123;1,3&#125;</code>”将匹配“<code>fooooood</code>”中的前三个<code>o</code>。“<code>o&#123;0,1&#125;</code>”等价于“<code>o?</code>”。请注意在逗号和两个数之间不能有空格。</td>
+</tr>
+<tr>
+<td><code>?</code></td>
+<td>当该字符紧跟在任何一个其他限制符（<code>*</code>,<code>+</code>,<code>?</code>，<code>&#123;n&#125;</code>，<code>&#123;n,&#125;</code>，<code>&#123;n,m&#125;</code>）后面时，匹配模式是非贪婪的。非贪婪模式尽可能少的匹配所搜索的字符串，而默认的贪婪模式则尽可能多的匹配所搜索的字符串。例如，对于字符串“<code>oooo</code>”，“<code>o+?</code>”将匹配单个“<code>o</code>”，而“<code>o+</code>”将匹配所有“<code>o</code>”。</td>
+</tr>
+<tr>
+<td><code>.</code></td>
+<td>匹配除“<code>\n</code>”之外的任何单个字符。要匹配包括“<code>\n</code>”在内的任何字符，请使用像“<code>(.\n)</code>”的模式。</td>
+</tr>
+<tr>
+<td><code>(pattern)</code></td>
+<td>匹配<code>pattern</code>并获取这一匹配。所获取的匹配可以从产生的<code>Matches</code>集合得到，在<code>VBScript</code>中使用<code>SubMatches</code>集合，在<code>JScript</code>中则使用<code>$0…$9</code>属性。要匹配圆括号字符，请使用“<code>\(</code>”或“<code>&#124;\</code>”。</td>
+</tr>
+<tr>
+<td><code>(?:pattern)</code></td>
+<td>匹配<code>pattern</code>但不获取匹配结果，也就是说这是一个非获取匹配，不进行存储供以后使用。这在使用或字符“<code>(&#124;)</code>”来组合一个模式的各个部分是很有用。例如“<code>industr(?:y&#124;ies)</code>”就是一个比“<code>industry&#124;industries</code>”更简略的表达式。</td>
+</tr>
+<tr>
+<td><code>(?=pattern)</code></td>
+<td>正向肯定预查，在任何匹配<code>pattern</code>的字符串开始处匹配查找字符串。这是一个非获取匹配，也就是说，该匹配不需要获取供以后使用。例如，“<code>Windows(?=95&#124;98&#124;NT&#124;2000)</code>”能匹配“<code>Windows2000</code>”中的“<code>Windows</code>”，但不能匹配“<code>Windows3.1</code>”中的“<code>Windows</code>”。预查不消耗字符，也就是说，在一个匹配发生后，在最后一次匹配之后立即开始下一次匹配的搜索，而不是从包含预查的字符之后开始。</td>
+</tr>
+<tr>
+<td><code>(?!pattern)</code></td>
+<td>正向否定预查，在任何不匹配<code>pattern</code>的字符串开始处匹配查找字符串。这是一个非获取匹配，也就是说，该匹配不需要获取供以后使用。例如“<code>Windows(?!95&#124;98&#124;NT&#124;2000)</code>”能匹配“<code>Windows3.1</code>”中的“<code>Windows</code>”，但不能匹配“<code>Windows2000</code>”中的“<code>Windows</code>”。预查不消耗字符，也就是说，在一个匹配发生后，在最后一次匹配之后立即开始下一次匹配的搜索，而不是从包含预查的字符之后开始。</td>
+</tr>
+<tr>
+<td><code>(?&lt;=pattern)</code></td>
+<td>反向肯定预查，与正向肯定预查类拟，只是方向相反。例如，“<code>(?&lt;=95&#124;98&#124;NT&#124;2000)Windows</code>”能匹配“<code>2000Windows</code>”中的“<code>Windows</code>”，但不能匹配“<code>3.1Windows</code>”中的“<code>Windows</code>”。</td>
+</tr>
+<tr>
+<td><code>(?&lt;!pattern)</code></td>
+<td>反向否定预查，与正向否定预查类拟，只是方向相反。例如“<code>(?&lt;!95&#124;98&#124;NT&#124;2000)Windows</code>”能匹配“<code>3.1Windows</code>”中的“<code>Windows</code>”，但不能匹配“<code>2000Windows</code>”中的“<code>Windows</code>”。</td>
+</tr>
+<tr>
+<td><code>x&#124;y</code></td>
+<td>匹配<code>x</code>或<code>y</code>。例如，“<code>z&#124;food</code>”能匹配“<code>z</code>”或“<code>food</code>”。“<code>(z&#124;f)ood</code>”则匹配“<code>zood</code>”或“<code>food</code>”。</td>
+</tr>
+<tr>
+<td><code>[xyz]</code></td>
+<td>字符集合。匹配所包含的任意一个字符。例如，“<code>[abc]</code>”可以匹配“<code>plain</code>”中的“<code>a</code>”。</td>
+</tr>
+<tr>
+<td><code>[^xyz]</code></td>
+<td>负值字符集合。匹配未包含的任意字符。例如，“<code>[^abc]</code>”可以匹配“<code>plain</code>”中的“<code>p</code>”。</td>
+</tr>
+<tr>
+<td><code>[a-z]</code></td>
+<td>字符范围。匹配指定范围内的任意字符。例如，“<code>[a-z]</code>”可以匹配“<code>a</code>”到“<code>z</code>”范围内的任意小写字母字符。</td>
+</tr>
+<tr>
+<td><code>[^a-z]</code></td>
+<td>负值字符范围。匹配任何不在指定范围内的任意字符。例如，“<code>[^a-z]</code>”可以匹配任何不在“<code>a</code>”到“<code>z</code>”范围内的任意字符。</td>
+</tr>
+<tr>
+<td><code>\b</code></td>
+<td>匹配一个单词边界，也就是指单词和空格间的位置。例如，“<code>er\b</code>”可以匹配“<code>never</code>”中的“<code>er</code>”，但不能匹配“<code>verb</code>”中的“<code>er</code>”。</td>
+</tr>
+<tr>
+<td><code>\B</code></td>
+<td>匹配非单词边界。“<code>er\B</code>”能匹配“<code>verb</code>”中的“<code>er</code>”，但不能匹配“<code>never</code>”中的“<code>er</code>”。</td>
+</tr>
+<tr>
+<td><code>\cx</code></td>
+<td>匹配由<code>x</code>指明的控制字符。例如，<code>\cM</code>匹配一个<code>Control-M</code>或回车符。<code>x</code>的值必须为<code>A-Z</code>或<code>a-z</code>之一。否则，将c视为一个原义的“<code>c</code>”字符。</td>
+</tr>
+<tr>
+<td><code>\d</code></td>
+<td>匹配一个数字字符。等价于<code>[0-9]</code>。</td>
+</tr>
+<tr>
+<td><code>\D</code></td>
+<td>匹配一个非数字字符。等价于<code>[^0-9]</code>。</td>
+</tr>
+<tr>
+<td><code>\f</code></td>
+<td>匹配一个换页符。等价于<code>\x0c</code>和<code>\cL</code>。</td>
+</tr>
+<tr>
+<td><code>\n</code></td>
+<td>匹配一个换行符。等价于<code>\x0a</code>和<code>\cJ</code>。</td>
+</tr>
+<tr>
+<td><code>\r</code></td>
+<td>匹配一个回车符。等价于<code>\x0d</code>和<code>\cM</code>。</td>
+</tr>
+<tr>
+<td><code>\s</code></td>
+<td>匹配任何空白字符，包括空格、制表符、换页符等等。等价于<code>[\f\n\r\t\v]</code>。</td>
+</tr>
+<tr>
+<td><code>\S</code></td>
+<td>匹配任何非空白字符。等价于<code>[^\f\n\r\t\v]</code>。</td>
+</tr>
+<tr>
+<td><code>\t</code></td>
+<td>匹配一个制表符。等价于<code>\x09</code>和<code>\cI</code>。</td>
+</tr>
+<tr>
+<td><code>\v</code></td>
+<td>匹配一个垂直制表符。等价于<code>\x0b</code>和<code>\cK</code>。</td>
+</tr>
+<tr>
+<td><code>\w</code></td>
+<td>匹配包括下划线的任何单词字符。等价于“<code>[A-Za-z0-9_]</code>”。</td>
+</tr>
+<tr>
+<td><code>\W</code></td>
+<td>匹配任何非单词字符。等价于“<code>[^A-Za-z0-9_]</code>”。</td>
+</tr>
+<tr>
+<td><code>\xn</code></td>
+<td>匹配<code>n</code>，其中<code>n</code>为十六进制转义值。十六进制转义值必须为确定的两个数字长。例如，“<code>\x41</code>”匹配“<code>A</code>”。“<code>\x041</code>”则等价于“<code>\x04&amp;1</code>”。正则表达式中可以使用<code>ASCII</code>编码。</td>
+</tr>
+<tr>
+<td><code>\num</code></td>
+<td>匹配<code>num</code>，其中<code>num</code>是一个正整数。对所获取的匹配的引用。例如，“<code>(.)\1</code>”匹配两个连续的相同字符。</td>
+</tr>
+<tr>
+<td><code>\n</code></td>
+<td>标识一个八进制转义值或一个向后引用。如果<code>\n</code>之前至少<code>n</code>个获取的子表达式，则<code>n</code>为向后引用。否则，如果<code>n</code>为八进制数字（<code>0-7</code>），则<code>n</code>为一个八进制转义值。</td>
+</tr>
+<tr>
+<td><code>\nm</code></td>
+<td>标识一个八进制转义值或一个向后引用。如果<code>\nm</code>之前至少有<code>nm</code>个获得子表达式，则<code>nm</code>为向后引用。如果<code>\nm</code>之前至少有<code>n</code>个获取，则<code>n</code>为一个后跟文字<code>m</code>的向后引用。如果前面的条件都不满足，若<code>n</code>和<code>m</code>均为八进制数字（<code>0-7</code>），则<code>\nm</code>将匹配八进制转义值<code>nm</code>。</td>
+</tr>
+<tr>
+<td><code>\nml</code></td>
+<td>如果<code>n</code>为八进制数字（<code>0-3</code>），且<code>m</code>和<code>l</code>均为八进制数字（<code>0-7</code>），则匹配八进制转义值<code>nml</code>。</td>
+</tr>
+<tr>
+<td><code>\un</code></td>
+<td>匹配<code>n</code>，其中<code>n</code>是一个用四个十六进制数字表示的<code>Unicode</code>字符。例如，<code>\u00A9</code>匹配版权符号（<code>©</code>）。</td>
+</tr>
+</tbody>
+</table>
+<h1 id="常用正则表达式"><a href="#常用正则表达式" class="headerlink" title="常用正则表达式"></a>常用正则表达式</h1><table>
+<thead>
+<tr>
+<th>匹配内容</th>
+<th>正则表达式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>用户名</td>
+<td><code>/^[a-z0-9_-]&#123;3,16&#125;$/</code></td>
+</tr>
+<tr>
+<td>密码</td>
+<td><code>/^[a-z0-9_-]&#123;6,18&#125;$/</code></td>
+</tr>
+<tr>
+<td>十六进制值</td>
+<td><code>/^#?([a-f0-9]&#123;6&#125;&#124;[a-f0-9]&#123;3&#125;)$/</code></td>
+</tr>
+<tr>
+<td>电子邮箱</td>
+<td><code>/^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]&#123;2,6&#125;)$/</code><br><code>/^[a-z\d]+(\.[a-z\d]+)*@([\da-z](-[\da-z])?)+(\.&#123;1,2&#125;[a-z]+)+$/</code></td>
+</tr>
+<tr>
+<td>URL</td>
+<td><code>/^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]&#123;2,6&#125;)([\/\w \.-]*)*\/?$/</code></td>
+</tr>
+<tr>
+<td>IP 地址</td>
+<td><code>/((2[0-4]\d&#124;25[0-5]&#124;[01]?\d\d?).)&#123;3&#125;(2[0-4]\d&#124;25[0-5]&#124;[01]?\d\d?)/</code><br><code>/^(?:(?:25[0-5]&#124;2[0-4][0-9]&#124;[01]?[0-9][0-9]?).)&#123;3&#125;(?:25[0-5]&#124;2[0-4][0-9]&#124;[01]?[0-9][0-9]?)$/</code></td>
+</tr>
+<tr>
+<td>HTML标签</td>
+<td><code>/^&lt;([a-z]+)([\^&lt;]+)<em>(?:&gt;(.</em>)&lt;\/\1&gt;&#124;\s+\/&gt;)$/</code></td>
+</tr>
+<tr>
+<td>删除代码\注释</td>
+<td><code>(?&lt;!\http:&#124;\S)//.*$</code></td>
+</tr>
+<tr>
+<td><code>Unicode</code>编码中的汉字范围</td>
+<td><code>/^[\u2E80-\u9FFF]+$/</code></td>
+</tr>
+</tbody>
+</table>
+
+    </section>
+    
+      <div class="tags">
+        <span>Tags:</span>
+        
+  <a href="/tags#前端" >
+    <span class="tag-code">前端</span>
+  </a>
+
+  <a href="/tags#正则表达式" >
+    <span class="tag-code">正则表达式</span>
+  </a>
+
+      </div>
+      
+        <div class="money-like">
+          <div class="reward-btn">
+            赏
+            <div class="money-code">
+              <span class="wechat-code">
+                <img class="code-image" src="/css/images/wechat.png" />
+                <b>使用微信打赏</b>
+              </span>
+              <span class="wechat-code">
+                <img class="code-image" src="/css/images/alipay.png">
+                <b>使用支付宝打赏</b>
+              </span>
+            </div>
+          </div>
+          <p class="notice">雅致寓于高阁渔舟唱晚，古典悠然；<br />格调外发园林绿树萦绕，馥郁清香。</p>
+        </div>
+        <div class="qrcode">
+          <img id="share-qrcode" />
+          <p class="notice">扫描二维码，分享此文章</p>
+        </div>
+  </article>
+</main>
+<!--PC和WAP自适应版-->
+<div id="SOHUCS" sid="2018/11/13/technical/正则表达式手册/" style="max-width: 750px; height: 100%;"></div>
+
+<script>
+  (function () {
+    var url = "https://whjin.github.io/2018/11/13/technical/正则表达式手册/";
+    var banner = "";
+    if (banner) {
+      $("#article-banner").css({
+        "background-image": "url(" + banner + ")",
+      });
+    } else {
+      $("#article-banner").geopattern(url);
+    }
+    $(".header").removeClass("fixed-header");
+
+    // error image
+    $(".markdown-content img").on("error", function () {
+      $(this).attr("src", "http://file.muyutech.com/error-img.png");
+    });
+
+    // zoom image
+    $(".markdown-content img").on("click", function () {
+      var src = $(this).attr("src");
+      var imageW = $(this).width();
+      var imageH = $(this).height();
+
+      var zoom = (($(window).width() * 0.95) / imageW).toFixed(2);
+      zoom = zoom < 1 ? 1 : zoom;
+      zoom = zoom > 2 ? 2 : zoom;
+      var transY = (($(window).height() - imageH) / 2).toFixed(2);
+
+      $("body").append(
+        '<div class="image-view-wrap"><div class="image-view-inner"><img src="' + src + '" /></div></div>'
+      );
+      $(".image-view-wrap").addClass("wrap-active");
+      $(".image-view-wrap img").css({
+        width: `${imageW}`,
+        transform: `translate3d(0, ${transY}px, 0) scale3d(${zoom}, ${zoom}, 1)`,
+      });
+      $("html").css("overflow", "hidden");
+
+      $(".image-view-wrap").on("click", function () {
+        $(this).remove();
+        $("html").attr("style", "");
+      });
+    });
+
+    // qrcode
+    var qr = new QRious({
+      element: document.getElementById("share-qrcode"),
+      value: document.location.href,
+    });
+  })();
+</script>
+
+<!-- <script type="text/javascript">
+  (function () {
+    var appid = "cytdwbqB7";
+    var conf = "prod_2648b5665a85c057dd13bef6cd1ebd30";
+    var width = window.innerWidth || document.documentElement.clientWidth;
+    if (width < 960) {
+      window.document.write(
+        '<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="//changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' +
+          appid +
+          "&conf=" +
+          conf +
+          '"><\/script>'
+      );
+    } else {
+      var loadJs = function (d, a) {
+        var c = document.getElementsByTagName("head")[0] || document.head || document.documentElement;
+        var b = document.createElement("script");
+        b.setAttribute("type", "text/javascript");
+        b.setAttribute("charset", "UTF-8");
+        b.setAttribute("src", d);
+        if (typeof a === "function") {
+          if (window.attachEvent) {
+            b.onreadystatechange = function () {
+              var e = b.readyState;
+              if (e === "loaded" || e === "complete") {
+                b.onreadystatechange = null;
+                a();
+              }
+            };
+          } else {
+            b.onload = a;
+          }
+        }
+        c.appendChild(b);
+      };
+      loadJs("//changyan.sohu.com/upload/changyan.js", function () {
+        window.changyan.api.config({ appid: appid, conf: conf });
+      });
+    }
+  })();
+</script> -->
+
+
+  <div class="vcomment valine">
+    <script src="//cdn.jsdelivr.net/npm/valine"></script>
+    <script>
+      var path = window.location.pathname.replace("index.html", "");
+      var isEN = path.indexOf("en") > -1;
+      path = isEN ? path.replace("en/", "") : path;
+      new Valine({
+        el: ".vcomment",
+        appId: "9NwKq9DsbUrNgihmAZusvPpR-gzGzoHsz",
+        appKey: "WaUpXkmnXUes9ZNF30cZIAho",
+        placeholder: "",
+        avatar: "mp",
+        path: path,
+        recordIP: true,
+        lang: isEN ? "en" : "zh-cn",
+        visitor: true,
+        enableQQ: "true",
+        emojiCDN:
+          path.indexOf("emoji") > -1
+            ? "//i0.hdslb.com/bfs/emote/"
+            : "//img.t.sinajs.cn/t4/appstyle/expression/ext/normal/",
+        emojiMaps:
+          path.indexOf("emoji") > -1
+            ? {
+              tv_doge: "6ea59c827c414b4a2955fe79e0f6fd3dcd515e24.png",
+              tv_亲亲: "a8111ad55953ef5e3be3327ef94eb4a39d535d06.png",
+              tv_偷笑: "bb690d4107620f1c15cff29509db529a73aee261.png",
+              tv_再见: "180129b8ea851044ce71caf55cc8ce44bd4a4fc8.png",
+              tv_冷漠: "b9cbc755c2b3ee43be07ca13de84e5b699a3f101.png",
+              tv_发怒: "34ba3cd204d5b05fec70ce08fa9fa0dd612409ff.png",
+              tv_发财: "34db290afd2963723c6eb3c4560667db7253a21a.png",
+              tv_可爱: "9e55fd9b500ac4b96613539f1ce2f9499e314ed9.png",
+              tv_吐血: "09dd16a7aa59b77baa1155d47484409624470c77.png",
+              tv_呆: "fe1179ebaa191569b0d31cecafe7a2cd1c951c9d.png",
+              tv_呕吐: "9f996894a39e282ccf5e66856af49483f81870f3.png",
+              tv_困: "241ee304e44c0af029adceb294399391e4737ef2.png",
+              tv_坏笑: "1f0b87f731a671079842116e0991c91c2c88645a.png",
+              tv_大佬: "093c1e2c490161aca397afc45573c877cdead616.png",
+              tv_大哭: "23269aeb35f99daee28dda129676f6e9ea87934f.png",
+              tv_委屈: "d04dba7b5465779e9755d2ab6f0a897b9b33bb77.png",
+              tv_害羞: "a37683fb5642fa3ddfc7f4e5525fd13e42a2bdb1.png",
+              tv_尴尬: "7cfa62dafc59798a3d3fb262d421eeeff166cfa4.png",
+              tv_微笑: "70dc5c7b56f93eb61bddba11e28fb1d18fddcd4c.png",
+              tv_思考: "90cf159733e558137ed20aa04d09964436f618a1.png",
+              tv_惊吓: "0d15c7e2ee58e935adc6a7193ee042388adc22af.png",
+              tv_打脸: "56ab10b624063e966bfcb76ea5dc4794d87dfd47.png",
+              tv_抓狂: "fe31c08edad661d63762b04e17b8d5ae3c71a757.png",
+              tv_抠鼻: "c666f55e88d471e51bbd9fab9bb308110824a6eb.png",
+              tv_斜眼笑: "911f987aa8bc1bee12d52aafe62bc41ef4474e6c.png",
+              tv_无奈: "ea8ed89ee9878f2fece2dda0ea8a5dbfe21b5751.png",
+              tv_晕: "5443c22b4d07fb1907ccc610c8e6db254f2461b7.png",
+              tv_流汗: "cead1c351ab8d79e9f369605beb90148db0fbed3.png",
+              tv_流泪: "7e71cde7858f0cd50d74b0264aa26db612a8a167.png",
+              tv_流鼻血: "c32d39db2737f89b904ca32700d140a9241b0767.png",
+              tv_点赞: "f85c354995bd99e28fc76c869bfe42ba6438eff4.png",
+              tv_生气: "26702dcafdab5e8225b43ffd23c94ac1ff932654.png",
+              tv_生病: "8b0ec90e6b86771092a498c54f09fc94621c1900.png",
+              tv_疑问: "0793d949b18d7be716078349c202c15ff166f314.png",
+              tv_白眼: "c1d59f439e379ee50eef488bcb5e5378e5044ea4.png",
+              tv_皱眉: "72ccad6679fea0d14cce648b4d818e09b8ffea2d.png",
+              tv_目瞪口呆: "0b8cb81a68de5d5365212c99375e7ace3e7891b7.png",
+              tv_睡着: "8b196675b53af58264f383c50ad0945048290b33.png",
+              tv_笑哭: "1abc628f6d4f4caf9d0e7800878f4697abbc8273.png",
+              tv_腼腆: "89712c0d4af73e67f89e35cbc518420380a7f6f4.png",
+              tv_色: "61822c7e9aae5da76475e7892534545336b23a6f.png",
+              tv_调侃: "4bc022533ef31544ca0d72c12c808cf4a1cce3e3.png",
+              tv_调皮: "b9c41de8e82dd7a8515ae5e3cb63e898bf245186.png",
+              tv_鄙视: "6e72339f346a692a495b123174b49e4e8e781303.png",
+              tv_闭嘴: "c9e990da7f6e93975e25fd8b70e2e290aa4086ef.png",
+              tv_难过: "87f46748d3f142ebc6586ff58860d0e2fc8263ba.png",
+              tv_馋: "fc7e829b845c43c623c8b490ee3602b7f0e76a31.png",
+              tv_鬼脸: "0ffbbddf8a94d124ca2f54b360bbc04feb6bbfea.png",
+              tv_黑人问号: "45821a01f51bc867da9edbaa2e070410819a95b2.png",
+              tv_鼓掌: "1d21793f96ef4e6f48b23e53e3b9e42da833a0f6.png",
+              // ... 更多表情
+            }
+            : void 0,
+      });
+    </script>
+  </div>
+  
+
+    <script>
+      var _hmt = _hmt || [];
+      (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?7176d0bc67fb19a89fea168ac922b24e";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+      })();
+    </script>
+<div class="scroll-top">
+  <span class="arrow-icon"></span>
+</div>
+<footer class="app-footer">
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <div>&copy; 2015 -
+        <script type="text/javascript">document.write(new Date().getFullYear());</script>
+        <a href="https://github.com/whjin" target="_blank" title="Github"> whjin </a>|<span
+                id="busuanzi_container_site_pv"> 访问 <a
+                    href="http://service.ibruce.info/" target="_blank"><span id="busuanzi_value_site_pv"></span></a> 次 </span><span
+                id="busuanzi_container_site_uv"><a href="http://service.ibruce.info/" target="_blank"><span
+                        id="busuanzi_value_site_uv"></span></a> 人</span></div>
+</footer>
+
+<script>
+    function async(u, c) {
+        var d = document, t = 'script',
+            o = d.createElement(t),
+            s = d.getElementsByTagName(t)[0];
+        o.src = u;
+        if (c) {
+            o.addEventListener('load', function (e) {
+                c(null, e);
+            }, false);
+        }
+        s.parentNode.insertBefore(o, s);
+    }
+</script>
+<script>
+    async("//cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function () {
+        FastClick.attach(document.body);
+    })
+</script>
+
+<script>
+    var hasLine = 'false';
+    async("//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js", function () {
+        $('figure pre').each(function (i, block) {
+            var figure = $(this).parents('figure');
+            if (hasLine == 'false') {
+                figure.find('.gutter').hide();
+            }
+            var lang = figure.attr('class').split(' ')[1] || 'code';
+            var codeHtml = $(this).html();
+            var codeTag = document.createElement('code');
+            codeTag.className = lang;
+            codeTag.innerHTML = codeHtml;
+            $(this).attr('class', '').empty().html(codeTag);
+            figure.attr('data-lang', lang.toUpperCase());
+            hljs.highlightBlock(block);
+        });
+    })
+</script>
+<!-- Baidu Tongji -->
+
+
+<script src="/js/script.js"></script>
+
+<script>
+    var _hmt = _hmt || [];
+    (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?7176d0bc67fb19a89fea168ac922b24e";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,1139 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+  <meta name="description" content="吴华锦的个人主页" />
+  <meta name="keyword" content="hexo-theme, vuejs" />
+   <link rel="shortcut icon" href="/css/images/logo.png"> 
+  <title>
+     使用Quasar设计Material和IOS风格的响应式网站 | 吴华锦 
+  </title>
+  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+  <link href="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.css" rel="stylesheet" />
+  <link href="//cdn.bootcss.com/highlight.js/9.12.0/styles/vs.min.css" rel="stylesheet" />
+  <link href="//cdn.bootcss.com/emojione/2.2.2/assets/css/emojione.min.css" rel="stylesheet" />
+  <link href="//cdn.bootcss.com/emojione/2.2.2/assets/sprites/emojione.sprites.css" rel="stylesheet" />
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  <script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+  <script src="//cdn.bootcss.com/geopattern/1.2.3/js/geopattern.min.js"></script>
+  <script src="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js"></script>
+  <script src="//cdn.bootcdn.net/ajax/libs/emojione/4.5.0/lib/js/emojione.min.js"></script>
+  
+<script src="/js/qrious.js"></script>
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+<div class="wechat-share">
+  <img src="/css/images/logo.png" />
+</div>
+
+<body>
+<header class="header fixed-header">
+    <div class="header-container">
+        <a class="home-link" href="/">
+            <div class="logo"></div>
+            <span>吴华锦</span>
+        </a>
+        <ul class="right-list">
+            
+            <li class="list-item">
+                
+                <a href="/" class="item-link">首页</a>
+                
+            </li>
+            
+            <li class="list-item">
+                
+                <a href="/archives/" class="item-link">归档</a>
+                
+            </li>
+            
+            <li class="list-item">
+                
+                <a href="/tags/" class="item-link">标签</a>
+                
+            </li>
+            
+            <li class="list-item">
+                
+                <a href="/project/" class="item-link">项目</a>
+                
+            </li>
+            
+            <li class="list-item">
+                
+                <a href="/about/" class="item-link">关于</a>
+                
+            </li>
+            
+        </ul>
+        <div class="menu">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </div>
+        <div class="menu-mask">
+            <ul class="menu-list">
+                
+                <li class="menu-item">
+                    
+                    <a href="/" class="menu-link">首页</a>
+                    
+                </li>
+                
+                <li class="menu-item">
+                    
+                    <a href="/archives/" class="menu-link">归档</a>
+                    
+                </li>
+                
+                <li class="menu-item">
+                    
+                    <a href="/tags/" class="menu-link">标签</a>
+                    
+                </li>
+                
+                <li class="menu-item">
+                    
+                    <a href="/project/" class="menu-link">项目</a>
+                    
+                </li>
+                
+                <li class="menu-item">
+                    
+                    <a href="/about/" class="menu-link">关于</a>
+                    
+                </li>
+                
+            </ul>
+        </div>
+    </div>
+</header>
+
+<div id="article-banner">
+  <h2>
+    使用Quasar设计Material和IOS风格的响应式网站
+  </h2>
+  <p class="post-date">
+    2019-02-23
+  </p>
+  <div class="arrow-down">
+    <a href="javascript:;"></a>
+  </div>
+</div>
+<main class="app-body">
+  <article class="post-article">
+    <section class="markdown-content">
+      <h1 id="Quasar"><a href="#Quasar" class="headerlink" title="Quasar"></a>Quasar</h1><p><code>Quasar</code>是一款基于<code>Vue.js</code>开发的<code>UI</code>框架，可以让你轻松构建网站简洁明快的界面，更重要的是它还能让你轻松做好<code>RWD</code>（响应式网站设计），除此之外还能帮助你加上<code>PWA</code>，使你的网页变成手机上的<code>App</code>。</p>
+<span id="more"></span>
+<p>以下内容来自官网<a target="_blank" rel="noopener" href="http://www.quasarchs.com/">Quasar Framework</a>，概括了<code>Quasar</code>的主要特点。</p>
+<p><code>Quasar</code>是<code>MIT</code>许可的开源框架（基于<a target="_blank" rel="noopener" href="https://cn.vuejs.org/">Vue</a>），可帮助<code>Web</code>开发人员创建：</p>
+<ul>
+<li>响应式网站</li>
+<li><code>PWA</code></li>
+<li>通过<code>Apache Cordova</code>构建移动<code>App</code></li>
+<li>多平台桌面应用程序（使用<code>Electron</code>）</li>
+</ul>
+<h2 id="选择Quasar的5个理由"><a href="#选择Quasar的5个理由" class="headerlink" title="选择Quasar的5个理由"></a>选择Quasar的5个理由</h2><ol>
+<li>内建了<code>Material</code>及<code>IOS</code>两种主题</li>
+<li>组件均内建<code>RWD</code>快速响应</li>
+<li>多样的基础<code>UI</code>组件库</li>
+<li>自带了<code>Vuex</code>、<code>VueRouter</code>、<code>Vuei18n</code>（多国语系）</li>
+<li>强大的部署工具</li>
+</ol>
+<h2 id="安装指南"><a href="#安装指南" class="headerlink" title="安装指南"></a>安装指南</h2><p>首先安装<code>Node.js</code>和<code>vue-cli</code>，具体安装方法查看官网资料。</p>
+<p>然后安装<code>Quasar</code>，<code>npm install -g quasar-cli</code>。</p>
+<p>最后搭建项目：<code>quasar init &lt;folder name&gt;</code></p>
+<p>取代<code>main.js</code>的<code>quasar.config.js</code>设置文件：</p>
+<ul>
+<li>引用Quasar内建的组件，可以不用在每个地方<code>import components</code></li>
+<li><code>i18n</code>设置多国语系</li>
+<li><code>icons</code>移除注释即可使用</li>
+<li><code>开发模式</code>下的HTTPS以及<code>port</code>设置</li>
+<li><code>CSS</code>动画设置</li>
+<li>其他外部插件的设置</li>
+<li><code>PWA</code>、<code>manifest</code>等设置</li>
+</ul>
+<h3 id="quasar-config-js"><a href="#quasar-config-js" class="headerlink" title="quasar.config.js"></a><code>quasar.config.js</code></h3><ul>
+<li><code>plugins</code></li>
+</ul>
+<p>以前在<code>Vue</code>安装其他的<code>plugin</code>会在<code>main.js</code>里引入，而在<code>Quasar</code>就会取代<code>main.js</code>成为全部配置文件。</p>
+<ul>
+<li><code>css</code></li>
+</ul>
+<p>CSS的引入都会放在这个文件，默认的位置<code>/src/css</code>，所需的CSS库已经准备好，可以直接使用。</p>
+<ul>
+<li><code>extra</code></li>
+</ul>
+<p>这里是设置是否引入<a target="_blank" rel="noopener" href="https://github.com/quasarframework/quasar-extras">quasar-extras</a>的内容。</p>
+<table>
+<thead>
+<tr>
+<th>Package</th>
+<th>name</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Roboto Font</td>
+<td><code>roboto-font</code></td>
+<td>Material主题的建议字体</td>
+</tr>
+<tr>
+<td>Roboto Font Latin Extended</td>
+<td><code>roboto-font-latin-ext</code></td>
+<td>Material主题的建议字体</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://material.io/tools/icons/?style=baseline">Material Icons</a></td>
+<td><code>material-icons</code></td>
+<td>Material风格的<code>icon</code></td>
+</tr>
+<tr>
+<td>MDI (Material Design Icons)</td>
+<td><code>mdi</code></td>
+<td>Material风格的<code>icon</code>扩展</td>
+</tr>
+<tr>
+<td>Font Awesome</td>
+<td><code>fontawesome</code></td>
+<td>自由选择<code>icon</code></td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://ionicons.com/">Ionicons</a></td>
+<td><code>ionicons</code></td>
+<td><code>ionicons</code>的<code>icon</code></td>
+</tr>
+<tr>
+<td>Animate.css</td>
+<td><code>animations</code></td>
+<td>网页组件动画</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><code>scopeHoiting</code></li>
+</ul>
+<p>默认<code>true</code>，用来提升<code>webpack</code>运行时的性能</p>
+<ul>
+<li><code>VueRouterMode</code></li>
+</ul>
+<p>设置<code>Vue Router</code>的模式，有<code>history</code>、<code>hash</code>两种值。</p>
+<ul>
+<li><code>vueCompiler</code></li>
+</ul>
+<p>包含两种Vue的编译模式<code>vue runtime</code>+<code>compiler</code>，默认只有<code>runtime-only</code>运行时编译</p>
+<ul>
+<li><code>gzip</code></li>
+</ul>
+<p>使网站支持<code>gzip</code>的格式。</p>
+<ul>
+<li><code>analyze</code></li>
+</ul>
+<p>在<code>build</code>时会运行<code>webpack-bundle-analyzer</code>工具。</p>
+<p><img src="https://d1dwq032kyr03c.cloudfront.net/upload/images/20181017/20111805z6Qs0mgwUv.png" alt=""></p>
+<ul>
+<li><code>extractCSS</code></li>
+</ul>
+<p>提取CSS到文件中。<a target="_blank" rel="noopener" href="https://vue-loader-v14.vuejs.org/zh-cn/configurations/extract-css.html">VueLoader</a></p>
+<ul>
+<li><code>extendWebpack</code></li>
+</ul>
+<p>在<code>dev</code>模式中服务器的设置。</p>
+<ul>
+<li><p><code>https</code></p>
+</li>
+<li><p><code>port</code></p>
+</li>
+</ul>
+<p>设置成指定的<code>port</code>，当quasar在运行<code>dev</code>模式时，遇到相同的<code>port</code>时会自己再<code>+1</code>。</p>
+<ul>
+<li><code>open</code></li>
+</ul>
+<p>是否在<code>dev</code>指令执行完成后，自动开启此网站的分页在浏览器上。</p>
+<h3 id="Layout"><a href="#Layout" class="headerlink" title="Layout"></a>Layout</h3><p><code>quasar dev</code>打开初始页面，页面的<code>header</code>和<code>drawer</code>都是在<code>layout/MyLayout.vue</code>里。</p>
+<p><img src="https://ithelp.ithome.com.tw/upload/images/20181018/20111805omoWvkNkQj.png" alt=""></p>
+<p>一些常用的属性：</p>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>取值</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>side</code></td>
+<td><code>String</code></td>
+<td>有两个值<code>left</code>，<code>right</code>，决定要出现在左边还是右边</td>
+</tr>
+<tr>
+<td><code>overlay</code></td>
+<td><code>Boolean</code></td>
+<td>设置侧边栏弹出时是挤压<code>q-page-container</code>还是直接盖在上面</td>
+</tr>
+<tr>
+<td><code>content-style</code></td>
+<td><code>Object</code></td>
+<td>设置侧边栏的CSS</td>
+</tr>
+<tr>
+<td><code>content-class</code></td>
+<td><code>String/Object/Array</code></td>
+<td>设置侧边栏的<code>class</code></td>
+</tr>
+<tr>
+<td><code>mini</code></td>
+<td><code>Boolean</code></td>
+<td>把侧边栏缩小到只有<code>icon</code></td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>这里的CSS要用<code>Object</code>的方式传入。</p>
+</blockquote>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line">:content-style=&quot;&#123;color: &#x27;red&#x27;&#125;&quot;</span><br></pre></td></tr></table></figure>
+<h2 id="旅游网站-Header"><a href="#旅游网站-Header" class="headerlink" title="旅游网站-Header"></a>旅游网站-Header</h2><p><strong>演示项目：</strong></p>
+<ul>
+<li>Toolbar</li>
+<li>ToolbarTitle</li>
+<li>Button</li>
+</ul>
+<p><p class="codepen" data-height="265" data-theme-id="0" data-default-tab="html" data-user="whjin" data-slug-hash="MLNxZN" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid black; margin: 1em 0; padding: 1em;" data-pen-title="旅游网站-Header"><br>  <span>See the Pen <a target="_blank" rel="noopener" href="https://codepen.io/whjin/pen/MLNxZN/"><br>  旅游网站-Header</a> by whjin (<a target="_blank" rel="noopener" href="https://codepen.io/whjin">@whjin</a>)<br>  on <a target="_blank" rel="noopener" href="https://codepen.io">CodePen</a>.</span><br></p></p>
+<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+
+<h3 id="Toolbar"><a href="#Toolbar" class="headerlink" title="Toolbar"></a>Toolbar</h3><ul>
+<li><code>color</code></li>
+</ul>
+<p>Quasar内建色：<a target="_blank" rel="noopener" href="http://www.quasarchs.com/components/color-palette.html">color-palette</a></p>
+<p>在<code>/src/css/themes/common.variables.styl</code>里面增加调色板的颜色。</p>
+<ul>
+<li><code>inverted</code></li>
+</ul>
+<p>让<strong>背景色</strong>变成<strong>白色</strong>，然后使原来白色的文字变成设置的<strong>背景色</strong>。</p>
+<ul>
+<li><code>glossy</code></li>
+</ul>
+<p>加上玻璃效果</p>
+<h3 id="QToolbarTitle"><a href="#QToolbarTitle" class="headerlink" title="QToolbarTitle"></a>QToolbarTitle</h3><ul>
+<li><code>gt-xs</code></li>
+</ul>
+<p>用来设置显示像素高于<code>576px</code>的页面样式。</p>
+<ul>
+<li><code>q-mr-md</code></li>
+</ul>
+<p><code>mr</code>等于<code>margin-right</code><br><code>sm</code>就是<code>size</code>的值为<code>small</code></p>
+<p><img src="https://ithelp.ithome.com.tw/upload/images/20181019/20111805O7e642RHjY.png" alt=""></p>
+<p><strong>其他非外观的功能属性：</strong></p>
+<ul>
+<li><code>disable</code>，<code>:disable=&quot;true&quot;</code>时按钮禁用</li>
+<li><code>label</code>设置按钮的文字</li>
+<li><code>type</code>可以是<code>button</code>、<code>submit</code>、<code>reset</code>其中一种</li>
+<li><code>loading</code>，值为<code>true</code>显示读取中</li>
+<li><code>percentage</code>显示读取的圆圈，要跟<code>loading</code>一起使用</li>
+<li><code>dark-percentage</code>用在亮色系的按钮上</li>
+</ul>
+<h3 id="List-amp-ListItem"><a href="#List-amp-ListItem" class="headerlink" title="List&amp;ListItem"></a>List&amp;ListItem</h3><p><strong>修改Drawer</strong></p>
+<ul>
+<li><code>v-model=&quot;rightDrawerOpen&quot;</code>控制弹出侧边栏的位置</li>
+<li><code>content-class=&quot;bg-grey-10&quot;</code>背景色</li>
+<li><code>side=&quot;right&quot;</code>按钮设置在多边</li>
+</ul>
+<p>设置了<code>rightDrawerOpen</code>需要加到<code>data</code>里。</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">  <span class="attr">name</span>: <span class="string">&#x27;MyLayout&#x27;</span>,</span><br><span class="line">  data () &#123;</span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">      <span class="attr">rightDrawerOpen</span>: <span class="literal">false</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="手机端按钮"><a href="#手机端按钮" class="headerlink" title="手机端按钮"></a>手机端按钮</h3><p>控制显示的<code>class</code>用<code>lt-sm</code>只要像素小于<code>sm(768px)</code>就会显示该区域。</p>
+<h3 id="设置List和ListItem"><a href="#设置List和ListItem" class="headerlink" title="设置List和ListItem"></a>设置List和<code>ListItem</code></h3><p><strong>使用Dark属性使得组件内容在暗色背景下更好显示</strong></p>
+<p>List中可用组件，这些组件需要自己去配置文件中自行引入。</p>
+<ul>
+<li><code>QListHeader</code>List上的标题</li>
+<li><code>QItemSeparator</code>分割线</li>
+<li><code>QItem</code></li>
+<li><code>QItemSide</code>可分成左右两侧的区块</li>
+<li><code>QItemMain</code>中间的区块</li>
+<li><code>QItemTitle</code>区块中的标题</li>
+</ul>
+<h2 id="旅游网站-Carousel页面轮播"><a href="#旅游网站-Carousel页面轮播" class="headerlink" title="旅游网站-Carousel页面轮播"></a>旅游网站-Carousel页面轮播</h2><h3 id="建立新的首页"><a href="#建立新的首页" class="headerlink" title="建立新的首页"></a>建立新的首页</h3><p>在<code>src/pages/</code>下新建<code>Index</code>文件夹，并在此文件夹下新建<code>Index.vue</code>作为首页，删除原来的<code>Index.vue</code>文件。</p>
+<h3 id="修改Vue-Router"><a href="#修改Vue-Router" class="headerlink" title="修改Vue Router"></a>修改Vue Router</h3><p>在<code>src/router/routers.js</code>修改<code>Index.vue</code>的路径。</p>
+<h3 id="建立轮播的区块"><a href="#建立轮播的区块" class="headerlink" title="建立轮播的区块"></a>建立轮播的区块</h3><p>在<code>src/pages/Index</code>下新建<code>SectionCarousel.vue</code>，并在<code>Index.vue</code>中引入。</p>
+<p>然后再<code>template</code>下的<code>q-page</code>中加入<code>section-carousel</code></p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">q-page</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">section-carousel</span>&gt;</span><span class="tag">&lt;/<span class="name">section-carousel</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">q-page</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="开始写轮播"><a href="#开始写轮播" class="headerlink" title="开始写轮播"></a>开始写轮播</h3><p><a target="_blank" rel="noopener" href="http://www.quasarchs.com/components/carousel.html">官方Carousel</a></p>
+<p>在设置文件<code>quasa.config.js</code>中引入：</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="attr">framework</span>: &#123;</span><br><span class="line">  <span class="attr">components</span>: [</span><br><span class="line">    <span class="string">&#x27;QCarousel&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;QCarouselSlide&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;QCarouselControl&#x27;</span></span><br><span class="line">    ...</span><br><span class="line">  ],</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="加入轮播的图片-页面"><a href="#加入轮播的图片-页面" class="headerlink" title="加入轮播的图片/页面"></a>加入轮播的图片/页面</h3><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">q-carousel</span></span></span><br><span class="line"><span class="tag">    <span class="attr">color</span>=<span class="string">&quot;white&quot;</span></span></span><br><span class="line"><span class="tag">    <span class="attr">infinite</span></span></span><br><span class="line"><span class="tag">    <span class="attr">arrows</span></span></span><br><span class="line"><span class="tag">    <span class="attr">autoplay</span></span></span><br><span class="line"><span class="tag">    <span class="attr">height</span>=<span class="string">&quot;400px&quot;</span></span></span><br><span class="line"><span class="tag">  &gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">q-carousel-slide</span> <span class="attr">img-src</span>=<span class="string">&quot;statics/images/papercut1.jpg&quot;</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">q-carousel-slide</span> <span class="attr">img-src</span>=<span class="string">&quot;statics/images/papercut2.jpg&quot;</span>/&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">q-carousel</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="加入文字区块"><a href="#加入文字区块" class="headerlink" title="加入文字区块"></a>加入文字区块</h3><p>Quasar在<code>carousel</code>中有个子组件<code>QCarouselControl</code>用来自定义按钮在页面上。</p>
+<p>根据官方文档的范例，<code>QCarouselControl</code>要放在<code>QCarousel</code>的最后面，也就是<code>QCarouselSlide</code>的后面。</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">q-carousel-control</span></span></span><br><span class="line"><span class="tag">  <span class="attr">position</span>=<span class="string">&quot;center&quot;</span></span></span><br><span class="line"><span class="tag">  <span class="attr">slot</span>=<span class="string">&quot;control-nav&quot;</span></span></span><br><span class="line"><span class="tag">  <span class="attr">slot-scope</span>=<span class="string">&quot;carousel&quot;</span></span></span><br><span class="line"><span class="tag">  <span class="attr">class</span>=<span class="string">&quot;carouselInput&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">q-carousel-control</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>在<code>q-carousel-control</code>中加入内容：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;main&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">h6</span> <span class="attr">class</span>=<span class="string">&quot;title&quot;</span>&gt;</span>新锐旅游网站<span class="tag">&lt;/<span class="name">h6</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">&quot;subtitle&quot;</span>&gt;</span>您身边的好玩专家<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">p</span>&gt;</span>发现周边好玩的地方，玩得快乐，玩得精彩。<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="加上CSS"><a href="#加上CSS" class="headerlink" title="加上CSS"></a>加上CSS</h3><figure class="highlight css"><table><tr><td class="code"><pre><span class="line">&lt;style lang=&quot;stylus&quot; scoped&gt;</span><br><span class="line">  <span class="selector-class">.carouselInput</span> &#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">90%</span></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="selector-class">.carouselInput</span> <span class="selector-class">.main</span> &#123;</span><br><span class="line">    <span class="attribute">text-align</span> center</span><br><span class="line">    <span class="attribute">color</span>: <span class="number">#f50057</span></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="selector-class">.carouselInput</span> <span class="selector-class">.title</span> &#123;</span><br><span class="line">    <span class="attribute">font-size</span> <span class="number">48px</span></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="selector-class">.carouselInput</span> <span class="selector-class">.subtitle</span> &#123;</span><br><span class="line">    <span class="attribute">font-size</span> <span class="number">24px</span></span><br><span class="line">  &#125;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="调整手机版CSS"><a href="#调整手机版CSS" class="headerlink" title="调整手机版CSS"></a>调整手机版CSS</h3><figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@media</span> (<span class="attribute">min-width</span>: <span class="number">768px</span>) &#123;</span><br><span class="line">  <span class="selector-class">.carouselInput</span> <span class="selector-class">.title</span> &#123;</span><br><span class="line">    <span class="attribute">font-size</span> <span class="number">48px</span></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="selector-class">.carouselInput</span> <span class="selector-class">.subtitle</span> &#123;</span><br><span class="line">    <span class="attribute">font-size</span> <span class="number">24px</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">@media</span> (<span class="attribute">max-width</span>: <span class="number">768px</span>) &#123;</span><br><span class="line">  <span class="selector-class">.carouselInput</span> <span class="selector-class">.title</span> &#123;</span><br><span class="line">    <span class="attribute">font-size</span> <span class="number">24px</span></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="selector-class">.carouselInput</span> <span class="selector-class">.subtitle</span> &#123;</span><br><span class="line">    <span class="attribute">font-size</span> <span class="number">16px</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="旅游网站-搜索框"><a href="#旅游网站-搜索框" class="headerlink" title="旅游网站-搜索框"></a>旅游网站-搜索框</h2><h3 id="加入搜索框"><a href="#加入搜索框" class="headerlink" title="加入搜索框"></a>加入搜索框</h3><p><strong><code>input</code></strong></p>
+<p>首先到<code>quasar.config.js</code>中引入<code>QInput</code></p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="attr">framework</span>: &#123;</span><br><span class="line">  <span class="attr">components</span>: [<span class="string">&#x27;QInput&#x27;</span>]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>在<code>&lt;div class=&quot;main&quot;&gt;</code>后面加入<code>q-input</code>内容：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">q-input</span></span></span><br><span class="line"><span class="tag">  <span class="attr">inverted-light</span></span></span><br><span class="line"><span class="tag">  <span class="attr">color</span>=<span class="string">&quot;white&quot;</span></span></span><br><span class="line"><span class="tag">  <span class="attr">placeholder</span>=<span class="string">&quot;输入城市/景点 或是想去的地方&quot;</span></span></span><br><span class="line"><span class="tag">  <span class="attr">:after</span>=<span class="string">&quot;[&#123;icon:&#x27;fas fa-search-location&#x27;&#125;]&quot;</span></span></span><br><span class="line"><span class="tag">  <span class="attr">v-model</span>=<span class="string">&quot;search&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">q-input</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>inverted</code>显示<strong>背景</strong></li>
+<li><code>color</code>主题颜色</li>
+<li><code>after</code>用来显示输入框前后<code>icon</code></li>
+</ul>
+<p>最后绑定<code>v-model=&quot;search&quot;</code>，此时需要在<code>data</code>中添加<code>value</code>值，否则会报错。</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="title function_">data</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> &#123;</span><br><span class="line">    <span class="attr">search</span>: <span class="string">&#x27;&#x27;</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="调整排版"><a href="#调整排版" class="headerlink" title="调整排版"></a>调整排版</h3><blockquote>
+<p>使用<a target="_blank" rel="noopener" href="http://www.quasarchs.com/components/flex-css.html">Flex CSS</a>调整组件长度。</p>
+</blockquote>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;row&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;col-md-2 col-xs-1&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;col-md-8 col-xs-10&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">q-input</span> <span class="attr">...</span>&gt;</span><span class="tag">&lt;/<span class="name">q-input</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;col-md-2 col-xs-1&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="自动填入autocomplete"><a href="#自动填入autocomplete" class="headerlink" title="自动填入autocomplete"></a>自动填入<code>autocomplete</code></h3><p>引入<code>QAutocomplete</code>组件：</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="attr">framework</span>: &#123;</span><br><span class="line">  <span class="attr">components</span>: [<span class="string">&#x27;QAutocomplete&#x27;</span>]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>加入<code>q-autocomplete</code>：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">q-input</span> <span class="attr">...</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">q-autocomplete</span> <span class="attr">:static-data</span>=<span class="string">&quot;&#123;field: &#x27;label&#x27;, list: countries&#125;&quot;</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">q-input</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>static-data</code><ul>
+<li><code>field</code>用于搜索数据的栏位</li>
+<li><code>list</code>搜索的数据来源</li>
+</ul>
+</li>
+</ul>
+<h3 id="设置静态数据"><a href="#设置静态数据" class="headerlink" title="设置静态数据"></a>设置静态数据</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="attr">countries</span>: [</span><br><span class="line">  &#123;<span class="attr">label</span>: <span class="string">&#x27;广州市&#x27;</span>, <span class="attr">icon</span>: <span class="string">&#x27;fas fa-map-marker-alt&#x27;</span>&#125;,</span><br><span class="line">  &#123;<span class="attr">label</span>: <span class="string">&#x27;深圳市&#x27;</span>, <span class="attr">icon</span>: <span class="string">&#x27;fas fa-map-marker-alt&#x27;</span>&#125;,</span><br><span class="line">  &#123;<span class="attr">label</span>: <span class="string">&#x27;珠海市&#x27;</span>, <span class="attr">icon</span>: <span class="string">&#x27;fas fa-map-marker-alt&#x27;</span>&#125;,</span><br><span class="line">  &#123;<span class="attr">label</span>: <span class="string">&#x27;[网美景点]香山公园，秋季赏枫胜地&#x27;</span>, <span class="attr">stamp</span>: <span class="string">&#x27;北京市&#x27;</span>&#125;,</span><br><span class="line">  &#123;<span class="attr">label</span>: <span class="string">&#x27;珠海长隆[海豚剧场]精彩不容错过！精彩变身演出抢先看&#x27;</span>, </span><br><span class="line">   <span class="attr">stamp</span>: <span class="string">&#x27;珠海，长隆&#x27;</span>, <span class="attr">rightTextColor</span>: <span class="string">&#x27;pink-13&#x27;</span>&#125;</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+<h3 id="自定义过滤器filter"><a href="#自定义过滤器filter" class="headerlink" title="自定义过滤器filter"></a>自定义过滤器<code>filter</code></h3><p>在<code>q-autocomplete</code>中加入<code>filter</code>：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">q-autocomplete</span></span></span><br><span class="line"><span class="tag">  <span class="attr">:static-data</span>=<span class="string">&quot;&#123;field: &#x27;label&#x27;, list: countries&#125;&quot;</span></span></span><br><span class="line"><span class="tag">  <span class="attr">:filter</span>=<span class="string">&quot;advFilter&quot;</span></span></span><br><span class="line"><span class="tag">/&gt;</span></span><br></pre></td></tr></table></figure>
+<p>引入<code>lodash</code>处理<code>filter</code>。</p>
+<h2 id="旅游网站-Popover弹出框"><a href="#旅游网站-Popover弹出框" class="headerlink" title="旅游网站-Popover弹出框"></a>旅游网站-Popover弹出框</h2><h3 id="加入Popover组件"><a href="#加入Popover组件" class="headerlink" title="加入Popover组件"></a>加入Popover组件</h3><p>在<code>quasar.config.js</code>中引入<code>QPopover</code>。<a target="_blank" rel="noopener" href="http://www.quasarchs.com/components/popover.html">Popover</a></p>
+<ul>
+<li><code>no-focus</code>不设焦点</li>
+<li><code>fit</code>弹出框跟输入框等长</li>
+<li><code>v-show=&quot;!search&quot;</code>弹框和候选框不同时出现</li>
+</ul>
+<h3 id="内容排版"><a href="#内容排版" class="headerlink" title="内容排版"></a>内容排版</h3><p>使用<code>FlexCSS</code>来进行排版。</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;row viewList&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;col-sm-4 col-xs-12&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;col-sm-4 col-xs-12&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;col-sm-4 col-xs-12&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>设配手机端，在CSS底部加入：</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@media</span> (<span class="attribute">max-width</span>: <span class="number">576px</span>) &#123;</span><br><span class="line">  <span class="selector-class">.viewList</span> &#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">280px</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>解决在手机像素下原来<code>Popover</code>不能自动<code>fix</code>的问。这里应该是小于Popover的<code>fix</code>的<strong>最小宽度</strong>。</p>
+<h3 id="设置内容-List-amp-Item"><a href="#设置内容-List-amp-Item" class="headerlink" title="设置内容(List&amp;Item)"></a>设置内容(List&amp;Item)</h3><p>列表类直接用<code>list</code>做最快。</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;col-sm-4 col-xs-12&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">q-list</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">q-list-header</span>&gt;</span>热门目的地<span class="tag">&lt;/<span class="name">q-list-header</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">q-item</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">q-item-main</span>&gt;</span>珠海<span class="tag">&lt;/<span class="name">q-item-main</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">q-item</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">q-list</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="加入右侧Icon及文字"><a href="#加入右侧Icon及文字" class="headerlink" title="加入右侧Icon及文字"></a>加入右侧Icon及文字</h3><p>在<code>src/components</code>下新建<code>LIcon.vue</code>，提升组件复用。</p>
+<p>主要使用了<code>q-icon</code>来引入<a target="_blank" rel="noopener" href="http://www.fontawesome.com.cn/">Font Awesome</a>的<code>icon</code>。</p>
+<h3 id="在原来的页面引入子组件"><a href="#在原来的页面引入子组件" class="headerlink" title="在原来的页面引入子组件"></a>在原来的页面引入子组件</h3><blockquote>
+<p>具体代码：<br><a target="_blank" rel="noopener" href="https://github.com/whjin/make-quasar/blob/master/src/pages/Index/SectionCarousel.vue">SectionCarousel.vue</a><br><a target="_blank" rel="noopener" href="https://github.com/whjin/make-quasar/blob/master/src/components/LIcon.vue">src/components/LIcon.vue</a></p>
+</blockquote>
+<h2 id="旅游网站-Cards卡片"><a href="#旅游网站-Cards卡片" class="headerlink" title="旅游网站-Cards卡片"></a>旅游网站-Cards卡片</h2><h3 id="建立并引入第二个区块"><a href="#建立并引入第二个区块" class="headerlink" title="建立并引入第二个区块"></a>建立并引入第二个区块</h3><p>在<code>src/pages/Index</code>下新建<code>SectionCards.vue</code>组件，用来作为卡片区块。</p>
+<p>在<code>Index.vue</code>中引入<code>SectionCards.vue</code>。</p>
+<h3 id="区块内版面规划"><a href="#区块内版面规划" class="headerlink" title="区块内版面规划"></a>区块内版面规划</h3><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;row&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;col-12&quot;</span>&gt;</span><span class="tag">&lt;<span class="name">b</span>&gt;</span>本月最精选<span class="tag">&lt;/<span class="name">b</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;col-lg-3 col-sm-6 col-xs-12&quot;</span>&gt;</span>卡片一<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;col-lg-3 col-sm-6 col-xs-12&quot;</span>&gt;</span>卡片二<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;col-lg-3 col-sm-6 col-xs-12&quot;</span>&gt;</span>卡片三<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;col-lg-3 col-sm-6 col-xs-12&quot;</span>&gt;</span>卡片四<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="制作卡片"><a href="#制作卡片" class="headerlink" title="制作卡片"></a>制作卡片</h3><p>卡片内的内容都会大量重复，所以直接把卡片独立成一个组件。</p>
+<p>在<code>src/components/</code>下新建一个<code>LCard.vue</code>。</p>
+<blockquote>
+<p>在<code>quasar.config.js</code>中引入卡片组件<a target="_blank" rel="noopener" href="http://www.quasarchs.com/components/card.html">Cards</a></p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="attr">framework</span>: &#123;</span><br><span class="line">  <span class="attr">components</span>: [</span><br><span class="line">    <span class="string">&#x27;QCard&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;QCardTitle&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;QCardMain&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;QCardMedia&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;QCardSeparator&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;QCardActions&#x27;</span></span><br><span class="line">  ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>卡片主要分成三个部分：</p>
+<ul>
+<li><code>q-card-media</code>放照片影片的区块</li>
+<li><code>q-card-title</code>卡片的标题</li>
+<li><code>q-card-main</code>卡片的主内容</li>
+<li><code>q-card-actions</code>用来放按钮等操作的区块</li>
+<li><code>q-card-separator</code>分隔线</li>
+</ul>
+<p>在<code>SectionCards.vue</code>中引入<code>LCard.vue</code>。</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;col-lg-3 col-sm-6 col-xs-12&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">l-card</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="title class_">LCard</span> <span class="keyword">from</span> <span class="string">&#x27;src/components/LCard.vue&#x27;</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">  <span class="attr">components</span>:&#123;</span><br><span class="line">    <span class="title class_">LCard</span></span><br><span class="line">  &#125;,</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="加上Icon"><a href="#加上Icon" class="headerlink" title="加上Icon"></a>加上Icon</h3><p>继续补上<strong>评分</strong>和<strong>地标</strong>的<code>Icon</code>。</p>
+<h3 id="让LCard的文字能从父组件引入"><a href="#让LCard的文字能从父组件引入" class="headerlink" title="让LCard的文字能从父组件引入"></a>让LCard的文字能从父组件引入</h3><p>让<code>LCard.vue</code>能够动态获取数据：</p>
+<p><p class="codepen" data-height="365" data-theme-id="0" data-default-tab="html" data-user="whjin" data-slug-hash="OqJpKq" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid black; margin: 1em 0; padding: 1em;" data-pen-title="Quasar-LCard.vue"><br>  <span>See the Pen <a target="_blank" rel="noopener" href="https://codepen.io/whjin/pen/OqJpKq/"><br>  Quasar-LCard.vue</a> by whjin (<a target="_blank" rel="noopener" href="https://codepen.io/whjin">@whjin</a>)<br>  on <a target="_blank" rel="noopener" href="https://codepen.io">CodePen</a>.</span><br></p></p>
+<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+
+<h3 id="在SectionCards设置数据"><a href="#在SectionCards设置数据" class="headerlink" title="在SectionCards设置数据"></a>在SectionCards设置数据</h3><p>新增一个<code>data</code>数据<code>monthBestList</code>，然后在<code>template</code>模板中使用<code>v-for</code>获取数据并显示。</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span> <span class="attr">v-for</span>=<span class="string">&quot;(data,index) in monthBestList&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;col-lg-3 col-sm-6 col-xs-12 q-pa-sm&quot;</span> <span class="attr">:key</span>=<span class="string">&quot;index&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">l-card</span></span></span><br><span class="line"><span class="tag">      <span class="attr">:title</span>=<span class="string">&quot;data.title&quot;</span></span></span><br><span class="line"><span class="tag">      <span class="attr">:rate</span>=<span class="string">&quot;data.rate&quot;</span></span></span><br><span class="line"><span class="tag">      <span class="attr">:comment</span>=<span class="string">&quot;data.comment&quot;</span></span></span><br><span class="line"><span class="tag">      <span class="attr">:view</span>=<span class="string">&quot;data.view&quot;</span></span></span><br><span class="line"><span class="tag">      <span class="attr">:locate</span>=<span class="string">&quot;data.locate&quot;</span></span></span><br><span class="line"><span class="tag">      <span class="attr">:image</span>=<span class="string">&quot;data.image&quot;</span></span></span><br><span class="line"><span class="tag">    /&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="调整CSS及layout"><a href="#调整CSS及layout" class="headerlink" title="调整CSS及layout"></a>调整CSS及layout</h3><h2 id="旅游网站-制作景点详情页"><a href="#旅游网站-制作景点详情页" class="headerlink" title="旅游网站-制作景点详情页"></a>旅游网站-制作景点详情页</h2><p>在<code>src/pages</code>下新建<code>place</code>文件夹，并在此文件夹下新建<code>Index.vue</code>作为文章的主要页面。</p>
+<h3 id="设置Vue-Router"><a href="#设置Vue-Router" class="headerlink" title="设置Vue Router"></a>设置Vue Router</h3><p>要进行页面导航/切换需要用到Vue Router。</p>
+<p>在<code>router/routes.js</code>中加入导航：</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> routes = [</span><br><span class="line">  &#123;</span><br><span class="line">    <span class="attr">path</span>: <span class="string">&#x27;/&#x27;</span>,</span><br><span class="line">    <span class="attr">component</span>: <span class="function">() =&gt;</span> <span class="keyword">import</span>(<span class="string">&#x27;layouts/MyLayout.vue&#x27;</span>),</span><br><span class="line">    <span class="attr">children</span>: [</span><br><span class="line">      &#123;<span class="attr">path</span>: <span class="string">&#x27;&#x27;</span>, <span class="attr">component</span>: <span class="function">() =&gt;</span> <span class="keyword">import</span>(<span class="string">&#x27;pages/Index&#x27;</span>)&#125;,</span><br><span class="line">      &#123;<span class="attr">path</span>: <span class="string">&#x27;Place&#x27;</span>, <span class="attr">component</span>: <span class="function">() =&gt;</span> <span class="keyword">import</span>(<span class="string">&#x27;pages/Place&#x27;</span>)&#125;</span><br><span class="line">    ]</span><br><span class="line">  &#125;</span><br><span class="line">];</span><br></pre></td></tr></table></figure>
+<p>在<code>http://localhost:8080/#/place</code>中查看效果。</p>
+<h3 id="加入视差-Parallax-组件"><a href="#加入视差-Parallax-组件" class="headerlink" title="加入视差(Parallax)组件"></a>加入视差(Parallax)组件</h3><blockquote>
+<p><a target="_blank" rel="noopener" href="http://www.quasarchs.com/components/parallax.html">视差(Parallax)</a></p>
+</blockquote>
+<p>在<code>quasar.config.js</code>中引入<code>QParallax</code>组件。</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">q-page</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">q-parallax</span> <span class="attr">:src</span>=<span class="string">&quot;localData.image&quot;</span> <span class="attr">:height</span>=<span class="string">&quot;400&quot;</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">p</span>&gt;</span>&#123;&#123; localData.title &#125;&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">q-parallax</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">q-page</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="主题部分的页面排版"><a href="#主题部分的页面排版" class="headerlink" title="主题部分的页面排版"></a>主题部分的页面排版</h3><p>按照8格+4格进行排版：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;row place-main&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;col-8&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;col-4&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>CSS补上左右<code>margin 5%</code>让页面看起来不会太满。</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.place-main</span> &#123;</span><br><span class="line">  <span class="attribute">margin-left</span> <span class="number">5%</span></span><br><span class="line">  <span class="attribute">margin-right</span> <span class="number">5%</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="设置左边画面"><a href="#设置左边画面" class="headerlink" title="设置左边画面"></a>设置左边画面</h3><p>这里要用Quasar的面包屑<a target="_blank" rel="noopener" href="http://www.quasarchs.com/components/breadcrumbs.html">BreadCrumbs</a>组件。</p>
+<p>在<code>quasar.config.js</code>中引入：</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="string">&#x27;QBreadcrumbs&#x27;</span>,</span><br><span class="line"><span class="string">&#x27;QBreadcrumbsEl&#x27;</span>,</span><br></pre></td></tr></table></figure>
+<h3 id="加上景点信息及评分的排版"><a href="#加上景点信息及评分的排版" class="headerlink" title="加上景点信息及评分的排版"></a>加上景点信息及评分的排版</h3><p>这里按照<code>8格+4格</code>设定，左侧栏要设为文字靠右对齐。</p>
+<h3 id="加上景点信息"><a href="#加上景点信息" class="headerlink" title="加上景点信息"></a>加上景点信息</h3><p>引入<code>LIcon.vue</code>图标组件：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;col-8 info-left&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">l-icon</span> </span></span><br><span class="line"><span class="tag">    <span class="attr">class</span>=<span class="string">&quot;q-mt-sm&quot;</span> </span></span><br><span class="line"><span class="tag">    <span class="attr">:text</span>=<span class="string">&quot;&#x27;景点编号：&#x27; + localData.id&quot;</span> </span></span><br><span class="line"><span class="tag">    <span class="attr">:icon</span>=<span class="string">&quot;&#x27;fas fa-tag&#x27;&quot;</span> </span></span><br><span class="line"><span class="tag">    <span class="attr">:color</span>=<span class="string">&quot;&#x27;grey&#x27;&quot;</span>/&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line">  ...</span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="加上评分"><a href="#加上评分" class="headerlink" title="加上评分"></a>加上评分</h3><p>评分组件<a target="_blank" rel="noopener" href="http://www.quasarchs.com/components/rating.html">Rating</a></p>
+<h2 id="表单组件-Field"><a href="#表单组件-Field" class="headerlink" title="表单组件-Field"></a>表单组件-Field</h2><blockquote>
+<p><a target="_blank" rel="noopener" href="http://www.quasarchs.com/components/field.html">表单字段(Field)</a></p>
+</blockquote>
+<p>Field的组件有<code>QInput</code>、<code>QSeclet</code>、<code>QDatetime</code>、<code>QChipsInput</code></p>
+<h3 id="引入组件"><a href="#引入组件" class="headerlink" title="引入组件"></a>引入组件</h3><p>在<code>quasar.config.js</code>中引入组件</p>
+<h3 id="基本范例"><a href="#基本范例" class="headerlink" title="基本范例"></a>基本范例</h3><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">q-field</span></span></span><br><span class="line"><span class="tag">  <span class="attr">label</span>=<span class="string">&quot;信箱&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">q-input</span> <span class="attr">suffix</span>=<span class="string">&quot;@gmail.com&quot;</span> <span class="attr">v-model</span>=<span class="string">&quot;model&quot;</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">q-field</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>label</code>设置标题文字</li>
+<li><code>icon</code>设置标题的<code>icon</code></li>
+<li><code>icon-color</code>设置标题<code>icon</code>的颜色</li>
+<li><code>helper</code>组件地下的辅助文字</li>
+<li><code>error</code>控制组件在错误时会变成红色警示</li>
+<li><code>error-label</code>错误时会显示的文字</li>
+<li><code>warning</code>控制组件是否为警告状态</li>
+<li><code>warning-label</code>同<code>error-label</code></li>
+<li><code>count</code>显示目前输入多少文字</li>
+<li><code>inset</code>用来为没有<code>icon/label</code>的栏位留空</li>
+<li><code>orientation</code>组件的排列方向（水平<code>horizontal</code>/垂直<code>vertical</code>）</li>
+<li><code>label-width</code>文字区块的宽度（以<code>12</code>格宽度划分）假设文字的宽度要和输入一样长，则设定为<code>6</code></li>
+<li><code>dark</code>是文字反白，适用在暗色背景下</li>
+</ul>
+<h2 id="表单组件-Chips-Input"><a href="#表单组件-Chips-Input" class="headerlink" title="表单组件-Chips Input"></a>表单组件-Chips Input</h2><blockquote>
+<p><a target="_blank" rel="noopener" href="http://www.quasarchs.com/components/chips-input.html">Chips Input</a></p>
+</blockquote>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">q-chips-input</span> <span class="attr">float-label</span>=<span class="string">&quot;兴趣&quot;</span> <span class="attr">v-model</span>=<span class="string">&quot;model&quot;</span> /&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">export default &#123;</span><br><span class="line">  data() &#123;</span><br><span class="line">    return &#123;</span><br><span class="line">      model: []</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="外观属性"><a href="#外观属性" class="headerlink" title="外观属性"></a>外观属性</h3><ul>
+<li><code>chips-color</code>改变<code>chips</code>的颜色</li>
+<li><code>chips-bg-color</code>改变<code>chips</code>的背景颜色</li>
+<li><code>add-icon</code>替换输入时显示在右边的<code>enter</code>按钮<code>icon</code></li>
+</ul>
+<h3 id="基本属性"><a href="#基本属性" class="headerlink" title="基本属性"></a>基本属性</h3><ul>
+<li><code>prefix</code>加入前缀文字（不影响<code>array</code>内的值）</li>
+<li><code>suffix</code>加入后缀文字，可以跟前缀一起用</li>
+<li><code>hide-underline</code>移除原本输入框的底线</li>
+<li><code>no-parent-field</code>如果外面套有QField，可以避免跟QField的效果连结</li>
+<li><code>upper-case</code>自动转大写</li>
+<li><code>lower-case</code>自动转小写</li>
+</ul>
+<p><strong>大部分组件都会重复的基本属性</strong></p>
+<ul>
+<li><code>float-label</code>悬浮标题</li>
+<li><code>stack-label</code>固定式标题</li>
+<li><code>color</code>组件颜色</li>
+<li><code>inverted</code>是否有背景色</li>
+<li><code>inverted-light</code>改善亮色背景下组件的显示</li>
+<li><code>dark</code>改善暗色背景下组件的显示</li>
+<li><code>error</code>错误</li>
+<li><code>warning</code>警告</li>
+<li><code>disable</code>跟<code>readonly</code>类似，但是会有灰键效果</li>
+</ul>
+<h3 id="事件属性"><a href="#事件属性" class="headerlink" title="事件属性"></a>事件属性</h3><ul>
+<li><code>@input(newVal)</code>输入文字的同事就会触发</li>
+<li><code>@change(newVal)</code>数组数值改变触发</li>
+<li><code>@clear(clearVal)</code>数组被清空时触发</li>
+<li><code>@duplicate(val)</code>输入重复的值时触发</li>
+<li><code>@add(val)</code>输入时触发</li>
+<li><code>@remove(&#123;index, value&#125;)</code>其中一个组件被删除时触发</li>
+</ul>
+<h3 id="方法属性-Vue-Methods"><a href="#方法属性-Vue-Methods" class="headerlink" title="方法属性(Vue Methods)"></a>方法属性(Vue Methods)</h3><p>这里的用法通常都是在组件中加入<code>red</code>属性，然后再其他地方使用<code>this.$refs</code>来对这些组件进行操作。</p>
+<ul>
+<li><code>add(value)</code>加入值到组件的数组中</li>
+<li><code>remove(index)</code>删除指定索引的值</li>
+<li><code>focus()</code>聚焦在组件上</li>
+<li><code>select()</code>选择组件</li>
+<li><code>clear()</code>清除组件中数组的值</li>
+</ul>
+<h2 id="表单组件-Radio"><a href="#表单组件-Radio" class="headerlink" title="表单组件-Radio"></a>表单组件-Radio</h2><blockquote>
+<p>引入组件<code>QRadio</code>，<a target="_blank" rel="noopener" href="http://www.quasarchs.com/components/radio.html">单选框(Radio)</a></p>
+</blockquote>
+<h3 id="与QField一起使用"><a href="#与QField一起使用" class="headerlink" title="与QField一起使用"></a>与QField一起使用</h3><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">q-field</span></span></span><br><span class="line"><span class="tag">        <span class="attr">label</span>=<span class="string">&quot;黄金周去哪玩？&quot;</span></span></span><br><span class="line"><span class="tag">        <span class="attr">orientation</span>=<span class="string">&quot;vertical&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">q-radio</span> <span class="attr">v-model</span>=<span class="string">&quot;model&quot;</span> <span class="attr">label</span>=<span class="string">&quot;去杭州&quot;</span> <span class="attr">val</span>=<span class="string">&quot;hangzhou&quot;</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">q-radio</span> <span class="attr">v-model</span>=<span class="string">&quot;model&quot;</span> <span class="attr">label</span>=<span class="string">&quot;去北京&quot;</span> <span class="attr">val</span>=<span class="string">&quot;beijing&quot;</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">q-radio</span> <span class="attr">v-model</span>=<span class="string">&quot;model&quot;</span> <span class="attr">label</span>=<span class="string">&quot;去成都&quot;</span> <span class="attr">val</span>=<span class="string">&quot;chengdu&quot;</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">q-field</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="基本属性-1"><a href="#基本属性-1" class="headerlink" title="基本属性"></a>基本属性</h3><ul>
+<li><code>val</code>存储绑定变量的值</li>
+<li><code>label</code>组件上的文字</li>
+<li><code>left-label</code>设定为<code>true</code>时，文字会改变显示在选项的左边</li>
+<li><code>checked-icon</code>改变选取时的icon</li>
+<li><code>unchecked-icon</code>改变未选取时的icon</li>
+<li><code>color</code>改变组件的颜色</li>
+<li><code>keep-color</code>没选取时也会有颜色（默认是灰色）</li>
+<li><code>readonly</code>只读属性</li>
+<li><code>disable</code>禁用</li>
+<li><code>dark</code>在暗色背景时，凸显组件文字</li>
+<li><code>no-focus</code>不会触发聚焦事件</li>
+</ul>
+<h3 id="基本事件"><a href="#基本事件" class="headerlink" title="基本事件"></a>基本事件</h3><ul>
+<li><code>@input</code>选取时触发</li>
+<li><code>@blur</code>失去焦点（点到其他地方）时触发</li>
+<li><code>@focus</code>聚焦（点选该组件）时触发</li>
+</ul>
+<h2 id="表单组件-Checkbox"><a href="#表单组件-Checkbox" class="headerlink" title="表单组件-Checkbox"></a>表单组件-Checkbox</h2><blockquote>
+<p><a target="_blank" rel="noopener" href="http://www.quasarchs.com/components/checkbox.html">复选框(Checkbox)</a></p>
+</blockquote>
+<h3 id="引入组件-1"><a href="#引入组件-1" class="headerlink" title="引入组件"></a>引入组件</h3><p>在<code>quasai.config.js</code>中引入<code>QCheckbox</code>。</p>
+<p>复选框需要绑定数据类型为<code>Array</code>，也需要和<code>QField</code>一起使用。</p>
+<h3 id="基本属性-2"><a href="#基本属性-2" class="headerlink" title="基本属性"></a>基本属性</h3><ul>
+<li><code>val</code>数值，加入到<code>v-model</code>绑定的变量中</li>
+<li><code>true-value</code>如果<code>model</code>不是数组，在选取时会给<code>model</code>值<code>true</code>，用来取代<code>true</code></li>
+<li><code>false-value</code>同上解析</li>
+<li><code>indeterminate-value</code>用来替换<code>null</code></li>
+<li><code>toggle-indeterminate</code>使点击可以让状态在以上三个中转换</li>
+</ul>
+<h2 id="表单组件-Toggle"><a href="#表单组件-Toggle" class="headerlink" title="表单组件-Toggle"></a>表单组件-Toggle</h2><blockquote>
+<p><a target="_blank" rel="noopener" href="http://www.quasarchs.com/components/toggle.html">切换键Toggle</a></p>
+</blockquote>
+<h3 id="引入组件-2"><a href="#引入组件-2" class="headerlink" title="引入组件"></a>引入组件</h3><p>在<code>quasar.config.js</code>中引入<code>QToggle</code></p>
+<h3 id="基本属性-3"><a href="#基本属性-3" class="headerlink" title="基本属性"></a>基本属性</h3><ul>
+<li><code>val</code>，<code>v-model</code>是<code>Array</code>，会加在<code>Array</code>内</li>
+<li><code>icon</code>如果底下两个（<code>checke-icon</code>、<code>unchecked-icon</code>）icon 会被覆盖掉</li>
+</ul>
+<h2 id="表单组件-Option-Group"><a href="#表单组件-Option-Group" class="headerlink" title="表单组件-Option Group"></a>表单组件-Option Group</h2><blockquote>
+<p><a target="_blank" rel="noopener" href="http://www.quasarchs.com/components/option-group.html">选项组option-group</a></p>
+</blockquote>
+<p>把选项写进一个<code>Array</code>中，然后直接用<code>v-for</code>全部渲染出来。</p>
+<h3 id="引入组件-3"><a href="#引入组件-3" class="headerlink" title="引入组件"></a>引入组件</h3><p>每一步都是一样的，在<code>quasar.config.js</code>中引入<code>QOptionGroup</code>。</p>
+<h3 id="基本范例-1"><a href="#基本范例-1" class="headerlink" title="基本范例"></a>基本范例</h3><p><strong>CheckBox</strong></p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">q-field</span> <span class="attr">orientation</span>=<span class="string">&quot;vertical&quot;</span> <span class="attr">label</span>=<span class="string">&quot;要选购的商品&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">q-option-group</span></span></span><br><span class="line"><span class="tag">                <span class="attr">type</span>=<span class="string">&quot;checkbox&quot;</span></span></span><br><span class="line"><span class="tag">                <span class="attr">v-model</span>=<span class="string">&quot;model&quot;</span></span></span><br><span class="line"><span class="tag">                <span class="attr">:options</span>=<span class="string">&quot;optionList&quot;</span></span></span><br><span class="line"><span class="tag">        /&gt;</span></span><br><span class="line">    &lt;/q-field</span><br><span class="line">    &gt;</span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">    <span class="keyword">export</span> <span class="keyword">default</span> &#123;</span></span><br><span class="line"><span class="language-javascript">        <span class="attr">name</span>: <span class="string">&quot;index&quot;</span>,</span></span><br><span class="line"><span class="language-javascript">        <span class="title function_">data</span>(<span class="params"></span>) &#123;</span></span><br><span class="line"><span class="language-javascript">            <span class="keyword">return</span> &#123;</span></span><br><span class="line"><span class="language-javascript">                <span class="attr">model</span>: [],</span></span><br><span class="line"><span class="language-javascript">                <span class="attr">optionList</span>: [</span></span><br><span class="line"><span class="language-javascript">                    &#123;<span class="attr">label</span>: <span class="string">&#x27;鸡蛋&#x27;</span>, <span class="attr">value</span>: <span class="string">&#x27;egg&#x27;</span>&#125;,</span></span><br><span class="line"><span class="language-javascript">                    &#123;<span class="attr">label</span>: <span class="string">&#x27;海带&#x27;</span>, <span class="attr">value</span>: <span class="string">&#x27;seaweed&#x27;</span>&#125;,</span></span><br><span class="line"><span class="language-javascript">                    &#123;<span class="attr">label</span>: <span class="string">&#x27;鸡腿&#x27;</span>, <span class="attr">value</span>: <span class="string">&#x27;lag&#x27;</span>&#125;,</span></span><br><span class="line"><span class="language-javascript">                    &#123;<span class="attr">label</span>: <span class="string">&#x27;牛肉&#x27;</span>, <span class="attr">value</span>: <span class="string">&#x27;beef&#x27;</span>&#125;</span></span><br><span class="line"><span class="language-javascript">                ]</span></span><br><span class="line"><span class="language-javascript">            &#125;</span></span><br><span class="line"><span class="language-javascript">        &#125;</span></span><br><span class="line"><span class="language-javascript">    &#125;</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p><strong><code>toggle</code>、<code>radio</code>和<code>checkbox</code>类似，只需要修改<code>type</code>属性值即可</strong></p>
+<h2 id="表单组件-Datetime"><a href="#表单组件-Datetime" class="headerlink" title="表单组件-Datetime"></a>表单组件-Datetime</h2><p>时间日期输入框Datetime，有Material和IOS两种风格。</p>
+<h3 id="引入组件-4"><a href="#引入组件-4" class="headerlink" title="引入组件"></a>引入组件</h3><p>有两个组件需要引入，一个是输入时显示，一个是默认就是显示的。分别为：</p>
+<p>日期时间输入<a target="_blank" rel="noopener" href="http://www.quasarchs.com/components/datetime-input.html">Datetime Input</a></p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="attr">framework</span>: &#123;</span><br><span class="line">  <span class="attr">components</span>: [<span class="string">&#x27;QDatetime&#x27;</span>]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>日期时间选择器<a target="_blank" rel="noopener" href="http://www.quasarchs.com/components/datetime-picker.html">Datetime Picker</a></p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="attr">framework</span>: &#123;</span><br><span class="line">  <span class="attr">components</span>: [<span class="string">&#x27;QDatetimePicker&#x27;</span>]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="基本操作"><a href="#基本操作" class="headerlink" title="基本操作"></a>基本操作</h3><figure class="highlight html"><table><tr><td class="code"><pre><span class="line">// Datetime Input</span><br><span class="line"><span class="tag">&lt;<span class="name">q-datetime</span> <span class="attr">v-model</span>=<span class="string">&quot;model&quot;</span> <span class="attr">type</span>=<span class="string">&quot;date&quot;</span>/&gt;</span></span><br><span class="line"></span><br><span class="line">// Datetime Picker</span><br><span class="line"><span class="tag">&lt;<span class="name">q-datetime-picker</span> <span class="attr">v-model</span>=<span class="string">&quot;model&quot;</span> <span class="attr">type</span>=<span class="string">&quot;date&quot;</span>/&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="基本属性-4"><a href="#基本属性-4" class="headerlink" title="基本属性"></a>基本属性</h3><ul>
+<li><p><code>type</code>，一共有三个值，默认是<code>date</code></p>
+<ol>
+<li><code>date</code>单纯日期</li>
+<li><code>time</code>单纯时间</li>
+<li><code>datetime</code>时间+日期</li>
+</ol>
+</li>
+<li><p><code>minimal</code>，不显示标题</p>
+</li>
+<li><p><code>min max</code>，设置能够选择的日期时间范围</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">q-datetime</span> <span class="attr">v-model</span>=<span class="string">&quot;model&quot;</span> <span class="attr">type</span>=<span class="string">&quot;datetime&quot;</span> <span class="attr">max</span>=<span class="string">&quot;2019/02/27 2:30&quot;</span>/&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>format-model</code>存储的时间格式，有四种选择：</p>
+<ol>
+<li><code>auto</code>2019-02-27T12:01:00.000+08:00</li>
+<li><code>date</code>“2019-02-27T04:00:00.000Z”</li>
+<li><code>number</code>1541044860000</li>
+<li><code>string</code>2019-02-27T12:01:00.000+08:00</li>
+</ol>
+</li>
+<li><p><code>format24h</code>设为24时制的时钟</p>
+</li>
+</ul>
+<h3 id="基本方法"><a href="#基本方法" class="headerlink" title="基本方法"></a>基本方法</h3><p><strong>Input</strong></p>
+<ul>
+<li><code>show()</code>显示输入</li>
+<li><code>hide()</code>隐藏输入</li>
+<li><code>toggle()</code>切换输入</li>
+<li><code>clear()</code>清空model</li>
+</ul>
+<p><strong>Picker</strong></p>
+<ul>
+<li><code>setYear(val)</code>设置年</li>
+<li><code>setMonth(val)</code>设置月</li>
+<li><code>setDay(val)</code>设置日</li>
+<li><code>setHour(val)</code>设置时</li>
+<li><code>setMinute(val)</code>设置分</li>
+<li><code>setView(val)</code>设置要显示的模式</li>
+<li><code>clear()</code>清空model</li>
+</ul>
+<h2 id="表单组件-Editor"><a href="#表单组件-Editor" class="headerlink" title="表单组件-Editor"></a>表单组件-Editor</h2><h3 id="内建的文章编辑器Editor"><a href="#内建的文章编辑器Editor" class="headerlink" title="内建的文章编辑器Editor"></a>内建的文章编辑器Editor</h3><blockquote>
+<p><a target="_blank" rel="noopener" href="http://www.quasarchs.com/components/editor---wysiwyg.html">编辑器（WYSIWYG）</a></p>
+</blockquote>
+<p>在<code>quasar.config.js</code>中引入<code>QEditor</code>组件。</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">q-editor</span> <span class="attr">v-model</span>=<span class="string">&quot;model&quot;</span>/&gt;</span></span><br></pre></td></tr></table></figure>
+<p>主要设置页面的属性有三个：</p>
+<ul>
+<li><p><code>Toolbar</code></p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">q-editor</span></span></span><br><span class="line"><span class="tag">  <span class="attr">v-model</span>=<span class="string">&quot;model&quot;</span></span></span><br><span class="line"><span class="tag">  <span class="attr">:toolbar</span>=<span class="string">&quot;[</span></span></span><br><span class="line"><span class="string"><span class="tag">      [&#x27;bold&#x27;,&#x27;italic&#x27;,&#x27;strike&#x27;,&#x27;underline&#x27;],</span></span></span><br><span class="line"><span class="string"><span class="tag">      [&#x27;hr&#x27;,&#x27;link&#x27;],</span></span></span><br><span class="line"><span class="string"><span class="tag">      [&#x27;fullscreen&#x27;],</span></span></span><br><span class="line"><span class="string"><span class="tag">      [&#x27;print&#x27;]</span></span></span><br><span class="line"><span class="string"><span class="tag">    ]&quot;</span></span></span><br><span class="line"><span class="tag">/&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>Definitions</code></p>
+<ul>
+<li><code>label</code>要显示的文字</li>
+<li><code>icon</code>要显示的icon</li>
+<li><code>tip</code>小提示</li>
+<li><code>cmd</code>如果不想用默认的功能名称，可以用这个绑回你要的功能</li>
+<li><code>handler</code>自定义<code>methods</code>的<code>function</code>名称<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="attr">save</span>: &#123;</span><br><span class="line">  <span class="attr">label</span>:<span class="string">&#x27;保存&#x27;</span>,</span><br><span class="line">  <span class="attr">handler</span>: functionName</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li><code>disable</code>禁用</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">q-editor</span></span></span><br><span class="line"><span class="tag">        <span class="attr">v-model</span>=<span class="string">&quot;model&quot;</span></span></span><br><span class="line"><span class="tag">        <span class="attr">:toolbar</span>=<span class="string">&quot;[</span></span></span><br><span class="line"><span class="string"><span class="tag">        [&#x27;bold&#x27;,&#x27;italic&#x27;,&#x27;strike&#x27;,&#x27;underline&#x27;],</span></span></span><br><span class="line"><span class="string"><span class="tag">        [&#x27;hr&#x27;,&#x27;link&#x27;],</span></span></span><br><span class="line"><span class="string"><span class="tag">        [&#x27;fullscreen&#x27;],</span></span></span><br><span class="line"><span class="string"><span class="tag">        [&#x27;print&#x27;]</span></span></span><br><span class="line"><span class="string"><span class="tag">    ]&quot;</span></span></span><br><span class="line"><span class="tag">        <span class="attr">:definitions</span>=<span class="string">&quot;&#123;</span></span></span><br><span class="line"><span class="string"><span class="tag">            bold:&#123;label:&#x27;粗体&#x27;,icon:null,tip:&#x27;这是粗体&#x27;&#125;</span></span></span><br><span class="line"><span class="string"><span class="tag">            &#125;&quot;</span></span></span><br><span class="line"><span class="tag">/&gt;</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>Font</code></li>
+</ul>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">q-editor</span> <span class="attr">v-model</span>=<span class="string">&quot;model&quot;</span></span></span><br><span class="line"><span class="tag">          <span class="attr">:toolbar</span>=<span class="string">&quot;[</span></span></span><br><span class="line"><span class="string"><span class="tag">        [&#x27;arial&#x27;,&#x27;arial_black&#x27;,&#x27;comic_sans&#x27;],</span></span></span><br><span class="line"><span class="string"><span class="tag">    ]&quot;</span></span></span><br><span class="line"><span class="tag">          <span class="attr">:fonts</span>=<span class="string">&quot;&#123;</span></span></span><br><span class="line"><span class="string"><span class="tag">              arial:&#x27;Arial&#x27;,</span></span></span><br><span class="line"><span class="string"><span class="tag">              arial_black:&#x27;Arial Black&#x27;,</span></span></span><br><span class="line"><span class="string"><span class="tag">              comic_sans:&#x27;Comic Sans MS&#x27;</span></span></span><br><span class="line"><span class="string"><span class="tag">              &#125;&quot;</span></span></span><br><span class="line"><span class="tag">/&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="基本事件-1"><a href="#基本事件-1" class="headerlink" title="基本事件"></a>基本事件</h3><ul>
+<li><code>@input</code>输入时触发</li>
+<li><code>@fullscreen(true/false)</code>切换全屏时触发</li>
+</ul>
+<h2 id="表单组件-Knob旋转按钮"><a href="#表单组件-Knob旋转按钮" class="headerlink" title="表单组件-Knob旋转按钮"></a>表单组件-Knob旋转按钮</h2><blockquote>
+<p><a target="_blank" rel="noopener" href="http://www.quasarchs.com/components/knob.html">旋转按钮（Knob)</a></p>
+</blockquote>
+<p>在<code>quasar.config.js</code>中引入<code>QKnob</code>组件。</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">q-knob</span></span></span><br><span class="line"><span class="tag">        <span class="attr">v-model</span>=<span class="string">&quot;model&quot;</span></span></span><br><span class="line"><span class="tag">        <span class="attr">:min</span>=<span class="string">&quot;0&quot;</span></span></span><br><span class="line"><span class="tag">        <span class="attr">:max</span>=<span class="string">&quot;25&quot;</span></span></span><br><span class="line"><span class="tag">&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">q-icon</span> <span class="attr">class</span>=<span class="string">&quot;q-mr-xs&quot;</span> <span class="attr">name</span>=<span class="string">&quot;volume_up&quot;</span>/&gt;</span></span><br><span class="line">    &#123;&#123;model&#125;&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">q-knob</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p><strong>属性</strong></p>
+<ul>
+<li><code>size</code>调整组件的大小，默认<code>120px</code></li>
+<li><code>step</code>数值的间距</li>
+<li><code>decimals</code>小数点显示的位数</li>
+<li><code>min max</code>最小值和最大值</li>
+<li><code>color</code>、<code>track-color</code>颜色、未到达的旋转轴颜色</li>
+<li><code>line-width</code>线条的宽度，默认<code>6px</code></li>
+</ul>
+<p><strong>事件</strong></p>
+<ul>
+<li><code>@input(val)</code>改变时立即触发</li>
+<li><code>@change(val)</code>改变时触发</li>
+<li><code>@drag-value(val)</code>拖动时就会触发</li>
+</ul>
+<h2 id="弹窗-Action-Sheet"><a href="#弹窗-Action-Sheet" class="headerlink" title="弹窗-Action Sheet"></a>弹窗-Action Sheet</h2><blockquote>
+<p><a target="_blank" rel="noopener" href="http://www.quasarchs.com/components/action-sheet.html">操作表(ActionSheet)</a></p>
+</blockquote>
+<p>在<code>quasar.config.js</code>中引入<code>ActionSheet</code>组件，有Material和IOS两种风格。</p>
+<p><strong><code>pluginS</code>形式</strong></p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="attr">framework</span>: &#123;</span><br><span class="line">  <span class="attr">plugins</span>: [<span class="string">&#x27;ActionSheet&#x27;</span>]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong><code>components</code>形式</strong></p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="attr">framework</span>: &#123;</span><br><span class="line">  <span class="attr">components</span>: [<span class="string">&#x27;QActionSheet&#x27;</span>]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="作为Plugins的使用方法"><a href="#作为Plugins的使用方法" class="headerlink" title="作为Plugins的使用方法"></a>作为Plugins的使用方法</h3><p><strong>Vue内</strong></p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="variable language_">this</span>.<span class="property">$q</span>.<span class="title function_">actionSheet</span>(configObj)</span><br></pre></td></tr></table></figure>
+<p><strong>Vue外</strong></p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; <span class="title class_">ActionSheet</span> &#125; <span class="keyword">from</span> <span class="string">&#x27;quasar&#x27;</span>;</span><br><span class="line"><span class="title class_">ActionSheet</span>.<span class="title function_">create</span>(configObj)</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="variable language_">this</span>.<span class="property">$q</span>.<span class="title function_">actionSheet</span>(&#123;</span><br><span class="line">    <span class="attr">title</span>: <span class="string">&#x27;操作选择&#x27;</span>,</span><br><span class="line">    <span class="attr">grid</span>: <span class="literal">true</span>, <span class="comment">//使用格状排版（一排三个）</span></span><br><span class="line">    <span class="attr">dismissLabel</span>: <span class="string">&#x27;取消&#x27;</span>, <span class="comment">//取消按钮的文字 只有IOS主题下可用 默认是cancel</span></span><br><span class="line">    <span class="attr">actions</span>: [</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="attr">label</span>: <span class="string">&#x27;抓虫&#x27;</span>,</span><br><span class="line">            <span class="attr">color</span>: <span class="string">&#x27;green&#x27;</span>,</span><br><span class="line">            <span class="attr">icon</span>: <span class="string">&#x27;fas fa-bug&#x27;</span>,</span><br><span class="line">            <span class="title function_">handler</span>(<span class="params"></span>) &#123;</span><br><span class="line">                <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;抓虫大师&#x27;</span>)</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="attr">label</span>: <span class="string">&#x27;分享到微博&#x27;</span>,</span><br><span class="line">            <span class="attr">color</span>: <span class="string">&#x27;blue&#x27;</span>,</span><br><span class="line">            <span class="attr">icon</span>: <span class="string">&#x27;fas fa-weibo&#x27;</span></span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="attr">label</span>: <span class="string">&#x27;请人帮忙&#x27;</span>,</span><br><span class="line">            <span class="attr">color</span>: <span class="string">&#x27;black&#x27;</span>,</span><br><span class="line">            <span class="attr">icon</span>: <span class="string">&#x27;fas fa-alipay&#x27;</span></span><br><span class="line">        &#125;</span><br><span class="line">    ]</span><br><span class="line">&#125;).<span class="title function_">then</span>(<span class="function"><span class="params">action</span> =&gt;</span> &#123;&#125;).<span class="title function_">watch</span>(<span class="function">() =&gt;</span> &#123;&#125;);</span><br></pre></td></tr></table></figure>
+<h3 id="作为Component的使用方法"><a href="#作为Component的使用方法" class="headerlink" title="作为Component的使用方法"></a>作为Component的使用方法</h3><p>跟上面的操作基本上一样，只是能够多监听<code>@show</code>和<code>@hide</code>时间。</p>
+<p><strong>事件</strong></p>
+<ul>
+<li><code>@ok</code>点选选项时触发</li>
+<li><code>@cancel</code>取消时触发</li>
+<li><code>@show</code>显示时触发</li>
+<li><code>@hide</code>隐藏时触发</li>
+<li><code>@escape-key</code>按Esc时触发</li>
+</ul>
+<h2 id="弹窗-Dialog"><a href="#弹窗-Dialog" class="headerlink" title="弹窗-Dialog"></a>弹窗-Dialog</h2><p>基本跟上面的Action Sheet一样的操作方法。</p>
+<p><p class="codepen" data-height="365" data-theme-id="0" data-default-tab="js" data-user="whjin" data-slug-hash="GegPVd" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid black; margin: 1em 0; padding: 1em;" data-pen-title="弹出窗口-Dialog"><br>  <span>See the Pen <a target="_blank" rel="noopener" href="https://codepen.io/whjin/pen/GegPVd/"><br>  弹出窗口-Dialog</a> by whjin (<a target="_blank" rel="noopener" href="https://codepen.io/whjin">@whjin</a>)<br>  on <a target="_blank" rel="noopener" href="https://codepen.io">CodePen</a>.</span><br></p></p>
+<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+
+<h3 id="作为Component的使用方法-1"><a href="#作为Component的使用方法-1" class="headerlink" title="作为Component的使用方法"></a>作为Component的使用方法</h3><p>在配置文件中引入<code>QDialog</code>组件。</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">q-dialog</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">span</span> <span class="attr">slot</span>=<span class="string">&quot;title&quot;</span>&gt;</span>标题<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">span</span> <span class="attr">slot</span>=<span class="string">&quot;message&quot;</span>&gt;</span>正文<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">span</span> <span class="attr">slot</span>=<span class="string">&quot;body&quot;</span>&gt;</span>主体<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">span</span> <span class="attr">slot</span>=<span class="string">&quot;buttons&quot;</span>&gt;</span>按钮<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">q-dialog</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="弹窗-Modal"><a href="#弹窗-Modal" class="headerlink" title="弹窗-Modal"></a>弹窗-Modal</h2><blockquote>
+<p><a target="_blank" rel="noopener" href="http://www.quasarchs.com/components/modal.html">模态框(Modal)</a></p>
+</blockquote>
+<p>引入<code>QModal</code>组件，另外加入<code>directives</code>的<code>CloseOverlay</code>。</p>
+<p>使用按钮或是<code>method</code>将<code>modal</code>设为<code>true</code>才能打开<code>modal</code>。</p>
+<p><strong>全页显示</strong></p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">q-btn</span> @<span class="attr">click</span>=<span class="string">&quot;model=true&quot;</span>&gt;</span>Open<span class="tag">&lt;/<span class="name">q-btn</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">q-modal</span> <span class="attr">v-model</span>=<span class="string">&quot;model&quot;</span> <span class="attr">content-css</span>=<span class="string">&quot;padding: 50px&quot;</span> <span class="attr">maximized</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h4</span>&gt;</span>想去哪里玩？<span class="tag">&lt;/<span class="name">h4</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>自由行·出国度假<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>泰国、首尔、珠海、九寨沟<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">q-btn</span></span></span><br><span class="line"><span class="tag">            <span class="attr">class</span>=<span class="string">&quot;q-mt-lg&quot;</span></span></span><br><span class="line"><span class="tag">            <span class="attr">color</span>=<span class="string">&quot;primary&quot;</span></span></span><br><span class="line"><span class="tag">            @<span class="attr">click</span>=<span class="string">&quot;model=false&quot;</span></span></span><br><span class="line"><span class="tag">            <span class="attr">label</span>=<span class="string">&quot;订购行程&quot;</span></span></span><br><span class="line"><span class="tag">    /&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">q-modal</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p><strong>最小窗口</strong><code>minimized</code></p>
+<p>设置<code>position</code>后会自动清除<code>content-css</code>定义的<code>css</code>，所以要在里面多一个<code>div</code>来做<code>padding</code>。</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">q-modal</span> <span class="attr">v-model</span>=<span class="string">&quot;model&quot;</span> <span class="attr">minimized</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">&quot;padding: 20px&quot;</span>&gt;</span></span><br><span class="line">        ...</span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">q-modal</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="基本属性-5"><a href="#基本属性-5" class="headerlink" title="基本属性"></a>基本属性</h3><ul>
+<li><code>minimized</code>，<code>maximized</code>设置窗口最小化或是最大化</li>
+<li><code>no-route-dismiss</code>、<code>no-esc-dismiss</code>、<code>no-backdrop-dismiss</code>分别为控制换页、按下Esc、按黑色背景是否会触发开闭事件</li>
+<li><code>content-css</code>，<code>content-classes</code>，Modal内的CSS及class，在设置了<code>position</code>后会无效</li>
+<li><code>position</code>设置弹窗出来的位置</li>
+<li><code>position-classes</code>设置<code>position</code>后就要用这个来设<code>class</code>，默认是<code>items-center</code>，<code>justify-center</code></li>
+<li><code>transition</code>，<code>enter-class</code>，<code>leave-class</code>可以用自定义的CSS来做出场的动画</li>
+<li><code>no-refocus</code>是否让关闭窗口时聚焦回到打开窗口前的最后一个组件</li>
+</ul>
+<h3 id="Vue方法"><a href="#Vue方法" class="headerlink" title="Vue方法"></a>Vue方法</h3><p>控制打开关闭窗口的一些方法，要搭配<code>this.$refs.窗口名称</code>来使用。</p>
+<ul>
+<li><code>show</code></li>
+<li><code>hide</code></li>
+<li><code>toggle</code></li>
+</ul>
+<h2 id="弹窗-Notify"><a href="#弹窗-Notify" class="headerlink" title="弹窗-Notify"></a>弹窗-Notify</h2><blockquote>
+<p><a target="_blank" rel="noopener" href="http://www.quasarchs.com/components/notify.html">通知框（Notify）</a></p>
+</blockquote>
+<p><p class="codepen" data-height="365" data-theme-id="0" data-default-tab="js" data-user="whjin" data-slug-hash="wOaGJO" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid black; margin: 1em 0; padding: 1em;" data-pen-title="弹窗-Notify"><br>  <span>See the Pen <a target="_blank" rel="noopener" href="https://codepen.io/whjin/pen/wOaGJO/"><br>  弹窗-Notify</a> by whjin (<a target="_blank" rel="noopener" href="https://codepen.io/whjin">@whjin</a>)<br>  on <a target="_blank" rel="noopener" href="https://codepen.io">CodePen</a>.</span><br></p></p>
+<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+
+<h3 id="在Vue外使用"><a href="#在Vue外使用" class="headerlink" title="在Vue外使用"></a>在Vue外使用</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123;<span class="title class_">Notify</span>&#125; <span class="keyword">from</span> <span class="string">&#x27;quasar&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="title class_">Notify</span>.<span class="title function_">create</span>(<span class="string">&#x27;已保存&#x27;</span>);</span><br><span class="line"><span class="comment">//方式二</span></span><br><span class="line"><span class="title class_">Notify</span>.<span class="title function_">create</span>(&#123;</span><br><span class="line">    <span class="attr">message</span>: <span class="string">&#x27;已保存&#x27;</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h2 id="进度条-Ajax-Bar-amp-Loading-Bar"><a href="#进度条-Ajax-Bar-amp-Loading-Bar" class="headerlink" title="进度条-Ajax Bar&amp;Loading Bar"></a>进度条-Ajax Bar&amp;Loading Bar</h2><blockquote>
+<p><a target="_blank" rel="noopener" href="http://www.quasarchs.com/components/ajax-bar.html">Ajax栏(Ajax Bar)</a></p>
+</blockquote>
+<p>在<code>quasar.config.js</code>中引入<code>QAjaxBar</code>组件。</p>
+<h3 id="基本使用"><a href="#基本使用" class="headerlink" title="基本使用"></a>基本使用</h3><h3 id="Ajax-Bar"><a href="#Ajax-Bar" class="headerlink" title="Ajax Bar"></a>Ajax Bar</h3><p>因为在每个页面都会用到，所以放在最上层<code>App.vue</code>。</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;q-app&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">router-view</span>&gt;</span><span class="tag">&lt;/<span class="name">router-view</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">a-ajax-bar</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>position</code>设置组件位置</li>
+<li><code>size</code>载入条的宽度，默认<code>4px</code></li>
+<li><code>color</code>默认<code>red</code></li>
+<li><code>reverse</code>使进度方向相反</li>
+</ul>
+<h4 id="基本事件-2"><a href="#基本事件-2" class="headerlink" title="基本事件"></a>基本事件</h4><ul>
+<li><code>@start</code>开始动作时触发</li>
+<li><code>@stop</code>结束动作时触发</li>
+</ul>
+<h4 id="基本方法-1"><a href="#基本方法-1" class="headerlink" title="基本方法"></a>基本方法</h4><ul>
+<li><code>start()</code></li>
+<li><code>stop()</code></li>
+</ul>
+<h3 id="Loading-Bar"><a href="#Loading-Bar" class="headerlink" title="Loading Bar"></a>Loading Bar</h3><h2 id="进度条-Inner-Loading"><a href="#进度条-Inner-Loading" class="headerlink" title="进度条-Inner Loading"></a>进度条-Inner Loading</h2><blockquote>
+<p><a target="_blank" rel="noopener" href="http://www.quasarchs.com/components/inner-loading.html">内部加载(Inner Loading)</a></p>
+</blockquote>
+<h3 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h3><p>使用InnerLoading时会作用在<code>relative-position</code>这个<code>class</code>下，如果没有添加这个会变成整页。</p>
+<h3 id="基本操作-1"><a href="#基本操作-1" class="headerlink" title="基本操作"></a>基本操作</h3><p><strong>index.vue</strong></p>
+<p><p class="codepen" data-height="265" data-theme-id="0" data-default-tab="html" data-user="whjin" data-slug-hash="rRVJYL" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid black; margin: 1em 0; padding: 1em;" data-pen-title="Quasar-InnerLoading-Index.vue"><br>  <span>See the Pen <a target="_blank" rel="noopener" href="https://codepen.io/whjin/pen/rRVJYL/"><br>  Quasar-InnerLoading-Index.vue</a> by whjin (<a target="_blank" rel="noopener" href="https://codepen.io/whjin">@whjin</a>)<br>  on <a target="_blank" rel="noopener" href="https://codepen.io">CodePen</a>.</span><br></p></p>
+<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+
+<p><strong>MyField.vue</strong></p>
+<p><p class="codepen" data-height="265" data-theme-id="0" data-default-tab="html" data-user="whjin" data-slug-hash="XGbZEN" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid black; margin: 1em 0; padding: 1em;" data-pen-title="Quasar-InnerLoading-MyField.vue"><br>  <span>See the Pen <a target="_blank" rel="noopener" href="https://codepen.io/whjin/pen/XGbZEN/"><br>  Quasar-InnerLoading-MyField.vue</a> by whjin (<a target="_blank" rel="noopener" href="https://codepen.io/whjin">@whjin</a>)<br>  on <a target="_blank" rel="noopener" href="https://codepen.io">CodePen</a>.</span><br></p></p>
+<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+
+<p><strong>效果</strong></p>
+<p><img src="https://i.imgur.com/d5QwW8f.jpg" alt=""></p>
+<p><img src="https://i.imgur.com/0nMNKFM.jpg" alt=""></p>
+<h2 id="CSS-Helpers"><a href="#CSS-Helpers" class="headerlink" title="CSS Helpers"></a>CSS Helpers</h2><h3 id="空间排版CSS-Spacing-Classes"><a href="#空间排版CSS-Spacing-Classes" class="headerlink" title="空间排版CSS Spacing Classes"></a>空间排版CSS Spacing Classes</h3><blockquote>
+<p><a target="_blank" rel="noopener" href="http://www.quasarchs.com/components/spacing.html">CSS间距类CSS Spacing Classes</a></p>
+</blockquote>
+<h3 id="基本范例-2"><a href="#基本范例-2" class="headerlink" title="基本范例"></a>基本范例</h3><figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">q</span>-ma-xs</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>q</code>作为前缀</li>
+<li><code>ma</code>：<ul>
+<li><code>m</code>类型，<code>margin</code></li>
+<li><code>a</code>方向，<code>all</code></li>
+</ul>
+</li>
+<li><code>xs</code>范围的大小跟<code>flex css</code>一致</li>
+</ul>
+<h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">q</span>-<span class="selector-attr">[类型]</span><span class="selector-attr">[方向]</span>-<span class="selector-attr">[大小]</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>类型</p>
+<ul>
+<li><code>m</code>（<code>margin</code>向外扩）</li>
+<li><code>p</code>（<code>padding</code>向内扩）</li>
+</ul>
+</li>
+<li><p>方法</p>
+</li>
+</ul>
+<p>总共有7种选择，除了基本的<code>t(top)</code>，<code>r(right)</code>，<code>l(left)</code>、<code>b(bottom)</code>，<code>a(all)</code>之外，还有两种<code>x(left+right)</code>，<code>y(top+bottom)</code>。</p>
+<ul>
+<li>大小</li>
+</ul>
+<p>有<code>none</code>，<code>auto</code>(只能用在<code>margin</code>),<code>xs</code>，<code>sm</code>，<code>md</code>，<code>lg</code>，<code>xl</code>。</p>
+<h3 id="阴影CSS-Shadows"><a href="#阴影CSS-Shadows" class="headerlink" title="阴影CSS Shadows"></a>阴影CSS Shadows</h3><blockquote>
+<p><a target="_blank" rel="noopener" href="http://www.quasarchs.com/components/shadows.html">CSS阴影（立面图）CSS Shadows</a></p>
+</blockquote>
+<h3 id="可视范围CSS-Visibility"><a href="#可视范围CSS-Visibility" class="headerlink" title="可视范围CSS Visibility"></a>可视范围CSS Visibility</h3><blockquote>
+<p><a target="_blank" rel="noopener" href="http://www.quasarchs.com/components/visibility.html">可视范围CSS Visibility</a></p>
+</blockquote>
+<h3 id="位置排版CSS-Positioning-Classes"><a href="#位置排版CSS-Positioning-Classes" class="headerlink" title="位置排版CSS Positioning Classes"></a>位置排版CSS Positioning Classes</h3><blockquote>
+<p><a target="_blank" rel="noopener" href="http://www.quasarchs.com/components/positioning.html">CSS定位类CSS Positioning Classes</a></p>
+</blockquote>
+<h2 id="自定义颜色"><a href="#自定义颜色" class="headerlink" title="自定义颜色"></a>自定义颜色</h2><blockquote>
+<p><a target="_blank" rel="noopener" href="http://www.quasarchs.com/components/color-palette.html">调色板(Color Palette)</a></p>
+</blockquote>
+<p>在<code>src/css/app.styl</code>文件中自定义全局CSS</p>
+<h3 id="新增颜色"><a href="#新增颜色" class="headerlink" title="新增颜色"></a>新增颜色</h3><figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.text-redsp</span></span><br><span class="line">  <span class="attribute">color</span>: <span class="number">#D03F38</span></span><br><span class="line">.bg-redsp</span><br><span class="line">  background: <span class="number">#D03F38</span>  </span><br></pre></td></tr></table></figure>
+<p>这里<code>text</code>和<code>bg</code>需要同时设定。</p>
+<h3 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h3><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">q-btn</span> <span class="attr">color</span>=<span class="string">&quot;redsp&quot;</span>&gt;</span>Open<span class="tag">&lt;/<span class="name">q-btn</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="多国语系I18n"><a href="#多国语系I18n" class="headerlink" title="多国语系I18n"></a>多国语系I18n</h2><h3 id="Quasar的I18n"><a href="#Quasar的I18n" class="headerlink" title="Quasar的I18n"></a>Quasar的I18n</h3><blockquote>
+<p><a target="_blank" rel="noopener" href="http://www.quasarchs.com/components/internationalization.html">多国语系(I18n)</a></p>
+</blockquote>
+<p>在<code>quasar.config.js</code>中设置：</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="attr">framework</span>: &#123;</span><br><span class="line">  <span class="attr">i18n</span>: <span class="string">&#x27;zh-hans&#x27;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="读取当前语系"><a href="#读取当前语系" class="headerlink" title="读取当前语系"></a>读取当前语系</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> lang = <span class="variable language_">this</span>.#q.<span class="property">i18n</span>.<span class="title function_">getLocal</span>()</span><br></pre></td></tr></table></figure>
+<h3 id="动态设置"><a href="#动态设置" class="headerlink" title="动态设置"></a>动态设置</h3><p>Quasar的切换语系不像是传统的<code>vue-i18n</code>直接换就能用，必须重新载入新语系的语系档。</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">q-btn</span> @<span class="attr">click</span>=<span class="string">&quot;setLang(&#x27;zh-hans&#x27;)&quot;</span>&gt;</span>简体中文<span class="tag">&lt;/<span class="name">q-btn</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">  <span class="keyword">export</span> <span class="keyword">default</span> &#123;</span></span><br><span class="line"><span class="language-javascript">    <span class="attr">name</span>: <span class="string">&quot;I18n&quot;</span>,</span></span><br><span class="line"><span class="language-javascript">    <span class="attr">methods</span>: &#123;</span></span><br><span class="line"><span class="language-javascript">      <span class="title function_">setLang</span>(<span class="params">lang</span>) &#123;</span></span><br><span class="line"><span class="language-javascript">        <span class="keyword">import</span>(<span class="string">&#x27;quasar-framework/i18n/$&#123;lang&#125;&#x27;</span>).<span class="title function_">then</span>(<span class="function"><span class="params">lang</span> =&gt;</span> &#123;</span></span><br><span class="line"><span class="language-javascript">          <span class="variable language_">this</span>.<span class="property">$q</span>.<span class="property">i18n</span>.<span class="title function_">set</span>(lang.<span class="property">default</span>)</span></span><br><span class="line"><span class="language-javascript">        &#125;)</span></span><br><span class="line"><span class="language-javascript">      &#125;</span></span><br><span class="line"><span class="language-javascript">    &#125;</span></span><br><span class="line"><span class="language-javascript">  &#125;</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="Vue-I18n"><a href="#Vue-I18n" class="headerlink" title="Vue-I18n"></a>Vue-I18n</h3><p>Vue-I18n在<code>src/i18n</code>里面，参照已经设定的内容添加自己想要的语系。</p>
+<h3 id="应用"><a href="#应用" class="headerlink" title="应用"></a>应用</h3><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>&#123;&#123;$t(&#x27;apple&#x27;)&#125;&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">q-btn</span> @<span class="attr">click</span>=<span class="string">&quot;setLang()&quot;</span> <span class="attr">:label</span>=<span class="string">&quot;$t(&#x27;setting&#x27;)&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">q-btn</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="动态切换语系"><a href="#动态切换语系" class="headerlink" title="动态切换语系"></a>动态切换语系</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="attr">methods</span>: &#123;</span><br><span class="line">    <span class="title function_">setLang</span>(<span class="params"></span>) &#123;</span><br><span class="line">        <span class="variable language_">this</span>.<span class="property">$i18m</span>.<span class="property">local</span> = <span class="string">&#x27;zh-CN&#x27;</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>GITHUB：<a target="_blank" rel="noopener" href="https://github.com/whjin/make-quasar">使用Quasar设计旅游网站</a><br>文章链接：<a href="https://whjin.github.io/blog/2019/02/23/%E4%BD%BF%E7%94%A8Quasar%E8%AE%BE%E8%AE%A1Material%E5%92%8CIOS%E9%A3%8E%E6%A0%BC%E7%9A%84%E5%93%8D%E5%BA%94%E5%BC%8F%E7%BD%91%E7%AB%99/">使用Quasar设计Material和IOS风格的响应式网站</a></p>
+</blockquote>
+
+    </section>
+    
+      <div class="tags">
+        <span>Tags:</span>
+        
+  <a href="/tags#前端" >
+    <span class="tag-code">前端</span>
+  </a>
+
+  <a href="/tags#Quasar" >
+    <span class="tag-code">Quasar</span>
+  </a>
+
+      </div>
+      
+        <div class="money-like">
+          <div class="reward-btn">
+            赏
+            <div class="money-code">
+              <span class="wechat-code">
+                <img class="code-image" src="/css/images/wechat.png" />
+                <b>使用微信打赏</b>
+              </span>
+              <span class="wechat-code">
+                <img class="code-image" src="/css/images/alipay.png">
+                <b>使用支付宝打赏</b>
+              </span>
+            </div>
+          </div>
+          <p class="notice">雅致寓于高阁渔舟唱晚，古典悠然；<br />格调外发园林绿树萦绕，馥郁清香。</p>
+        </div>
+        <div class="qrcode">
+          <img id="share-qrcode" />
+          <p class="notice">扫描二维码，分享此文章</p>
+        </div>
+  </article>
+</main>
+<!--PC和WAP自适应版-->
+<div id="SOHUCS" sid="2019/02/23/technical/使用Quasar设计Material和IOS风格的响应式网站/" style="max-width: 750px; height: 100%;"></div>
+
+<script>
+  (function () {
+    var url = "https://whjin.github.io/2019/02/23/technical/使用Quasar设计Material和IOS风格的响应式网站/";
+    var banner = "";
+    if (banner) {
+      $("#article-banner").css({
+        "background-image": "url(" + banner + ")",
+      });
+    } else {
+      $("#article-banner").geopattern(url);
+    }
+    $(".header").removeClass("fixed-header");
+
+    // error image
+    $(".markdown-content img").on("error", function () {
+      $(this).attr("src", "http://file.muyutech.com/error-img.png");
+    });
+
+    // zoom image
+    $(".markdown-content img").on("click", function () {
+      var src = $(this).attr("src");
+      var imageW = $(this).width();
+      var imageH = $(this).height();
+
+      var zoom = (($(window).width() * 0.95) / imageW).toFixed(2);
+      zoom = zoom < 1 ? 1 : zoom;
+      zoom = zoom > 2 ? 2 : zoom;
+      var transY = (($(window).height() - imageH) / 2).toFixed(2);
+
+      $("body").append(
+        '<div class="image-view-wrap"><div class="image-view-inner"><img src="' + src + '" /></div></div>'
+      );
+      $(".image-view-wrap").addClass("wrap-active");
+      $(".image-view-wrap img").css({
+        width: `${imageW}`,
+        transform: `translate3d(0, ${transY}px, 0) scale3d(${zoom}, ${zoom}, 1)`,
+      });
+      $("html").css("overflow", "hidden");
+
+      $(".image-view-wrap").on("click", function () {
+        $(this).remove();
+        $("html").attr("style", "");
+      });
+    });
+
+    // qrcode
+    var qr = new QRious({
+      element: document.getElementById("share-qrcode"),
+      value: document.location.href,
+    });
+  })();
+</script>
+
+<!-- <script type="text/javascript">
+  (function () {
+    var appid = "cytdwbqB7";
+    var conf = "prod_2648b5665a85c057dd13bef6cd1ebd30";
+    var width = window.innerWidth || document.documentElement.clientWidth;
+    if (width < 960) {
+      window.document.write(
+        '<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="//changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' +
+          appid +
+          "&conf=" +
+          conf +
+          '"><\/script>'
+      );
+    } else {
+      var loadJs = function (d, a) {
+        var c = document.getElementsByTagName("head")[0] || document.head || document.documentElement;
+        var b = document.createElement("script");
+        b.setAttribute("type", "text/javascript");
+        b.setAttribute("charset", "UTF-8");
+        b.setAttribute("src", d);
+        if (typeof a === "function") {
+          if (window.attachEvent) {
+            b.onreadystatechange = function () {
+              var e = b.readyState;
+              if (e === "loaded" || e === "complete") {
+                b.onreadystatechange = null;
+                a();
+              }
+            };
+          } else {
+            b.onload = a;
+          }
+        }
+        c.appendChild(b);
+      };
+      loadJs("//changyan.sohu.com/upload/changyan.js", function () {
+        window.changyan.api.config({ appid: appid, conf: conf });
+      });
+    }
+  })();
+</script> -->
+
+
+  <div class="vcomment valine">
+    <script src="//cdn.jsdelivr.net/npm/valine"></script>
+    <script>
+      var path = window.location.pathname.replace("index.html", "");
+      var isEN = path.indexOf("en") > -1;
+      path = isEN ? path.replace("en/", "") : path;
+      new Valine({
+        el: ".vcomment",
+        appId: "9NwKq9DsbUrNgihmAZusvPpR-gzGzoHsz",
+        appKey: "WaUpXkmnXUes9ZNF30cZIAho",
+        placeholder: "",
+        avatar: "mp",
+        path: path,
+        recordIP: true,
+        lang: isEN ? "en" : "zh-cn",
+        visitor: true,
+        enableQQ: "true",
+        emojiCDN:
+          path.indexOf("emoji") > -1
+            ? "//i0.hdslb.com/bfs/emote/"
+            : "//img.t.sinajs.cn/t4/appstyle/expression/ext/normal/",
+        emojiMaps:
+          path.indexOf("emoji") > -1
+            ? {
+              tv_doge: "6ea59c827c414b4a2955fe79e0f6fd3dcd515e24.png",
+              tv_亲亲: "a8111ad55953ef5e3be3327ef94eb4a39d535d06.png",
+              tv_偷笑: "bb690d4107620f1c15cff29509db529a73aee261.png",
+              tv_再见: "180129b8ea851044ce71caf55cc8ce44bd4a4fc8.png",
+              tv_冷漠: "b9cbc755c2b3ee43be07ca13de84e5b699a3f101.png",
+              tv_发怒: "34ba3cd204d5b05fec70ce08fa9fa0dd612409ff.png",
+              tv_发财: "34db290afd2963723c6eb3c4560667db7253a21a.png",
+              tv_可爱: "9e55fd9b500ac4b96613539f1ce2f9499e314ed9.png",
+              tv_吐血: "09dd16a7aa59b77baa1155d47484409624470c77.png",
+              tv_呆: "fe1179ebaa191569b0d31cecafe7a2cd1c951c9d.png",
+              tv_呕吐: "9f996894a39e282ccf5e66856af49483f81870f3.png",
+              tv_困: "241ee304e44c0af029adceb294399391e4737ef2.png",
+              tv_坏笑: "1f0b87f731a671079842116e0991c91c2c88645a.png",
+              tv_大佬: "093c1e2c490161aca397afc45573c877cdead616.png",
+              tv_大哭: "23269aeb35f99daee28dda129676f6e9ea87934f.png",
+              tv_委屈: "d04dba7b5465779e9755d2ab6f0a897b9b33bb77.png",
+              tv_害羞: "a37683fb5642fa3ddfc7f4e5525fd13e42a2bdb1.png",
+              tv_尴尬: "7cfa62dafc59798a3d3fb262d421eeeff166cfa4.png",
+              tv_微笑: "70dc5c7b56f93eb61bddba11e28fb1d18fddcd4c.png",
+              tv_思考: "90cf159733e558137ed20aa04d09964436f618a1.png",
+              tv_惊吓: "0d15c7e2ee58e935adc6a7193ee042388adc22af.png",
+              tv_打脸: "56ab10b624063e966bfcb76ea5dc4794d87dfd47.png",
+              tv_抓狂: "fe31c08edad661d63762b04e17b8d5ae3c71a757.png",
+              tv_抠鼻: "c666f55e88d471e51bbd9fab9bb308110824a6eb.png",
+              tv_斜眼笑: "911f987aa8bc1bee12d52aafe62bc41ef4474e6c.png",
+              tv_无奈: "ea8ed89ee9878f2fece2dda0ea8a5dbfe21b5751.png",
+              tv_晕: "5443c22b4d07fb1907ccc610c8e6db254f2461b7.png",
+              tv_流汗: "cead1c351ab8d79e9f369605beb90148db0fbed3.png",
+              tv_流泪: "7e71cde7858f0cd50d74b0264aa26db612a8a167.png",
+              tv_流鼻血: "c32d39db2737f89b904ca32700d140a9241b0767.png",
+              tv_点赞: "f85c354995bd99e28fc76c869bfe42ba6438eff4.png",
+              tv_生气: "26702dcafdab5e8225b43ffd23c94ac1ff932654.png",
+              tv_生病: "8b0ec90e6b86771092a498c54f09fc94621c1900.png",
+              tv_疑问: "0793d949b18d7be716078349c202c15ff166f314.png",
+              tv_白眼: "c1d59f439e379ee50eef488bcb5e5378e5044ea4.png",
+              tv_皱眉: "72ccad6679fea0d14cce648b4d818e09b8ffea2d.png",
+              tv_目瞪口呆: "0b8cb81a68de5d5365212c99375e7ace3e7891b7.png",
+              tv_睡着: "8b196675b53af58264f383c50ad0945048290b33.png",
+              tv_笑哭: "1abc628f6d4f4caf9d0e7800878f4697abbc8273.png",
+              tv_腼腆: "89712c0d4af73e67f89e35cbc518420380a7f6f4.png",
+              tv_色: "61822c7e9aae5da76475e7892534545336b23a6f.png",
+              tv_调侃: "4bc022533ef31544ca0d72c12c808cf4a1cce3e3.png",
+              tv_调皮: "b9c41de8e82dd7a8515ae5e3cb63e898bf245186.png",
+              tv_鄙视: "6e72339f346a692a495b123174b49e4e8e781303.png",
+              tv_闭嘴: "c9e990da7f6e93975e25fd8b70e2e290aa4086ef.png",
+              tv_难过: "87f46748d3f142ebc6586ff58860d0e2fc8263ba.png",
+              tv_馋: "fc7e829b845c43c623c8b490ee3602b7f0e76a31.png",
+              tv_鬼脸: "0ffbbddf8a94d124ca2f54b360bbc04feb6bbfea.png",
+              tv_黑人问号: "45821a01f51bc867da9edbaa2e070410819a95b2.png",
+              tv_鼓掌: "1d21793f96ef4e6f48b23e53e3b9e42da833a0f6.png",
+              // ... 更多表情
+            }
+            : void 0,
+      });
+    </script>
+  </div>
+  
+
+    <script>
+      var _hmt = _hmt || [];
+      (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?7176d0bc67fb19a89fea168ac922b24e";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+      })();
+    </script>
+<div class="scroll-top">
+  <span class="arrow-icon"></span>
+</div>
+<footer class="app-footer">
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <div>&copy; 2015 -
+        <script type="text/javascript">document.write(new Date().getFullYear());</script>
+        <a href="https://github.com/whjin" target="_blank" title="Github"> whjin </a>|<span
+                id="busuanzi_container_site_pv"> 访问 <a
+                    href="http://service.ibruce.info/" target="_blank"><span id="busuanzi_value_site_pv"></span></a> 次 </span><span
+                id="busuanzi_container_site_uv"><a href="http://service.ibruce.info/" target="_blank"><span
+                        id="busuanzi_value_site_uv"></span></a> 人</span></div>
+</footer>
+
+<script>
+    function async(u, c) {
+        var d = document, t = 'script',
+            o = d.createElement(t),
+            s = d.getElementsByTagName(t)[0];
+        o.src = u;
+        if (c) {
+            o.addEventListener('load', function (e) {
+                c(null, e);
+            }, false);
+        }
+        s.parentNode.insertBefore(o, s);
+    }
+</script>
+<script>
+    async("//cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function () {
+        FastClick.attach(document.body);
+    })
+</script>
+
+<script>
+    var hasLine = 'false';
+    async("//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js", function () {
+        $('figure pre').each(function (i, block) {
+            var figure = $(this).parents('figure');
+            if (hasLine == 'false') {
+                figure.find('.gutter').hide();
+            }
+            var lang = figure.attr('class').split(' ')[1] || 'code';
+            var codeHtml = $(this).html();
+            var codeTag = document.createElement('code');
+            codeTag.className = lang;
+            codeTag.innerHTML = codeHtml;
+            $(this).attr('class', '').empty().html(codeTag);
+            figure.attr('data-lang', lang.toUpperCase());
+            hljs.highlightBlock(block);
+        });
+    })
+</script>
+<!-- Baidu Tongji -->
+
+
+<script src="/js/script.js"></script>
+
+<script>
+    var _hmt = _hmt || [];
+    (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?7176d0bc67fb19a89fea168ac922b24e";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+
+</body>
+</html>

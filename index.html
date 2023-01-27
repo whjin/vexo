@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+  <meta name="description" content="吴华锦的个人主页" />
+  <meta name="keyword" content="hexo-theme, vuejs" />
+   <link rel="shortcut icon" href="/css/images/logo.png"> 
+  <title>
+     吴华锦 
+  </title>
+  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+  <link href="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.css" rel="stylesheet" />
+  <link href="//cdn.bootcss.com/highlight.js/9.12.0/styles/vs.min.css" rel="stylesheet" />
+  <link href="//cdn.bootcss.com/emojione/2.2.2/assets/css/emojione.min.css" rel="stylesheet" />
+  <link href="//cdn.bootcss.com/emojione/2.2.2/assets/sprites/emojione.sprites.css" rel="stylesheet" />
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  <script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+  <script src="//cdn.bootcss.com/geopattern/1.2.3/js/geopattern.min.js"></script>
+  <script src="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js"></script>
+  <script src="//cdn.bootcdn.net/ajax/libs/emojione/4.5.0/lib/js/emojione.min.js"></script>
+  
+<script src="/js/qrious.js"></script>
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+<div class="wechat-share">
+  <img src="/css/images/logo.png" />
+</div>
+
+<body>
+<header class="header fixed-header">
+    <div class="header-container">
+        <a class="home-link" href="/">
+            <div class="logo"></div>
+            <span>吴华锦</span>
+        </a>
+        <ul class="right-list">
+            
+            <li class="list-item">
+                
+                <a href="/" class="item-link active">首页</a>
+                
+            </li>
+            
+            <li class="list-item">
+                
+                <a href="/archives/" class="item-link">归档</a>
+                
+            </li>
+            
+            <li class="list-item">
+                
+                <a href="/tags/" class="item-link">标签</a>
+                
+            </li>
+            
+            <li class="list-item">
+                
+                <a href="/project/" class="item-link">项目</a>
+                
+            </li>
+            
+            <li class="list-item">
+                
+                <a href="/about/" class="item-link">关于</a>
+                
+            </li>
+            
+        </ul>
+        <div class="menu">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </div>
+        <div class="menu-mask">
+            <ul class="menu-list">
+                
+                <li class="menu-item">
+                    
+                    <a href="/" class="menu-link mobile-active">首页</a>
+                    
+                </li>
+                
+                <li class="menu-item">
+                    
+                    <a href="/archives/" class="menu-link">归档</a>
+                    
+                </li>
+                
+                <li class="menu-item">
+                    
+                    <a href="/tags/" class="menu-link">标签</a>
+                    
+                </li>
+                
+                <li class="menu-item">
+                    
+                    <a href="/project/" class="menu-link">项目</a>
+                    
+                </li>
+                
+                <li class="menu-item">
+                    
+                    <a href="/about/" class="menu-link">关于</a>
+                    
+                </li>
+                
+            </ul>
+        </div>
+    </div>
+</header>
+
+<main class="app-body">
+  
+    <article class="article-card">
+      <h2 class="article-head">
+        <a href="/2023/01/24/technical/%E5%8A%9F%E8%83%BD%E4%BB%A3%E7%A0%81%E9%9B%86%E5%90%88/">功能代码集合</a>
+      </h2>
+      <p class="article-date">2023年1月24日</p>
+      
+        
+  <a href="/tags#前端" >
+    <span class="tag-code">前端</span>
+  </a>
+
+      
+      <div class="article-summary">
+        
+          <h3 id="JS原型链"><a href="#JS原型链" class="headerlink" title="JS原型链"></a>JS原型链</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">Person</span>(<span class="params"></span>) &#123;&#125;</span><br><span class="line"><span class="title class_">Person</span>.<span class="property"><span class="keyword">prototype</span></span>.<span class="property">name</span> = <span class="string">&quot;abc&quot;</span>;</span><br><span class="line"><span class="title class_">Person</span>.<span class="property"><span class="keyword">prototype</span></span>.<span class="property">sayName</span> = <span class="keyword">function</span> (<span class="params"></span>) &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>.<span class="property">name</span>);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> person = <span class="keyword">new</span> <span class="title class_">Person</span>();</span><br><span class="line"></span><br><span class="line">person.<span class="property">__proto__</span> = <span class="title class_">Person</span>.<span class="property"><span class="keyword">prototype</span></span>;</span><br><span class="line"><span class="title class_">String</span>.<span class="property">__proto__</span> = <span class="title class_">Function</span>.<span class="property"><span class="keyword">prototype</span></span>;</span><br><span class="line"><span class="title class_">String</span>.<span class="property">constructor</span> = <span class="title class_">Function</span>;</span><br></pre></td></tr></table></figure>
+        
+      </div>
+      <a class="more" href="/2023/01/24/technical/%E5%8A%9F%E8%83%BD%E4%BB%A3%E7%A0%81%E9%9B%86%E5%90%88/">阅读全文</a>
+    </article>
+  
+    <article class="article-card">
+      <h2 class="article-head">
+        <a href="/2023/01/22/technical/Vue%E6%8A%80%E6%9C%AF%E7%82%B9%E6%B1%87%E6%80%BB/">Vue技术点汇总</a>
+      </h2>
+      <p class="article-date">2023年1月22日</p>
+      
+        
+  <a href="/tags#前端" >
+    <span class="tag-code">前端</span>
+  </a>
+
+  <a href="/tags#Vue" >
+    <span class="tag-code">Vue</span>
+  </a>
+
+      
+      <div class="article-summary">
+        
+          <h3 id="响应式数据"><a href="#响应式数据" class="headerlink" title="响应式数据"></a>响应式数据</h3><p>根据数据类型【数组和对象】进行不同处理。</p>
+<ol>
+<li><p>对象内部通过<code>defineReactive</code>方法，使用<code>Object.defineProperty()</code>监听数据属性的<code>get</code>进行数据依赖收集，再通过<code>set</code>完成数据更新。</p>
+</li>
+<li><p>数组则通过重写数组方法实现。扩展<code>7</code>个变更方法（<code>push/pop/shift/unshift/splice/reverse/sort</code>），通过监听这些方法收集依赖和派发更新。</p>
+</li>
+</ol>
+<blockquote>
+<p>多层对象通过递归实现监听，<code>Vue3</code>使用<code>proxy</code>实现响应式数据。<br>响应式流程：<code>defineReactive</code>定义响应式数据；给属性增加<code>dep</code>收集对应的<code>watcher</code>；等数据变化进行更新。<br><code>dep.depend</code>——<code>get</code>取值，依赖收集；<code>dep.notify</code>——<code>set</code>设置，通知视图更新。</p>
+</blockquote>
+        
+      </div>
+      <a class="more" href="/2023/01/22/technical/Vue%E6%8A%80%E6%9C%AF%E7%82%B9%E6%B1%87%E6%80%BB/">阅读全文</a>
+    </article>
+  
+    <article class="article-card">
+      <h2 class="article-head">
+        <a href="/2020/08/23/technical/JavaScript%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95%E9%9B%86/">JavaScript常用方法集</a>
+      </h2>
+      <p class="article-date">2020年8月23日</p>
+      
+        
+  <a href="/tags#前端" >
+    <span class="tag-code">前端</span>
+  </a>
+
+  <a href="/tags#JS" >
+    <span class="tag-code">JS</span>
+  </a>
+
+      
+      <div class="article-summary">
+        
+          <h3 id="日期格式化"><a href="#日期格式化" class="headerlink" title="日期格式化"></a>日期格式化</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 格式化日期类型,fmt格式可选择</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">dateFormat</span>(<span class="params">fmt, date</span>) &#123;</span><br><span class="line">  <span class="keyword">let</span> ret;</span><br><span class="line">  <span class="keyword">let</span> opt = &#123;</span><br><span class="line">    <span class="string">&quot;Y+&quot;</span>: date.<span class="title function_">getFullYear</span>().<span class="title function_">toString</span>(), <span class="comment">// 年</span></span><br><span class="line">    <span class="string">&quot;M+&quot;</span>: (date.<span class="title function_">getMonth</span>() + <span class="number">1</span>).<span class="title function_">toString</span>(), <span class="comment">// 月</span></span><br><span class="line">    <span class="string">&quot;D+&quot;</span>: date.<span class="title function_">getDate</span>().<span class="title function_">toString</span>(), <span class="comment">// 日</span></span><br><span class="line">    <span class="string">&quot;h+&quot;</span>: date.<span class="title function_">getHours</span>().<span class="title function_">toString</span>(), <span class="comment">// 时</span></span><br><span class="line">    <span class="string">&quot;m+&quot;</span>: date.<span class="title function_">getMinutes</span>().<span class="title function_">toString</span>(), <span class="comment">// 分</span></span><br><span class="line">    <span class="string">&quot;s+&quot;</span>: date.<span class="title function_">getSeconds</span>().<span class="title function_">toString</span>(), <span class="comment">// 秒</span></span><br><span class="line">    <span class="string">&quot;ms+&quot;</span>: date.<span class="title function_">getMilliseconds</span>().<span class="title function_">toString</span>() <span class="comment">// 毫秒</span></span><br><span class="line">  &#125;;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> k <span class="keyword">in</span> opt) &#123;</span><br><span class="line">    ret = <span class="keyword">new</span> <span class="title class_">RegExp</span>(<span class="string">&quot;(&quot;</span> + k + <span class="string">&quot;)&quot;</span>).<span class="title function_">exec</span>(fmt);</span><br><span class="line">    <span class="keyword">if</span> (ret) &#123;</span><br><span class="line">      fmt = fmt.<span class="title function_">replace</span>(ret[<span class="number">1</span>], ret[<span class="number">1</span>].<span class="property">length</span> == <span class="number">1</span> ? opt[k] : opt[k].<span class="title function_">padStart</span>(ret[<span class="number">1</span>].<span class="property">length</span>, <span class="string">&quot;0&quot;</span>));</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> fmt;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">let</span> date = <span class="keyword">new</span> <span class="title class_">Date</span>();</span><br><span class="line"><span class="keyword">let</span> fDate = <span class="title function_">dateFormat</span>(<span class="string">&quot;YYYY-MM-DD hh:mm:ss.ms&quot;</span>, <span class="keyword">new</span> <span class="title class_">Date</span>(date));</span><br></pre></td></tr></table></figure>
+        
+      </div>
+      <a class="more" href="/2020/08/23/technical/JavaScript%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95%E9%9B%86/">阅读全文</a>
+    </article>
+  
+    <article class="article-card">
+      <h2 class="article-head">
+        <a href="/2020/08/23/technical/Web-SQL%E6%B5%8F%E8%A7%88%E5%99%A8%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%9E%E4%BE%8B/">Web SQL浏览器数据库实例</a>
+      </h2>
+      <p class="article-date">2020年8月23日</p>
+      
+        
+  <a href="/tags#前端" >
+    <span class="tag-code">前端</span>
+  </a>
+
+  <a href="/tags#数据库" >
+    <span class="tag-code">数据库</span>
+  </a>
+
+      
+      <div class="article-summary">
+        
+          <blockquote>
+<p>最近在做一个消息定时器，需要在离线环境中使用，通过表单写入事项存储到本地，渲染在表格中。尝试过使用Node.js进行文件读写操作，受到UI框架的限制；同时测试了localStorage存储，也达不到想要的效果。最后直接使用WebSql和indexDB来完成。以下是一个DEMO，实际效果正在测试中…</p>
+</blockquote>
+        
+      </div>
+      <a class="more" href="/2020/08/23/technical/Web-SQL%E6%B5%8F%E8%A7%88%E5%99%A8%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%9E%E4%BE%8B/">阅读全文</a>
+    </article>
+  
+    <article class="article-card">
+      <h2 class="article-head">
+        <a href="/2020/08/23/literature/%E5%85%AB%E6%9C%88%E6%96%B0%E4%BD%9C/">八月新作</a>
+      </h2>
+      <p class="article-date">2020年8月23日</p>
+      
+        
+  <a href="/tags#诗词" >
+    <span class="tag-code">诗词</span>
+  </a>
+
+      
+      <div class="article-summary">
+        
+          <center><br><strong>八月新作</strong><br>作者：寒青<br>
+        
+      </div>
+      <a class="more" href="/2020/08/23/literature/%E5%85%AB%E6%9C%88%E6%96%B0%E4%BD%9C/">阅读全文</a>
+    </article>
+  
+
+  
+    <div class="guide-pager">
+    
+    <a class="unvisible" href="/"><span class="page-arrow">←</span>上一页</a>
+    
+    
+    <a href="/page/2/">下一页<span class="page-arrow"> →</span></a>
+    
+</div>
+  
+</main>
+
+
+<div class="scroll-top">
+  <span class="arrow-icon"></span>
+</div>
+<footer class="app-footer">
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <div>&copy; 2015 -
+        <script type="text/javascript">document.write(new Date().getFullYear());</script>
+        <a href="https://github.com/whjin" target="_blank" title="Github"> whjin </a>|<span
+                id="busuanzi_container_site_pv"> 访问 <a
+                    href="http://service.ibruce.info/" target="_blank"><span id="busuanzi_value_site_pv"></span></a> 次 </span><span
+                id="busuanzi_container_site_uv"><a href="http://service.ibruce.info/" target="_blank"><span
+                        id="busuanzi_value_site_uv"></span></a> 人</span></div>
+</footer>
+
+<script>
+    function async(u, c) {
+        var d = document, t = 'script',
+            o = d.createElement(t),
+            s = d.getElementsByTagName(t)[0];
+        o.src = u;
+        if (c) {
+            o.addEventListener('load', function (e) {
+                c(null, e);
+            }, false);
+        }
+        s.parentNode.insertBefore(o, s);
+    }
+</script>
+<script>
+    async("//cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function () {
+        FastClick.attach(document.body);
+    })
+</script>
+
+<script>
+    var hasLine = 'false';
+    async("//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js", function () {
+        $('figure pre').each(function (i, block) {
+            var figure = $(this).parents('figure');
+            if (hasLine == 'false') {
+                figure.find('.gutter').hide();
+            }
+            var lang = figure.attr('class').split(' ')[1] || 'code';
+            var codeHtml = $(this).html();
+            var codeTag = document.createElement('code');
+            codeTag.className = lang;
+            codeTag.innerHTML = codeHtml;
+            $(this).attr('class', '').empty().html(codeTag);
+            figure.attr('data-lang', lang.toUpperCase());
+            hljs.highlightBlock(block);
+        });
+    })
+</script>
+<!-- Baidu Tongji -->
+
+
+<script src="/js/script.js"></script>
+
+<script>
+    var _hmt = _hmt || [];
+    (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?7176d0bc67fb19a89fea168ac922b24e";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+
+</body>
+</html>

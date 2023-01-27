@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+  <meta name="description" content="吴华锦的个人主页" />
+  <meta name="keyword" content="hexo-theme, vuejs" />
+   <link rel="shortcut icon" href="/css/images/logo.png"> 
+  <title>
+     基于Node.js的实时聊天室 | 吴华锦 
+  </title>
+  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+  <link href="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.css" rel="stylesheet" />
+  <link href="//cdn.bootcss.com/highlight.js/9.12.0/styles/vs.min.css" rel="stylesheet" />
+  <link href="//cdn.bootcss.com/emojione/2.2.2/assets/css/emojione.min.css" rel="stylesheet" />
+  <link href="//cdn.bootcss.com/emojione/2.2.2/assets/sprites/emojione.sprites.css" rel="stylesheet" />
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  <script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+  <script src="//cdn.bootcss.com/geopattern/1.2.3/js/geopattern.min.js"></script>
+  <script src="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js"></script>
+  <script src="//cdn.bootcdn.net/ajax/libs/emojione/4.5.0/lib/js/emojione.min.js"></script>
+  
+<script src="/js/qrious.js"></script>
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+<div class="wechat-share">
+  <img src="/css/images/logo.png" />
+</div>
+
+<body>
+<header class="header fixed-header">
+    <div class="header-container">
+        <a class="home-link" href="/">
+            <div class="logo"></div>
+            <span>吴华锦</span>
+        </a>
+        <ul class="right-list">
+            
+            <li class="list-item">
+                
+                <a href="/" class="item-link">首页</a>
+                
+            </li>
+            
+            <li class="list-item">
+                
+                <a href="/archives/" class="item-link">归档</a>
+                
+            </li>
+            
+            <li class="list-item">
+                
+                <a href="/tags/" class="item-link">标签</a>
+                
+            </li>
+            
+            <li class="list-item">
+                
+                <a href="/project/" class="item-link">项目</a>
+                
+            </li>
+            
+            <li class="list-item">
+                
+                <a href="/about/" class="item-link">关于</a>
+                
+            </li>
+            
+        </ul>
+        <div class="menu">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </div>
+        <div class="menu-mask">
+            <ul class="menu-list">
+                
+                <li class="menu-item">
+                    
+                    <a href="/" class="menu-link">首页</a>
+                    
+                </li>
+                
+                <li class="menu-item">
+                    
+                    <a href="/archives/" class="menu-link">归档</a>
+                    
+                </li>
+                
+                <li class="menu-item">
+                    
+                    <a href="/tags/" class="menu-link">标签</a>
+                    
+                </li>
+                
+                <li class="menu-item">
+                    
+                    <a href="/project/" class="menu-link">项目</a>
+                    
+                </li>
+                
+                <li class="menu-item">
+                    
+                    <a href="/about/" class="menu-link">关于</a>
+                    
+                </li>
+                
+            </ul>
+        </div>
+    </div>
+</header>
+
+<div id="article-banner">
+  <h2>
+    基于Node.js的实时聊天室
+  </h2>
+  <p class="post-date">
+    2018-10-02
+  </p>
+  <div class="arrow-down">
+    <a href="javascript:;"></a>
+  </div>
+</div>
+<main class="app-body">
+  <article class="post-article">
+    <section class="markdown-content">
+      <blockquote>
+<p><strong>项目需求：</strong><br>1、用<code>nodejs</code>的<code>socket.io</code>写了一个简易版的聊天室（<strong>实时推送技术，无刷新实现信息实时更新，应用于在线聊天室、在线客服系统、评论系统和WebIM等</strong>）      </p>
+<p>2、根据<code>socket.io</code>库给出的<code>api</code>以及《<code>nodejs</code>实战》给出的<code>demo</code>实现了, 也只是很基础的, 但放到服务器上后会有网络延迟, 顺序不正确等问题    </p>
+<p>3、看过网上的资料, 没看到有解释很全或者投入生产环境的代码, 都是一些<code>demo</code></p>
+<p><strong>想请教前辈, 对于一个业务开发中常用的聊天室模块:</strong></p>
+<p>1、应该如何去思考呢?<br>2、整个过程会涉及到哪些知识点?<br>3、会有哪些难点呢?(比如支持高并发啥的)<br>4、应该注意什么呢?(比如如何测试或者啥的?)</p>
+</blockquote>
+<span id="more"></span>
+<h1 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h1><h2 id="需求分析："><a href="#需求分析：" class="headerlink" title="需求分析："></a>需求分析：</h2><ol>
+<li>实现在线聊天室的基本功能，包括显示在线用户的个人信息</li>
+<li>用户进行实时聊天，信息推送实时更新</li>
+<li>其他可扩展功能</li>
+</ol>
+<p><img src="https://i.imgur.com/6eGgAmr.png" alt=""></p>
+<h2 id="技术栈分析"><a href="#技术栈分析" class="headerlink" title="技术栈分析"></a>技术栈分析</h2><p><code>socket.io</code>是一个开源<code>WebSocket</code>库，它通过<code>Node.js</code>实现<code>WebSocket</code>服务端，同时提供客户端<code>JS</code>库。<code>socket.io</code>支持以事件为基础的实时双向通讯，可以工作在任何平台、浏览器或移动设备。</p>
+<ol>
+<li><code>Node.js+Express/koa/egg</code>环境搭建</li>
+<li><code>socket.io</code></li>
+<li>聊天基础版（壳模型）</li>
+<li>模板引擎（<code>jade/pug</code>）</li>
+<li>聊天界面</li>
+<li>系统消息</li>
+<li>用户上下线</li>
+<li>单聊和群聊</li>
+<li>图片发送</li>
+<li>功能完善</li>
+<li>项目总结</li>
+</ol>
+<ol>
+<li>首先需要先从一个产品的角度进行考虑：<ol>
+<li>设计草图，画出聊天室的大致样子，各个组件的位置，标注功能；</li>
+<li>对每个组件进行分析，确认需要使用的技术；</li>
+<li>再次确认细节，进行切图工作，如果不具备这项能力可以自己动手画图；</li>
+</ol>
+</li>
+<li>搭建开发环境：<ol>
+<li>技术栈<code>Node.js+socket.io+Express/koa+Mongodb</code>；</li>
+<li>安装<code>Node.js</code>并配置相关依赖，Express有自己的生成器</li>
+<li>搭建壳模型，也就是最简易的聊天室</li>
+<li>开发平台推荐使用Linux或者使用Mac</li>
+</ol>
+</li>
+<li>功能介绍：<ol>
+<li>用户列表<ol>
+<li>用户登录</li>
+<li>在线用户列表</li>
+</ol>
+</li>
+<li>文本消息传输<ol>
+<li>用户（谁发的消息）</li>
+<li>时间（什么时候发的）</li>
+<li>内容（发的什么内容）</li>
+</ol>
+</li>
+<li>图片传输</li>
+<li>上下线通知</li>
+</ol>
+</li>
+<li><p>技术点：</p>
+<ol>
+<li><code>Node.js</code></li>
+<li><code>Express</code></li>
+<li><code>socket.io</code>（包括客户端和服务器端代码，这个直接看官网的文档）<ol>
+<li><code>server</code></li>
+<li><code>client</code></li>
+</ol>
+</li>
+<li><code>html/css</code></li>
+<li><code>sco.js、messenger.js</code></li>
+<li><strong>模板引擎（<code>jade/pug</code>）是非常重要的一个工具，配合<code>Node.js</code>可以帮助你完成一些复杂的任务，需要重点掌握</strong></li>
+<li>聊天界面设计：<ol>
+<li>用户列表（用户上线添加/下线移除，用户每次的变更都进行整体更新，不做单独的移除。如果需要进行单独移除，可通过用户下线时的指定对象来移除特定用户）</li>
+<li>聊天窗口<ol>
+<li>内容展示区（当前用户消息展示/对方用户消息展示）</li>
+<li>消息发送区（图片传输功能键/消息输入区/消息发送功能键）</li>
+<li>用户上下线通知</li>
+<li>键盘事件</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>系统消息<ol>
+<li>界面提醒（上/下线提醒）</li>
+<li><code>sco.js/message.js</code>    </li>
+</ol>
+</li>
+<li>用户上下线<br><img src="https://i.imgur.com/EfROll6.png" alt=""></li>
+</ol>
+</li>
+<li><p>具体实例可参考网上的资料：</p>
+<ol>
+<li><a target="_blank" rel="noopener" href="http://blog.fens.me/nodejs-socketio-chat/">Socket.io在线聊天室</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/bsspirit/chat-websocket">bsspirit/chat-websocket</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/yinxin630/fiora">yinxin630/fiora</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/lufeng501/nchat">lufeng501/nchat</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/maochunguang/free_chat">maochunguang/free_chat</a></li>
+<li><a target="_blank" rel="noopener" href="http://www.52im.net/thread-516-1-1.html">一个WebSocket实时聊天室Demo：基于node.js+socket.io</a></li>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/haodawang/article/details/56011749">Node.js websocket 使用 socket.io库实现实时聊天室</a></li>
+<li><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/36602333">Node.js + Web Socket 打造即时聊天程序</a></li>
+<li><a target="_blank" rel="noopener" href="http://www.rxshc.com/164.html">实战WebSocket聊天室：从开发到部署上线</a></li>
+</ol>
+</li>
+</ol>
+<h2 id="项目总结"><a href="#项目总结" class="headerlink" title="项目总结"></a>项目总结</h2><ol>
+<li>聊天室分为客户端和服务端，完整的应用其实就是把这两个模块连接起来实现数据通信，然后在分别对两个模块进行细分；</li>
+<li>根据细节的结果确定其中涉及的技术问题，逐一进行解决，类似于搭积木游戏；</li>
+<li>比如客户端模块需要<code>html/css/js</code>、模板引擎；服务器模块需要<code>Node.js/Express/Koa</code>、<code>sco.js/message.js</code>、数据库技术等；</li>
+<li><code>Node.js</code>很适合应用在高并发的场景中，高并发的场景可以使用Nginx来做负载均衡，会有哪些难点需要在实际项目中才会知道，大概是在读写数据和数据传输方面会有一些需要重点解决的问题；</li>
+<li>在<code>Node.js</code>中写测试，包括了测试框架、测试异步函数、私有方法、模拟测试环境、依赖<code>HTTP</code>协议的<code>web</code>应用，需要了解<code>TDD</code>和<code>BDD</code>，还有需要提供测试的覆盖率</li>
+</ol>
+<h3 id="Node-js单元测试工具"><a href="#Node-js单元测试工具" class="headerlink" title="Node.js单元测试工具"></a>Node.js单元测试工具</h3><ol>
+<li>测试框架：<code>mocha</code></li>
+<li>断言库：<code>should.js</code>、<code>expect.js</code>、<code>chai</code></li>
+<li>覆盖率：<code>istanbul</code>、<code>jscover</code>、<code>blanket</code></li>
+<li>Mock库：<code>muk</code></li>
+<li>测试私有方法：<code>rewire</code></li>
+<li>Web测试：<code>supertest</code></li>
+<li>持续集成：<code>Travis-cli</code></li>
+</ol>
+
+    </section>
+    
+      <div class="tags">
+        <span>Tags:</span>
+        
+  <a href="/tags#前端" >
+    <span class="tag-code">前端</span>
+  </a>
+
+  <a href="/tags#Node" >
+    <span class="tag-code">Node</span>
+  </a>
+
+      </div>
+      
+        <div class="money-like">
+          <div class="reward-btn">
+            赏
+            <div class="money-code">
+              <span class="wechat-code">
+                <img class="code-image" src="/css/images/wechat.png" />
+                <b>使用微信打赏</b>
+              </span>
+              <span class="wechat-code">
+                <img class="code-image" src="/css/images/alipay.png">
+                <b>使用支付宝打赏</b>
+              </span>
+            </div>
+          </div>
+          <p class="notice">雅致寓于高阁渔舟唱晚，古典悠然；<br />格调外发园林绿树萦绕，馥郁清香。</p>
+        </div>
+        <div class="qrcode">
+          <img id="share-qrcode" />
+          <p class="notice">扫描二维码，分享此文章</p>
+        </div>
+  </article>
+</main>
+<!--PC和WAP自适应版-->
+<div id="SOHUCS" sid="2018/10/02/technical/基于Node的实时聊天室/" style="max-width: 750px; height: 100%;"></div>
+
+<script>
+  (function () {
+    var url = "https://whjin.github.io/2018/10/02/technical/基于Node的实时聊天室/";
+    var banner = "";
+    if (banner) {
+      $("#article-banner").css({
+        "background-image": "url(" + banner + ")",
+      });
+    } else {
+      $("#article-banner").geopattern(url);
+    }
+    $(".header").removeClass("fixed-header");
+
+    // error image
+    $(".markdown-content img").on("error", function () {
+      $(this).attr("src", "http://file.muyutech.com/error-img.png");
+    });
+
+    // zoom image
+    $(".markdown-content img").on("click", function () {
+      var src = $(this).attr("src");
+      var imageW = $(this).width();
+      var imageH = $(this).height();
+
+      var zoom = (($(window).width() * 0.95) / imageW).toFixed(2);
+      zoom = zoom < 1 ? 1 : zoom;
+      zoom = zoom > 2 ? 2 : zoom;
+      var transY = (($(window).height() - imageH) / 2).toFixed(2);
+
+      $("body").append(
+        '<div class="image-view-wrap"><div class="image-view-inner"><img src="' + src + '" /></div></div>'
+      );
+      $(".image-view-wrap").addClass("wrap-active");
+      $(".image-view-wrap img").css({
+        width: `${imageW}`,
+        transform: `translate3d(0, ${transY}px, 0) scale3d(${zoom}, ${zoom}, 1)`,
+      });
+      $("html").css("overflow", "hidden");
+
+      $(".image-view-wrap").on("click", function () {
+        $(this).remove();
+        $("html").attr("style", "");
+      });
+    });
+
+    // qrcode
+    var qr = new QRious({
+      element: document.getElementById("share-qrcode"),
+      value: document.location.href,
+    });
+  })();
+</script>
+
+<!-- <script type="text/javascript">
+  (function () {
+    var appid = "cytdwbqB7";
+    var conf = "prod_2648b5665a85c057dd13bef6cd1ebd30";
+    var width = window.innerWidth || document.documentElement.clientWidth;
+    if (width < 960) {
+      window.document.write(
+        '<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="//changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' +
+          appid +
+          "&conf=" +
+          conf +
+          '"><\/script>'
+      );
+    } else {
+      var loadJs = function (d, a) {
+        var c = document.getElementsByTagName("head")[0] || document.head || document.documentElement;
+        var b = document.createElement("script");
+        b.setAttribute("type", "text/javascript");
+        b.setAttribute("charset", "UTF-8");
+        b.setAttribute("src", d);
+        if (typeof a === "function") {
+          if (window.attachEvent) {
+            b.onreadystatechange = function () {
+              var e = b.readyState;
+              if (e === "loaded" || e === "complete") {
+                b.onreadystatechange = null;
+                a();
+              }
+            };
+          } else {
+            b.onload = a;
+          }
+        }
+        c.appendChild(b);
+      };
+      loadJs("//changyan.sohu.com/upload/changyan.js", function () {
+        window.changyan.api.config({ appid: appid, conf: conf });
+      });
+    }
+  })();
+</script> -->
+
+
+  <div class="vcomment valine">
+    <script src="//cdn.jsdelivr.net/npm/valine"></script>
+    <script>
+      var path = window.location.pathname.replace("index.html", "");
+      var isEN = path.indexOf("en") > -1;
+      path = isEN ? path.replace("en/", "") : path;
+      new Valine({
+        el: ".vcomment",
+        appId: "9NwKq9DsbUrNgihmAZusvPpR-gzGzoHsz",
+        appKey: "WaUpXkmnXUes9ZNF30cZIAho",
+        placeholder: "",
+        avatar: "mp",
+        path: path,
+        recordIP: true,
+        lang: isEN ? "en" : "zh-cn",
+        visitor: true,
+        enableQQ: "true",
+        emojiCDN:
+          path.indexOf("emoji") > -1
+            ? "//i0.hdslb.com/bfs/emote/"
+            : "//img.t.sinajs.cn/t4/appstyle/expression/ext/normal/",
+        emojiMaps:
+          path.indexOf("emoji") > -1
+            ? {
+              tv_doge: "6ea59c827c414b4a2955fe79e0f6fd3dcd515e24.png",
+              tv_亲亲: "a8111ad55953ef5e3be3327ef94eb4a39d535d06.png",
+              tv_偷笑: "bb690d4107620f1c15cff29509db529a73aee261.png",
+              tv_再见: "180129b8ea851044ce71caf55cc8ce44bd4a4fc8.png",
+              tv_冷漠: "b9cbc755c2b3ee43be07ca13de84e5b699a3f101.png",
+              tv_发怒: "34ba3cd204d5b05fec70ce08fa9fa0dd612409ff.png",
+              tv_发财: "34db290afd2963723c6eb3c4560667db7253a21a.png",
+              tv_可爱: "9e55fd9b500ac4b96613539f1ce2f9499e314ed9.png",
+              tv_吐血: "09dd16a7aa59b77baa1155d47484409624470c77.png",
+              tv_呆: "fe1179ebaa191569b0d31cecafe7a2cd1c951c9d.png",
+              tv_呕吐: "9f996894a39e282ccf5e66856af49483f81870f3.png",
+              tv_困: "241ee304e44c0af029adceb294399391e4737ef2.png",
+              tv_坏笑: "1f0b87f731a671079842116e0991c91c2c88645a.png",
+              tv_大佬: "093c1e2c490161aca397afc45573c877cdead616.png",
+              tv_大哭: "23269aeb35f99daee28dda129676f6e9ea87934f.png",
+              tv_委屈: "d04dba7b5465779e9755d2ab6f0a897b9b33bb77.png",
+              tv_害羞: "a37683fb5642fa3ddfc7f4e5525fd13e42a2bdb1.png",
+              tv_尴尬: "7cfa62dafc59798a3d3fb262d421eeeff166cfa4.png",
+              tv_微笑: "70dc5c7b56f93eb61bddba11e28fb1d18fddcd4c.png",
+              tv_思考: "90cf159733e558137ed20aa04d09964436f618a1.png",
+              tv_惊吓: "0d15c7e2ee58e935adc6a7193ee042388adc22af.png",
+              tv_打脸: "56ab10b624063e966bfcb76ea5dc4794d87dfd47.png",
+              tv_抓狂: "fe31c08edad661d63762b04e17b8d5ae3c71a757.png",
+              tv_抠鼻: "c666f55e88d471e51bbd9fab9bb308110824a6eb.png",
+              tv_斜眼笑: "911f987aa8bc1bee12d52aafe62bc41ef4474e6c.png",
+              tv_无奈: "ea8ed89ee9878f2fece2dda0ea8a5dbfe21b5751.png",
+              tv_晕: "5443c22b4d07fb1907ccc610c8e6db254f2461b7.png",
+              tv_流汗: "cead1c351ab8d79e9f369605beb90148db0fbed3.png",
+              tv_流泪: "7e71cde7858f0cd50d74b0264aa26db612a8a167.png",
+              tv_流鼻血: "c32d39db2737f89b904ca32700d140a9241b0767.png",
+              tv_点赞: "f85c354995bd99e28fc76c869bfe42ba6438eff4.png",
+              tv_生气: "26702dcafdab5e8225b43ffd23c94ac1ff932654.png",
+              tv_生病: "8b0ec90e6b86771092a498c54f09fc94621c1900.png",
+              tv_疑问: "0793d949b18d7be716078349c202c15ff166f314.png",
+              tv_白眼: "c1d59f439e379ee50eef488bcb5e5378e5044ea4.png",
+              tv_皱眉: "72ccad6679fea0d14cce648b4d818e09b8ffea2d.png",
+              tv_目瞪口呆: "0b8cb81a68de5d5365212c99375e7ace3e7891b7.png",
+              tv_睡着: "8b196675b53af58264f383c50ad0945048290b33.png",
+              tv_笑哭: "1abc628f6d4f4caf9d0e7800878f4697abbc8273.png",
+              tv_腼腆: "89712c0d4af73e67f89e35cbc518420380a7f6f4.png",
+              tv_色: "61822c7e9aae5da76475e7892534545336b23a6f.png",
+              tv_调侃: "4bc022533ef31544ca0d72c12c808cf4a1cce3e3.png",
+              tv_调皮: "b9c41de8e82dd7a8515ae5e3cb63e898bf245186.png",
+              tv_鄙视: "6e72339f346a692a495b123174b49e4e8e781303.png",
+              tv_闭嘴: "c9e990da7f6e93975e25fd8b70e2e290aa4086ef.png",
+              tv_难过: "87f46748d3f142ebc6586ff58860d0e2fc8263ba.png",
+              tv_馋: "fc7e829b845c43c623c8b490ee3602b7f0e76a31.png",
+              tv_鬼脸: "0ffbbddf8a94d124ca2f54b360bbc04feb6bbfea.png",
+              tv_黑人问号: "45821a01f51bc867da9edbaa2e070410819a95b2.png",
+              tv_鼓掌: "1d21793f96ef4e6f48b23e53e3b9e42da833a0f6.png",
+              // ... 更多表情
+            }
+            : void 0,
+      });
+    </script>
+  </div>
+  
+
+    <script>
+      var _hmt = _hmt || [];
+      (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?7176d0bc67fb19a89fea168ac922b24e";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+      })();
+    </script>
+<div class="scroll-top">
+  <span class="arrow-icon"></span>
+</div>
+<footer class="app-footer">
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <div>&copy; 2015 -
+        <script type="text/javascript">document.write(new Date().getFullYear());</script>
+        <a href="https://github.com/whjin" target="_blank" title="Github"> whjin </a>|<span
+                id="busuanzi_container_site_pv"> 访问 <a
+                    href="http://service.ibruce.info/" target="_blank"><span id="busuanzi_value_site_pv"></span></a> 次 </span><span
+                id="busuanzi_container_site_uv"><a href="http://service.ibruce.info/" target="_blank"><span
+                        id="busuanzi_value_site_uv"></span></a> 人</span></div>
+</footer>
+
+<script>
+    function async(u, c) {
+        var d = document, t = 'script',
+            o = d.createElement(t),
+            s = d.getElementsByTagName(t)[0];
+        o.src = u;
+        if (c) {
+            o.addEventListener('load', function (e) {
+                c(null, e);
+            }, false);
+        }
+        s.parentNode.insertBefore(o, s);
+    }
+</script>
+<script>
+    async("//cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function () {
+        FastClick.attach(document.body);
+    })
+</script>
+
+<script>
+    var hasLine = 'false';
+    async("//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js", function () {
+        $('figure pre').each(function (i, block) {
+            var figure = $(this).parents('figure');
+            if (hasLine == 'false') {
+                figure.find('.gutter').hide();
+            }
+            var lang = figure.attr('class').split(' ')[1] || 'code';
+            var codeHtml = $(this).html();
+            var codeTag = document.createElement('code');
+            codeTag.className = lang;
+            codeTag.innerHTML = codeHtml;
+            $(this).attr('class', '').empty().html(codeTag);
+            figure.attr('data-lang', lang.toUpperCase());
+            hljs.highlightBlock(block);
+        });
+    })
+</script>
+<!-- Baidu Tongji -->
+
+
+<script src="/js/script.js"></script>
+
+<script>
+    var _hmt = _hmt || [];
+    (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?7176d0bc67fb19a89fea168ac922b24e";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+
+</body>
+</html>

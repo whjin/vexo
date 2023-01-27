@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+  <meta name="description" content="吴华锦的个人主页" />
+  <meta name="keyword" content="hexo-theme, vuejs" />
+   <link rel="shortcut icon" href="/css/images/logo.png"> 
+  <title>
+     清除浮动细节介绍 | 吴华锦 
+  </title>
+  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+  <link href="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.css" rel="stylesheet" />
+  <link href="//cdn.bootcss.com/highlight.js/9.12.0/styles/vs.min.css" rel="stylesheet" />
+  <link href="//cdn.bootcss.com/emojione/2.2.2/assets/css/emojione.min.css" rel="stylesheet" />
+  <link href="//cdn.bootcss.com/emojione/2.2.2/assets/sprites/emojione.sprites.css" rel="stylesheet" />
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  <script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+  <script src="//cdn.bootcss.com/geopattern/1.2.3/js/geopattern.min.js"></script>
+  <script src="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js"></script>
+  <script src="//cdn.bootcdn.net/ajax/libs/emojione/4.5.0/lib/js/emojione.min.js"></script>
+  
+<script src="/js/qrious.js"></script>
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+<div class="wechat-share">
+  <img src="/css/images/logo.png" />
+</div>
+
+<body>
+<header class="header fixed-header">
+    <div class="header-container">
+        <a class="home-link" href="/">
+            <div class="logo"></div>
+            <span>吴华锦</span>
+        </a>
+        <ul class="right-list">
+            
+            <li class="list-item">
+                
+                <a href="/" class="item-link">首页</a>
+                
+            </li>
+            
+            <li class="list-item">
+                
+                <a href="/archives/" class="item-link">归档</a>
+                
+            </li>
+            
+            <li class="list-item">
+                
+                <a href="/tags/" class="item-link">标签</a>
+                
+            </li>
+            
+            <li class="list-item">
+                
+                <a href="/project/" class="item-link">项目</a>
+                
+            </li>
+            
+            <li class="list-item">
+                
+                <a href="/about/" class="item-link">关于</a>
+                
+            </li>
+            
+        </ul>
+        <div class="menu">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </div>
+        <div class="menu-mask">
+            <ul class="menu-list">
+                
+                <li class="menu-item">
+                    
+                    <a href="/" class="menu-link">首页</a>
+                    
+                </li>
+                
+                <li class="menu-item">
+                    
+                    <a href="/archives/" class="menu-link">归档</a>
+                    
+                </li>
+                
+                <li class="menu-item">
+                    
+                    <a href="/tags/" class="menu-link">标签</a>
+                    
+                </li>
+                
+                <li class="menu-item">
+                    
+                    <a href="/project/" class="menu-link">项目</a>
+                    
+                </li>
+                
+                <li class="menu-item">
+                    
+                    <a href="/about/" class="menu-link">关于</a>
+                    
+                </li>
+                
+            </ul>
+        </div>
+    </div>
+</header>
+
+<div id="article-banner">
+  <h2>
+    清除浮动细节介绍
+  </h2>
+  <p class="post-date">
+    2019-10-11
+  </p>
+  <div class="arrow-down">
+    <a href="javascript:;"></a>
+  </div>
+</div>
+<main class="app-body">
+  <article class="post-article">
+    <section class="markdown-content">
+      <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>浮动<code>float</code>的渲染位置在行框与包含块之间，这样可以使得行框内文字与浮动元素不重叠，并且环绕它显示。在布局过程中经常使用它实现左右并排布局的效果。但是，由于浮动特性，容器如果没有明确设定高度，会依照普通流内元素高度设置，这样就会导致脱离普通流的浮动元素溢出容器，影响后面的元素布局。</p>
+<span id="more"></span>
+<p>已知的清除浮动元素方法：</p>
+<ol>
+<li>采用一个<code>HTML</code>标签，以及<code>css</code>的<code>clear</code>属性，手动清除浮动；</li>
+<li>采用伪类<code>:after</code>动态建立一个块元素，设定<code>clear</code>属性，清除之前的浮动元素；</li>
+<li>采用<code>css overflow</code>非<code>visible</code>值（<code>overflow:auto/overflow:hidden</code>）设定使父容器包含浮动元素；</li>
+<li>采用<code>display:table/display:table-cell</code>等<code>table</code>系列属性将父元素变成<code>table</code>形式自动包含浮动元素；</li>
+<li>使用<code>table</code>以及<code>td</code>标签作为浮动元素容器；</li>
+<li>采用<code>float:left/float:right</code>方式将父元素同样浮动，就可以包含浮动内容；</li>
+<li>在<code>IE 6/7</code>的标准文档模式中设置<code>width/height/zoom</code>等样式来自动清除浮动；</li>
+</ol>
+<h2 id="使用clear样式清除"><a href="#使用clear样式清除" class="headerlink" title="使用clear样式清除"></a>使用<code>clear</code>样式清除</h2><figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.clear-float</span> &#123;<span class="attribute">clear</span>:both;&#125; </span><br></pre></td></tr></table></figure>
+<p><code>clear</code>属性是<code>CSS 1</code>就提供的用来清除浮动的样式，设置了<code>clear</code>属性的元素，其上边框位置会紧贴浮动元素的<code>margin-bottom</code>边界位置渲染，忽略其<code>margin-top</code>设置。这样父容器高度为设定（默认值是<code>auto</code>）时，由于定义的清除浮动样式元素所在位置处于浮动元素下，容器计算后的实际高度就包含了浮动元素。</p>
+<h2 id="使用伪元素-after清除"><a href="#使用伪元素-after清除" class="headerlink" title="使用伪元素:after清除"></a>使用伪元素<code>:after</code>清除</h2><figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.after-clear-float</span> <span class="selector-pseudo">:after</span>&#123;<span class="attribute">content</span>:<span class="string">&quot;&quot;</span>; <span class="attribute">display</span>:block; <span class="attribute">clear</span>:both;&#125;</span><br></pre></td></tr></table></figure>
+<p><code>:after</code>伪元素是在<code>CSS 2</code>规范内提出的，<code>IE 6/7</code>并不支持。它的作用是在指定该伪元素内部，所有子元素最后自动生成一个伪元素，并且可以为这个伪元素设定样式。在设定样式中，使用<code>clear</code>属性即可达到与手动添加元素指定清理的效果。</p>
+<p><strong>注意兼容问题：</strong></p>
+<h2 id="使用overflow清除"><a href="#使用overflow清除" class="headerlink" title="使用overflow清除"></a>使用<code>overflow</code>清除</h2><figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.overflow-clear-float</span> &#123;<span class="attribute">overflow</span>:hidden;&#125;</span><br><span class="line">或者</span><br><span class="line"><span class="selector-class">.overflow-clear-float</span> &#123;<span class="attribute">overflow</span>:auto;&#125;</span><br></pre></td></tr></table></figure>
+<p><code>overflow</code>样式值为非<code>visible</code>时，实际上是创建了CSS 2.1规范定义的BFC。创建了它的元素，会重新计算其内部元素位置，从未获得确切高度。这样父容器也就包含了浮动元素高度。</p>
+<h2 id="使用display-table清除"><a href="#使用display-table清除" class="headerlink" title="使用display:table清除"></a>使用<code>display:table</code>清除</h2><figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.table-clear-float</span> &#123;<span class="attribute">display</span>:table&#125;</span><br><span class="line">或者</span><br><span class="line"><span class="selector-class">.table-clear-float</span> &#123;<span class="attribute">display</span>:table-cell&#125;</span><br></pre></td></tr></table></figure>
+<p>当元素<code>display</code>值被设定为<code>table</code>或<code>table-cell</code>时，同样创建了CSS 2.1规范定义的BFC。这样父容器也就包含了浮动元素高度。</p>
+<h2 id="使用表格类元素作为浮动元素容器"><a href="#使用表格类元素作为浮动元素容器" class="headerlink" title="使用表格类元素作为浮动元素容器"></a>使用表格类元素作为浮动元素容器</h2><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">table</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">td</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">”float:left”</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">table</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>当使用<code>table td th</code>等<code>table</code>系列标签时，元素的<code>display</code>值实际上是<code>display:table</code>系列，这同样也创建了BFC。这样父容器也就包含了浮动元素高度。同时在IE 6/7中，<code>table td th</code>等<code>table</code>系列标签天然拥有<code>haslayout</code>特性，这也可以使容器自动包含浮动元素高度。</p>
+<h2 id="使用浮动父元素清除"><a href="#使用浮动父元素清除" class="headerlink" title="使用浮动父元素清除"></a>使用浮动父元素清除</h2><p>当元素设置<code>float:left/float:right</code>时，创建BFC。父容器包含浮动元素高度。</p>
+<h2 id="触发haslayout清除"><a href="#触发haslayout清除" class="headerlink" title="触发haslayout清除"></a>触发<code>haslayout</code>清除</h2><figure class="highlight css"><table><tr><td class="code"><pre><span class="line">haslayout-<span class="attribute">clear</span>-<span class="attribute">float</span>:&#123;<span class="attribute">width</span>:<span class="number">1px</span>&#125;</span><br><span class="line">或</span><br><span class="line"><span class="selector-class">.haslayout-clear-float</span>:&#123;<span class="attribute">height</span>:<span class="number">1px</span>&#125;</span><br><span class="line">或</span><br><span class="line"><span class="selector-class">.haslayout-clear-float</span>:&#123;zoom:<span class="number">1</span>&#125;</span><br></pre></td></tr></table></figure>
+<p><code>layout</code>是IE的专有概念，它决定了元素如何对其内容进行定位和尺寸计算。可以被某些<code>css property</code>特性不可逆的触发，而某些HTML元素本身就具有<code>layout</code>。</p>
+<p><code>layout</code>在IE中可以通过<code>hasLayout</code>属性来判断一个元素是否具有<code>layout</code>，如<code>object.currentStyle.hasLayout</code>。</p>
+<p><code>layout</code>是IE浏览器渲染引擎的一个内部组成部分，在IE浏览器中，一个元素要么自己对自身的内容进行组织和计算大小，要么依赖于包含块来计算尺寸和组织内容。为了协调这两种方式的矛盾，渲染引擎采用了<code>hasLayout</code>属性，属性值可以为<code>true</code>或<code>false</code>。当一个元素的<code>hasLayout</code>属性值为<code>true</code>时，我们说这个元素有一个布局<code>layout</code>，或拥有布局。</p>
+<p><strong>默认拥有布局的元素：</strong></p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span>, <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">table</span>&gt;</span>, <span class="tag">&lt;<span class="name">tr</span>&gt;</span>, <span class="tag">&lt;<span class="name">th</span>&gt;</span>, <span class="tag">&lt;<span class="name">td</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">img</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">hr</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span>&gt;</span>, <span class="tag">&lt;<span class="name">button</span>&gt;</span>, <span class="tag">&lt;<span class="name">select</span>&gt;</span>, <span class="tag">&lt;<span class="name">textarea</span>&gt;</span>, <span class="tag">&lt;<span class="name">fieldset</span>&gt;</span>, <span class="tag">&lt;<span class="name">legend</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">iframe</span>&gt;</span>, <span class="tag">&lt;<span class="name">embed</span>&gt;</span>, <span class="tag">&lt;<span class="name">object</span>&gt;</span>, <span class="tag">&lt;<span class="name">applet</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">marquee</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p><strong>可以触发<code>hasLayout</code>的<code>CSS</code>特性：</strong></p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line">display: inline-block</span><br><span class="line">height: (除 auto 外任何值)</span><br><span class="line">width: (除 auto 外任何值)</span><br><span class="line">float: (left 或 right)</span><br><span class="line">position: absolute</span><br><span class="line">writing-mode: tb-rl</span><br><span class="line">zoom: (除 normal 外任意值)</span><br></pre></td></tr></table></figure>
+<p><strong><code>IE7还有一些额外的属性可以触发</code>hasLayout`：</strong></p>
+<figure class="highlight arduino"><table><tr><td class="code"><pre><span class="line">min-height: (任意值)</span><br><span class="line">min-width: (任意值)</span><br><span class="line">max-height: (除 none 外任意值)</span><br><span class="line">max-width: (除 none 外任意值)</span><br><span class="line">overflow: (除 visible 外任意值，仅用于块级元素)</span><br><span class="line">overflow-x: (除 visible 外任意值，仅用于块级元素)</span><br><span class="line">overflow-y: (除 visible 外任意值，仅用于块级元素)</span><br><span class="line">position: fixed</span><br></pre></td></tr></table></figure>
+<h1 id="建议"><a href="#建议" class="headerlink" title="建议"></a>建议</h1><p>对于初级开发者，推荐使用以下清除浮动元素的方式：</p>
+<ul>
+<li>采用一个<code>HTML</code>标签，以及<code>css</code>的<code>clear</code>属性，来手动清除浮动；</li>
+<li>为元素设置<code>overflow:hidden</code>或<code>overflow:auto</code>值，配合可以设置<code>zoom:1</code>样式触发<code>IE 6 hasLayout</code>特性，来达到兼容所有浏览器清除浮动的目的；</li>
+<li>采用伪元素<code>:after</code>配合可以设置<code>zoom:1</code>样式触发<code>IE6/7 hasLayout</code>特性。</li>
+</ul>
+
+    </section>
+    
+      <div class="tags">
+        <span>Tags:</span>
+        
+  <a href="/tags#CSS" >
+    <span class="tag-code">CSS</span>
+  </a>
+
+  <a href="/tags#前端" >
+    <span class="tag-code">前端</span>
+  </a>
+
+      </div>
+      
+        <div class="money-like">
+          <div class="reward-btn">
+            赏
+            <div class="money-code">
+              <span class="wechat-code">
+                <img class="code-image" src="/css/images/wechat.png" />
+                <b>使用微信打赏</b>
+              </span>
+              <span class="wechat-code">
+                <img class="code-image" src="/css/images/alipay.png">
+                <b>使用支付宝打赏</b>
+              </span>
+            </div>
+          </div>
+          <p class="notice">雅致寓于高阁渔舟唱晚，古典悠然；<br />格调外发园林绿树萦绕，馥郁清香。</p>
+        </div>
+        <div class="qrcode">
+          <img id="share-qrcode" />
+          <p class="notice">扫描二维码，分享此文章</p>
+        </div>
+  </article>
+</main>
+<!--PC和WAP自适应版-->
+<div id="SOHUCS" sid="2019/10/11/technical/清除浮动细节介绍/" style="max-width: 750px; height: 100%;"></div>
+
+<script>
+  (function () {
+    var url = "https://whjin.github.io/2019/10/11/technical/清除浮动细节介绍/";
+    var banner = "";
+    if (banner) {
+      $("#article-banner").css({
+        "background-image": "url(" + banner + ")",
+      });
+    } else {
+      $("#article-banner").geopattern(url);
+    }
+    $(".header").removeClass("fixed-header");
+
+    // error image
+    $(".markdown-content img").on("error", function () {
+      $(this).attr("src", "http://file.muyutech.com/error-img.png");
+    });
+
+    // zoom image
+    $(".markdown-content img").on("click", function () {
+      var src = $(this).attr("src");
+      var imageW = $(this).width();
+      var imageH = $(this).height();
+
+      var zoom = (($(window).width() * 0.95) / imageW).toFixed(2);
+      zoom = zoom < 1 ? 1 : zoom;
+      zoom = zoom > 2 ? 2 : zoom;
+      var transY = (($(window).height() - imageH) / 2).toFixed(2);
+
+      $("body").append(
+        '<div class="image-view-wrap"><div class="image-view-inner"><img src="' + src + '" /></div></div>'
+      );
+      $(".image-view-wrap").addClass("wrap-active");
+      $(".image-view-wrap img").css({
+        width: `${imageW}`,
+        transform: `translate3d(0, ${transY}px, 0) scale3d(${zoom}, ${zoom}, 1)`,
+      });
+      $("html").css("overflow", "hidden");
+
+      $(".image-view-wrap").on("click", function () {
+        $(this).remove();
+        $("html").attr("style", "");
+      });
+    });
+
+    // qrcode
+    var qr = new QRious({
+      element: document.getElementById("share-qrcode"),
+      value: document.location.href,
+    });
+  })();
+</script>
+
+<!-- <script type="text/javascript">
+  (function () {
+    var appid = "cytdwbqB7";
+    var conf = "prod_2648b5665a85c057dd13bef6cd1ebd30";
+    var width = window.innerWidth || document.documentElement.clientWidth;
+    if (width < 960) {
+      window.document.write(
+        '<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="//changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' +
+          appid +
+          "&conf=" +
+          conf +
+          '"><\/script>'
+      );
+    } else {
+      var loadJs = function (d, a) {
+        var c = document.getElementsByTagName("head")[0] || document.head || document.documentElement;
+        var b = document.createElement("script");
+        b.setAttribute("type", "text/javascript");
+        b.setAttribute("charset", "UTF-8");
+        b.setAttribute("src", d);
+        if (typeof a === "function") {
+          if (window.attachEvent) {
+            b.onreadystatechange = function () {
+              var e = b.readyState;
+              if (e === "loaded" || e === "complete") {
+                b.onreadystatechange = null;
+                a();
+              }
+            };
+          } else {
+            b.onload = a;
+          }
+        }
+        c.appendChild(b);
+      };
+      loadJs("//changyan.sohu.com/upload/changyan.js", function () {
+        window.changyan.api.config({ appid: appid, conf: conf });
+      });
+    }
+  })();
+</script> -->
+
+
+  <div class="vcomment valine">
+    <script src="//cdn.jsdelivr.net/npm/valine"></script>
+    <script>
+      var path = window.location.pathname.replace("index.html", "");
+      var isEN = path.indexOf("en") > -1;
+      path = isEN ? path.replace("en/", "") : path;
+      new Valine({
+        el: ".vcomment",
+        appId: "9NwKq9DsbUrNgihmAZusvPpR-gzGzoHsz",
+        appKey: "WaUpXkmnXUes9ZNF30cZIAho",
+        placeholder: "",
+        avatar: "mp",
+        path: path,
+        recordIP: true,
+        lang: isEN ? "en" : "zh-cn",
+        visitor: true,
+        enableQQ: "true",
+        emojiCDN:
+          path.indexOf("emoji") > -1
+            ? "//i0.hdslb.com/bfs/emote/"
+            : "//img.t.sinajs.cn/t4/appstyle/expression/ext/normal/",
+        emojiMaps:
+          path.indexOf("emoji") > -1
+            ? {
+              tv_doge: "6ea59c827c414b4a2955fe79e0f6fd3dcd515e24.png",
+              tv_亲亲: "a8111ad55953ef5e3be3327ef94eb4a39d535d06.png",
+              tv_偷笑: "bb690d4107620f1c15cff29509db529a73aee261.png",
+              tv_再见: "180129b8ea851044ce71caf55cc8ce44bd4a4fc8.png",
+              tv_冷漠: "b9cbc755c2b3ee43be07ca13de84e5b699a3f101.png",
+              tv_发怒: "34ba3cd204d5b05fec70ce08fa9fa0dd612409ff.png",
+              tv_发财: "34db290afd2963723c6eb3c4560667db7253a21a.png",
+              tv_可爱: "9e55fd9b500ac4b96613539f1ce2f9499e314ed9.png",
+              tv_吐血: "09dd16a7aa59b77baa1155d47484409624470c77.png",
+              tv_呆: "fe1179ebaa191569b0d31cecafe7a2cd1c951c9d.png",
+              tv_呕吐: "9f996894a39e282ccf5e66856af49483f81870f3.png",
+              tv_困: "241ee304e44c0af029adceb294399391e4737ef2.png",
+              tv_坏笑: "1f0b87f731a671079842116e0991c91c2c88645a.png",
+              tv_大佬: "093c1e2c490161aca397afc45573c877cdead616.png",
+              tv_大哭: "23269aeb35f99daee28dda129676f6e9ea87934f.png",
+              tv_委屈: "d04dba7b5465779e9755d2ab6f0a897b9b33bb77.png",
+              tv_害羞: "a37683fb5642fa3ddfc7f4e5525fd13e42a2bdb1.png",
+              tv_尴尬: "7cfa62dafc59798a3d3fb262d421eeeff166cfa4.png",
+              tv_微笑: "70dc5c7b56f93eb61bddba11e28fb1d18fddcd4c.png",
+              tv_思考: "90cf159733e558137ed20aa04d09964436f618a1.png",
+              tv_惊吓: "0d15c7e2ee58e935adc6a7193ee042388adc22af.png",
+              tv_打脸: "56ab10b624063e966bfcb76ea5dc4794d87dfd47.png",
+              tv_抓狂: "fe31c08edad661d63762b04e17b8d5ae3c71a757.png",
+              tv_抠鼻: "c666f55e88d471e51bbd9fab9bb308110824a6eb.png",
+              tv_斜眼笑: "911f987aa8bc1bee12d52aafe62bc41ef4474e6c.png",
+              tv_无奈: "ea8ed89ee9878f2fece2dda0ea8a5dbfe21b5751.png",
+              tv_晕: "5443c22b4d07fb1907ccc610c8e6db254f2461b7.png",
+              tv_流汗: "cead1c351ab8d79e9f369605beb90148db0fbed3.png",
+              tv_流泪: "7e71cde7858f0cd50d74b0264aa26db612a8a167.png",
+              tv_流鼻血: "c32d39db2737f89b904ca32700d140a9241b0767.png",
+              tv_点赞: "f85c354995bd99e28fc76c869bfe42ba6438eff4.png",
+              tv_生气: "26702dcafdab5e8225b43ffd23c94ac1ff932654.png",
+              tv_生病: "8b0ec90e6b86771092a498c54f09fc94621c1900.png",
+              tv_疑问: "0793d949b18d7be716078349c202c15ff166f314.png",
+              tv_白眼: "c1d59f439e379ee50eef488bcb5e5378e5044ea4.png",
+              tv_皱眉: "72ccad6679fea0d14cce648b4d818e09b8ffea2d.png",
+              tv_目瞪口呆: "0b8cb81a68de5d5365212c99375e7ace3e7891b7.png",
+              tv_睡着: "8b196675b53af58264f383c50ad0945048290b33.png",
+              tv_笑哭: "1abc628f6d4f4caf9d0e7800878f4697abbc8273.png",
+              tv_腼腆: "89712c0d4af73e67f89e35cbc518420380a7f6f4.png",
+              tv_色: "61822c7e9aae5da76475e7892534545336b23a6f.png",
+              tv_调侃: "4bc022533ef31544ca0d72c12c808cf4a1cce3e3.png",
+              tv_调皮: "b9c41de8e82dd7a8515ae5e3cb63e898bf245186.png",
+              tv_鄙视: "6e72339f346a692a495b123174b49e4e8e781303.png",
+              tv_闭嘴: "c9e990da7f6e93975e25fd8b70e2e290aa4086ef.png",
+              tv_难过: "87f46748d3f142ebc6586ff58860d0e2fc8263ba.png",
+              tv_馋: "fc7e829b845c43c623c8b490ee3602b7f0e76a31.png",
+              tv_鬼脸: "0ffbbddf8a94d124ca2f54b360bbc04feb6bbfea.png",
+              tv_黑人问号: "45821a01f51bc867da9edbaa2e070410819a95b2.png",
+              tv_鼓掌: "1d21793f96ef4e6f48b23e53e3b9e42da833a0f6.png",
+              // ... 更多表情
+            }
+            : void 0,
+      });
+    </script>
+  </div>
+  
+
+    <script>
+      var _hmt = _hmt || [];
+      (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?7176d0bc67fb19a89fea168ac922b24e";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+      })();
+    </script>
+<div class="scroll-top">
+  <span class="arrow-icon"></span>
+</div>
+<footer class="app-footer">
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <div>&copy; 2015 -
+        <script type="text/javascript">document.write(new Date().getFullYear());</script>
+        <a href="https://github.com/whjin" target="_blank" title="Github"> whjin </a>|<span
+                id="busuanzi_container_site_pv"> 访问 <a
+                    href="http://service.ibruce.info/" target="_blank"><span id="busuanzi_value_site_pv"></span></a> 次 </span><span
+                id="busuanzi_container_site_uv"><a href="http://service.ibruce.info/" target="_blank"><span
+                        id="busuanzi_value_site_uv"></span></a> 人</span></div>
+</footer>
+
+<script>
+    function async(u, c) {
+        var d = document, t = 'script',
+            o = d.createElement(t),
+            s = d.getElementsByTagName(t)[0];
+        o.src = u;
+        if (c) {
+            o.addEventListener('load', function (e) {
+                c(null, e);
+            }, false);
+        }
+        s.parentNode.insertBefore(o, s);
+    }
+</script>
+<script>
+    async("//cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function () {
+        FastClick.attach(document.body);
+    })
+</script>
+
+<script>
+    var hasLine = 'false';
+    async("//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js", function () {
+        $('figure pre').each(function (i, block) {
+            var figure = $(this).parents('figure');
+            if (hasLine == 'false') {
+                figure.find('.gutter').hide();
+            }
+            var lang = figure.attr('class').split(' ')[1] || 'code';
+            var codeHtml = $(this).html();
+            var codeTag = document.createElement('code');
+            codeTag.className = lang;
+            codeTag.innerHTML = codeHtml;
+            $(this).attr('class', '').empty().html(codeTag);
+            figure.attr('data-lang', lang.toUpperCase());
+            hljs.highlightBlock(block);
+        });
+    })
+</script>
+<!-- Baidu Tongji -->
+
+
+<script src="/js/script.js"></script>
+
+<script>
+    var _hmt = _hmt || [];
+    (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?7176d0bc67fb19a89fea168ac922b24e";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+
+</body>
+</html>
