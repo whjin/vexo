@@ -125,14 +125,24 @@
     <span class="tag-code">前端</span>
   </a>
 
-  <a href="/tags#正则表达式" >
-    <span class="tag-code">正则表达式</span>
+  <a href="/tags#正则" >
+    <span class="tag-code">正则</span>
   </a>
 
       
       <div class="article-summary">
         
-          <h1 id="商品计价的千分位分隔符转换"><a href="#商品计价的千分位分隔符转换" class="headerlink" title="商品计价的千分位分隔符转换"></a>商品计价的千分位分隔符转换</h1><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">return</span> total.<span class="title function_">toString</span>().<span class="title function_">replace</span>(<span class="regexp">/\B(?=(\d&#123;3&#125;)+$)/g</span>, <span class="string">&#x27;,&#x27;</span>)</span><br></pre></td></tr></table></figure>
+          <h4 id="商品计价的千分位分隔符转换"><a href="#商品计价的千分位分隔符转换" class="headerlink" title="商品计价的千分位分隔符转换"></a>商品计价的千分位分隔符转换</h4><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">return</span> total.<span class="title function_">toString</span>().<span class="title function_">replace</span>(<span class="regexp">/\B(?=(\d&#123;3&#125;)+$)/g</span>, <span class="string">&#x27;,&#x27;</span>)</span><br></pre></td></tr></table></figure>
+<h3 id="去除字符串的空格"><a href="#去除字符串的空格" class="headerlink" title="去除字符串的空格"></a>去除字符串的空格</h3><ol>
+<li>字符串原生<code>trim</code>方法，只能去除两侧空格，返回新字符串</li>
+<li><code>replace</code>正则匹配<ul>
+<li>去除所有空格：<code>str = str.replace(/\s*/g,&quot;&quot;)</code>  </li>
+<li>去除两侧空格：<code>str = str.replace(/^\s*|\s*$]/g,&quot;&quot;)</code></li>
+<li>去除左侧空格：<code>str = str.replace(/^\s*/,&quot;&quot;)</code></li>
+<li>去除右侧空格：<code>str = str.replace(/\s*$/,&quot;&quot;)</code>  </li>
+</ul>
+</li>
+</ol>
         
       </div>
       <a class="more" href="/2019/08/29/technical/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%AE%9E%E4%BE%8B/">阅读全文</a>
@@ -258,14 +268,15 @@
     <div>&copy; 2015 -
         <script type="text/javascript">document.write(new Date().getFullYear());</script>
         <a href="https://github.com/whjin" target="_blank" title="Github"> whjin </a>|<span
-                id="busuanzi_container_site_pv"> 访问 <a
-                    href="http://service.ibruce.info/" target="_blank"><span id="busuanzi_value_site_pv"></span></a> 次 </span><span
-                id="busuanzi_container_site_uv"><a href="http://service.ibruce.info/" target="_blank"><span
-                        id="busuanzi_value_site_uv"></span></a> 人</span></div>
+            id="busuanzi_container_site_pv"> 访问 <a
+                href="http://service.ibruce.info/" target="_blank"><span id="busuanzi_value_site_pv"></span></a> 次 </span><span
+            id="busuanzi_container_site_uv"><a href="http://service.ibruce.info/" target="_blank"><span
+                    id="busuanzi_value_site_uv"></span></a> 人</span>
+    </div>
 </footer>
 
 <script>
-    function async(u, c) {
+    function async (u, c) {
         var d = document, t = 'script',
             o = d.createElement(t),
             s = d.getElementsByTagName(t)[0];
@@ -305,18 +316,17 @@
 </script>
 <!-- Baidu Tongji -->
 
-
+        
 <script src="/js/script.js"></script>
 
-<script>
-    var _hmt = _hmt || [];
-    (function () {
-        var hm = document.createElement("script");
-        hm.src = "https://hm.baidu.com/hm.js?7176d0bc67fb19a89fea168ac922b24e";
-        var s = document.getElementsByTagName("script")[0];
-        s.parentNode.insertBefore(hm, s);
-    })();
-</script>
-
+            <script>
+                var _hmt = _hmt || [];
+                (function () {
+                    var hm = document.createElement("script");
+                    hm.src = "https://hm.baidu.com/hm.js?7176d0bc67fb19a89fea168ac922b24e";
+                    var s = document.getElementsByTagName("script")[0];
+                    s.parentNode.insertBefore(hm, s);
+                })();
+            </script>
 </body>
 </html>
