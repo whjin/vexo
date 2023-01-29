@@ -349,7 +349,7 @@ let shuffle = require('lodash.shuffle')
 
 ## 过滤器filter ##
 
-### `filters`串联 ###
+### filters串联 ###
 
 `filter`可以同时串联多个`filter`函数。
 

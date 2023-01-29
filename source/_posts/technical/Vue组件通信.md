@@ -5,11 +5,11 @@ category: ["技术"]
 tags: ["前端","Vue"]
 ---
 
-# `props` #
+# props #
 
 父传子组件的属性，`props`值可以是一个数组或对象。
 
-# `$emit` #
+# $emit #
 
 子传父组件绑定自定义事件。
 
@@ -22,7 +22,7 @@ tags: ["前端","Vue"]
 this.$emit('title',[{title:'这是title'}])
 ```
 
-# `vuex` #
+# vuex #
 
 `vuex`是一个状态管理器插件，适合数据共享多的项目。
 
@@ -32,14 +32,14 @@ this.$emit('title',[{title:'这是title'}])
 - `actions`：异步调用函数执行`mutation`，进而改变`store`值，可通过`this.$dispatch`或`mapActions`访问；
 - `modules`：模块，如果状态过多，可以拆分成模块，最后在入口通过`...`解构引入。
 
-# `parent`父实例和`children`子实例 #
+# parent父实例和children子实例 #
 
 - 父组件`this.$children`
 - 子组件`this.$parent`
 
 `children`和`parent`并不保证顺序，也不是响应式，只能拿到一级父组件和子组件。
 
-# `$refs` #
+# $refs #
 
 ```javascript
 // 父组件
@@ -50,7 +50,7 @@ mounted(){
 }
 ```
 
-# `$root` #
+# $root #
 
 ```javascript
 // 父组件
@@ -61,7 +61,7 @@ mounted(){
 }
 ```
 
-# `.sync` #
+# .sync #
 
 ```javascript
 // 父组件
@@ -76,7 +76,7 @@ mounted(){
 }
 ```
 
-# `v-slot` #
+# v-slot #
 
 `v-slot`作用就是将父组件的`template`传入子组件。
 
@@ -139,7 +139,7 @@ data() {
 // {{ user.lastName }}是默认数据  v-slot:todo 当父页面没有(="slotProps")
 ```
 
-# `EventBus` #
+# EventBus #
 
 1. 生命一个全局Vue实例变量`EventBus`，把所有的通信数据、事件监听都存储到这个变量上；
 2. 类似于Vuex，但这种方式只适用于极小的项目；

@@ -46,7 +46,7 @@ tags: ["前端","Quasar"]
 - 其他外部插件的设置
 - `PWA`、`manifest`等设置
 
-### `quasar.config.js` ###
+### quasar.config.js ###
 
 - `plugins`
 
@@ -211,7 +211,7 @@ export default {
 
 控制显示的`class`用`lt-sm`只要像素小于`sm(768px)`就会显示该区域。
 
-### 设置List和`ListItem` ###
+### 设置List和ListItem ###
 
 **使用Dark属性使得组件内容在暗色背景下更好显示**
 
@@ -443,7 +443,7 @@ countries: [
 ]
 ```
 
-### 自定义过滤器`filter` ###
+### 自定义过滤器filter ###
 
 在`q-autocomplete`中加入`filter`：
 

@@ -476,7 +476,7 @@ export default {
 }
 ```
 
-### `CSS`控制禁止点击
+### CSS控制禁止点击
 `pointer-events: none; //（禁止鼠标点击事件）`
 
 ### 单行居中，多行顶部对齐
