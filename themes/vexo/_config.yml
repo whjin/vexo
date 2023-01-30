@@ -16,9 +16,9 @@ menu:
 highlight:
   # default
   # foundation
-  idea
+  # idea
   # github
-  # vs
+  vs
   # tomorrow
 
 valine:
