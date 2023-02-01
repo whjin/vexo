@@ -246,7 +246,7 @@ let lastDay = new Date(date.getFullYear(), date.getMonth() + 1, 0);
 console.log(dateFormat("YYYY-MM-DD", lastDay));
 ```
 
-### `fetch`接口请求
+### fetch接口请求
 ```javascript
 let api = "https://api.com";
 let headerConfig = {
