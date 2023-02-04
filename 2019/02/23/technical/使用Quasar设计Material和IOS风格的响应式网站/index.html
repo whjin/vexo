@@ -156,7 +156,7 @@
 <li>其他外部插件的设置</li>
 <li><code>PWA</code>、<code>manifest</code>等设置</li>
 </ul>
-<h3 id="quasar-config-js"><a href="#quasar-config-js" class="headerlink" title="quasar.config.js"></a><code>quasar.config.js</code></h3><ul>
+<h3 id="quasar-config-js"><a href="#quasar-config-js" class="headerlink" title="quasar.config.js"></a>quasar.config.js</h3><ul>
 <li><code>plugins</code></li>
 </ul>
 <p>以前在<code>Vue</code>安装其他的<code>plugin</code>会在<code>main.js</code>里引入，而在<code>Quasar</code>就会取代<code>main.js</code>成为全部配置文件。</p>
@@ -346,7 +346,7 @@
 <p>设置了<code>rightDrawerOpen</code>需要加到<code>data</code>里。</p>
 <figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">  <span class="attr">name</span>: <span class="string">&#x27;MyLayout&#x27;</span>,</span><br><span class="line">  data () &#123;</span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">      <span class="attr">rightDrawerOpen</span>: <span class="literal">false</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h3 id="手机端按钮"><a href="#手机端按钮" class="headerlink" title="手机端按钮"></a>手机端按钮</h3><p>控制显示的<code>class</code>用<code>lt-sm</code>只要像素小于<code>sm(768px)</code>就会显示该区域。</p>
-<h3 id="设置List和ListItem"><a href="#设置List和ListItem" class="headerlink" title="设置List和ListItem"></a>设置List和<code>ListItem</code></h3><p><strong>使用Dark属性使得组件内容在暗色背景下更好显示</strong></p>
+<h3 id="设置List和ListItem"><a href="#设置List和ListItem" class="headerlink" title="设置List和ListItem"></a>设置List和ListItem</h3><p><strong>使用Dark属性使得组件内容在暗色背景下更好显示</strong></p>
 <p>List中可用组件，这些组件需要自己去配置文件中自行引入。</p>
 <ul>
 <li><code>QListHeader</code>List上的标题</li>
@@ -400,7 +400,7 @@
 </li>
 </ul>
 <h3 id="设置静态数据"><a href="#设置静态数据" class="headerlink" title="设置静态数据"></a>设置静态数据</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="attr">countries</span>: [</span><br><span class="line">  &#123;<span class="attr">label</span>: <span class="string">&#x27;广州市&#x27;</span>, <span class="attr">icon</span>: <span class="string">&#x27;fas fa-map-marker-alt&#x27;</span>&#125;,</span><br><span class="line">  &#123;<span class="attr">label</span>: <span class="string">&#x27;深圳市&#x27;</span>, <span class="attr">icon</span>: <span class="string">&#x27;fas fa-map-marker-alt&#x27;</span>&#125;,</span><br><span class="line">  &#123;<span class="attr">label</span>: <span class="string">&#x27;珠海市&#x27;</span>, <span class="attr">icon</span>: <span class="string">&#x27;fas fa-map-marker-alt&#x27;</span>&#125;,</span><br><span class="line">  &#123;<span class="attr">label</span>: <span class="string">&#x27;[网美景点]香山公园，秋季赏枫胜地&#x27;</span>, <span class="attr">stamp</span>: <span class="string">&#x27;北京市&#x27;</span>&#125;,</span><br><span class="line">  &#123;<span class="attr">label</span>: <span class="string">&#x27;珠海长隆[海豚剧场]精彩不容错过！精彩变身演出抢先看&#x27;</span>, </span><br><span class="line">   <span class="attr">stamp</span>: <span class="string">&#x27;珠海，长隆&#x27;</span>, <span class="attr">rightTextColor</span>: <span class="string">&#x27;pink-13&#x27;</span>&#125;</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
-<h3 id="自定义过滤器filter"><a href="#自定义过滤器filter" class="headerlink" title="自定义过滤器filter"></a>自定义过滤器<code>filter</code></h3><p>在<code>q-autocomplete</code>中加入<code>filter</code>：</p>
+<h3 id="自定义过滤器filter"><a href="#自定义过滤器filter" class="headerlink" title="自定义过滤器filter"></a>自定义过滤器filter</h3><p>在<code>q-autocomplete</code>中加入<code>filter</code>：</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">q-autocomplete</span></span></span><br><span class="line"><span class="tag">  <span class="attr">:static-data</span>=<span class="string">&quot;&#123;field: &#x27;label&#x27;, list: countries&#125;&quot;</span></span></span><br><span class="line"><span class="tag">  <span class="attr">:filter</span>=<span class="string">&quot;advFilter&quot;</span></span></span><br><span class="line"><span class="tag">/&gt;</span></span><br></pre></td></tr></table></figure>
 <p>引入<code>lodash</code>处理<code>filter</code>。</p>
 <h2 id="旅游网站-Popover弹出框"><a href="#旅游网站-Popover弹出框" class="headerlink" title="旅游网站-Popover弹出框"></a>旅游网站-Popover弹出框</h2><h3 id="加入Popover组件"><a href="#加入Popover组件" class="headerlink" title="加入Popover组件"></a>加入Popover组件</h3><p>在<code>quasar.config.js</code>中引入<code>QPopover</code>。<a target="_blank" rel="noopener" href="http://www.quasarchs.com/components/popover.html">Popover</a></p>

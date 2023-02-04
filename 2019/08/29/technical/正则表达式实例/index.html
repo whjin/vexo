@@ -138,6 +138,11 @@
 </li>
 </ol>
 <span id="more"></span>
+<h3 id="中文、英文、数字但不包括下划线等符号"><a href="#中文、英文、数字但不包括下划线等符号" class="headerlink" title="中文、英文、数字但不包括下划线等符号"></a>中文、英文、数字但不包括下划线等符号</h3><ul>
+<li>中文：<code>^[\u4e00-\u9fa5]&#123;0,&#125;$</code></li>
+<li>中文、英文、数字：<code>^[\u4e00-\u9fa5A-Za-z0-9_]+$</code>（包括下划线），<code>[\u4e00-\u9fa5A-Za-z0-9]+$</code>/<code>[\u4e00-\u9fa5A-Za-z0-9]&#123;2,20&#125;$</code>（不包括下划线）</li>
+<li></li>
+</ul>
 
     </section>
     
