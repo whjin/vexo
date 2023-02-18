@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+  <meta name="description" content="吴华锦的个人主页" />
+  <meta name="keyword" content="hexo-theme, vuejs" />
+   <link rel="shortcut icon" href="/css/images/logo.png"> 
+  <title>
+     Git操作文档 | 吴华锦 
+  </title>
+  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+  <link href="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.css" rel="stylesheet" />
+  <link href="//cdn.bootcss.com/highlight.js/9.12.0/styles/vs.min.css" rel="stylesheet" />
+  <link href="//cdn.bootcss.com/emojione/2.2.2/assets/css/emojione.min.css" rel="stylesheet" />
+  <link href="//cdn.bootcss.com/emojione/2.2.2/assets/sprites/emojione.sprites.css" rel="stylesheet" />
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  <script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+  <script src="//cdn.bootcss.com/geopattern/1.2.3/js/geopattern.min.js"></script>
+  <script src="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js"></script>
+  <script src="//cdn.bootcdn.net/ajax/libs/emojione/4.5.0/lib/js/emojione.min.js"></script>
+  
+<script src="/js/qrious.js"></script>
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+<div class="wechat-share">
+  <img src="/css/images/logo.png" />
+</div>
+
+<body>
+<header class="header fixed-header">
+    <div class="header-container">
+        <a class="home-link" href="/">
+            <div class="logo"></div>
+            <span>吴华锦</span>
+        </a>
+        <ul class="right-list">
+            
+            <li class="list-item">
+                
+                <a href="/" class="item-link">首页</a>
+                
+            </li>
+            
+            <li class="list-item">
+                
+                <a href="/archives/" class="item-link">归档</a>
+                
+            </li>
+            
+            <li class="list-item">
+                
+                <a href="/tags/" class="item-link">标签</a>
+                
+            </li>
+            
+            <li class="list-item">
+                
+                <a href="/project/" class="item-link">项目</a>
+                
+            </li>
+            
+            <li class="list-item">
+                
+                <a href="/about/" class="item-link">关于</a>
+                
+            </li>
+            
+        </ul>
+        <div class="menu">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </div>
+        <div class="menu-mask">
+            <ul class="menu-list">
+                
+                <li class="menu-item">
+                    
+                    <a href="/" class="menu-link">首页</a>
+                    
+                </li>
+                
+                <li class="menu-item">
+                    
+                    <a href="/archives/" class="menu-link">归档</a>
+                    
+                </li>
+                
+                <li class="menu-item">
+                    
+                    <a href="/tags/" class="menu-link">标签</a>
+                    
+                </li>
+                
+                <li class="menu-item">
+                    
+                    <a href="/project/" class="menu-link">项目</a>
+                    
+                </li>
+                
+                <li class="menu-item">
+                    
+                    <a href="/about/" class="menu-link">关于</a>
+                    
+                </li>
+                
+            </ul>
+        </div>
+    </div>
+</header>
+
+<div id="article-banner">
+  <h2>
+    Git操作文档
+  </h2>
+  <p class="post-date">
+    2023-02-18
+  </p>
+  <div class="arrow-down">
+    <a href="javascript:;"></a>
+  </div>
+</div>
+<main class="app-body">
+  <article class="post-article">
+    <section class="markdown-content">
+      <h3 id="提交（Commit）"><a href="#提交（Commit）" class="headerlink" title="提交（Commit）"></a>提交（Commit）</h3><h4 id="查看HEAD上最近一次的提交（commit）"><a href="#查看HEAD上最近一次的提交（commit）" class="headerlink" title="查看HEAD上最近一次的提交（commit）"></a>查看HEAD上最近一次的提交（commit）</h4><figure class="highlight gauss"><table><tr><td class="code"><pre><span class="line">git <span class="keyword">show</span></span><br><span class="line"></span><br><span class="line">git <span class="built_in">log</span> -n1 -p</span><br></pre></td></tr></table></figure>
+<span id="more"></span>
+<h4 id="修改提交信息（commit-message）"><a href="#修改提交信息（commit-message）" class="headerlink" title="修改提交信息（commit message）"></a>修改提交信息（commit message）</h4><figure class="highlight dsconfig"><table><tr><td class="code"><pre><span class="line"><span class="string">git</span> <span class="string">commit</span> <span class="built_in">--amend</span> <span class="built_in">--only</span></span><br><span class="line"></span><br><span class="line"><span class="string">git</span> <span class="string">commit</span> <span class="built_in">--amend</span> <span class="built_in">--only</span> -<span class="string">m</span> <span class="string">&#x27;xxx&#x27;</span></span><br></pre></td></tr></table></figure>
+<h4 id="修改提交的用户名和邮箱"><a href="#修改提交的用户名和邮箱" class="headerlink" title="修改提交的用户名和邮箱"></a>修改提交的用户名和邮箱</h4><figure class="highlight dsconfig"><table><tr><td class="code"><pre><span class="line"><span class="string">git</span> <span class="string">commit</span> <span class="built_in">--amend</span> <span class="built_in">--author</span> <span class="string">&#x27;new authorname email&#x27;</span></span><br></pre></td></tr></table></figure>
+<h4 id="从一个提交移除一个文件"><a href="#从一个提交移除一个文件" class="headerlink" title="从一个提交移除一个文件"></a>从一个提交移除一个文件</h4><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">git checkout HEAD<span class="operator">^</span> myfile</span><br><span class="line"></span><br><span class="line">git <span class="keyword">add</span> <span class="operator">-</span>A</span><br><span class="line"></span><br><span class="line">git <span class="keyword">commit</span> <span class="comment">--amend</span></span><br></pre></td></tr></table></figure>
+<h4 id="删除最后一次提交"><a href="#删除最后一次提交" class="headerlink" title="删除最后一次提交"></a>删除最后一次提交</h4><figure class="highlight scss"><table><tr><td class="code"><pre><span class="line">git reset HEAD^ <span class="attr">--hard</span></span><br><span class="line"></span><br><span class="line">git push -f <span class="selector-attr">[remote]</span><span class="selector-attr">[branch]</span></span><br><span class="line"></span><br><span class="line">git reset <span class="attr">--soft</span> HEAD@&#123;<span class="number">1</span>&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="删除任意提交"><a href="#删除任意提交" class="headerlink" title="删除任意提交"></a>删除任意提交</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git rebase --onto SHA1_OF_BAD_COMMIT^ SHA1_OF_BAD_COMMIT</span><br><span class="line"></span><br><span class="line">git push -f [remote][branch]</span><br></pre></td></tr></table></figure>
+<h4 id="强推到远端"><a href="#强推到远端" class="headerlink" title="强推到远端"></a>强推到远端</h4><figure class="highlight maxima"><table><tr><td class="code"><pre><span class="line">git <span class="built_in">push</span> -f <span class="built_in">origin</span> my-branch</span><br></pre></td></tr></table></figure>
+<h4 id="硬重置（hard-reset）后，找回内容"><a href="#硬重置（hard-reset）后，找回内容" class="headerlink" title="硬重置（hard reset）后，找回内容"></a>硬重置（hard reset）后，找回内容</h4><figure class="highlight pgsql"><table><tr><td class="code"><pre><span class="line">git reflog</span><br><span class="line"></span><br><span class="line">git <span class="keyword">reset</span> <span class="comment">--hard SHA1234</span></span><br></pre></td></tr></table></figure>
+<h3 id="暂存（Staging）"><a href="#暂存（Staging）" class="headerlink" title="暂存（Staging）"></a>暂存（Staging）</h3><h4 id="把暂存（staging）的内容添加到上一次的提交"><a href="#把暂存（staging）的内容添加到上一次的提交" class="headerlink" title="把暂存（staging）的内容添加到上一次的提交"></a>把暂存（staging）的内容添加到上一次的提交</h4><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">git <span class="keyword">commit</span> <span class="comment">--amend</span></span><br></pre></td></tr></table></figure>
+<h4 id="只暂存一个新文件的一部分，不是全部"><a href="#只暂存一个新文件的一部分，不是全部" class="headerlink" title="只暂存一个新文件的一部分，不是全部"></a>只暂存一个新文件的一部分，不是全部</h4><figure class="highlight llvm"><table><tr><td class="code"><pre><span class="line">git <span class="keyword">add</span> --patch[-p] filename.<span class="keyword">x</span></span><br><span class="line"></span><br><span class="line">git <span class="keyword">add</span> -N filename.<span class="keyword">x</span></span><br></pre></td></tr></table></figure>
+<h4 id="把在一个文件里的变化（changes）加到两个提交里"><a href="#把在一个文件里的变化（changes）加到两个提交里" class="headerlink" title="把在一个文件里的变化（changes）加到两个提交里"></a>把在一个文件里的变化（changes）加到两个提交里</h4><figure class="highlight routeros"><table><tr><td class="code"><pre><span class="line">git <span class="built_in">add</span> -p</span><br></pre></td></tr></table></figure>
+<h4 id="把暂存的内容变成未暂存，把未暂存的内容暂存"><a href="#把暂存的内容变成未暂存，把未暂存的内容暂存" class="headerlink" title="把暂存的内容变成未暂存，把未暂存的内容暂存"></a>把暂存的内容变成未暂存，把未暂存的内容暂存</h4><figure class="highlight pgsql"><table><tr><td class="code"><pre><span class="line">git <span class="keyword">commit</span> -m &quot;WIP&quot;</span><br><span class="line"></span><br><span class="line">git <span class="keyword">add</span> .</span><br><span class="line"></span><br><span class="line">git stash</span><br><span class="line"></span><br><span class="line">git <span class="keyword">reset</span> HEAD^</span><br><span class="line"></span><br><span class="line">git stash pop <span class="comment">--index 0</span></span><br></pre></td></tr></table></figure>
+<h3 id="未暂存（Unstaged）"><a href="#未暂存（Unstaged）" class="headerlink" title="未暂存（Unstaged）"></a>未暂存（Unstaged）</h3><h4 id="把未暂存（unstaged）的内容移动到一个新分支"><a href="#把未暂存（unstaged）的内容移动到一个新分支" class="headerlink" title="把未暂存（unstaged）的内容移动到一个新分支"></a>把未暂存（unstaged）的内容移动到一个新分支</h4><figure class="highlight applescript"><table><tr><td class="code"><pre><span class="line">git checkout -b <span class="keyword">my</span>-branch</span><br></pre></td></tr></table></figure>
+<h4 id="把未暂存的内容移动到另一个已存在的分支"><a href="#把未暂存的内容移动到另一个已存在的分支" class="headerlink" title="把未暂存的内容移动到另一个已存在的分支"></a>把未暂存的内容移动到另一个已存在的分支</h4><figure class="highlight perl"><table><tr><td class="code"><pre><span class="line">git stash</span><br><span class="line"></span><br><span class="line">git checkout <span class="keyword">my</span>-branch</span><br><span class="line"></span><br><span class="line">git stash <span class="keyword">pop</span></span><br></pre></td></tr></table></figure>
+<h4 id="丢弃本地未提交的变化（uncommitted-changes）"><a href="#丢弃本地未提交的变化（uncommitted-changes）" class="headerlink" title="丢弃本地未提交的变化（uncommitted changes）"></a>丢弃本地未提交的变化（uncommitted changes）</h4><figure class="highlight pgsql"><table><tr><td class="code"><pre><span class="line">// one <span class="keyword">commit</span></span><br><span class="line">git <span class="keyword">reset</span> <span class="comment">--hard HEAD^</span></span><br><span class="line"></span><br><span class="line">// two commits</span><br><span class="line">git <span class="keyword">reset</span> <span class="comment">--hard HEAD^^</span></span><br><span class="line"></span><br><span class="line">// four commits</span><br><span class="line">git <span class="keyword">reset</span> <span class="comment">--hard HEAD~4</span></span><br><span class="line"></span><br><span class="line">git checkout -f</span><br><span class="line"></span><br><span class="line">git <span class="keyword">reset</span> filename</span><br></pre></td></tr></table></figure>
+<h4 id="丢弃某些未暂存的内容"><a href="#丢弃某些未暂存的内容" class="headerlink" title="丢弃某些未暂存的内容"></a>丢弃某些未暂存的内容</h4><figure class="highlight css"><table><tr><td class="code"><pre><span class="line">git checkout -<span class="selector-tag">p</span></span><br><span class="line"></span><br><span class="line">git stash -<span class="selector-tag">p</span></span><br><span class="line"></span><br><span class="line">git reset <span class="attr">--hard</span></span><br><span class="line"></span><br><span class="line">git stash pop</span><br><span class="line"></span><br><span class="line">git stash drop</span><br></pre></td></tr></table></figure>
+<h3 id="分支（Branches）"><a href="#分支（Branches）" class="headerlink" title="分支（Branches）"></a>分支（Branches）</h3><h4 id="从错误的分支拉取了内容，或把内容推送到了错误的分支"><a href="#从错误的分支拉取了内容，或把内容推送到了错误的分支" class="headerlink" title="从错误的分支拉取了内容，或把内容推送到了错误的分支"></a>从错误的分支拉取了内容，或把内容推送到了错误的分支</h4><figure class="highlight css"><table><tr><td class="code"><pre><span class="line">git reflog</span><br><span class="line"></span><br><span class="line">git reset <span class="attr">--hard</span> <span class="selector-attr">[hash]</span></span><br></pre></td></tr></table></figure>
+<h4 id="丢弃本地的提交，以便本地分支与远程保持一致"><a href="#丢弃本地的提交，以便本地分支与远程保持一致" class="headerlink" title="丢弃本地的提交，以便本地分支与远程保持一致"></a>丢弃本地的提交，以便本地分支与远程保持一致</h4><figure class="highlight maxima"><table><tr><td class="code"><pre><span class="line">git <span class="built_in">status</span></span><br><span class="line"></span><br><span class="line">git <span class="built_in">reset</span> --hard <span class="built_in">origin</span>/branch</span><br></pre></td></tr></table></figure>
+<h4 id="需要提交到一个新分支，但错误的提交到了main"><a href="#需要提交到一个新分支，但错误的提交到了main" class="headerlink" title="需要提交到一个新分支，但错误的提交到了main"></a>需要提交到一个新分支，但错误的提交到了main</h4><figure class="highlight pgsql"><table><tr><td class="code"><pre><span class="line">git branch my-branch</span><br><span class="line"></span><br><span class="line">git <span class="keyword">reset</span> <span class="comment">--hard HEAD^</span></span><br><span class="line"></span><br><span class="line">git <span class="keyword">reset</span> <span class="comment">--hard [hash]</span></span><br></pre></td></tr></table></figure>
+<h4 id="保留来自另一个ref-ish的整体文件"><a href="#保留来自另一个ref-ish的整体文件" class="headerlink" title="保留来自另一个ref-ish的整体文件"></a>保留来自另一个ref-ish的整体文件</h4><figure class="highlight pgsql"><table><tr><td class="code"><pre><span class="line">git <span class="keyword">add</span> -A &amp;&amp; git <span class="keyword">commit</span> -m &quot;commit message&quot;</span><br><span class="line"></span><br><span class="line">git checkout solution <span class="comment">-- file.txt</span></span><br></pre></td></tr></table></figure>
+<h4 id="删除上游（upstream）分支被删除了的本地分支"><a href="#删除上游（upstream）分支被删除了的本地分支" class="headerlink" title="删除上游（upstream）分支被删除了的本地分支"></a>删除上游（upstream）分支被删除了的本地分支</h4><figure class="highlight css"><table><tr><td class="code"><pre><span class="line">git fetch -<span class="selector-tag">p</span></span><br></pre></td></tr></table></figure>
+<h4 id="不小心删除了分支"><a href="#不小心删除了分支" class="headerlink" title="不小心删除了分支"></a>不小心删除了分支</h4><figure class="highlight mipsasm"><table><tr><td class="code"><pre><span class="line">git checkout -<span class="keyword">b </span>my-<span class="keyword">branch</span></span><br><span class="line"><span class="keyword"></span></span><br><span class="line">git <span class="keyword">branch</span></span><br><span class="line"><span class="keyword"></span></span><br><span class="line">git reflog</span><br><span class="line"></span><br><span class="line">git checkout -<span class="keyword">b </span>my-<span class="keyword">branch</span></span><br></pre></td></tr></table></figure>
+<h4 id="删除一个远程分支"><a href="#删除一个远程分支" class="headerlink" title="删除一个远程分支"></a>删除一个远程分支</h4><figure class="highlight maxima"><table><tr><td class="code"><pre><span class="line">git <span class="built_in">push</span> <span class="built_in">origin</span> --<span class="built_in">delete</span> my-branch</span><br><span class="line"></span><br><span class="line">git <span class="built_in">push</span> <span class="built_in">origin</span> :my-branch</span><br></pre></td></tr></table></figure>
+<h4 id="删除一个本地分支"><a href="#删除一个本地分支" class="headerlink" title="删除一个本地分支"></a>删除一个本地分支</h4><figure class="highlight applescript"><table><tr><td class="code"><pre><span class="line">git branch -D <span class="keyword">my</span>-branch</span><br></pre></td></tr></table></figure>
+<h4 id="从别人正在工作的远程分支迁出（checkout）一个分支"><a href="#从别人正在工作的远程分支迁出（checkout）一个分支" class="headerlink" title="从别人正在工作的远程分支迁出（checkout）一个分支"></a>从别人正在工作的远程分支迁出（checkout）一个分支</h4><figure class="highlight css"><table><tr><td class="code"><pre><span class="line">git fetch <span class="attr">--all</span></span><br><span class="line"></span><br><span class="line">git checkout <span class="attr">--track</span> origin/<span class="selector-attr">[branch]</span></span><br></pre></td></tr></table></figure>
+<h3 id="Rebasing和合并（Merging）"><a href="#Rebasing和合并（Merging）" class="headerlink" title="Rebasing和合并（Merging）"></a>Rebasing和合并（Merging）</h3><h4 id="撤销rebase-merge"><a href="#撤销rebase-merge" class="headerlink" title="撤销rebase/merge"></a>撤销rebase/merge</h4><figure class="highlight pgsql"><table><tr><td class="code"><pre><span class="line">git <span class="keyword">reset</span> <span class="comment">--hard ORIG_HEAD</span></span><br></pre></td></tr></table></figure>
+<h4 id="已经rebase，但不想强推（force-push）"><a href="#已经rebase，但不想强推（force-push）" class="headerlink" title="已经rebase，但不想强推（force push）"></a>已经rebase，但不想强推（force push）</h4><figure class="highlight css"><table><tr><td class="code"><pre><span class="line">git checkout my-branch</span><br><span class="line"></span><br><span class="line">git rebase -<span class="selector-tag">i</span> <span class="selector-tag">main</span></span><br><span class="line"></span><br><span class="line">git checkout <span class="selector-tag">main</span></span><br><span class="line"></span><br><span class="line">git merge <span class="attr">--ff-only</span> my-branch</span><br></pre></td></tr></table></figure>
+<h4 id="需要组合（combine）几个提交"><a href="#需要组合（combine）几个提交" class="headerlink" title="需要组合（combine）几个提交"></a>需要组合（combine）几个提交</h4><figure class="highlight stylus"><table><tr><td class="code"><pre><span class="line">git reset <span class="attr">--soft</span> <span class="selector-tag">main</span></span><br><span class="line"></span><br><span class="line">git commit -am <span class="string">&quot;new awesome feature&quot;</span></span><br><span class="line"></span><br><span class="line">git rebase -<span class="selector-tag">i</span> <span class="selector-tag">main</span></span><br><span class="line"></span><br><span class="line">git rebase -<span class="selector-tag">i</span> HEAD~<span class="number">2</span></span><br></pre></td></tr></table></figure>
+    </section>
+    
+      <div class="tags">
+        <span>Tags:</span>
+        
+  <a href="/tags#Git" >
+    <span class="tag-code">Git</span>
+  </a>
+
+      </div>
+      
+        <div class="money-like">
+          <div class="reward-btn">
+            赏
+            <div class="money-code">
+              <span class="wechat-code">
+                <img class="code-image" src="/css/images/wechat.png" />
+                <b>使用微信打赏</b>
+              </span>
+              <span class="wechat-code">
+                <img class="code-image" src="/css/images/alipay.png">
+                <b>使用支付宝打赏</b>
+              </span>
+            </div>
+          </div>
+          <p class="notice">雅致寓于高阁渔舟唱晚，古典悠然；<br />格调外发园林绿树萦绕，馥郁清香。</p>
+        </div>
+        <div class="qrcode">
+          <img id="share-qrcode" />
+          <p class="notice">扫描二维码，分享此文章</p>
+        </div>
+  </article>
+</main>
+<!--PC和WAP自适应版-->
+<div id="SOHUCS" sid="2023/02/18/technical/Git操作文档/" style="max-width: 750px; height: 100%;"></div>
+
+<script>
+  (function () {
+    var url = "https://whjin.github.io/2023/02/18/technical/Git操作文档/";
+    var banner = "";
+    if (banner) {
+      $("#article-banner").css({
+        "background-image": "url(" + banner + ")",
+      });
+    } else {
+      $("#article-banner").geopattern(url);
+    }
+    $(".header").removeClass("fixed-header");
+
+    // error image
+    $(".markdown-content img").on("error", function () {
+      $(this).attr("src", "http://file.muyutech.com/error-img.png");
+    });
+
+    // zoom image
+    $(".markdown-content img").on("click", function () {
+      var src = $(this).attr("src");
+      var imageW = $(this).width();
+      var imageH = $(this).height();
+
+      var zoom = (($(window).width() * 0.95) / imageW).toFixed(2);
+      zoom = zoom < 1 ? 1 : zoom;
+      zoom = zoom > 2 ? 2 : zoom;
+      var transY = (($(window).height() - imageH) / 2).toFixed(2);
+
+      $("body").append(
+        '<div class="image-view-wrap"><div class="image-view-inner"><img src="' + src + '" /></div></div>'
+      );
+      $(".image-view-wrap").addClass("wrap-active");
+      $(".image-view-wrap img").css({
+        width: `${imageW}`,
+        transform: `translate3d(0, ${transY}px, 0) scale3d(${zoom}, ${zoom}, 1)`,
+      });
+      $("html").css("overflow", "hidden");
+
+      $(".image-view-wrap").on("click", function () {
+        $(this).remove();
+        $("html").attr("style", "");
+      });
+    });
+
+    // qrcode
+    var qr = new QRious({
+      element: document.getElementById("share-qrcode"),
+      value: document.location.href,
+    });
+  })();
+</script>
+
+<!-- <script type="text/javascript">
+  (function () {
+    var appid = "cytdwbqB7";
+    var conf = "prod_2648b5665a85c057dd13bef6cd1ebd30";
+    var width = window.innerWidth || document.documentElement.clientWidth;
+    if (width < 960) {
+      window.document.write(
+        '<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="//changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' +
+          appid +
+          "&conf=" +
+          conf +
+          '"><\/script>'
+      );
+    } else {
+      var loadJs = function (d, a) {
+        var c = document.getElementsByTagName("head")[0] || document.head || document.documentElement;
+        var b = document.createElement("script");
+        b.setAttribute("type", "text/javascript");
+        b.setAttribute("charset", "UTF-8");
+        b.setAttribute("src", d);
+        if (typeof a === "function") {
+          if (window.attachEvent) {
+            b.onreadystatechange = function () {
+              var e = b.readyState;
+              if (e === "loaded" || e === "complete") {
+                b.onreadystatechange = null;
+                a();
+              }
+            };
+          } else {
+            b.onload = a;
+          }
+        }
+        c.appendChild(b);
+      };
+      loadJs("//changyan.sohu.com/upload/changyan.js", function () {
+        window.changyan.api.config({ appid: appid, conf: conf });
+      });
+    }
+  })();
+</script> -->
+
+
+  <div class="vcomment valine">
+    <script src="//cdn.jsdelivr.net/npm/valine"></script>
+    <script>
+      var path = window.location.pathname.replace("index.html", "");
+      var isEN = path.indexOf("en") > -1;
+      path = isEN ? path.replace("en/", "") : path;
+      new Valine({
+        el: ".vcomment",
+        appId: "9NwKq9DsbUrNgihmAZusvPpR-gzGzoHsz",
+        appKey: "WaUpXkmnXUes9ZNF30cZIAho",
+        placeholder: "",
+        avatar: "mp",
+        path: path,
+        recordIP: true,
+        lang: isEN ? "en" : "zh-cn",
+        visitor: true,
+        enableQQ: "true",
+        emojiCDN:
+          path.indexOf("emoji") > -1
+            ? "//i0.hdslb.com/bfs/emote/"
+            : "//img.t.sinajs.cn/t4/appstyle/expression/ext/normal/",
+        emojiMaps:
+          path.indexOf("emoji") > -1
+            ? {
+              tv_doge: "6ea59c827c414b4a2955fe79e0f6fd3dcd515e24.png",
+              tv_亲亲: "a8111ad55953ef5e3be3327ef94eb4a39d535d06.png",
+              tv_偷笑: "bb690d4107620f1c15cff29509db529a73aee261.png",
+              tv_再见: "180129b8ea851044ce71caf55cc8ce44bd4a4fc8.png",
+              tv_冷漠: "b9cbc755c2b3ee43be07ca13de84e5b699a3f101.png",
+              tv_发怒: "34ba3cd204d5b05fec70ce08fa9fa0dd612409ff.png",
+              tv_发财: "34db290afd2963723c6eb3c4560667db7253a21a.png",
+              tv_可爱: "9e55fd9b500ac4b96613539f1ce2f9499e314ed9.png",
+              tv_吐血: "09dd16a7aa59b77baa1155d47484409624470c77.png",
+              tv_呆: "fe1179ebaa191569b0d31cecafe7a2cd1c951c9d.png",
+              tv_呕吐: "9f996894a39e282ccf5e66856af49483f81870f3.png",
+              tv_困: "241ee304e44c0af029adceb294399391e4737ef2.png",
+              tv_坏笑: "1f0b87f731a671079842116e0991c91c2c88645a.png",
+              tv_大佬: "093c1e2c490161aca397afc45573c877cdead616.png",
+              tv_大哭: "23269aeb35f99daee28dda129676f6e9ea87934f.png",
+              tv_委屈: "d04dba7b5465779e9755d2ab6f0a897b9b33bb77.png",
+              tv_害羞: "a37683fb5642fa3ddfc7f4e5525fd13e42a2bdb1.png",
+              tv_尴尬: "7cfa62dafc59798a3d3fb262d421eeeff166cfa4.png",
+              tv_微笑: "70dc5c7b56f93eb61bddba11e28fb1d18fddcd4c.png",
+              tv_思考: "90cf159733e558137ed20aa04d09964436f618a1.png",
+              tv_惊吓: "0d15c7e2ee58e935adc6a7193ee042388adc22af.png",
+              tv_打脸: "56ab10b624063e966bfcb76ea5dc4794d87dfd47.png",
+              tv_抓狂: "fe31c08edad661d63762b04e17b8d5ae3c71a757.png",
+              tv_抠鼻: "c666f55e88d471e51bbd9fab9bb308110824a6eb.png",
+              tv_斜眼笑: "911f987aa8bc1bee12d52aafe62bc41ef4474e6c.png",
+              tv_无奈: "ea8ed89ee9878f2fece2dda0ea8a5dbfe21b5751.png",
+              tv_晕: "5443c22b4d07fb1907ccc610c8e6db254f2461b7.png",
+              tv_流汗: "cead1c351ab8d79e9f369605beb90148db0fbed3.png",
+              tv_流泪: "7e71cde7858f0cd50d74b0264aa26db612a8a167.png",
+              tv_流鼻血: "c32d39db2737f89b904ca32700d140a9241b0767.png",
+              tv_点赞: "f85c354995bd99e28fc76c869bfe42ba6438eff4.png",
+              tv_生气: "26702dcafdab5e8225b43ffd23c94ac1ff932654.png",
+              tv_生病: "8b0ec90e6b86771092a498c54f09fc94621c1900.png",
+              tv_疑问: "0793d949b18d7be716078349c202c15ff166f314.png",
+              tv_白眼: "c1d59f439e379ee50eef488bcb5e5378e5044ea4.png",
+              tv_皱眉: "72ccad6679fea0d14cce648b4d818e09b8ffea2d.png",
+              tv_目瞪口呆: "0b8cb81a68de5d5365212c99375e7ace3e7891b7.png",
+              tv_睡着: "8b196675b53af58264f383c50ad0945048290b33.png",
+              tv_笑哭: "1abc628f6d4f4caf9d0e7800878f4697abbc8273.png",
+              tv_腼腆: "89712c0d4af73e67f89e35cbc518420380a7f6f4.png",
+              tv_色: "61822c7e9aae5da76475e7892534545336b23a6f.png",
+              tv_调侃: "4bc022533ef31544ca0d72c12c808cf4a1cce3e3.png",
+              tv_调皮: "b9c41de8e82dd7a8515ae5e3cb63e898bf245186.png",
+              tv_鄙视: "6e72339f346a692a495b123174b49e4e8e781303.png",
+              tv_闭嘴: "c9e990da7f6e93975e25fd8b70e2e290aa4086ef.png",
+              tv_难过: "87f46748d3f142ebc6586ff58860d0e2fc8263ba.png",
+              tv_馋: "fc7e829b845c43c623c8b490ee3602b7f0e76a31.png",
+              tv_鬼脸: "0ffbbddf8a94d124ca2f54b360bbc04feb6bbfea.png",
+              tv_黑人问号: "45821a01f51bc867da9edbaa2e070410819a95b2.png",
+              tv_鼓掌: "1d21793f96ef4e6f48b23e53e3b9e42da833a0f6.png",
+              // ... 更多表情
+            }
+            : void 0,
+      });
+    </script>
+  </div>
+  
+
+    <script>
+      var _hmt = _hmt || [];
+      (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?7176d0bc67fb19a89fea168ac922b24e";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+      })();
+    </script>
+<div class="scroll-top">
+  <span class="arrow-icon"></span>
+</div>
+<footer class="app-footer">
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <div>&copy; 2015 -
+        <script type="text/javascript">document.write(new Date().getFullYear());</script>
+        <a href="https://github.com/whjin" target="_blank" title="Github"> whjin </a>|<span
+            id="busuanzi_container_site_pv"> 访问 <a
+                href="http://service.ibruce.info/" target="_blank"><span id="busuanzi_value_site_pv"></span></a> 次 </span><span
+            id="busuanzi_container_site_uv"><a href="http://service.ibruce.info/" target="_blank"><span
+                    id="busuanzi_value_site_uv"></span></a> 人</span>
+    </div>
+</footer>
+
+<script>
+    function async (u, c) {
+        var d = document, t = 'script',
+            o = d.createElement(t),
+            s = d.getElementsByTagName(t)[0];
+        o.src = u;
+        if (c) {
+            o.addEventListener('load', function (e) {
+                c(null, e);
+            }, false);
+        }
+        s.parentNode.insertBefore(o, s);
+    }
+</script>
+<script>
+    async("//cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function () {
+        FastClick.attach(document.body);
+    })
+</script>
+
+<script>
+    var hasLine = 'false';
+    async("//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js", function () {
+        $('figure pre').each(function (i, block) {
+            var figure = $(this).parents('figure');
+            if (hasLine == 'false') {
+                figure.find('.gutter').hide();
+            }
+            var lang = figure.attr('class').split(' ')[1] || 'code';
+            var codeHtml = $(this).html();
+            var codeTag = document.createElement('code');
+            codeTag.className = lang;
+            codeTag.innerHTML = codeHtml;
+            $(this).attr('class', '').empty().html(codeTag);
+            figure.attr('data-lang', lang.toUpperCase());
+            hljs.highlightBlock(block);
+        });
+    })
+</script>
+<!-- Baidu Tongji -->
+
+        
+<script src="/js/script.js"></script>
+
+            <script>
+                var _hmt = _hmt || [];
+                (function () {
+                    var hm = document.createElement("script");
+                    hm.src = "https://hm.baidu.com/hm.js?7176d0bc67fb19a89fea168ac922b24e";
+                    var s = document.getElementsByTagName("script")[0];
+                    s.parentNode.insertBefore(hm, s);
+                })();
+            </script>
+</body>
+</html>
