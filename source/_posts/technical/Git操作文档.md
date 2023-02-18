@@ -12,6 +12,8 @@ git show
 git log -n1 -p
 ```
 
+<!--more-->
+
 #### 修改提交信息（commit message） ####
 ```text
 git commit --amend --only
@@ -41,4 +43,4 @@ git push -f [remote][branch]
 
 git reset --soft HEAD@{1}
 ```
-<!--more-->
+
