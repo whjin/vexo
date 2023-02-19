@@ -341,3 +341,13 @@ git config --global credential.helper cache
 git config --global credential.helper 'cache --timeout=3600'
 ```
 
+#### 修改远程分支名 ####
+```git
+git branch -m oldbranch newbranch
+
+git push --delete origin oldbranch
+
+git push origin newbranch
+
+git branch --set-upsteam-to origin/newbranch
+```
