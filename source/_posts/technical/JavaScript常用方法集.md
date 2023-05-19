@@ -170,6 +170,22 @@ function unique(arr) {
 }
 ```
 
+### 数组对象去重
+```JavaScript
+function uniqueArr(arr) {
+  if (!Array.isArray(arr)) {
+    return;
+  }
+  let map = new Map();
+  for (let i = 0, len = arr.length; i < len; i++) {
+    if (!map.has(arr[i].name)) {
+      map.set(arr[i].name, arr[i]);
+    }
+  }
+  return [...map.values()];
+}
+```
+
 ### 数组对象排序
 ```JavaScript
 // 数组对象排序，比较两个字符串
