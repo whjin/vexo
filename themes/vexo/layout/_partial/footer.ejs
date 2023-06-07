@@ -1,10 +1,14 @@
 <footer class="app-footer">
     <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-    <div>&copy; 2015 -
-        <script type="text/javascript">document.write(new Date().getFullYear());</script>
+    <div>&copy; 2015 - <span id="current"></span>
+        <script type="text/javascript">
+            const current = document.getElementById("current");
+            current.innerText = new Date().getFullYear();
+        </script>
         <a href="https://github.com/whjin" target="_blank" title="Github"> whjin </a>|<span
             id="busuanzi_container_site_pv"> 访问 <a
-                href="http://service.ibruce.info/" target="_blank"><span id="busuanzi_value_site_pv"></span></a> 次 </span><span
+                href="http://service.ibruce.info/" target="_blank"><span id="busuanzi_value_site_pv"></span></a> 次
+        </span><span
             id="busuanzi_container_site_uv"><a href="http://service.ibruce.info/" target="_blank"><span
                     id="busuanzi_value_site_uv"></span></a> 人</span>
     </div>
