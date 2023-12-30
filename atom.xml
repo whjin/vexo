@@ -5,9 +5,9 @@
   <subtitle>吴华锦的个人主页</subtitle>
   <link href="/atom.xml" rel="self"/>
   
-  <link href="https://whjin.github.io/"/>
+  <link href="https://whjin.github.io/vexo/"/>
   <updated>2023-02-19T06:45:02.836Z</updated>
-  <id>https://whjin.github.io/</id>
+  <id>https://whjin.github.io/vexo/</id>
   
   <author>
     <name>吴华锦</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>Git异常处理</title>
-    <link href="https://whjin.github.io/2023/02/19/technical/Git%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86/"/>
-    <id>https://whjin.github.io/2023/02/19/technical/Git异常处理/</id>
+    <link href="https://whjin.github.io/vexo/2023/02/19/technical/Git%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86/"/>
+    <id>https://whjin.github.io/vexo/2023/02/19/technical/Git异常处理/</id>
     <published>2023-02-19T06:26:11.000Z</published>
     <updated>2023-02-19T06:45:02.836Z</updated>
     
@@ -31,17 +31,17 @@
     
     </summary>
     
-      <category term="技术" scheme="https://whjin.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+      <category term="技术" scheme="https://whjin.github.io/vexo/categories/%E6%8A%80%E6%9C%AF/"/>
     
     
-      <category term="Git" scheme="https://whjin.github.io/tags/Git/"/>
+      <category term="Git" scheme="https://whjin.github.io/vexo/tags/Git/"/>
     
   </entry>
   
   <entry>
     <title>Git操作文档</title>
-    <link href="https://whjin.github.io/2023/02/18/technical/Git%E6%93%8D%E4%BD%9C%E6%96%87%E6%A1%A3/"/>
-    <id>https://whjin.github.io/2023/02/18/technical/Git操作文档/</id>
+    <link href="https://whjin.github.io/vexo/2023/02/18/technical/Git%E6%93%8D%E4%BD%9C%E6%96%87%E6%A1%A3/"/>
+    <id>https://whjin.github.io/vexo/2023/02/18/technical/Git操作文档/</id>
     <published>2023-02-18T09:15:19.000Z</published>
     <updated>2023-02-19T06:51:03.101Z</updated>
     
@@ -53,17 +53,17 @@
     
     </summary>
     
-      <category term="技术" scheme="https://whjin.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+      <category term="技术" scheme="https://whjin.github.io/vexo/categories/%E6%8A%80%E6%9C%AF/"/>
     
     
-      <category term="Git" scheme="https://whjin.github.io/tags/Git/"/>
+      <category term="Git" scheme="https://whjin.github.io/vexo/tags/Git/"/>
     
   </entry>
   
   <entry>
     <title>功能代码集合</title>
-    <link href="https://whjin.github.io/2023/01/24/technical/%E5%8A%9F%E8%83%BD%E4%BB%A3%E7%A0%81%E9%9B%86%E5%90%88/"/>
-    <id>https://whjin.github.io/2023/01/24/technical/功能代码集合/</id>
+    <link href="https://whjin.github.io/vexo/2023/01/24/technical/%E5%8A%9F%E8%83%BD%E4%BB%A3%E7%A0%81%E9%9B%86%E5%90%88/"/>
+    <id>https://whjin.github.io/vexo/2023/01/24/technical/功能代码集合/</id>
     <published>2023-01-23T16:35:33.000Z</published>
     <updated>2023-01-27T05:58:20.943Z</updated>
     
@@ -75,17 +75,17 @@
     
     </summary>
     
-      <category term="技术" scheme="https://whjin.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+      <category term="技术" scheme="https://whjin.github.io/vexo/categories/%E6%8A%80%E6%9C%AF/"/>
     
     
-      <category term="前端" scheme="https://whjin.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
+      <category term="前端" scheme="https://whjin.github.io/vexo/tags/%E5%89%8D%E7%AB%AF/"/>
     
   </entry>
   
   <entry>
     <title>Vue技术点汇总</title>
-    <link href="https://whjin.github.io/2023/01/22/technical/Vue%E6%8A%80%E6%9C%AF%E7%82%B9%E6%B1%87%E6%80%BB/"/>
-    <id>https://whjin.github.io/2023/01/22/technical/Vue技术点汇总/</id>
+    <link href="https://whjin.github.io/vexo/2023/01/22/technical/Vue%E6%8A%80%E6%9C%AF%E7%82%B9%E6%B1%87%E6%80%BB/"/>
+    <id>https://whjin.github.io/vexo/2023/01/22/technical/Vue技术点汇总/</id>
     <published>2023-01-22T08:57:15.000Z</published>
     <updated>2023-01-27T07:09:27.492Z</updated>
     
@@ -106,19 +106,19 @@
     
     </summary>
     
-      <category term="技术" scheme="https://whjin.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+      <category term="技术" scheme="https://whjin.github.io/vexo/categories/%E6%8A%80%E6%9C%AF/"/>
     
     
-      <category term="前端" scheme="https://whjin.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
+      <category term="前端" scheme="https://whjin.github.io/vexo/tags/%E5%89%8D%E7%AB%AF/"/>
     
-      <category term="Vue" scheme="https://whjin.github.io/tags/Vue/"/>
+      <category term="Vue" scheme="https://whjin.github.io/vexo/tags/Vue/"/>
     
   </entry>
   
   <entry>
     <title>JavaScript常用方法集</title>
-    <link href="https://whjin.github.io/2020/08/23/technical/JavaScript%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95%E9%9B%86/"/>
-    <id>https://whjin.github.io/2020/08/23/technical/JavaScript常用方法集/</id>
+    <link href="https://whjin.github.io/vexo/2020/08/23/technical/JavaScript%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95%E9%9B%86/"/>
+    <id>https://whjin.github.io/vexo/2020/08/23/technical/JavaScript常用方法集/</id>
     <published>2020-08-23T13:01:36.000Z</published>
     <updated>2023-05-20T16:02:56.717Z</updated>
     
@@ -130,19 +130,19 @@
     
     </summary>
     
-      <category term="技术" scheme="https://whjin.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+      <category term="技术" scheme="https://whjin.github.io/vexo/categories/%E6%8A%80%E6%9C%AF/"/>
     
     
-      <category term="前端" scheme="https://whjin.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
+      <category term="前端" scheme="https://whjin.github.io/vexo/tags/%E5%89%8D%E7%AB%AF/"/>
     
-      <category term="JS" scheme="https://whjin.github.io/tags/JS/"/>
+      <category term="JS" scheme="https://whjin.github.io/vexo/tags/JS/"/>
     
   </entry>
   
   <entry>
     <title>Web SQL浏览器数据库实例</title>
-    <link href="https://whjin.github.io/2020/08/23/technical/Web-SQL%E6%B5%8F%E8%A7%88%E5%99%A8%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%9E%E4%BE%8B/"/>
-    <id>https://whjin.github.io/2020/08/23/technical/Web-SQL浏览器数据库实例/</id>
+    <link href="https://whjin.github.io/vexo/2020/08/23/technical/Web-SQL%E6%B5%8F%E8%A7%88%E5%99%A8%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%9E%E4%BE%8B/"/>
+    <id>https://whjin.github.io/vexo/2020/08/23/technical/Web-SQL浏览器数据库实例/</id>
     <published>2020-08-23T12:55:31.000Z</published>
     <updated>2023-01-27T07:09:04.040Z</updated>
     
@@ -156,19 +156,19 @@
     
     </summary>
     
-      <category term="技术" scheme="https://whjin.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+      <category term="技术" scheme="https://whjin.github.io/vexo/categories/%E6%8A%80%E6%9C%AF/"/>
     
     
-      <category term="前端" scheme="https://whjin.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
+      <category term="前端" scheme="https://whjin.github.io/vexo/tags/%E5%89%8D%E7%AB%AF/"/>
     
-      <category term="数据库" scheme="https://whjin.github.io/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+      <category term="数据库" scheme="https://whjin.github.io/vexo/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
     
   </entry>
   
   <entry>
     <title>八月新作</title>
-    <link href="https://whjin.github.io/2020/08/23/literature/%E5%85%AB%E6%9C%88%E6%96%B0%E4%BD%9C/"/>
-    <id>https://whjin.github.io/2020/08/23/literature/八月新作/</id>
+    <link href="https://whjin.github.io/vexo/2020/08/23/literature/%E5%85%AB%E6%9C%88%E6%96%B0%E4%BD%9C/"/>
+    <id>https://whjin.github.io/vexo/2020/08/23/literature/八月新作/</id>
     <published>2020-08-23T12:45:37.000Z</published>
     <updated>2023-01-27T05:31:53.805Z</updated>
     
@@ -180,17 +180,17 @@
     
     </summary>
     
-      <category term="文学" scheme="https://whjin.github.io/categories/%E6%96%87%E5%AD%A6/"/>
+      <category term="文学" scheme="https://whjin.github.io/vexo/categories/%E6%96%87%E5%AD%A6/"/>
     
     
-      <category term="诗词" scheme="https://whjin.github.io/tags/%E8%AF%97%E8%AF%8D/"/>
+      <category term="诗词" scheme="https://whjin.github.io/vexo/tags/%E8%AF%97%E8%AF%8D/"/>
     
   </entry>
   
   <entry>
     <title>远方无从往</title>
-    <link href="https://whjin.github.io/2020/05/16/literature/%E8%BF%9C%E6%96%B9%E6%97%A0%E4%BB%8E%E5%BE%80/"/>
-    <id>https://whjin.github.io/2020/05/16/literature/远方无从往/</id>
+    <link href="https://whjin.github.io/vexo/2020/05/16/literature/%E8%BF%9C%E6%96%B9%E6%97%A0%E4%BB%8E%E5%BE%80/"/>
+    <id>https://whjin.github.io/vexo/2020/05/16/literature/远方无从往/</id>
     <published>2020-05-16T12:23:35.000Z</published>
     <updated>2023-01-27T05:27:34.499Z</updated>
     
@@ -202,17 +202,17 @@
     
     </summary>
     
-      <category term="文学" scheme="https://whjin.github.io/categories/%E6%96%87%E5%AD%A6/"/>
+      <category term="文学" scheme="https://whjin.github.io/vexo/categories/%E6%96%87%E5%AD%A6/"/>
     
     
-      <category term="诗词" scheme="https://whjin.github.io/tags/%E8%AF%97%E8%AF%8D/"/>
+      <category term="诗词" scheme="https://whjin.github.io/vexo/tags/%E8%AF%97%E8%AF%8D/"/>
     
   </entry>
   
   <entry>
     <title>typescript开发环境</title>
-    <link href="https://whjin.github.io/2019/10/13/technical/typescript%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/"/>
-    <id>https://whjin.github.io/2019/10/13/technical/typescript开发环境/</id>
+    <link href="https://whjin.github.io/vexo/2019/10/13/technical/typescript%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/"/>
+    <id>https://whjin.github.io/vexo/2019/10/13/technical/typescript开发环境/</id>
     <published>2019-10-13T13:43:15.000Z</published>
     <updated>2023-01-27T07:11:09.401Z</updated>
     
@@ -225,19 +225,19 @@
     
     </summary>
     
-      <category term="技术" scheme="https://whjin.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+      <category term="技术" scheme="https://whjin.github.io/vexo/categories/%E6%8A%80%E6%9C%AF/"/>
     
     
-      <category term="前端" scheme="https://whjin.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
+      <category term="前端" scheme="https://whjin.github.io/vexo/tags/%E5%89%8D%E7%AB%AF/"/>
     
-      <category term="TS" scheme="https://whjin.github.io/tags/TS/"/>
+      <category term="TS" scheme="https://whjin.github.io/vexo/tags/TS/"/>
     
   </entry>
   
   <entry>
     <title>Vue组件通信</title>
-    <link href="https://whjin.github.io/2019/10/12/technical/Vue%E7%BB%84%E4%BB%B6%E9%80%9A%E4%BF%A1/"/>
-    <id>https://whjin.github.io/2019/10/12/technical/Vue组件通信/</id>
+    <link href="https://whjin.github.io/vexo/2019/10/12/technical/Vue%E7%BB%84%E4%BB%B6%E9%80%9A%E4%BF%A1/"/>
+    <id>https://whjin.github.io/vexo/2019/10/12/technical/Vue组件通信/</id>
     <published>2019-10-11T16:36:21.000Z</published>
     <updated>2023-02-02T16:03:23.207Z</updated>
     
@@ -250,19 +250,19 @@
     
     </summary>
     
-      <category term="技术" scheme="https://whjin.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+      <category term="技术" scheme="https://whjin.github.io/vexo/categories/%E6%8A%80%E6%9C%AF/"/>
     
     
-      <category term="前端" scheme="https://whjin.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
+      <category term="前端" scheme="https://whjin.github.io/vexo/tags/%E5%89%8D%E7%AB%AF/"/>
     
-      <category term="Vue" scheme="https://whjin.github.io/tags/Vue/"/>
+      <category term="Vue" scheme="https://whjin.github.io/vexo/tags/Vue/"/>
     
   </entry>
   
   <entry>
     <title>清除浮动细节介绍</title>
-    <link href="https://whjin.github.io/2019/10/11/technical/%E6%B8%85%E9%99%A4%E6%B5%AE%E5%8A%A8%E7%BB%86%E8%8A%82%E4%BB%8B%E7%BB%8D/"/>
-    <id>https://whjin.github.io/2019/10/11/technical/清除浮动细节介绍/</id>
+    <link href="https://whjin.github.io/vexo/2019/10/11/technical/%E6%B8%85%E9%99%A4%E6%B5%AE%E5%8A%A8%E7%BB%86%E8%8A%82%E4%BB%8B%E7%BB%8D/"/>
+    <id>https://whjin.github.io/vexo/2019/10/11/technical/清除浮动细节介绍/</id>
     <published>2019-10-11T05:57:28.000Z</published>
     <updated>2023-02-02T16:03:23.211Z</updated>
     
@@ -274,19 +274,19 @@
     
     </summary>
     
-      <category term="技术" scheme="https://whjin.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+      <category term="技术" scheme="https://whjin.github.io/vexo/categories/%E6%8A%80%E6%9C%AF/"/>
     
     
-      <category term="CSS" scheme="https://whjin.github.io/tags/CSS/"/>
+      <category term="CSS" scheme="https://whjin.github.io/vexo/tags/CSS/"/>
     
-      <category term="前端" scheme="https://whjin.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
+      <category term="前端" scheme="https://whjin.github.io/vexo/tags/%E5%89%8D%E7%AB%AF/"/>
     
   </entry>
   
   <entry>
     <title>vscode配置</title>
-    <link href="https://whjin.github.io/2019/09/05/technical/vscode%E9%85%8D%E7%BD%AE/"/>
-    <id>https://whjin.github.io/2019/09/05/technical/vscode配置/</id>
+    <link href="https://whjin.github.io/vexo/2019/09/05/technical/vscode%E9%85%8D%E7%BD%AE/"/>
+    <id>https://whjin.github.io/vexo/2019/09/05/technical/vscode配置/</id>
     <published>2019-09-04T20:41:29.000Z</published>
     <updated>2023-01-27T07:10:57.426Z</updated>
     
@@ -304,19 +304,19 @@
     
     </summary>
     
-      <category term="技术" scheme="https://whjin.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+      <category term="技术" scheme="https://whjin.github.io/vexo/categories/%E6%8A%80%E6%9C%AF/"/>
     
     
-      <category term="前端" scheme="https://whjin.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
+      <category term="前端" scheme="https://whjin.github.io/vexo/tags/%E5%89%8D%E7%AB%AF/"/>
     
-      <category term="编辑器" scheme="https://whjin.github.io/tags/%E7%BC%96%E8%BE%91%E5%99%A8/"/>
+      <category term="编辑器" scheme="https://whjin.github.io/vexo/tags/%E7%BC%96%E8%BE%91%E5%99%A8/"/>
     
   </entry>
   
   <entry>
     <title>正则表达式实例</title>
-    <link href="https://whjin.github.io/2019/08/29/technical/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%AE%9E%E4%BE%8B/"/>
-    <id>https://whjin.github.io/2019/08/29/technical/正则表达式实例/</id>
+    <link href="https://whjin.github.io/vexo/2019/08/29/technical/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%AE%9E%E4%BE%8B/"/>
+    <id>https://whjin.github.io/vexo/2019/08/29/technical/正则表达式实例/</id>
     <published>2019-08-29T13:41:36.000Z</published>
     <updated>2023-02-04T14:37:06.047Z</updated>
     
@@ -338,19 +338,19 @@
     
     </summary>
     
-      <category term="技术" scheme="https://whjin.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+      <category term="技术" scheme="https://whjin.github.io/vexo/categories/%E6%8A%80%E6%9C%AF/"/>
     
     
-      <category term="前端" scheme="https://whjin.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
+      <category term="前端" scheme="https://whjin.github.io/vexo/tags/%E5%89%8D%E7%AB%AF/"/>
     
-      <category term="正则" scheme="https://whjin.github.io/tags/%E6%AD%A3%E5%88%99/"/>
+      <category term="正则" scheme="https://whjin.github.io/vexo/tags/%E6%AD%A3%E5%88%99/"/>
     
   </entry>
   
   <entry>
     <title>状态管理与Vuex</title>
-    <link href="https://whjin.github.io/2019/08/24/technical/%E7%8A%B6%E6%80%81%E7%AE%A1%E7%90%86%E4%B8%8EVuex/"/>
-    <id>https://whjin.github.io/2019/08/24/technical/状态管理与Vuex/</id>
+    <link href="https://whjin.github.io/vexo/2019/08/24/technical/%E7%8A%B6%E6%80%81%E7%AE%A1%E7%90%86%E4%B8%8EVuex/"/>
+    <id>https://whjin.github.io/vexo/2019/08/24/technical/状态管理与Vuex/</id>
     <published>2019-08-24T01:39:56.000Z</published>
     <updated>2023-01-27T07:04:14.554Z</updated>
     
@@ -363,19 +363,19 @@
     
     </summary>
     
-      <category term="技术" scheme="https://whjin.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+      <category term="技术" scheme="https://whjin.github.io/vexo/categories/%E6%8A%80%E6%9C%AF/"/>
     
     
-      <category term="前端" scheme="https://whjin.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
+      <category term="前端" scheme="https://whjin.github.io/vexo/tags/%E5%89%8D%E7%AB%AF/"/>
     
-      <category term="Vue" scheme="https://whjin.github.io/tags/Vue/"/>
+      <category term="Vue" scheme="https://whjin.github.io/vexo/tags/Vue/"/>
     
   </entry>
   
   <entry>
     <title>Vue技术细节</title>
-    <link href="https://whjin.github.io/2019/08/23/technical/Vue%E6%8A%80%E6%9C%AF%E7%BB%86%E8%8A%82/"/>
-    <id>https://whjin.github.io/2019/08/23/technical/Vue技术细节/</id>
+    <link href="https://whjin.github.io/vexo/2019/08/23/technical/Vue%E6%8A%80%E6%9C%AF%E7%BB%86%E8%8A%82/"/>
+    <id>https://whjin.github.io/vexo/2019/08/23/technical/Vue技术细节/</id>
     <published>2019-08-23T07:21:15.000Z</published>
     <updated>2023-01-27T07:09:41.736Z</updated>
     
@@ -387,19 +387,19 @@
     
     </summary>
     
-      <category term="技术" scheme="https://whjin.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+      <category term="技术" scheme="https://whjin.github.io/vexo/categories/%E6%8A%80%E6%9C%AF/"/>
     
     
-      <category term="前端" scheme="https://whjin.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
+      <category term="前端" scheme="https://whjin.github.io/vexo/tags/%E5%89%8D%E7%AB%AF/"/>
     
-      <category term="Vue" scheme="https://whjin.github.io/tags/Vue/"/>
+      <category term="Vue" scheme="https://whjin.github.io/vexo/tags/Vue/"/>
     
   </entry>
   
   <entry>
     <title>Redux+API制作meme generator</title>
-    <link href="https://whjin.github.io/2019/05/14/technical/Redux%E5%88%B6%E4%BD%9CmemeGenerator/"/>
-    <id>https://whjin.github.io/2019/05/14/technical/Redux制作memeGenerator/</id>
+    <link href="https://whjin.github.io/vexo/2019/05/14/technical/Redux%E5%88%B6%E4%BD%9CmemeGenerator/"/>
+    <id>https://whjin.github.io/vexo/2019/05/14/technical/Redux制作memeGenerator/</id>
     <published>2019-05-14T00:27:51.000Z</published>
     <updated>2023-01-27T07:11:36.569Z</updated>
     
@@ -412,19 +412,19 @@
     
     </summary>
     
-      <category term="技术" scheme="https://whjin.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+      <category term="技术" scheme="https://whjin.github.io/vexo/categories/%E6%8A%80%E6%9C%AF/"/>
     
     
-      <category term="前端" scheme="https://whjin.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
+      <category term="前端" scheme="https://whjin.github.io/vexo/tags/%E5%89%8D%E7%AB%AF/"/>
     
-      <category term="Redux" scheme="https://whjin.github.io/tags/Redux/"/>
+      <category term="Redux" scheme="https://whjin.github.io/vexo/tags/Redux/"/>
     
   </entry>
   
   <entry>
     <title>React生命周期</title>
-    <link href="https://whjin.github.io/2019/05/13/technical/React%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/"/>
-    <id>https://whjin.github.io/2019/05/13/technical/React生命周期/</id>
+    <link href="https://whjin.github.io/vexo/2019/05/13/technical/React%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/"/>
+    <id>https://whjin.github.io/vexo/2019/05/13/technical/React生命周期/</id>
     <published>2019-05-13T14:57:12.000Z</published>
     <updated>2023-01-27T07:11:57.981Z</updated>
     
@@ -436,19 +436,19 @@
     
     </summary>
     
-      <category term="技术" scheme="https://whjin.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+      <category term="技术" scheme="https://whjin.github.io/vexo/categories/%E6%8A%80%E6%9C%AF/"/>
     
     
-      <category term="前端" scheme="https://whjin.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
+      <category term="前端" scheme="https://whjin.github.io/vexo/tags/%E5%89%8D%E7%AB%AF/"/>
     
-      <category term="React" scheme="https://whjin.github.io/tags/React/"/>
+      <category term="React" scheme="https://whjin.github.io/vexo/tags/React/"/>
     
   </entry>
   
   <entry>
     <title>前端插件库</title>
-    <link href="https://whjin.github.io/2019/05/12/technical/%E5%89%8D%E7%AB%AF%E6%8F%92%E4%BB%B6%E5%BA%93/"/>
-    <id>https://whjin.github.io/2019/05/12/technical/前端插件库/</id>
+    <link href="https://whjin.github.io/vexo/2019/05/12/technical/%E5%89%8D%E7%AB%AF%E6%8F%92%E4%BB%B6%E5%BA%93/"/>
+    <id>https://whjin.github.io/vexo/2019/05/12/technical/前端插件库/</id>
     <published>2019-05-12T03:01:16.000Z</published>
     <updated>2023-02-02T16:03:23.211Z</updated>
     
@@ -461,19 +461,19 @@
     
     </summary>
     
-      <category term="技术" scheme="https://whjin.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+      <category term="技术" scheme="https://whjin.github.io/vexo/categories/%E6%8A%80%E6%9C%AF/"/>
     
     
-      <category term="前端" scheme="https://whjin.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
+      <category term="前端" scheme="https://whjin.github.io/vexo/tags/%E5%89%8D%E7%AB%AF/"/>
     
-      <category term="插件" scheme="https://whjin.github.io/tags/%E6%8F%92%E4%BB%B6/"/>
+      <category term="插件" scheme="https://whjin.github.io/vexo/tags/%E6%8F%92%E4%BB%B6/"/>
     
   </entry>
   
   <entry>
     <title>CSS的Transition与Animation</title>
-    <link href="https://whjin.github.io/2019/05/08/technical/CSS%E7%9A%84Transition%E4%B8%8EAnimation/"/>
-    <id>https://whjin.github.io/2019/05/08/technical/CSS的Transition与Animation/</id>
+    <link href="https://whjin.github.io/vexo/2019/05/08/technical/CSS%E7%9A%84Transition%E4%B8%8EAnimation/"/>
+    <id>https://whjin.github.io/vexo/2019/05/08/technical/CSS的Transition与Animation/</id>
     <published>2019-05-08T09:40:49.000Z</published>
     <updated>2023-01-27T07:13:18.788Z</updated>
     
@@ -487,19 +487,19 @@
     
     </summary>
     
-      <category term="技术" scheme="https://whjin.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+      <category term="技术" scheme="https://whjin.github.io/vexo/categories/%E6%8A%80%E6%9C%AF/"/>
     
     
-      <category term="CSS" scheme="https://whjin.github.io/tags/CSS/"/>
+      <category term="CSS" scheme="https://whjin.github.io/vexo/tags/CSS/"/>
     
-      <category term="前端" scheme="https://whjin.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
+      <category term="前端" scheme="https://whjin.github.io/vexo/tags/%E5%89%8D%E7%AB%AF/"/>
     
   </entry>
   
   <entry>
     <title>jQuery选择器</title>
-    <link href="https://whjin.github.io/2019/05/08/technical/jQuery%E9%80%89%E6%8B%A9%E5%99%A8/"/>
-    <id>https://whjin.github.io/2019/05/08/technical/jQuery选择器/</id>
+    <link href="https://whjin.github.io/vexo/2019/05/08/technical/jQuery%E9%80%89%E6%8B%A9%E5%99%A8/"/>
+    <id>https://whjin.github.io/vexo/2019/05/08/technical/jQuery选择器/</id>
     <published>2019-05-08T08:17:24.000Z</published>
     <updated>2023-01-27T07:12:28.798Z</updated>
     
@@ -517,12 +517,12 @@
     
     </summary>
     
-      <category term="技术" scheme="https://whjin.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+      <category term="技术" scheme="https://whjin.github.io/vexo/categories/%E6%8A%80%E6%9C%AF/"/>
     
     
-      <category term="前端" scheme="https://whjin.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
+      <category term="前端" scheme="https://whjin.github.io/vexo/tags/%E5%89%8D%E7%AB%AF/"/>
     
-      <category term="jQuery" scheme="https://whjin.github.io/tags/jQuery/"/>
+      <category term="jQuery" scheme="https://whjin.github.io/vexo/tags/jQuery/"/>
     
   </entry>
   
