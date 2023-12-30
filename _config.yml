@@ -12,7 +12,7 @@ timezone: Asia/Shanghai
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: https://whjin.github.io
+url: https://whjin.github.io/vexo/
 root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
@@ -86,5 +86,5 @@ theme: vexo
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: git
-  repository: git@github.com:whjin/whjin.github.io.git
+  repository: git@github.com:whjin/vexo.git
   branch: master
