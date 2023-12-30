@@ -5,7 +5,7 @@
   <meta name="keyword" content="<%= config.keyword || theme.keyword %>" />
   <% if (config.favicon || theme.favicon){ %>
   <link rel="shortcut icon" type="image/ico" href="<%= config.favicon || theme.favicon %>" />
-  <% } else { %> <%- favicon_tag('css/images/logo.png') %> <% } %>
+  <% } else { %> <%- favicon_tag('/vexo/css/images/logo.png') %> <% } %>
   <title>
     <% if (page.title){ %> <%= page.title %> | <%= config.title %> <% } else { %> <%= config.title %> <% } %>
   </title>
@@ -22,5 +22,5 @@
   <%- js(['js/qrious']) %>
 </head>
 <div class="wechat-share">
-  <img src="/css/images/logo.png" />
+  <img src="/vexo/css/images/logo.png" />
 </div>
