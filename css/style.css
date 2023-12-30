@@ -6,9 +6,6 @@
   background: #42b983;
   color: #fff;
 }
-::-webkit-scrollbar {
-  display: none;
-}
 body {
   font-family: 'Source Sans Pro', 'Helvetica Neue', Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -79,7 +76,7 @@ pre {
   font-family: 'Roboto Mono', Monaco, courier, monospace;
   font-size: 0.8em;
   display: inline-block;
-  background-color: #f8f8f8;
+  background-color: #eff7fd;
   color: #e96900;
   padding: 3px 5px;
   margin: 0 2px 5px 0;
@@ -214,9 +211,9 @@ h2.article-head {
   top: 2.5em;
   left: 50%;
   display: none;
-  width: 16em;
-  height: 9.2em;
-  margin-left: -8em;
+  width: 13em;
+  height: 7em;
+  margin-left: -6.5em;
   padding: 10px 0;
   background: #fff;
   box-shadow: 0 0 0 1px #e5e5e5;
@@ -225,11 +222,8 @@ h2.article-head {
 }
 .money-like .money-code span {
   display: inline-block;
-  width: 8em;
-  height: 8em;
-}
-.money-like .money-code .wechat-code {
-  float: left;
+  width: 6em;
+  height: 6em;
 }
 .money-like .money-code .wechat-code .code-image {
   background-size: contain;
@@ -517,7 +511,7 @@ z img,
 }
 .markdown-content p code,
 .article-summary p code {
-  background-color: #f8f8f8;
+  background-color: #eff7fd;
   color: #e96900;
   padding: 2px 5px;
   border-radius: 2px;
@@ -561,7 +555,7 @@ z img,
   margin: 1em 0;
   padding: 12px 20px;
   border-left: 4px solid #42b983;
-  background: #f8f8f8;
+  background: #eff7fd;
   border-bottom-right-radius: 2px;
   border-top-right-radius: 2px;
 }
@@ -599,7 +593,7 @@ z img,
 }
 .markdown-content figure,
 .article-summary figure {
-  background: #f8f8f8;
+  background: #eff7fd;
   padding: 0 10px;
   border-radius: 2px;
   margin: 20px 0;

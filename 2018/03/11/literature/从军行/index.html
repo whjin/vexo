@@ -5,7 +5,7 @@
   <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
   <meta name="description" content="吴华锦的个人主页" />
   <meta name="keyword" content="hexo-theme, vuejs" />
-   <link rel="shortcut icon" href="/css/images/logo.png"> 
+   <link rel="shortcut icon" href="/vexo/css/images/logo.png"> 
   <title>
      从军行 | 吴华锦 
   </title>
@@ -15,14 +15,14 @@
   <link href="//cdn.bootcss.com/emojione/2.2.2/assets/css/emojione.min.css" rel="stylesheet" />
   <link href="//cdn.bootcss.com/emojione/2.2.2/assets/sprites/emojione.sprites.css" rel="stylesheet" />
   
-<link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/vexo/css/style.css">
 
   <script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
   <script src="//cdn.bootcss.com/geopattern/1.2.3/js/geopattern.min.js"></script>
   <script src="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js"></script>
   <script src="//cdn.bootcdn.net/ajax/libs/emojione/4.5.0/lib/js/emojione.min.js"></script>
   
-<script src="/js/qrious.js"></script>
+<script src="/vexo/js/qrious.js"></script>
 
 <meta name="generator" content="Hexo 6.3.0"></head>
 <div class="wechat-share">
@@ -32,7 +32,7 @@
 <body>
 <header class="header fixed-header">
     <div class="header-container">
-        <a class="home-link" href="/">
+        <a class="home-link" href="/vexo/">
             <div class="logo"></div>
             <span>吴华锦</span>
         </a>
@@ -40,31 +40,31 @@
             
             <li class="list-item">
                 
-                <a href="/" class="item-link">首页</a>
+                <a href="/vexo/" class="item-link">首页</a>
                 
             </li>
             
             <li class="list-item">
                 
-                <a href="/archives/" class="item-link">归档</a>
+                <a href="/vexo/archives/" class="item-link">归档</a>
                 
             </li>
             
             <li class="list-item">
                 
-                <a href="/tags/" class="item-link">标签</a>
+                <a href="/vexo/tags/" class="item-link">标签</a>
                 
             </li>
             
             <li class="list-item">
                 
-                <a href="/project/" class="item-link">项目</a>
+                <a href="/vexo/project/" class="item-link">项目</a>
                 
             </li>
             
             <li class="list-item">
                 
-                <a href="/about/" class="item-link">关于</a>
+                <a href="/vexo/about/" class="item-link">关于</a>
                 
             </li>
             
@@ -79,31 +79,31 @@
                 
                 <li class="menu-item">
                     
-                    <a href="/" class="menu-link">首页</a>
+                    <a href="/vexo/" class="menu-link">首页</a>
                     
                 </li>
                 
                 <li class="menu-item">
                     
-                    <a href="/archives/" class="menu-link">归档</a>
+                    <a href="/vexo/archives/" class="menu-link">归档</a>
                     
                 </li>
                 
                 <li class="menu-item">
                     
-                    <a href="/tags/" class="menu-link">标签</a>
+                    <a href="/vexo/tags/" class="menu-link">标签</a>
                     
                 </li>
                 
                 <li class="menu-item">
                     
-                    <a href="/project/" class="menu-link">项目</a>
+                    <a href="/vexo/project/" class="menu-link">项目</a>
                     
                 </li>
                 
                 <li class="menu-item">
                     
-                    <a href="/about/" class="menu-link">关于</a>
+                    <a href="/vexo/about/" class="menu-link">关于</a>
                     
                 </li>
                 
@@ -133,7 +133,7 @@
       <div class="tags">
         <span>Tags:</span>
         
-  <a href="/tags#诗词" >
+  <a href="/vexo/vexo/tags#诗词" >
     <span class="tag-code">诗词</span>
   </a>
 
@@ -356,11 +356,15 @@
 </div>
 <footer class="app-footer">
     <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-    <div>&copy; 2015 -
-        <script type="text/javascript">document.write(new Date().getFullYear());</script>
+    <div>&copy; 2015 - <span id="current"></span>
+        <script type="text/javascript">
+            const current = document.getElementById("current");
+            current.innerText = new Date().getFullYear();
+        </script>
         <a href="https://github.com/whjin" target="_blank" title="Github"> whjin </a>|<span
             id="busuanzi_container_site_pv"> 访问 <a
-                href="http://service.ibruce.info/" target="_blank"><span id="busuanzi_value_site_pv"></span></a> 次 </span><span
+                href="http://service.ibruce.info/" target="_blank"><span id="busuanzi_value_site_pv"></span></a> 次
+        </span><span
             id="busuanzi_container_site_uv"><a href="http://service.ibruce.info/" target="_blank"><span
                     id="busuanzi_value_site_uv"></span></a> 人</span>
     </div>
@@ -408,7 +412,7 @@
 <!-- Baidu Tongji -->
 
         
-<script src="/js/script.js"></script>
+<script src="/vexo/js/script.js"></script>
 
             <script>
                 var _hmt = _hmt || [];
